@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet 谷歌 投资分析报告</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #4285F4; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #4285F4, #34A853); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div><h1>🔍 Alphabet (GOOGL) — 深度投资分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section><h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-19)</div><div class="snapshot-value">$305.73</div><div class="snapshot-change neutral">从高点$345回调-11%</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">1.9万亿美元</div><div class="snapshot-change">全球第三</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">~25x</div><div class="snapshot-change">合理</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$370</div><div class="snapshot-change">分析师中位数</div></div>
+            </div>
+        </section>
+
+        <section><h2>📈 一年股价走势</h2>
+            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+                <img src="charts/google.png" alt="google一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
+                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
+            </div>
+        </section>
+
+        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+            <p>AI搜索整合加速，Gemini 3.1全面上线。用户参与度提升20%。Cloud增长强劲，收购Wiz强化安全。广告业务稳健，估值具备吸引力。</p>
+        </div>
+
+        <section><h2>💰 季度财务表现 (Q4 2025)</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>Q4 营收</span><span class="metric-period">2025 Q4</span></div><div class="metric-value">$965亿</div><div class="metric-change bullish">YoY +12%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Q4 EPS</span><span class="metric-period">2025 Q4</span></div><div class="metric-value">$2.82</div><div class="metric-change bullish">超预期</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Google Cloud</span><div class="metric-value">$96亿</div><div class="metric-change bullish">YoY +30%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>广告收入</span><div class="metric-value">$720亿</div><div class="metric-change bullish">稳健</div></div>
+            </div>
+        </section>
+
+        <section><h2>💼 业务深度解析</h2>
+            <div class="analysis-card"><h3>🤖 AI 搜索整合 — Gemini时代</h3><span class="tag tag-bullish">核心变革</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>Gemini 3.1全面整合到美国搜索和Chrome</li><li>"AI模式"用户参与度提升 <strong>20%</strong></li><li>从搜索引擎转型"主动式数字代理"</li><li>搜索广告+AI原生广告双驱动</li></ul></div>
+            <div class="analysis-card"><h3>☁️ Google Cloud — 第三增长曲线</h3><span class="tag tag-bullish">高增长</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>收入 YoY +30%</li><li>收购Wiz强化云安全</li><li>与NVIDIA合作下一代推理基础设施</li><li>2026下半年推出Rubin NVL72系统</li></ul></div>
+            <div class="analysis-card"><h3>📺 广告业务 — 现金牛</h3><span class="tag tag-bullish">稳定</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>搜索广告仍是核心收入</li><li>YouTube Shorts变现提升</li><li>AI驱动的广告定向更精准</li></ul></div>
+        </section>
+
+        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$380</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">18%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$304</div></div></div></div>
+            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$340</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$272</div></div></div></div>
+            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$280</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$224</div></div></div></div>
+        </section>
+
+        <section><h2>🏆 巴菲特逐项评分</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">搜索+安卓</p><p style="font-size:0.85em;margin-top:10px;">全球搜索主导，安卓生态全覆盖，YouTube视频霸主。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px">皮查伊领导力</p><p style="font-size:0.85em;margin-top:10px">AI转型坚决，云业务快速增长，效率提升显著。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">强劲现金流</p><p style="font-size:0.85em;margin-top:10px">净利润率高，现金储备充足。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px">广告+云双轮驱动，利润率提升。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">业务稳定</p><p style="font-size:0.85em;margin-top:10px">搜索业务稳定，云高增长可预期。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">合理</p><p style="font-size:0.85em;margin-top:10px">回购+AI投资并重，收购Wiz补强云安全。</p></div>
+            </div>
+        </section>
+
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 买入 (Buy)</h3>
+            <p style="margin:20px 0;">AI搜索转型领先，Cloud高增长，目标价$370，当前$305有21%上涨空间。</p>
+            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$290-310</li><li>• 目标价：$370</li><li>• 止损位：$260</li></ul>
+        </div></section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>AI搜索商业化不确定性</li><li>监管反垄断调查</li><li>广告市场增速放缓</li><li>云业务竞争加剧（AWS/Azure）</li></ul></div>
+        </section>
+
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 微软 投资分析报告</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #00A4EF; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #00A4EF, #7FBA00); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--neutral); background: linear-gradient(135deg, var(--card-bg), rgba(255, 152, 0, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        .alert-box { background: rgba(255, 152, 0, 0.1); border-left: 4px solid var(--neutral); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--neutral); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div><h1>🪟 Microsoft (MSFT) — 深度投资分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section><h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-19)</div><div class="snapshot-value">$389.02</div><div class="snapshot-change bearish">从高点$540回调-28%</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">2.91万亿美元</div><div class="snapshot-change">全球第二</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">~35x</div><div class="snapshot-change">回调后合理</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$592</div><div class="snapshot-change">分析师平均</div></div>
+            </div>
+        </section>
+
+        <section><h2>📈 一年股价走势</h2>
+            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+                <img src="charts/microsoft.png" alt="microsoft一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
+                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
+            </div>
+        </section>
+
+        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+            <p>Q2营收$813亿 (+17%) 超预期，Microsoft Cloud首次突破$500亿。Azure增长39%持续强劲。AI资本开支$375亿创纪录，长期投资确定。PE 35x回调后具备吸引力。</p>
+        </div>
+
+        <section><h2>💰 季度财务表现 (FY26 Q2)</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>营收</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$813亿</div><div class="metric-change bullish">YoY +17%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Non-GAAP EPS</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$4.14</div><div class="metric-change bullish">YoY +24%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Microsoft Cloud</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$515亿</div><div class="metric-change bullish">首次突破500亿</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Azure增长</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">+39%</div><div class="metric-change bullish">持续强劲</div></div>
+            </div>
+        </section>
+
+        <section><h2>💼 业务深度解析</h2>
+            <div class="analysis-card"><h3>☁️ Azure — 核心增长引擎</h3><span class="tag tag-bullish">最大看点</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>全球第二大云服务商，市场份额21%</li><li>AI需求驱动Azure增长加速</li><li>Copilot商业化推进中</li><li>与OpenAI合作深化，Azure独占地位稳固</li></ul></div>
+            <div class="analysis-card"><h3>🤖 AI 商业化</h3><span class="tag tag-bullish">增长点</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>Microsoft 365 Copilot 企业用户增长</li><li>GitHub Copilot普及</li><li>Azure AI平台客户增加</li><li>OpenAI额外$250亿Azure承诺</li></ul></div>
+            <div class="analysis-card"><h3>💻 传统软件</h3><span class="tag tag-bullish">现金牛</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>Office 365订阅稳定</li><li>LinkedIn增长稳健</li><li>Windows OEM收入回升</li></ul></div>
+        </section>
+
+        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$520</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">18%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$416</div></div></div></div>
+            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$450</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$360</div></div></div></div>
+            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$350</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$280</div></div></div></div>
+        </section>
+
+        <section><h2>🏆 巴菲特逐项评分</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">Office+Azure</p><p style="font-size:0.85em;margin-top:10px;">Office 365统治企业软件，Azure全球第二，护城河宽广。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">纳德拉领导</p><p style="font-size:0.85em;margin-top:10px;">纳德拉战略眼光强，云转型成功，AI布局领先。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">超强现金流</p><p style="font-size:0.85em;margin-top:10px;">利润率行业领先，现金流充裕。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">订阅模式稳定，EPS增速高于营收。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">商业模式稳</p><p style="font-size:0.85em;margin-top:10px;">订阅收入可预测，云增长确定。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">进取</p><p style="font-size:0.85em;margin-top:10px;">回购+AI投资并重，股东回报丰厚。</p></div>
+            </div>
+        </section>
+
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 买入 (Buy)</h3>
+            <p style="margin:20px 0;">从高点回调28%，PE 35x具备吸引力。Azure+AI长期增长确定，目标价$450-520。</p>
+            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$370-390</li><li>• 加仓：$340以下</li><li>• 目标价：$450-520</li><li>• 止损位：$320</li></ul>
+        </div></section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>AI资本开支过高 — 压制利润率</li><li>Azure竞争加剧 — AWS/Google Cloud</li><li>OpenAI依赖 — 合作变动风险</li><li>监管反垄断调查</li></ul></div>
+        </section>
+
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+    </div>
+</body>
+</html>

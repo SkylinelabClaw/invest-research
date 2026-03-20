@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>META Platforms 投资分析报告</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #4267B2; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #4267B2, #898F9C); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--neutral); background: linear-gradient(135deg, var(--card-bg), rgba(255, 152, 0, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        .alert-box { background: rgba(255, 152, 0, 0.1); border-left: 4px solid var(--neutral); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--neutral); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        .table-container { overflow-x: auto; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); font-weight: 600; }
+        td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div><h1>📘 META Platforms (META) — 深度投资分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section><h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">$612.66</div><div class="snapshot-change neutral">从高点$700回调-12%</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">1.51万亿美元</div><div class="snapshot-change">全球前5</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">25.83x</div><div class="snapshot-change">合理偏高</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">股息率</div><div class="snapshot-value">0.35%</div><div class="snapshot-change">现金分红</div></div>
+            </div>
+        </section>
+
+        <section><h2>📈 一年股价走势</h2>
+            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+                <img src="charts/meta.png" alt="meta一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
+                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
+            </div>
+        </section>
+
+        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+            <p>Q4营收$599亿 (+24%) 超预期，净利$228亿。AI投资翻倍至1150-1350亿美元，Reality Labs亏损扩大。元宇宙故事退潮，核心社交业务依然强劲。PE 25x处于历史区间中部。</p>
+        </div>
+
+        <section><h2>💰 季度财务表现</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>Q4 2025 营收</span><span class="metric-period">FY25 Q4</span></div><div class="metric-value">$599亿</div><div class="metric-change bullish">YoY +24%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Q4 净利润</span><span class="metric-period">FY25 Q4</span></div><div class="metric-value">$228亿</div><div class="metric-change bullish">利润率 41%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>Q4 EPS</span><span class="metric-period">FY25 Q4</span></div><div class="metric-value">$8.88</div><div class="metric-change bullish">超预期</div></div>
+                <div class="metric-card"><div class="metric-header"><span>现金储备</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$816亿</div><div class="metric-change bullish">充沛</div></div>
+            </div>
+        </section>
+
+        <section><h2>📈 业务深度解析</h2>
+            <div class="analysis-card"><h3>🤖 AI 战略 — 全面转型</h3><span class="tag tag-bullish">核心驱动</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>2026年AI资本开支预计 <strong>1150-1350亿美元</strong>，较2025年翻倍</li><li>开发定制AI芯片，与AMD合作部署 <strong>6吉瓦</strong> GPU解决方案</li><li>AI内容审核系统表现优于人工团队</li><li>Llama开源大模型持续迭代</li></ul></div>
+            <div class="analysis-card"><h3>📱 核心广告业务</h3><span class="tag tag-bullish">现金牛</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>Facebook + Instagram 用户基础稳固</li><li>广告技术持续优化，Reels短视频变现提升</li><li>消息流广告原生化提高用户体验</li><li>AI推荐算法提升用户时长</li></ul></div>
+            <div class="analysis-card"><h3>🥽 Reality Labs — 长期投资</h3><span class="tag tag-bearish">风险点</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>元宇宙业务持续亏损</li><li>Quest 3 销量不及预期</li><li>AR/VR市场成熟仍需时间</li><li>成为估值压制因素</li></ul></div>
+        </section>
+
+        <section><h2>📞 管理层发言</h2>
+            <div class="qa-item"><div class="qa-question">Mark Zuckerberg — CEO</div>
+                <div class="qa-answer"><p>「我们对AI基础设施进行了重大投资，这将支持我们在所有产品中部署更先进的AI系统。这些投资对于保持我们的竞争力至关重要，同时也为股东创造了长期价值。」</p></div></div>
+            <div class="qa-item"><div class="qa-question">关于AI资本开支</div>
+                <div class="qa-answer"><p>「预计2026年AI相关资本支出将在1150亿至1350亿美元之间，这反映了我们对AI技术未来的坚定信念。虽然短期会影响利润率，但我们认为这是必要的战略投入。」</p></div></div>
+        </section>
+
+        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$750</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$600</div></div></div></div>
+            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$620</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$496</div></div></div></div>
+            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$480</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$384</div></div></div></div>
+        </section>
+
+        <section><h2>🏆 巴菲特逐项评分</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">社交帝国</p><p style="font-size:0.85em;margin-top:10px;">Facebook+Instagram+WhatsApp全球30亿用户，网络效应极强。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">战略眼光</p><p style="font-size:0.85em;margin-top:10px;">扎克伯格决策果断，AI+元宇宙双线投入，效率提升显著。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">现金牛</p><p style="font-size:0.85em;margin-top:10px;">$816亿现金，41%利润率，广告收入稳健。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">净利润增速高于营收增速，运营效率提升。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">商业模式稳</p><p style="font-size:0.85em;margin-top:10px;">广告业务可预测，AI投入回报周期不确定。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">激进投资</p><p style="font-size:0.85em;margin-top:10px;">AI投资翻倍，但回报周期长。元宇宙持续亏损。</p></div>
+            </div>
+        </section>
+
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 观察 (Watch)</h3>
+            <p style="margin:20px 0;">当前$612处于中性估值区间，PE 25x合理。AI投资翻倍是双刃剑——长期利好但短期压制利润率。</p>
+            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 等待更好的买入时机（$550-600）</li><li>• 关注Q1财报AI商业化进展</li><li>• Reality Labs 亏损是否收窄</li><li>• 止损位：$500</li></ul>
+        </div></section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>AI资本开支翻倍 — 短期压制利润率</li><li>Reality Labs 持续亏损 — 元宇宙仍需大量投入</li><li>监管风险 — 反垄断、数据隐私</li><li>广告市场放缓 — 宏观经济影响</li><li>来自TikTok竞争 — 用户时长被分流</li></ul></div>
+        </section>
+
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+    </div>
+</body>
+</html>

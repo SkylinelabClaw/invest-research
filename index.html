@@ -47,22 +47,29 @@
 </head>
 <body>
     <div class="container">
-        <header><h1>📊 投研分析目录</h1><p class="subtitle">Investment Research Reports | 公司投资分析汇总</p></header>
+        <header><h1>📊 投研分析目录</h1><p class="subtitle">Investment Research Reports | 公司投资分析汇总 (14家)</p></header>
+
         <div class="search-section">
             <div class="nav-hint" style="text-align:center;margin-bottom:15px;color:var(--text-muted);font-size:0.9em;">
                 💡 查看报告后可用导航按钮切换到上一家/下一家公司
             </div>
             <div class="search-box"><input type="text" class="search-input" placeholder="🔍 搜索公司名称或代码..." id="searchInput" onkeyup="filterCompanies()"></div>
             <div class="quick-index" id="quickIndex">
-                <a href="#section-A" class="quick-index-item"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴</span></a>
+                <a href="#section-A" class="quick-index-item"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴/ARM</span></a>
+                <a href="#section-C" class="quick-index-item"><span class="quick-index-letter">C</span><span class="quick-index-count">寒武纪</span></a>
                 <a href="#section-D" class="quick-index-item"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a>
+                <a href="#section-G" class="quick-index-item"><span class="quick-index-letter">G</span><span class="quick-index-count">谷歌</span></a>
+                <a href="#section-H" class="quick-index-item"><span class="quick-index-letter">H</span><span class="quick-index-count">海光信息</span></a>
                 <a href="#section-L" class="quick-index-item"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a>
+                <a href="#section-M" class="quick-index-item"><span class="quick-index-letter">M</span><span class="quick-index-count">Meta/微软</span></a>
+                <a href="#section-N" class="quick-index-item"><span class="quick-index-letter">N</span><span class="quick-index-count">英伟达</span></a>
                 <a href="#section-P" class="quick-index-item"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a>
                 <a href="#section-T" class="quick-index-item"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯/腾讯音乐</span></a>
             </div>
         </div>
         
-        <div class="section-title" id="section-A">A</div>
+        <!-- A section -->
+        <div class="section-title" id="section-A">A — 阿里巴巴 / ARM Holdings</div>
         <div class="company-grid">
             <a href="alibaba.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🅰️ 阿里巴巴</div><div class="company-code">BABA.US / 09988.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
@@ -75,9 +82,37 @@
                 <div class="pe-info"><span>PE TTM: 20x</span><span>PE 2026E: 18x</span></div>
                 <div class="conclusion">Q3营收同比+2%，净利同比-67%。AI高投入短期承压，云计算持续盈利。年初至今跌27%。</div>
             </a>
+            <a href="arm.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🔷 ARM Holdings</div><div class="company-code">ARM.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$129.82</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+5.2%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,400亿</div></div>
+                </div>
+                <div class="pe-info"><span>PS: 26x</span><span>目标价: $205</span></div>
+                <div class="conclusion">AI驱动服务器CPU转型核心受益，Q3营收+26%。目标价$205，当前$130有58%上涨空间。</div>
+            </a>
         </div>
-        
-        <div class="section-title" id="section-D">D</div>
+
+        <!-- C section -->
+        <div class="section-title" id="section-C">C — 寒武纪</div>
+        <div class="company-grid">
+            <a href="cambricon.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🧠 寒武纪</div><div class="company-code">688256.SZ</div></div><span class="rating-tag rating-watch">观察</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥1025</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.2%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4,495亿</div></div>
+                </div>
+                <div class="pe-info"><span>PE TTM: 218x</span><span>2025净利: 20.59亿</span></div>
+                <div class="conclusion">2025年首次年度盈利！营收+453%。AI芯片国产替代核心标的，PE极高等待更好买点。</div>
+            </a>
+        </div>
+
+        <!-- D section -->
+        <div class="section-title" id="section-D">D — 东鹏特饮</div>
         <div class="company-grid">
             <a href="dongpeng.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">⚡ 东鹏特饮</div><div class="company-code">605499.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
@@ -91,8 +126,41 @@
                 <div class="conclusion">功能饮料龙头，前三季营收+34%、净利+39%，渠道下沉+产品矩阵扩展，成长空间广阔。</div>
             </a>
         </div>
-        
-        <div class="section-title" id="section-L">L</div>
+
+        <!-- G section -->
+        <div class="section-title" id="section-G">G — 谷歌 Alphabet</div>
+        <div class="company-grid">
+            <a href="google.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🔍 Alphabet 谷歌</div><div class="company-code">GOOGL.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$305.73</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+88%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1.9万亿</div></div>
+                </div>
+                <div class="pe-info"><span>PE TTM: ~25x</span><span>目标价: $370</span></div>
+                <div class="conclusion">AI搜索整合加速，Gemini 3.1全面上线。Cloud+30%高增长。目标价$370，当前有21%空间。</div>
+            </a>
+        </div>
+
+        <!-- H section -->
+        <div class="section-title" id="section-H">H — 海光信息</div>
+        <div class="company-grid">
+            <a href="hygon.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🔥 海光信息</div><div class="company-code">688041.SH</div></div><span class="rating-tag rating-buy">买入</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥216.42</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.8%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">~500亿</div></div>
+                </div>
+                <div class="pe-info"><span>2025净利: 25.42亿</span><span>YoY: +31.66%</span></div>
+                <div class="conclusion">国产CPU绝对龙头，2025年净利+32%。Q1指引继续暴增+63-76%。目标价¥280。</div>
+            </a>
+        </div>
+
+        <!-- L section -->
+        <div class="section-title" id="section-L">L — 老铺黄金</div>
         <div class="company-grid">
             <a href="laopugold.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">💰 老铺黄金</div><div class="company-code">06181.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
@@ -106,8 +174,52 @@
                 <div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。年初至今跌18%。</div>
             </a>
         </div>
-        
-        <div class="section-title" id="section-P">P</div>
+
+        <!-- M section -->
+        <div class="section-title" id="section-M">M — Meta / Microsoft</div>
+        <div class="company-grid">
+            <a href="meta.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">📘 Meta Platforms</div><div class="company-code">META.US</div></div><span class="rating-tag rating-watch">观察</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$612.66</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-12%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1.51万亿</div></div>
+                </div>
+                <div class="pe-info"><span>PE TTM: 25.83x</span><span>股息率: 0.35%</span></div>
+                <div class="conclusion">Q4营收$599亿 (+24%) 超预期。AI投资翻倍至1150-1350亿。PE 25x合理，等待买点。</div>
+            </a>
+            <a href="microsoft.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🪟 Microsoft 微软</div><div class="company-code">MSFT.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$389.02</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.7%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-28%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2.91万亿</div></div>
+                </div>
+                <div class="pe-info"><span>PE TTM: ~35x</span><span>目标价: $592</span></div>
+                <div class="conclusion">从高点回调28%，PE 35x具备吸引力。Azure+39%持续强劲，Cloud首次破$500亿。目标价$450-520。</div>
+            </a>
+        </div>
+
+        <!-- N section -->
+        <div class="section-title" id="section-N">N — NVIDIA 英伟达</div>
+        <div class="company-grid">
+            <a href="nvidia.html" class="company-card">
+                <div class="company-header"><div><div class="company-name">🟢 NVIDIA 英伟达</div><div class="company-code">NVDA.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$178.56</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change neutral">--</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+50%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4.4万亿</div></div>
+                </div>
+                <div class="pe-info"><span>PE TTM: ~65x</span><span>目标价: $325</span></div>
+                <div class="conclusion">AI芯片霸主市占率90%。Q4营收+73%超预期。AWS百万GPU大单。目标价$220-300。</div>
+            </a>
+        </div>
+
+        <!-- P section -->
+        <div class="section-title" id="section-P">P — 拼多多 / 泡泡玛特</div>
         <div class="company-grid">
             <a href="pinduoduo.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🛒 拼多多</div><div class="company-code">PDD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
@@ -132,8 +244,9 @@
                 <div class="conclusion">LABUBU全球火爆，海外扩张加速。年初至今涨7.5%，但IP热度持续性存疑。</div>
             </a>
         </div>
-        
-        <div class="section-title" id="section-T">T</div>
+
+        <!-- T section -->
+        <div class="section-title" id="section-T">T — 腾讯 / 腾讯音乐</div>
         <div class="company-grid">
             <a href="tencentmusic.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🎵 腾讯音乐</div><div class="company-code">TME.US</div></div><span class="rating-tag rating-watch">观察</span></div>
@@ -163,12 +276,13 @@
     </div>
     <script>
     function filterCompanies() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        document.querySelectorAll('.company-card').forEach(card => {
-            const name = card.querySelector('.company-name').textContent.toLowerCase();
-            const code = card.querySelector('.company-code').textContent.toLowerCase();
-            card.style.display = (name.includes(filter) || code.includes(filter)) ? '' : 'none';
+        var input = document.getElementById('searchInput');
+        var filter = input.value.toLowerCase();
+        var cards = document.querySelectorAll('.company-card');
+        cards.forEach(function(card) {
+            var name = card.querySelector('.company-name').textContent.toLowerCase();
+            var code = card.querySelector('.company-code').textContent.toLowerCase();
+            card.style.display = (name.indexOf(filter) > -1 || code.indexOf(filter) > -1) ? '' : 'none';
         });
     }
     </script>
