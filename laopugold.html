@@ -5,28 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>老铺黄金 投资分析报告</title>
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --bullish: #00c853;
-            --bearish: #ff1744;
-            --neutral: #ff9800;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --card-bg: #1f2937;
-            --border: #374151;
-        }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #ffd700; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        header { background: linear-gradient(135deg, #8B4513, #DAA520); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
         .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         h1 { font-size: 2.2em; font-weight: 700; }
         .subtitle { color: var(--text-muted); font-size: 1.1em; }
         .report-meta { text-align: right; color: var(--text-muted); }
-        
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
@@ -36,181 +23,144 @@
         .bullish { color: var(--bullish); }
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
-        
         .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
         .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        
         section { margin-bottom: 40px; }
         h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
         h3 { font-size: 1.2em; margin: 20px 0 15px; }
-        
+        .table-container { overflow-x: auto; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); font-weight: 600; }
+        td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
         .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
         .metric-change { font-size: 0.9em; }
-        
         .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
         .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
-        
         .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
         .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
         .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
         .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
-        
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
         .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
         .conclusion h3 { margin-top: 0; color: var(--highlight); }
-        
         footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
         footer a { color: var(--accent); text-decoration: none; }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 1.5em; }
-            .header-content { flex-direction: column; text-align: center; }
-            .report-meta { text-align: center; }
-            .snapshot { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-                <div>
-                    <h1>💰 老铺黄金 (06181.HK) — 2025年财报深度分析</h1>
-                    <p class="subtitle">Investment Research Report</p>
-                </div>
-                <div class="report-meta">
-                    <div>报告日期: 2026-03-20</div>
-                    <div>分析师: 投研团队</div>
-                    <div>评级: 观察</div>
-                </div>
+                <div><h1>💰 老铺黄金 (06181.HK) — 2025年财报深度分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <section>
-            <h2>📊 股票快照</h2>
+        <section><h2>📊 股票快照</h2>
             <div class="snapshot">
-                <div class="snapshot-card highlight">
-                    <div class="snapshot-label">当前股价 (2026-03-11)</div>
-                    <div class="snapshot-value">≈ HK$650</div>
-                    <div class="snapshot-change bullish">财报后跳涨 +4%</div>
-                </div>
-                <div class="snapshot-card">
-                    <div class="snapshot-label">市值</div>
-                    <div class="snapshot-value">≈ HKD 1,150亿</div>
-                    <div class="snapshot-change">约 RMB 1,070亿</div>
-                </div>
-                <div class="snapshot-card">
-                    <div class="snapshot-label">2025 P/E (预估值)</div>
-                    <div class="snapshot-value">~22x</div>
-                    <div class="snapshot-change">净利润 48-49亿</div>
-                </div>
-                <div class="snapshot-card">
-                    <div class="snapshot-label">股息率</div>
-                    <div class="snapshot-value">~2.5%</div>
-                    <div class="snapshot-change">维持高分红</div>
-                </div>
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-11)</div><div class="snapshot-value">≈ HK$650</div><div class="snapshot-change bullish">财报后跳涨 +4%</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">≈ HKD 1,150亿</div><div class="snapshot-change">约 RMB 1,070亿</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">2025E P/E</div><div class="snapshot-value">~22x</div><div class="snapshot-change">净利润 48-49亿</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">股息率</div><div class="snapshot-value">~2.5%</div><div class="snapshot-change">维持高分红</div></div>
             </div>
         </section>
 
-        <div class="alert-box">
-            <div class="alert-title">🎯 核心亮点</div>
-            <p>2025年营收同比暴增 217%-229%至 270-280亿，净利润同比激增 226%-233%至 48-49亿。品牌影响力持续扩大，产品持续创新，2025年新增10家门店并对9家既有门店优化扩容，量价齐升推动业绩爆发。但估值已反映高增长预期，需观察后续门店扩张节奏和同店增长持续性。</p>
+        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+            <p>2025年营收同比暴增 217%-229%至 270-280亿，净利润同比激增 226%-233%至 48-49亿。品牌影响力持续扩大，产品持续创新，门店扩张驱动量价齐升。但估值已反映高增长预期，需观察后续门店扩张节奏和同店增长持续性。</p>
         </div>
 
-        <section>
-            <h2>💰 2025年全年业绩 (预告)</h2>
+        <section><h2>💰 2025年全年业绩 (预告)</h2>
             <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2025</span></div>
-                    <div class="metric-value">RMB 270-280亿</div>
-                    <div class="metric-change bullish">YoY +217% ~ +229%</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-header"><span>净利润</span><span class="metric-period">FY 2025</span></div>
-                    <div class="metric-value">RMB 48-49亿</div>
-                    <div class="metric-change bullish">YoY +226% ~ +233%</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-header"><span>经调整净利润</span><span class="metric-period">FY 2025</span></div>
-                    <div class="metric-value">RMB 50-51亿</div>
-                    <div class="metric-change bullish">剔除股权激励后 +233% ~ +240%</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-header"><span>含税销售额</span><span class="metric-period">FY 2025</span></div>
-                    <div class="metric-value">RMB 310-320亿</div>
-                    <div class="metric-change bullish">YoY +216% ~ +227%</div>
-                </div>
+                <div class="metric-card"><div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 270-280亿</div><div class="metric-change bullish">YoY +217% ~ +229%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 48-49亿</div><div class="metric-change bullish">YoY +226% ~ +233%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>经调整净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 50-51亿</div><div class="metric-change bullish">剔除股权激励后 +233% ~ +240%</div></div>
+                <div class="metric-card"><div class="metric-header"><span>含税销售额</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 310-320亿</div><div class="metric-change bullish">YoY +216% ~ +227%</div></div>
             </div>
         </section>
 
-        <section>
-            <h2>💼 增长驱动分析</h2>
-            <div class="analysis-card">
-                <h3>🏪 门店扩张</h3>
-                <ul style="margin-top:15px; padding-left:20px;">
-                    <li>2025年新增 <strong>10家门店</strong></li>
-                    <li>对 <strong>9家既有门店</strong> 进行优化及扩容</li>
-                    <li>门店数量持续增长带来增量营收</li>
-                </ul>
-            </div>
-            <div class="analysis-card">
-                <h3>✨ 品牌与产品</h3>
-                <ul style="margin-top:15px; padding-left:20px;">
-                    <li>品牌影响力持续扩大</li>
-                    <li>产品持续优化和推新迭代</li>
-                    <li>产品结构升级带动客单价提升</li>
-                </ul>
-            </div>
-            <div class="analysis-card">
-                <h3>📈 量价齐升</h3>
-                <ul style="margin-top:15px; padding-left:20px;">
-                    <li>门店覆盖加密带来客流增长</li>
-                    <li>同店销售增长强劲</li>
-                    <li>高毛利率产品占比提升</li>
-                </ul>
+        <section><h2>📈 历史业绩对比</h2>
+            <div class="table-container">
+                <table><thead><tr><th>指标</th><th class="number">2024全年</th><th class="number">2025上半年</th><th class="number">2025全年E</th><th class="number">YoY</th></tr></thead>
+                    <tbody>
+                        <tr><td>营收 (亿RMB)</td><td class="number">~85</td><td class="number">123.5</td><td class="number">270-280</td><td class="number bullish">+217%</td></tr>
+                        <tr><td>净利润 (亿RMB)</td><td class="number">~15</td><td class="number">22.7</td><td class="number">48-49</td><td class="number bullish">+226%</td></tr>
+                        <tr><td>门店数量</td><td class="number">~50</td><td class="number">~55</td><td class="number">~60</td><td class="number bullish">+10家</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <section>
-            <div class="conclusion">
-                <h3>🎯 综合裁决 — 观察 (Watch)</h3>
-                <p style="margin: 20px 0;">股价已反映高增长预期，22x PE 处于历史高位区间。</p>
-                <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-                    <p><strong>当前市场价：</strong>HK$650</p>
-                    <p><strong>目标价：</strong>HK$700-750 (10-15%空间)</p>
-                    <p><strong>催化剂：</strong>门店扩张超预期、同店增长持续性</p>
-                    <p><strong>风险：</strong>估值过高、门店扩张不及预期、行业竞争加剧</p>
-                </div>
-                <h4 style="margin: 30px 0 15px;">💼 操作建议</h4>
-                <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-                    <li>• 等待更好的买入点位（HK$550-600）</li>
-                    <li>• 关注2026年门店扩张计划</li>
-                    <li>• 跟踪同店销售增长趋势</li>
-                </ul>
+        <section><h2>💼 增长驱动深度解析</h2>
+            <div class="analysis-card"><h3>🏪 门店扩张 — 增量引擎</h3><span class="tag tag-bullish">核心驱动</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>2025年新增 <strong>10家门店</strong></li><li>对 <strong>9家既有门店</strong> 进行优化及扩容</li><li>门店数量持续增长带来增量营收</li><li>平均店效目标超过 <strong>10亿元</strong></li></ul></div>
+            <div class="analysis-card"><h3>✨ 品牌与产品 — 护城河</h3><span class="tag tag-bullish">竞争优势</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>品牌影响力持续扩大形成的绝对市场优势</li><li>产品持续优化和推新迭代</li><li>2025年进行了 <strong>三次产品价格上调</strong></li><li>2026年2月底完成 <strong>2026年首次提价</strong></li></ul></div>
+            <div class="analysis-card"><h3>📈 量价齐升 — 增长模式</h3><span class="tag tag-bullish">双轮驱动</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>门店覆盖加密带来客流增长</li><li>同店销售增长强劲</li><li>高毛利率产品占比提升</li><li>线上线下店铺整体营收大幅增长</li></ul></div>
+            <div class="analysis-card"><h3>🌏 海外扩张 — 新增长点</h3><span class="tag tag-neutral">探索期</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>2025年在新加坡和日本进行新店拓展和布局</li><li>调整境内外产品的商品结构</li><li>海外市场仍处于早期探索阶段</li></ul></div>
+        </section>
+
+        <section><h2>📞 管理层发言</h2>
+            <div class="qa-item"><div class="qa-question">徐高明 — 老铺黄金董事长</div>
+                <div class="qa-answer"><p>「老铺黄金并非'接住'了这波流量，而是'预判'并'顺应'了这个趋势，才取得了现在的市场效果。我们平均店效目标是超过10亿元，在2025年8月时认为已经达到该水平。」</p><p style="margin-top:10px;"><span class="tag tag-bullish">利好</span> 管理层对品牌定位清晰，执行力强。</p></div></div>
+            <div class="qa-item"><div class="qa-question">徐高明 — 高客管理与海外市场</div>
+                <div class="qa-answer"><p>「我们将继续深耕高客管理策略，通过产品创新和服务升级提升客户价值。同时，公司正在积极布局海外市场，2025年在新加坡和日本进行新店拓展和布局，调整境内外产品的商品结构。」</p><p style="margin-top:10px;"><span class="tag tag-neutral">观望</span> 海外扩张是长期看点，但短期贡献有限。</p></div></div>
+            <div class="qa-item" style="border-left-color: var(--bearish);"><div class="qa-question">⚠️ 风险提示</div>
+                <div class="qa-answer"><p>「我们认识到门店扩张可能面临选址、人才等挑战。同时，消费环境变化可能影响高端消费需求。」</p><p style="margin-top:10px;"><span class="tag tag-bearish">利空</span> 扩张速度和消费环境是主要风险。</p></div></div>
+        </section>
+
+        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+            <p style="margin-bottom:20px;color:var(--text-muted);">共同假设：股本 ~1.8亿股 | 净现金充裕 | 高增长预期</p>
+            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$850</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$680</div></div></div></div>
+            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$680</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$544</div></div></div></div>
+            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$480</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$384</div></div></div></div>
+        </section>
+
+        <section><h2>🏆 巴菲特逐项评分</h2>
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">品牌壁垒</p><p style="font-size:0.85em;margin-top:10px;">古法金工艺+品牌溢价构成独特护城河。高客单价+高复购率。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">优秀且理性</p><p style="font-size:0.85em;margin-top:10px;">徐高明战略清晰，IP运营克制。持续提价显示品牌力。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高增长高盈利</p><p style="font-size:0.85em;margin-top:10px;">净利润+226%，ROE高，现金流健康。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">量价齐升，真实增长。持续提价验证品牌力。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">门店驱动</p><p style="font-size:0.85em;margin-top:10px;">增长依赖门店扩张，扩张速度有不确定性。</p></div>
+                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">积极扩张</p><p style="font-size:0.85em;margin-top:10px;">门店扩张+海外探索并行。</p></div>
             </div>
         </section>
 
-        <section>
-            <h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color: var(--bearish);">
-                <ul style="padding-left: 20px;">
-                    <li>估值偏高，22x PE 反映过度乐观预期</li>
-                    <li>门店扩张速度放缓影响增长逻辑</li>
-                    <li>黄金价格波动影响毛利率</li>
-                    <li>可选消费下行压力</li>
-                </ul>
-            </div>
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 观察 (Watch)</h3>
+            <p style="margin:20px 0;">股价HK$650已反映高增长预期，22x PE处于历史高位区间。等待更好的买入点位。</p>
+            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 等待更好的买入点位（HK$550-600）</li><li>• 关注2026年门店扩张计划</li><li>• 跟踪同店销售增长趋势</li><li>• 止损位：HK$480</li></ul>
+        </div></section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>估值偏高，22x PE 反映过度乐观预期</li><li>门店扩张速度放缓影响增长逻辑</li><li>黄金价格波动影响毛利率</li><li>高端消费下行压力</li><li>海外扩张不确定性</li></ul></div>
         </section>
 
-        <footer>
-            <p><a href="index.html">← 返回目录</a></p>
-            <p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p>
-        </footer>
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
     </div>
 </body>
 </html>
