@@ -31,11 +31,11 @@
         .rating-tag { padding: 5px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; }
         .rating-buy { background: rgba(0, 200, 83, 0.2); color: #00c853; }
         .rating-watch { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
-        .price-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 15px 0; padding: 15px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .price-info { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 15px 0; padding: 15px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         .price-item { text-align: center; }
-        .price-label { font-size: 0.75em; color: var(--text-muted); }
+        .price-label { font-size: 0.7em; color: var(--text-muted); }
         .price-value { font-size: 1.1em; font-weight: 600; margin-top: 3px; }
-        .price-change { font-size: 0.9em; margin-top: 2px; }
+        .price-change { font-size: 0.8em; margin-top: 2px; }
         .bullish { color: var(--bullish); }
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
@@ -50,7 +50,7 @@
         <header><h1>📊 投研分析目录</h1><p class="subtitle">Investment Research Reports | 公司投资分析汇总</p></header>
         <div class="search-section">
             <div class="nav-hint" style="text-align:center;margin-bottom:15px;color:var(--text-muted);font-size:0.9em;">
-                💡 查看报告后可用底部导航切换到上一家/下一家公司
+                💡 查看报告后可用导航按钮切换到上一家/下一家公司
             </div>
             <div class="search-box"><input type="text" class="search-input" placeholder="🔍 搜索公司名称或代码..." id="searchInput" onkeyup="filterCompanies()"></div>
             <div class="quick-index" id="quickIndex">
@@ -66,9 +66,14 @@
         <div class="company-grid">
             <a href="alibaba.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🅰️ 阿里巴巴</div><div class="company-code">BABA.US / 09988.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">$134</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">3,000亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">-8%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$124.9</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-8.0%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-27.2%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2,900亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 20x</span><span>PE 2026E: 18x</span></div>
-                <div class="conclusion">Q3利润同比-67%大幅下滑，AI高投入短期承压。但云计算持续盈利，长期AI布局值得期待。</div>
+                <div class="conclusion">Q3营收同比+2%，净利同比-67%。AI高投入短期承压，云计算持续盈利。年初至今跌27%。</div>
             </a>
         </div>
         
@@ -76,7 +81,12 @@
         <div class="company-grid">
             <a href="dongpeng.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">⚡ 东鹏特饮</div><div class="company-code">605499.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">¥229.95</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">1,000亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">3月-3.1%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥229.95</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.9%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-3.1%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,000亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 28x</span><span>PE 2026E: 22x</span></div>
                 <div class="conclusion">功能饮料龙头，前三季营收+34%、净利+39%，渠道下沉+产品矩阵扩展，成长空间广阔。</div>
             </a>
@@ -86,9 +96,14 @@
         <div class="company-grid">
             <a href="laopugold.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">💰 老铺黄金</div><div class="company-code">06181.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$650</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">1,150亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bullish">+4%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$638</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-4.4%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-18.0%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,130亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 22x</span><span>PE 2026E: 18x</span></div>
-                <div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。但22x PE 反映过度乐观预期。</div>
+                <div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。年初至今跌18%。</div>
             </a>
         </div>
         
@@ -96,15 +111,25 @@
         <div class="company-grid">
             <a href="pinduoduo.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🛒 拼多多</div><div class="company-code">PDD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">$97.4</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">1,100亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change neutral">近期回调</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$97.4</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.2%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-15.8%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,100亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 10x</span><span>PE 2026E: 12x</span></div>
                 <div class="conclusion">Q3营收+9%超预期，净利润+17%。10x PE历史低位，TEMU全球化扩张迅猛，坚定看好。</div>
             </a>
             <a href="popmart.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🧸 泡泡玛特</div><div class="company-code">09992.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$190</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">2,500亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">-44%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$209</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.5%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+7.5%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2,700亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 18x</span><span>PE 2026E: 15x</span></div>
-                <div class="conclusion">LABUBU全球火爆，海外扩张加速。但IP热度持续性存疑，估值已从高点回落。</div>
+                <div class="conclusion">LABUBU全球火爆，海外扩张加速。年初至今涨7.5%，但IP热度持续性存疑。</div>
             </a>
         </div>
         
@@ -112,13 +137,23 @@
         <div class="company-grid">
             <a href="tencentmusic.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🎵 腾讯音乐</div><div class="company-code">TME.US</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">$11.37</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">175亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">-25%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">$10.3</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-24.7%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-32.1%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">165亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 12.9x</span><span>PE 2026E: 11.5x</span></div>
-                <div class="conclusion">Q4营收+16%但MAU-5%，停止披露运营指标引发市场恐慌，暴跌25%。订阅增长稳健但透明度存疑。</div>
+                <div class="conclusion">Q4营收+16%但MAU-5%，停止披露运营指标引发恐慌，单日暴跌25%。年初至今跌32%。</div>
             </a>
             <a href="tencent.html" class="company-card">
                 <div class="company-header"><div><div class="company-name">🐧 腾讯控股</div><div class="company-code">00700.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <div class="price-info"><div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$510</div></div><div class="price-item"><div class="price-label">市值</div><div class="price-value">4.7万亿</div></div><div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change neutral">-1.5%</div></div></div>
+                <div class="price-info">
+                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$508</div></div>
+                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.0%</div></div>
+                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-15.5%</div></div>
+                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4.7万亿</div></div>
+                </div>
                 <div class="pe-info"><span>PE TTM: 23x</span><span>PE 2026E: 14x</span></div>
                 <div class="conclusion">2025年营收7518亿净利2248亿，AI+游戏复苏+云盈利，14x PE历史低位，安全边际充足。</div>
             </a>
