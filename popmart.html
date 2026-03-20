@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泡泡玛特 投资分析报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --bullish: #00c853;
+            --bearish: #ff1744;
+            --neutral: #ff9800;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --card-bg: #1f2937;
+            --border: #374151;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #4a0080, #7b00ff); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        
+        .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5em; }
+            .header-content { flex-direction: column; text-align: center; }
+            .report-meta { text-align: center; }
+            .snapshot { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>🧸 泡泡玛特 (09992.HK) — 2025年深度分析</h1>
+                    <p class="subtitle">Investment Research Report</p>
+                </div>
+                <div class="report-meta">
+                    <div>报告日期: 2026-03-20</div>
+                    <div>分析师: 投研团队</div>
+                    <div>评级: 观察</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight">
+                    <div class="snapshot-label">当前股价 (2025-12)</div>
+                    <div class="snapshot-value">≈ HK$190</div>
+                    <div class="snapshot-change bearish">较高点回调 44%</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">市值</div>
+                    <div class="snapshot-value">≈ HKD 2,500亿</div>
+                    <div class="snapshot-change">约 RMB 2,300亿</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">2025E P/E</div>
+                    <div class="snapshot-value">~18-22x</div>
+                    <div class="snapshot-change">净利润 108-141亿</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">历史最高价</div>
+                    <div class="snapshot-value">HK$339.8</div>
+                    <div class="snapshot-change">2025年8月</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="alert-box">
+            <div class="alert-title">🎯 核心亮点</div>
+            <p>2025年营收同比 +152%至 328-402亿，净利润同比 +246%至 108-141亿，均超越2024年全年。THE MONSTERS（LABUBU）系列全球火爆，海外门店快速扩张。但股价从高点回调超40%，市场对IP热度持续性存疑。</p>
+        </div>
+
+        <section>
+            <h2>💰 2025年业绩预测</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2025E</span></div>
+                    <div class="metric-value">RMB 328-402亿</div>
+                    <div class="metric-change bullish">YoY +152% ~ +209%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>净利润</span><span class="metric-period">FY 2025E</span></div>
+                    <div class="metric-value">RMB 108-141亿</div>
+                    <div class="metric-change bullish">YoY +246% ~ +351%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>H1 2025 营收</span><span class="metric-period">已披露</span></div>
+                    <div class="metric-value">RMB 138.8亿</div>
+                    <div class="metric-change bullish">YoY +204%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>H1 2025 经调整净利</span><span class="metric-period">已披露</span></div>
+                    <div class="metric-value">RMB 47.1亿</div>
+                    <div class="metric-change bullish">YoY +363%</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💼 核心驱动分析</h2>
+            <div class="analysis-card">
+                <h3>🎭 IP表现 — THE MONSTERS/ LABUBU 火爆全球</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>THE MONSTERS 系列（含 LABUBU）H1 营收 <strong>48.1亿</strong>，占比 <strong>34.7%</strong></li>
+                    <li>MOLLY、SKULLPANDA、CRYBABY、DIMOO 四个IP收入均突破 <strong>10亿</strong></li>
+                    <li>LABUBU 全球热度飙升，驱动业绩大增</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>🌍 全球化加速 — 海外扩张迅猛</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>H1 中国营收 82.8亿 (+135%)</li>
+                    <li>亚太营收 28.5亿 (+258%)</li>
+                    <li>美洲营收 22.6亿 (+1142%)</li>
+                    <li>欧洲及其他 4.8亿 (+729%)</li>
+                    <li>2025年海外新增 <strong>200家门店</strong>目标</li>
+                    <li>全球门店达 <strong>571家</strong>，机器人商店 <strong>2,597台</strong></li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>👥 会员体系 — 高复购率</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>注册会员 <strong>5,912万人</strong></li>
+                    <li>上半年新增 <strong>1,304万</strong></li>
+                    <li>会员销售占比 <strong>91.2%</strong></li>
+                    <li>会员复购率 <strong>50.8%</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="conclusion">
+                <h3>🎯 综合裁决 — 观察 (Watch)</h3>
+                <p style="margin: 20px 0;">LABUBU 热度与全球化扩张是核心看点，但估值已反映高增长预期。</p>
+                <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <p><strong>当前市场价：</strong>HK$190</p>
+                    <p><strong>历史最高：</strong>HK$339.8 (已回调 44%)</p>
+                    <p><strong>目标价：</strong>HK$220-250 (15-30%空间)</p>
+                    <p><strong>催化剂：</strong>LABUBU 热度持续、海外扩张超预期</p>
+                    <p><strong>风险：</strong>IP热度消退、估值回归</p>
+                </div>
+                <h4 style="margin: 30px 0 15px;">💼 操作建议</h4>
+                <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>• 等待更好的买入时机</li>
+                    <li>• 关注LABUBU热度持续性</li>
+                    <li>• 跟踪海外门店落地情况</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color: var(--bearish);">
+                <ul style="padding-left: 20px;">
+                    <li>IP热度消退风险 — 潮流玩具市场变化快</li>
+                    <li>估值偏高 — 18-22x PE 反映过度乐观</li>
+                    <li>海外扩张成本高 — 可能拖累利润率</li>
+                    <li>单一IP依赖 — LABUBU 占比过高</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="index.html">← 返回目录</a></p>
+            <p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p>
+        </footer>
+    </div>
+</body>
+</html>

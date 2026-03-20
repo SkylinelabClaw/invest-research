@@ -26,60 +26,8 @@
         h1 { font-size: 2.5em; margin-bottom: 10px; }
         .subtitle { color: var(--text-muted); font-size: 1.1em; }
         
-        /* 搜索框区域 */
-        .search-section { margin-bottom: 30px; }
-        .search-box {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .search-input {
-            flex: 1;
-            max-width: 400px;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: 2px solid var(--border);
-            border-radius: 30px;
-            background: var(--card-bg);
-            color: var(--text);
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .search-input:focus { border-color: var(--accent); }
-        
-        /* 快速目录 */
-        .quick-index {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 15px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .quick-index-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: var(--secondary);
-            border-radius: 20px;
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.9em;
-            transition: background 0.2s;
-        }
-        .quick-index-item:hover { background: var(--accent); }
-        .quick-index-letter { font-weight: 700; color: var(--accent); }
-        .quick-index-count { color: var(--text-muted); font-size: 0.8em; }
-        
-        /* 分组标题 */
         .section-title { font-size: 1.3em; color: var(--text-muted); margin: 30px 0 20px; padding-left: 15px; border-left: 3px solid var(--accent); }
         
-        /* 公司卡片网格 */
         .company-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; margin-bottom: 40px; }
         
         .company-card { background: var(--card-bg); border-radius: 16px; padding: 25px; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: block; }
@@ -103,18 +51,13 @@
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
         
-        .pe-info { display: flex; gap: 15px; flex-wrap: wrap; font-size: 0.85em; color: var(--text-muted); margin-bottom: 12px; }
+        .pe-info { display: flex; gap: 20px; font-size: 0.85em; color: var(--text-muted); margin-bottom: 12px; }
         
         .conclusion { font-size: 0.9em; color: var(--text-muted); line-height: 1.5; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 8px; border-left: 3px solid var(--accent); }
         
         .footer-note { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
         
-        @media (max-width: 768px) { 
-            .company-grid { grid-template-columns: 1fr; } 
-            .price-info { grid-template-columns: repeat(2, 1fr); }
-            .search-box { flex-direction: column; }
-            .search-input { max-width: 100%; }
-        }
+        @media (max-width: 768px) { .company-grid { grid-template-columns: 1fr; } .price-info { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -124,24 +67,8 @@
             <p class="subtitle">Investment Research Reports | 公司投资分析汇总</p>
         </header>
         
-        <!-- 搜索框 -->
-        <div class="search-section">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="🔍 搜索公司名称或代码..." id="searchInput" onkeyup="filterCompanies()">
-            </div>
-            
-            <!-- 快速目录 -->
-            <div class="quick-index" id="quickIndex">
-                <a href="#section-A" class="quick-index-item"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴</span></a>
-                <a href="#section-D" class="quick-index-item"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a>
-                <a href="#section-L" class="quick-index-item"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a>
-                <a href="#section-P" class="quick-index-item"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a>
-                <a href="#section-T" class="quick-index-item"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯</span></a>
-            </div>
-        </div>
-        
         <!-- A 组 - 阿里巴巴 -->
-        <div class="section-title" id="section-A">A</div>
+        <div class="section-title">A</div>
         <div class="company-grid">
             <a href="alibaba.html" class="company-card">
                 <div class="company-header">
@@ -156,13 +83,13 @@
                     <div class="price-item"><div class="price-label">市值</div><div class="price-value">3,000亿</div></div>
                     <div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">-8%</div></div>
                 </div>
-                <div class="pe-info"><span>PE TTM: 20x</span><span>PE 2026E: 18x</span></div>
+                <div class="pe-info"><span>PE 2026E: 18x</span><span>Non-GAAP P/E: ~20x</span></div>
                 <div class="conclusion">Q3利润同比-67%大幅下滑，AI高投入短期承压。但云计算持续盈利，长期AI布局值得期待。</div>
             </a>
         </div>
         
         <!-- D 组 - 东鹏特饮 -->
-        <div class="section-title" id="section-D">D</div>
+        <div class="section-title">D</div>
         <div class="company-grid">
             <a href="dongpeng.html" class="company-card">
                 <div class="company-header">
@@ -177,13 +104,13 @@
                     <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,000亿</div></div>
                     <div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bullish">创新高</div></div>
                 </div>
-                <div class="pe-info"><span>PE TTM: 28x</span><span>PE 2026E: 22x</span></div>
+                <div class="pe-info"><span>PE 2025E: 30x</span><span>净利润 +65%</span></div>
                 <div class="conclusion">功能饮料龙头，前三季营收+34%、净利+39%，渠道下沉+产品矩阵扩展，成长空间广阔。</div>
             </a>
         </div>
         
         <!-- L 组 - 老铺黄金 -->
-        <div class="section-title" id="section-L">L</div>
+        <div class="section-title">L</div>
         <div class="company-grid">
             <a href="laopugold.html" class="company-card">
                 <div class="company-header">
@@ -198,13 +125,13 @@
                     <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,150亿</div></div>
                     <div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bullish">+4%</div></div>
                 </div>
-                <div class="pe-info"><span>PE TTM: 22x</span><span>PE 2026E: 18x</span></div>
+                <div class="pe-info"><span>PE 2025E: 22x</span><span>净利润 +230%</span></div>
                 <div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。但22x PE 反映过度乐观预期。</div>
             </a>
         </div>
         
-        <!-- P 组 -->
-        <div class="section-title" id="section-P">P</div>
+        <!-- P 组 - 泡泡玛特、拼多多 -->
+        <div class="section-title">P</div>
         <div class="company-grid">
             <a href="pinduoduo.html" class="company-card">
                 <div class="company-header">
@@ -219,7 +146,7 @@
                     <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,100亿</div></div>
                     <div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change neutral">近期回调</div></div>
                 </div>
-                <div class="pe-info"><span>PE TTM: 10x</span><span>PE 2026E: 12x</span></div>
+                <div class="pe-info"><span>PE 2025E: 10x</span><span>极具吸引力</span></div>
                 <div class="conclusion">Q3营收+9%超预期，净利润+17%。10x PE历史低位，TEMU全球化扩张迅猛，坚定看好。</div>
             </a>
             
@@ -236,13 +163,13 @@
                     <div class="price-item"><div class="price-label">市值</div><div class="price-value">2,500亿</div></div>
                     <div class="price-item"><div class="price-label">涨跌幅</div><div class="price-change bearish">-44%</div></div>
                 </div>
-                <div class="pe-info"><span>PE TTM: 18x</span><span>PE 2026E: 15x</span></div>
+                <div class="pe-info"><span>PE 2025E: 18-22x</span><span>净利润 +250%</span></div>
                 <div class="conclusion">LABUBU全球火爆，海外扩张加速。但IP热度持续性存疑，估值已从高点回落。</div>
             </a>
         </div>
         
-        <!-- T 组 -->
-        <div class="section-title" id="section-T">T</div>
+        <!-- T 组 - 腾讯、腾讯音乐 -->
+        <div class="section-title">T</div>
         <div class="company-grid">
             <a href="tencent.html" class="company-card">
                 <div class="company-header">
@@ -267,35 +194,5 @@
             <p style="margin-top:10px;font-size:0.85em;">数据更新时间: 2026-03-20 | 股价数据仅供参考，投资有风险</p>
         </div>
     </div>
-    
-    <script>
-    function filterCompanies() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        const cards = document.querySelectorAll('.company-card');
-        const sections = document.querySelectorAll('.section-title');
-        
-        cards.forEach(card => {
-            const name = card.querySelector('.company-name').textContent.toLowerCase();
-            const code = card.querySelector('.company-code').textContent.toLowerCase();
-            if (name.includes(filter) || code.includes(filter)) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
-        // 隐藏没有卡片的分组
-        sections.forEach(section => {
-            const grid = section.nextElementSibling;
-            const visibleCards = grid.querySelectorAll('.company-card[style=""]');
-            if (visibleCards.length === 0 && filter !== '') {
-                section.style.display = 'none';
-            } else {
-                section.style.display = '';
-            }
-        });
-    }
-    </script>
 </body>
 </html>

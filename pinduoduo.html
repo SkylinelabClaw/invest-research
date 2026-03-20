@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼多多 投资分析报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --bullish: #00c853;
+            --bearish: #ff1744;
+            --neutral: #ff9800;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --card-bg: #1f2937;
+            --border: #374151;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #00b33c, #00e600); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        
+        .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5em; }
+            .header-content { flex-direction: column; text-align: center; }
+            .report-meta { text-align: center; }
+            .snapshot { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>🛒 拼多多 (PDD) — 2025年深度分析</h1>
+                    <p class="subtitle">Investment Research Report</p>
+                </div>
+                <div class="report-meta">
+                    <div>报告日期: 2026-03-20</div>
+                    <div>分析师: 投研团队</div>
+                    <div>评级: 买入</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight">
+                    <div class="snapshot-label">当前股价 (2026-03-19)</div>
+                    <div class="snapshot-value">$97.4</div>
+                    <div class="snapshot-change neutral">近期回调</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">市值</div>
+                    <div class="snapshot-value">≈ $1,100亿</div>
+                    <div class="snapshot-change">约 RMB 8,000亿</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">2025E P/E</div>
+                    <div class="snapshot-value">~10x</div>
+                    <div class="snapshot-change">极具吸引力</div>
+                </div>
+                <div class="snapshot-card">
+                    <div class="snapshot-label">2026财报发布日期</div>
+                    <div class="snapshot-value">3月25日</div>
+                    <div class="snapshot-change">即将公布</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="alert-box">
+            <div class="alert-title">🎯 核心亮点</div>
+            <p>拼多多营收持续增长，Q3营收1082亿 (+9%) 超预期，净利润293亿 (+17%)。极致性价比深入人心，TEMU 全球化扩张迅猛。"千亿扶持"计划短期拖累利润但长期有利。10x PE 处于历史低位，极具吸引力。</p>
+        </div>
+
+        <section>
+            <h2>💰 2025年季度业绩</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header"><span>Q1 营收</span><span class="metric-period">2025</span></div>
+                    <div class="metric-value">¥956.7亿</div>
+                    <div class="metric-change bullish">高基数下增长</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>Q2 营收</span><span class="metric-period">2025</span></div>
+                    <div class="metric-value">¥1,039.9亿</div>
+                    <div class="metric-change neutral">略低于预期</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>Q3 营收</span><span class="metric-period">2025</span></div>
+                    <div class="metric-value">¥1,082.8亿</div>
+                    <div class="metric-change bullish">YoY +9% 超预期</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-header"><span>Q3 净利润</span><span class="metric-period">2025</span></div>
+                    <div class="metric-value">¥293.3亿</div>
+                    <div class="metric-change bullish">YoY +17%</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💼 核心竞争优势</h2>
+            <div class="analysis-card">
+                <h3>💎 极致性价比 — 核心竞争力</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>C2M 模式缩短供应链，最大限度降低价格</li>
+                    <li>农产品上行优势显著，性价比无可匹敌</li>
+                    <li>用户心智：拼多多=最便宜</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>🌍 TEMU 全球化 — 第二增长曲线</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>TEMU 席卷欧美市场</li>
+                    <li>全托管模式复制成功经验</li>
+                    <li>海外用户快速增长</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>📱 用户粘性 — 社交电商壁垒</h3>
+                <ul style="margin-top:15px; padding-left:20px;">
+                    <li>微信生态流量红利</li>
+                    <li>拼单模式自带传播属性</li>
+                    <li>用户复购率高</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚠️ 投资风险</h2>
+            <div class="analysis-card" style="border-left-color: var(--bearish);">
+                <ul style="padding-left: 20px;">
+                    <li>"千亿扶持"计划短期拖累利润</li>
+                    <li>国内电商竞争加剧</li>
+                    <li>TEMU 海外监管风险</li>
+                    <li>高基数下增速放缓</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="conclusion">
+                <h3>🎯 综合裁决 — 买入 (Buy)</h3>
+                <p style="margin: 20px 0;">10x PE 处于历史低位，增长确定性高，坚定看好。</p>
+                <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <p><strong>当前市场价：</strong>$97.4</p>
+                    <p><strong>目标价：</strong>$130-150 (33-54%空间)</p>
+                    <p><strong>2026年平均预测价：</strong>$402</p>
+                    <p><strong>催化剂：</strong>TEMU 盈利突破、国内电商复苏</p>
+                </div>
+                <h4 style="margin: 30px 0 15px;">💼 操作建议</h4>
+                <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>• 首次买入：$95-100 区间建仓 5-8%</li>
+                    <li>• 加仓点位：$85 以下加仓至 10-12%</li>
+                    <li>• 持有逻辑：TEMU 扩张 + 利润率回升</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="index.html">← 返回目录</a></p>
+            <p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p>
+        </footer>
+    </div>
+</body>
+</html>
