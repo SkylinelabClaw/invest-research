@@ -115,6 +115,32 @@
             </div>
         </section>
 
+        <section><h2>📈 三年股价走势</h2>
+            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+                <div class="tradingview-widget-container" style="height:400px;width:100%">
+                    <div id="tradingview_tencentmusic" style="height:100%;width:100%"></div>
+                </div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": 400,
+                    "symbol": "NYSE:TME",
+                    "interval": "W",
+                    "timezone": "Asia/Shanghai",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "zh_CN",
+                    "toolbar_bg": "#1f2937",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_tencentmusic"
+                });
+                </script>
+                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:10px;">数据来源: TradingView | 展示过去三年周线走势</p>
+            </div>
+        </section>
+
         <div class="alert-box">
             <div class="alert-title">🚨 核心警示</div>
             <p>腾讯音乐宣布从下季度起停止披露在线音乐 MAU、付费用户数量和 ARPPU 等核心运营指标。这是股价暴跌 25% 的最大导火索——投资者无法追踪增长质量，恐慌性抛售。管理层称"业务已进化，将以收入和利润为主要业绩指标"——但 MAU 持续下滑（528M, -5% YoY）的现实让这一说法难以令人信服。</p>
