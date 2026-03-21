@@ -362,7 +362,57 @@ invest-research/
 
 所有新建公司报告必须遵循此模板格式。
 
-### 8. 公司详情页模块化呈现规范 (2026-03-22 新增)
+### 9. 首页(index.html)模板规范 (2026-03-22 新增)
+
+#### 9.1 必须包含的模块
+1. **顶部标题区域**：
+```html
+<header>
+<h1>🧭 Sky Buffy 价投之路</h1>
+</header>
+```
+
+2. **搜索栏区域**（必须在quick-index之前）：
+```html
+<div class="search-section">
+<div class="search-box">
+<input type="text" class="search-input" placeholder="搜索公司名称..." id="searchInput">
+</div>
+</div>
+```
+
+3. **拼音首字母快速索引**（必须在搜索栏之后）：
+```html
+<div class="quick-index">
+<a class="quick-index-item" href="#section-A"><span class="quick-index-letter">A</span><span class="quick-index-count">公司名/公司名/公司名</span></a>
+...
+</div>
+```
+
+4. **搜索功能JavaScript**（必须在body结束前）：
+```html
+<script>
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    var searchTerm = e.target.value.toLowerCase();
+    var cards = document.querySelectorAll('.company-card');
+    cards.forEach(function(card) {
+        var name = card.querySelector('.company-name').textContent.toLowerCase();
+        var code = card.querySelector('.company-code').textContent.toLowerCase();
+        if (name.indexOf(searchTerm) !== -1 || code.indexOf(searchTerm) !== -1) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+</script>
+```
+
+#### 9.2 快速索引更新规则
+- **每次新增公司后必须更新quick-index**
+- 格式：`<span class="quick-index-count">公司名/公司名/公司名</span>`
+- 如果一个字母下超过3家公司，用"/数字"表示剩余数量，例如：`Meta/微软/茅台/毛戈平/5家`
+- 同时更新section-title，例如：`M — Meta / 微软 / 贵州茅台 / 毛戈平 / 鸣鸣很忙`
 
 为了保证所有34家公司详情页的极致统一和专业度，必须严格执行以下模块化标准：
 
