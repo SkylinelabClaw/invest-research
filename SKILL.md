@@ -356,3 +356,43 @@ invest-research/
 8. **其他sections...**
 
 所有新建公司报告必须遵循此模板格式。
+
+### 8. 公司详情页模块化呈现规范 (2026-03-22 新增)
+
+为了保证所有34家公司详情页的极致统一和专业度，必须严格执行以下模块化标准：
+
+#### 8.1 统一顶部导航栏 (Top Navigation)
+- **左上角**：必须是「回到首页」的链接。
+- **右上角**：必须是「上一家」和「下一家」的链接（按照首页A-Z的字母顺序闭环排列）。
+- **代码结构标准**：
+```html
+<nav style="display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+    <a href="index.html" style="color: #4CAF50; text-decoration: none;">← 回到首页</a>
+    <div>
+        <a href="prev_company.html" style="color: #4CAF50; text-decoration: none; margin-right: 15px;">上一家</a>
+        <a href="next_company.html" style="color: #4CAF50; text-decoration: none;">下一家</a>
+    </div>
+</nav>
+```
+
+#### 8.2 统一页脚声明 (Footer)
+- 在每个公司详情页的 `</body>` 标签前，必须显式包含统一的页脚：
+```html
+<footer style="text-align: center; padding: 20px; color: #888; font-size: 0.9em; border-top: 1px solid #333; margin-top: 40px;">
+    Powered by OpenClaw
+</footer>
+```
+
+#### 8.3 财务与预测数据溯源 (Data Sourcing)
+- 对于任何**预测性数据**（如未来两年的营收、净利预期），必须明确标注 Source。
+- **区分口径**：明确标出哪些是「管理层给出的前瞻指引 (Management Guidance)」，哪些是「投行/券商的一致性预期平均 (Consensus Estimates)」。
+
+#### 8.4 估值倍数矩阵 (Valuation Multiples)
+- 在「财务数据趋势与预测」的表格或模块中，除了基础的营收和利润，**必须增加三行核心估值指标：PE、PS、PB**。
+- **动态估值推算**：不仅要计算当下的静态估值倍数（基于最新市值），还要结合未来两年预测的财务数据，计算并列出对应的 **Forward PE / Forward PS**。
+
+#### 8.5 必备的深度模块检查 (Mandatory Sections)
+在日常维护和新建公司时，必须自查以下模块是否缺失：
+1. **管理层电话会议摘要 (Earnings Call Q&A)**：必须摘录最新财报发布后的管理层核心发言、指引和分析师问答（美股公司可直接使用英文原话摘录，或中英对照，视语境灵活变动）。
+2. **投行评级与目标价 (Analyst Ratings)**：必须包含华尔街/主流券商的最新评级分布、平均目标价以及最高/最低看法的多空分歧点。
+3. **最新业务分部数据 (Latest Segments)**：业务拆解必须穷尽最新披露的财报数据。如果公司更新了财务分类口径，必须以最新的口径为准（例如全面淘汰 2023/2024 的旧口径，替换为最新的季度/年度细项披露）。
