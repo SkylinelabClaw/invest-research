@@ -51,10 +51,14 @@
 <div class="container">
 <header>
 <h1>🧭 Sky Buffy 价投之路</h1>
-<p class="subtitle">33家优质公司深度投资研究 (A-Z)</p>
 </header>
+<div class="search-section">
+<div class="search-box">
+<input type="text" class="search-input" placeholder="搜索公司名称..." id="searchInput">
+</div>
+</div>
 <div class="quick-index">
-<a class="quick-index-item" href="#section-A"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴/安克创新/ARM Holdings</span></a><a class="quick-index-item" href="#section-C"><span class="quick-index-letter">C</span><span class="quick-index-count">剑桥科技/Coinbase</span></a><a class="quick-index-item" href="#section-D"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a><a class="quick-index-item" href="#section-F"><span class="quick-index-letter">F</span><span class="quick-index-count">山西汾酒</span></a><a class="quick-index-item" href="#section-G"><span class="quick-index-letter">G</span><span class="quick-index-count">谷歌/古茗/极智嘉</span></a><a class="quick-index-item" href="#section-H"><span class="quick-index-letter">H</span><span class="quick-index-count">寒武纪/海光信息/Hims & Hers/1家</span></a><a class="quick-index-item" href="#section-J"><span class="quick-index-letter">J</span><span class="quick-index-count">加科思/佳鑫国际</span></a><a class="quick-index-item" href="#section-L"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a><a class="quick-index-item" href="#section-M"><span class="quick-index-letter">M</span><span class="quick-index-count">Meta/微软/贵州茅台/2家</span></a><a class="quick-index-item" href="#section-N"><span class="quick-index-letter">N</span><span class="quick-index-count">Nabors/英伟达</span></a><a class="quick-index-item" href="#section-O"><span class="quick-index-letter">O</span><span class="quick-index-count">OSL集团</span></a><a class="quick-index-item" href="#section-P"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a><a class="quick-index-item" href="#section-S"><span class="quick-index-letter">S</span><span class="quick-index-count">三花智控/SoFi</span></a><a class="quick-index-item" href="#section-T"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯/腾讯音乐/台积电</span></a><a class="quick-index-item" href="#section-X"><span class="quick-index-letter">X</span><span class="quick-index-count">携程</span></a><a class="quick-index-item" href="#section-Z"><span class="quick-index-letter">Z</span><span class="quick-index-count">紫金矿业</span></a>
+<a class="quick-index-item" href="#section-A"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴/安克创新/ARM Holdings</span></a><a class="quick-index-item" href="#section-C"><span class="quick-index-letter">C</span><span class="quick-index-count">剑桥科技/Coinbase</span></a><a class="quick-index-item" href="#section-D"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a><a class="quick-index-item" href="#section-F"><span class="quick-index-letter">F</span><span class="quick-index-count">山西汾酒</span></a><a class="quick-index-item" href="#section-G"><span class="quick-index-letter">G</span><span class="quick-index-count">谷歌/古茗/极智嘉</span></a><a class="quick-index-item" href="#section-H"><span class="quick-index-letter">H</span><span class="quick-index-count">寒武纪/海光信息/Hims/Robinhood</span></a><a class="quick-index-item" href="#section-J"><span class="quick-index-letter">J</span><span class="quick-index-count">加科思/佳鑫国际</span></a><a class="quick-index-item" href="#section-L"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a><a class="quick-index-item" href="#section-M"><span class="quick-index-letter">M</span><span class="quick-index-count">Meta/微软/茅台/毛戈平/鸣鸣很忙</span></a><a class="quick-index-item" href="#section-N"><span class="quick-index-letter">N</span><span class="quick-index-count">Nabors/英伟达</span></a><a class="quick-index-item" href="#section-O"><span class="quick-index-letter">O</span><span class="quick-index-count">OSL集团</span></a><a class="quick-index-item" href="#section-P"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a><a class="quick-index-item" href="#section-S"><span class="quick-index-letter">S</span><span class="quick-index-count">三花智控/SoFi</span></a><a class="quick-index-item" href="#section-T"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯/腾讯音乐/台积电</span></a><a class="quick-index-item" href="#section-X"><span class="quick-index-letter">X</span><span class="quick-index-count">携程</span></a><a class="quick-index-item" href="#section-Z"><span class="quick-index-letter">Z</span><span class="quick-index-count">紫金矿业</span></a>
 </div>
 <div class="section-title" id="section-A">A — 阿里巴巴 / 安克创新 / ARM Holdings</div>
 <div class="company-grid">
@@ -586,6 +590,21 @@
 <footer>
 <p>Powered by OpenClaw | 投资研究仅供参考，不构成投资建议</p>
 </footer>
+<script>
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    var searchTerm = e.target.value.toLowerCase();
+    var cards = document.querySelectorAll('.company-card');
+    cards.forEach(function(card) {
+        var name = card.querySelector('.company-name').textContent.toLowerCase();
+        var code = card.querySelector('.company-code').textContent.toLowerCase();
+        if (name.indexOf(searchTerm) !== -1 || code.indexOf(searchTerm) !== -1) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+</script>
 </div>
 </body>
 </html>
