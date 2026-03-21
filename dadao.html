@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大道精读 - 段永平语录与投资思想</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        header { background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 50px 0; margin-bottom: 40px; border-radius: 20px; text-align: center; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        
+        /* Navigation */
+        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .nav-tabs a { color: var(--text-muted); padding-bottom: 8px; text-decoration: none; transition: color 0.2s; }
+        .nav-tabs a:hover { color: var(--text); }
+        .nav-tabs a.active { color: var(--highlight); font-weight: 600; border-bottom: 2px solid var(--highlight); }
+        
+        /* Sections */
+        .section { background: var(--card-bg); border-radius: 16px; padding: 30px; margin-bottom: 25px; border: 1px solid var(--border); }
+        .section-title { font-size: 1.4em; color: var(--highlight); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); display: flex; align-items: center; gap: 10px; }
+        
+        /* Quotes */
+        .quote-card { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--accent); }
+        .quote-text { font-size: 1.1em; line-height: 1.8; color: var(--text); }
+        .quote-author { color: var(--text-muted); font-size: 0.9em; margin-top: 10px; text-align: right; }
+        
+        /* Philosophy Cards */
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .philosophy-card { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 25px; border: 1px solid var(--border); }
+        .philosophy-card h3 { color: var(--accent); font-size: 1.2em; margin-bottom: 15px; }
+        .philosophy-card p { color: var(--text-muted); font-size: 0.95em; line-height: 1.7; }
+        
+        /* Q&A */
+        .qa-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
+        .qa-item:last-child { border-bottom: none; }
+        .qa-q { color: var(--highlight); font-weight: 600; font-size: 1.1em; margin-bottom: 12px; }
+        .qa-a { color: var(--text); line-height: 1.8; padding-left: 15px; border-left: 3px solid var(--accent); }
+        
+        /* Links */
+        .resource-links { display: flex; flex-wrap: wrap; gap: 12px; }
+        .resource-link { padding: 10px 20px; background: var(--secondary); border-radius: 25px; color: var(--text); text-decoration: none; font-size: 0.9em; transition: all 0.2s; }
+        .resource-link:hover { background: var(--accent); transform: translateY(-2px); }
+        
+        /* Footer */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 30px; margin-top: 20px; transition: all 0.2s; }
+        .back-link:hover { background: var(--highlight); transform: translateX(-5px); }
+        .footer-note { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        /* Highlight box */
+        .highlight-box { background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(15,52,96,0.2)); border-radius: 12px; padding: 20px; margin: 20px 0; border: 1px solid var(--accent); }
+        
+        @media (max-width: 768px) { .nav-tabs { flex-wrap: wrap; } .philosophy-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 大道精读</h1>
+            <p class="subtitle">段永平语录与投资思想</p>
+        </header>
+
+        <div class="nav-tabs">
+            <a href="index.html">🏠 首页</a>
+            <a href="bumang.html">📖 巴芒之道</a>
+            <a href="dadao.html" class="active">💡 大道精读</a>
+            <a href="buffett.html">🎯 巴菲特股东大会</a>
+        </div>
+
+        <!-- 投资理念核心 -->
+        <div class="section">
+            <div class="section-title">🎯 投资理念核心</div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>买股票就是买公司</h3>
+                    <p>购买股票等同于购买一家公司的部分或全部所有权。上市与否仅在于退出便利性，投资的本质是对企业的所有权。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>不懂不做（能力圈）</h3>
+                    <p>只投资自己能够深入理解的行业和企业。真正的"安全边际"并非指价格便宜，而是投资者对公司理解的深度。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>长期主义与平常心</h3>
+                    <p>着眼长远，不为短期市场波动所困扰。平常心是一种理性，即是思考长远，而长远思考就是长期主义。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>集中投资</h3>
+                    <p>倾向于将资金集中投入少数几家深入了解且具有强大竞争力的公司，如苹果、贵州茅台和腾讯。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 经典语录 -->
+        <div class="section">
+            <div class="section-title">📜 经典语录</div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"投资很简单，但是不容易。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"巴菲特的安全边际不是指便宜，是指你对公司有多懂。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"投资是认知的变现。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"投资永远要算你的机会成本。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"我是满仓主义者，拿着现金是一件很难受的事情。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"如果一家公司基本面良好，股价下跌就是机会。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"持有一家好公司就是永恒的牛市。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"成长率对我来说没有任何意义。"</div>
+            </div>
+        </div>
+
+        <!-- "本分"思想 -->
+        <div class="section">
+            <div class="section-title">🏮 "本分"思想</div>
+            <div class="highlight-box">
+                <p style="font-size:1.1em;margin-bottom:20px;">"本分"是段永平商业和投资哲学的基石，不仅是一种个人修养，更是企业经营和投资决策的指导原则。</p>
+            </div>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>做对的事情</h3>
+                    <p>指选择正确的战略方向和目标，专注于那些长期有价值的决策，避免做错误或无意义的事情。如果发现方向错了，即使付出代价也要及时修正。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>把事情做对</h3>
+                    <p>在确定正确方向后，以高标准执行，注重产品和服务质量，优化运营细节，并在过程中不断纠偏。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>诚信与正直</h3>
+                    <p>在商业和投资中，坚持诚信，不赚"不义之财"，不参与投机行为。诚信是长期智慧，能够建立信任、形成良性合作生态。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>平常心</h3>
+                    <p>"平常心不是心态，而是理性；理性不是克制，而是想长远；想长远，就是长期主义。"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企业护城河 -->
+        <div class="section">
+            <div class="section-title">🏰 企业护城河</div>
+            <p style="color:var(--text-muted);margin-bottom:20px;">段永平认为优秀的企业文化和强大的"护城河"是判断公司内在价值的重要手段。</p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>商业模式</h3>
+                    <p>好的商业模式能够产生强大的现金流，具有持续竞争优势。不好的商业模式即使管理优秀也难以长期创造价值。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>企业文化</h3>
+                    <p>优秀的企业文化是公司的核心竞争力之一。强大的文化能够吸引人才、保持执行力，在竞争中脱颖而出。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>品牌护城河</h3>
+                    <p>强大的品牌能够带来定价权，让消费者愿意为品牌支付溢价。如苹果、茅台等品牌都具有强大的护城河。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>规模效应</h3>
+                    <p>在好的商业模式基础上，规模越大成本越低，形成正循环。如腾讯的社交网络、阿里巴巴的电商平台。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投资问答录精选 -->
+        <div class="section">
+            <div class="section-title">💬 投资问答录精选</div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何判断一只股票是否值得投资？</div>
+                <div class="qa-a">A: 要看这家公司是不是好生意，是不是由对的人来经营。买股票就是买公司，要把自己当作公司的所有者而不是交易者。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何看待估值？</div>
+                <div class="qa-a">A: 公司的内在价值是其未来现金流的折现，但这是一种思维方式而非具体的计算公式。最重要的是理解公司，懂了估值自然就简单。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何面对市场波动？</div>
+                <div class="qa-a">A: 如果你投资的是好公司，股价下跌应该是机会而不是风险。持有一家好公司就是身处牛市之中。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 投资中最重要的是什么？</div>
+                <div class="qa-a">A: 不做错的事情。投资成功最重要的是避免错误，而不是抓住机会。"不做什么"比"做什么"更重要。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 年轻人如何开始投资？</div>
+                <div class="qa-a">A: 从存钱开始，慢慢积累本金。投资要慢慢来，不要想着一夜暴富。你越想挣快钱，可能越缺钱。</div>
+            </div>
+        </div>
+
+        <!-- 推荐资源 -->
+        <div class="section">
+            <div class="section-title">📚 推荐阅读与资源</div>
+            <p style="color:var(--text-muted);margin-bottom:20px;">深入学习段永平投资思想的核心资料：</p>
+            
+            <div class="resource-links">
+                <a href="https://xueqiu.com/u/1916538898" target="_blank" class="resource-link">📱 雪球主页：大道无形我有型</a>
+                <a href="https://book.douban.com/subject/35525072/" target="_blank" class="resource-link">📖 《段永平投资问答录》（投资逻辑篇）</a>
+                <a href="https://book.douban.com/subject/35525070/" target="_blank" class="resource-link">📖 《段永平投资问答录》（商业逻辑篇）</a>
+                <a href="https://36kr.com/p/3549591336819078" target="_blank" class="resource-link">📰 2025年雪球深度访谈</a>
+                <a href="https://wallstreetcn.com/articles/3759228" target="_blank" class="resource-link">📰 浙江大学演讲</a>
+            </div>
+        </div>
+
+        <!-- 参考来源 -->
+        <div class="section">
+            <div class="section-title">📋 参考来源</div>
+            <ul style="color:var(--text-muted);font-size:0.9em;line-height:2;padding-left:20px;">
+                <li>雪球专栏 - 段永平（ID：大道无形我有型）</li>
+                <li>《段永平投资问答录》投资逻辑篇 & 商业逻辑篇</li>
+                <li>2025年雪球《方略》栏目专访</li>
+                <li>浙江大学2025年演讲与交流</li>
+                <li>Various financial news and analysis platforms</li>
+            </ul>
+        </div>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="back-link">← 返回首页</a>
+        </div>
+
+        <div class="footer-note">
+            <p>© 2026 投研分析报告 | 本页面内容仅供研究参考</p>
+            <p style="margin-top:10px;font-size:0.85em;">资料整理自公开信息</p>
+        </div>
+    </div>
+</body>
+</html>

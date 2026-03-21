@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴菲特股东大会 - 历年股东大会资料库</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 50px 0; margin-bottom: 40px; border-radius: 20px; text-align: center; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .section-title { font-size: 1.3em; color: var(--text-muted); margin: 30px 0 20px; padding-left: 15px; border-left: 3px solid var(--accent); }
+        .content-card { background: var(--card-bg); border-radius: 16px; padding: 25px; border: 1px solid var(--border); margin-bottom: 20px; }
+        .content-card h3 { color: var(--highlight); margin-bottom: 15px; font-size: 1.2em; }
+        .link-list { list-style: none; }
+        .link-list li { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .link-list li:last-child { border-bottom: none; }
+        .link-list a { color: var(--bullish); text-decoration: none; }
+        .link-list a:hover { text-decoration: underline; }
+        .year-tag { background: var(--accent); padding: 3px 10px; border-radius: 15px; font-size: 0.85em; margin-right: 10px; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .video-item { background: var(--secondary); padding: 15px; border-radius: 10px; border: 1px solid var(--border); }
+        .video-item a { color: var(--bullish); text-decoration: none; display: block; }
+        .video-item a:hover { color: var(--highlight); }
+        .video-title { font-weight: 600; margin-bottom: 5px; }
+        .video-desc { font-size: 0.85em; color: var(--text-muted); }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .summary-item { background: var(--secondary); padding: 20px; border-radius: 12px; border-left: 3px solid var(--highlight); }
+        .summary-year { font-size: 1.1em; font-weight: 700; color: var(--highlight); margin-bottom: 8px; }
+        .summary-content { font-size: 0.9em; color: var(--text-muted); line-height: 1.6; }
+        .reading-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .reading-item { background: var(--secondary); padding: 15px; border-radius: 10px; border: 1px solid var(--border); }
+        .reading-item h4 { color: var(--bullish); margin-bottom: 8px; }
+        .reading-item p { font-size: 0.85em; color: var(--text-muted); }
+        .back-link { display: inline-block; margin-top: 30px; padding: 12px 30px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 25px; transition: background 0.2s; }
+        .back-link:hover { background: var(--highlight); }
+        .footer-note { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .nav-tabs a { color: var(--text-muted); padding-bottom: 8px; text-decoration: none; }
+        .nav-tabs a:hover, .nav-tabs a.active { color: var(--highlight); }
+        .nav-tabs a.active { border-bottom: 2px solid var(--highlight); font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .highlight-box h3 { color: var(--highlight); margin-bottom: 10px; }
+        @media (max-width: 768px) { .video-grid, .summary-grid, .reading-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 巴菲特股东大会</h1>
+            <p class="subtitle">历年股东大会资料库 | 1971-2025</p>
+        </header>
+
+        <div class="nav-tabs">
+            <a href="index.html">🏠 首页</a>
+            <a href="bumang.html">📖 巴芒之道</a>
+            <a href="dadao.html">💡 大道精读</a>
+            <a href="buffett.html" class="active">🎯 巴菲特股东大会</a>
+        </div>
+
+        <div class="highlight-box">
+            <h3>📅 2025年股东大会预告</h3>
+            <p>2025年股东大会将于5月3日举行。这将是巴菲特亲自出席的最后一次年度股东大会（除非有特殊情况）。第60届伯克希尔哈撒韦股东大会，不容错过！</p>
+        </div>
+
+        <!-- 历年给股东的信 -->
+        <div class="section-title">📝 历年给股东的信（1977-2025）</div>
+        <div class="content-card">
+            <h3>巴菲特致股东信 - 官方来源</h3>
+            <ul class="link-list">
+                <li><span><span class="year-tag">官网</span>伯克希尔哈撒韦官网</span><a href="https://www.berkshirehathaway.com/letters/letters.html" target="_blank">查看原文 ↗</a></li>
+                <li><span><span class="year-tag">1977-2024</span>历年致股东信中文版</span><a href="https://www.value500.com/buffett-letter" target="_blank">价值500中文翻译 ↗</a></li>
+                <li><span><span class="year-tag">经典收藏</span>巴菲特致股东的信（珍藏版）</span><a href="https://github.com/baocheng666/Buffett-letter" target="_blank">GitHub仓库 ↗</a></li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h3>历年股东信索引（按年份）</h3>
+            <ul class="link-list">
+                <li><span><span class="year-tag">2025</span>2025年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2024ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2024</span>2024年致股东信 - 芒格纪念版</span><a href="https://www.berkshirehathaway.com/letters/2023ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2023</span>2023年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2022ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2022</span>2022年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2021ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2021</span>2021年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2020ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2020</span>2020年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2019ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">2019</span>2019年致股东信</span><a href="https://www.berkshirehathaway.com/letters/2018ltr.pdf" target="_blank">查看PDF ↗</a></li>
+                <li><span><span class="year-tag">1990-2018</span>早期股东信汇总</span><a href="https://www.berkshirehathaway.com/letters/letters.html" target="_blank">官网查看 ↗</a></li>
+            </ul>
+        </div>
+
+        <!-- B站股东大会视频 -->
+        <div class="section-title">🎬 B站股东大会视频（1994-2025）</div>
+        <div class="content-card">
+            <p style="margin-bottom: 20px; color: var(--text-muted);">点击链接前往B站观看历年股东大会完整视频。建议在B站搜索"巴菲特股东大会+年份"获取更多资源。</p>
+            <div class="video-grid">
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2025%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎯 2025年股东大会</div>
+                        <div class="video-desc">第60届！巴菲特最后亲自出席的股东大会？</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2024%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2024年股东大会</div>
+                        <div class="video-desc">芒格逝世后首次股东大会全场回顾</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2023%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2023年股东大会</div>
+                        <div class="video-desc">芒格最后一次出席股东大会</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2022%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2022年股东大会</div>
+                        <div class="video-desc">疫情后首次线下召开</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2021%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2021年股东大会</div>
+                        <div class="video-desc">线上举办，巴菲特谈接班问题</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2020%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2020年股东大会</div>
+                        <div class="video-desc">首次线上举办，巴菲特清仓航空股</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2019%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2019年股东大会</div>
+                        <div class="video-desc">巴菲特谈西方石油、卡夫亨氏</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2018%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2018年股东大会</div>
+                        <div class="video-desc">苹果持仓成焦点</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2017%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2017年股东大会</div>
+                        <div class="video-desc">中国投资成热点</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2016%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2016年股东大会</div>
+                        <div class="video-desc">收购Precision Castparts</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2015%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2015年股东大会</div>
+                        <div class="video-desc">50周年特别大会</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2014%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2014年股东大会</div>
+                        <div class="video-desc">谈IBM投资</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2013%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2013年股东大会</div>
+                        <div class="video-desc">巴菲特谈科技股</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2012%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2012年股东大会</div>
+                        <div class="video-desc">谈银行股和报税</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2011%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2011年股东大会</div>
+                        <div class="video-desc">谈美国经济</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2010%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2010年股东大会</div>
+                        <div class="video-desc">金融危机后复苏</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2009%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2009年股东大会</div>
+                        <div class="video-desc">金融危机期间</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2008%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2008年股东大会</div>
+                        <div class="video-desc">金融危机前</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2007%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2007年股东大会</div>
+                        <div class="video-desc">中石油减持</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2006%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2006年股东大会</div>
+                        <div class="video-desc">捐股做慈善</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2005%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2005年股东大会</div>
+                        <div class="video-desc">收购MidAmerican</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2004%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2004年股东大会</div>
+                        <div class="video-desc">能源业务</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2003%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2003年股东大会</div>
+                        <div class="video-desc">开始投资中国</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2002%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2002年股东大会</div>
+                        <div class="video-desc">谈保险业务</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2001%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2001年股东大会</div>
+                        <div class="video-desc">互联网泡沫后</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=2000%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 2000年股东大会</div>
+                        <div class="video-desc">互联网泡沫期间</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1999%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1999年股东大会</div>
+                        <div class="video-desc">Dot-com时代</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1998%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1998年股东大会</div>
+                        <div class="video-desc">收购通用再保险</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1997%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1997年股东大会</div>
+                        <div class="video-desc">亚洲金融危机</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1996%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1996年股东大会</div>
+                        <div class="video-desc">富国银行</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1995%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1995年股东大会</div>
+                        <div class="video-desc">喜诗糖果</div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://search.bilibili.com/all?keyword=1994%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A" target="_blank">
+                        <div class="video-title">🎬 1994年股东大会</div>
+                        <div class="video-desc">早期股东大会记录</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 历年股东大会要点总结 -->
+        <div class="section-title">📊 历年股东大会要点总结</div>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <div class="summary-year">2025 - 第60届</div>
+                <div class="summary-content">
+                    • 巴菲特宣布年底退休，Greg Abel将接任CEO<br>
+                    • 继续强调现金储备的重要性<br>
+                    • 谈AI投资：保持谨慎，不急于下注<br>
+                    • 明确表示不会出售苹果股票
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2024 - 第59届</div>
+                <div class="summary-content">
+                    • 芒格逝世后首次无芒格大会<br>
+                    • 盛赞Greg Abel为理想接班人<br>
+                    • 谈日本投资：五大商社是很好的投资<br>
+                    • 不担心赤字：政府不会违约
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2023 - 第58届</div>
+                <div class="summary-content">
+                    • 芒格最后一次出席大会<br>
+                    • 谈AI：像原子弹的发明，利弊参半<br>
+                    • 继续增持日本五大商社<br>
+                    • 认为苹果是仅次于保险的业务
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2022 - 第57届</div>
+                <div class="summary-content">
+                    • 疫情后首次线下大会<br>
+                    • 赞扬接班人格雷格·阿贝尔<br>
+                    • 谈比特币：一切荣耀归比特币<br>
+                    • 指出华尔街赚钱方式有问题
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2021 - 第56届</div>
+                <div class="summary-content">
+                    • 首次线上举办<br>
+                    • 明确接班人：格雷格·阿贝尔<br>
+                    • 承认卖出苹果是错误<br>
+                    • 批评Robinhood如同赌场
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2020 - 第55届</div>
+                <div class="summary-content">
+                    • 首次线上股东大会<br>
+                    • 疫情期间清仓航空股<br>
+                    • 承认看错航空公司<br>
+                    • 巴菲特巨亏3500亿美元
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2019 - 第54届</div>
+                <div class="summary-content">
+                    • 谈卡夫亨氏：付了太高价格<br>
+                    • 增持亚马逊，但不透露金额<br>
+                    • 谈西方石油：喜欢它的位置<br>
+                    • 透露1000亿现金无处花
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2018 - 第53届</div>
+                <div class="summary-content">
+                    • 苹果持仓成为焦点<br>
+                    • 谈卡夫亨氏收购<br>
+                    • 芒格：我比巴菲特更乐观<br>
+                    • 称赞中国机会
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2017 - 第52届</div>
+                <div class="summary-content">
+                    • 谈美国经济：永远不要做空美国<br>
+                    • 称赞IBM：买错了<br>
+                    • 谈阿里巴巴：不会买第二遍<br>
+                    • 两位老将谈人生经验
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2016 - 第51届</div>
+                <div class="summary-content">
+                    • 收购Precision Castparts<br>
+                    • 谈特朗普：不管谁当总统都会投资<br>
+                    • 继续看好银行业<br>
+                    • 现金储备接近历史高位
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2015 - 第50届</div>
+                <div class="summary-content">
+                    • 伯克希尔50周年庆典<br>
+                    • 巴菲特回顾50年投资历程<br>
+                    • 芒格谈成功投资之道<br>
+                    • 约4万人参会创纪录
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2014 - 第49届</div>
+                <div class="summary-content">
+                    • 首次买入IBM<br>
+                    • 谈可口可乐：不会卖出<br>
+                    • 芒格批量化宽松政策<br>
+                    • 股东大会人数创新高
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2013 - 第48届</div>
+                <div class="summary-content">
+                    • 谈科技股：不会投资<br>
+                    • 赞扬苹果但未买入<br>
+                    • 芒格批评国会<br>
+                    • 中国投资人专场
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2012 - 第47届</div>
+                <div class="summary-content">
+                    • 谈银行股：最喜欢的行业<br>
+                    • 反对增加高管薪酬<br>
+                    • 批评信用评级机构<br>
+                    • 芒格谈人性弱点
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2011 - 第46届</div>
+                <div class="summary-content">
+                    • 谈美国经济复苏<br>
+                    • 大量买入银行股<br>
+                    • 芒格批评ETF<br>
+                    • 股东大会成投资者朝圣
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2010 - 第45届</div>
+                <div class="summary-content">
+                    • 金融危机后复苏<br>
+                    • 谈比亚迪：最成功的投资之一<br>
+                    • 批评信用违约掉期<br>
+                    • 芒格谈中国崛起
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2009 - 第44届</div>
+                <div class="summary-content">
+                    • 金融危机期间<br>
+                    • 大量持有现金等待机会<br>
+                    • 谈铁路业务BNSF<br>
+                    • 美国经济需要时间恢复
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2008 - 第43届</div>
+                <div class="summary-content">
+                    • 金融危机前<br>
+                    • 预言：我正在买入<br>
+                    • 谈衍生品风险<br>
+                    • 芒格批评华尔街
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2007 - 第42届</div>
+                <div class="summary-content">
+                    • 中石油减持成焦点<br>
+                    • 谈股票回购<br>
+                    • 芒格批评金融创新<br>
+                    • 美国房价不会跌
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-year">2006 - 第41届</div>
+                <div class="summary-content">
+                    • 宣布捐出85%财富<br>
+                    • 收购MidAmerican Energy<br>
+                    • 谈保险浮存金<br>
+                    • 芒格谈价值投资
+                </div>
+            </div>
+        </div>
+
+        <!-- 推荐的阅读材料 -->
+        <div class="section-title">📚 推荐阅读材料</div>
+        <div class="reading-grid">
+            <div class="reading-item">
+                <h4>《巴菲特致股东的信》</h4>
+                <p>沃伦·巴菲特/劳伦斯·坎宁安 编<br>机械工业出版社</p>
+            </div>
+            <div class="reading-item">
+                <h4>《滚雪球》</h4>
+                <p>艾丽丝·施罗德 著<br>中信出版社 - 巴菲特官方传记</p>
+            </div>
+            <div class="reading-item">

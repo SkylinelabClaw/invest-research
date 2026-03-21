@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴芒之道 - 巴菲特与芒格语录精选</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { background: linear-gradient(135deg, var(--secondary), var(--accent)); padding: 50px 0; margin-bottom: 40px; border-radius: 20px; text-align: center; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        
+        /* 导航标签 */
+        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .nav-tabs a { color: var(--text-muted); padding-bottom: 8px; text-decoration: none; transition: color 0.3s; }
+        .nav-tabs a:hover { color: var(--text); }
+        .nav-tabs a.active { color: var(--highlight); font-weight: 600; border-bottom: 2px solid var(--highlight); }
+        
+        /* 内容区域 */
+        .content-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid var(--border); margin-bottom: 30px; }
+        
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); display: flex; align-items: center; gap: 10px; }
+        h3 { font-size: 1.2em; margin: 25px 0 15px; color: var(--highlight); }
+        
+        /* 语录样式 */
+        .quote-section { margin-bottom: 25px; }
+        .quote-item { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; margin-bottom: 15px; border-left: 4px solid var(--accent); }
+        .quote-text { font-size: 1.05em; line-height: 1.7; margin-bottom: 10px; }
+        .quote-text.en { color: var(--text-muted); font-style: italic; font-size: 0.95em; }
+        .quote-author { color: var(--highlight); font-weight: 600; font-size: 0.9em; }
+        
+        /* 分类标签 */
+        .tag-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag { padding: 4px 12px; background: var(--secondary); border-radius: 15px; font-size: 0.8em; color: var(--text-muted); }
+        
+        /* 推荐链接 */
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
+        .link-card { display: block; padding: 20px; background: var(--secondary); border-radius: 12px; text-decoration: none; color: inherit; border: 1px solid var(--border); transition: transform 0.2s, border-color 0.2s; }
+        .link-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .link-title { font-weight: 600; margin-bottom: 8px; color: var(--highlight); }
+        .link-desc { font-size: 0.85em; color: var(--text-muted); }
+        
+        /* 来源标注 */
+        .sources { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; margin-top: 30px; }
+        .sources h3 { margin-top: 0; }
+        .sources ul { padding-left: 20px; color: var(--text-muted); font-size: 0.9em; }
+        .sources li { margin-bottom: 8px; }
+        
+        /* 返回首页 */
+        .back-home { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--accent); color: var(--text); text-decoration: none; border-radius: 25px; margin-top: 30px; transition: background 0.3s; }
+        .back-home:hover { background: var(--highlight); }
+        
+        .footer-note { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        @media (max-width: 768px) { .nav-tabs { flex-wrap: wrap; } .link-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 巴芒之道</h1>
+            <p class="subtitle">巴菲特与芒格语录精选 | 价值投资智慧</p>
+        </header>
+
+        <div class="nav-tabs">
+            <a href="index.html">🏠 首页</a>
+            <a href="bumang.html" class="active">📖 巴芒之道</a>
+            <a href="dadao.html">💡 大道精读</a>
+            <a href="buffett.html">🎯 巴菲特股东大会</a>
+        </div>
+
+        <!-- 巴菲特语录 -->
+        <div class="content-card">
+            <h2>👑 沃伦·巴菲特 (Warren Buffett)</h2>
+            
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">价值投资</span>
+                    <span class="tag">长期主义</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"价格是你付出的，价值是你得到的。"</div>
+                    <div class="quote-text en">Price is what you pay. Value is what you get.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"以合理的价格买入一家优秀的公司，远比以低廉的价格买入一家平庸的公司要好得多。"</div>
+                    <div class="quote-text en">It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"我们最喜欢的持有期限是永远。"</div>
+                    <div class="quote-text en">Our favorite holding period is forever.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"如果你不愿意持有一只股票十年，那就连十分钟也不要持有。"</div>
+                    <div class="quote-text en">If you aren't willing to own a stock for ten years, don't even think about owning it for ten minutes.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+            </div>
+
+            <h3>🎭 关于贪婪与恐惧</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">逆向思维</span>
+                    <span class="tag">市场情绪</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"在别人恐惧时我贪婪，在别人贪婪时我恐惧。"</div>
+                    <div class="quote-text en">Be fearful when others are greedy and greedy when others are fearful.</div>
+                    <div class="quote-author">— 巴菲特 (最著名的投资格言)</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"股票市场是为了将钱从不耐烦的人手中转移到有耐心的人手中。"</div>
+                    <div class="quote-text en">The stock market is designed to transfer money from the Active to the Patient.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+            </div>
+
+            <h3>🎯 能力圈</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">能力圈</span>
+                    <span class="tag">风险控制</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"风险来自于你不知道自己在做什么。"</div>
+                    <div class="quote-text en">Risk comes from not knowing what you're doing.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"每个人都有不同的能力圈，重要的是圈子的大小不重要，重要的是要呆在自己的能力圈内。"</div>
+                    <div class="quote-text en">Everybody's got a different circle of competence. The important thing is not how big the circle is. The important thing is staying inside the circle.</div>
+                    <div class="quote-author">— 巴菲特 (1996年致股东信)</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"永远不要投资于你不了解的企业。"</div>
+                    <div class="quote-text en">Never invest in a business you cannot understand.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+            </div>
+
+            <h3>💎 投资智慧</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">投资原则</span>
+                    <span class="tag">个人成长</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"投资最重要的品质是性情，而非智力。"</div>
+                    <div class="quote-text en">The most important quality for an investor is temperament, not intellect.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"规则一：永远不要亏钱。规则二：永远不要忘记规则一。"</div>
+                    <div class="quote-text en">Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"最好的投资就是投资自己。"</div>
+                    <div class="quote-text en">The best investment you can make is in yourself.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 芒格语录 -->
+        <div class="content-card">
+            <h2>🎓 查理·芒格 (Charlie Munger)</h2>
+            
+            <h3>🔄 逆向思维</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">逆向思维</span>
+                    <span class="tag">决策智慧</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"反过来想，总是反过来想。"</div>
+                    <div class="quote-text en">Invert, always invert.</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"我如果知道我会死在哪里，我永远不会去那里。"</div>
+                    <div class="quote-text en">If I knew where I was going to die, I would never go there.</div>
+                    <div class="quote-author">— 芒格 (逆向思维的经典表达)</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"随大流只会让你往平均值靠近（只能获得中等的业绩）。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"我专门琢磨怎么否定自己。大多数人都是努力维护自己的想法，无论自己的想法多么愚不可及。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"避免愚蠢，比寻找天才来得有效。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>⚠️ 关于风险</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">风险管理</span>
+                    <span class="tag">质地优先</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"真正的风险，不是价格风险，而是质地风险。大部分人亏钱，是因为买了垃圾公司，而非买了很贵的公司。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"根据股票的波动性来判断风险是很傻的。我们认为只有两种风险：一，血本无归；二，回报不足。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"一个聪明的人只有三种破产方法：酒精、女士和杠杆。"</div>
+                    <div class="quote-text en">A smart person only has three ways to go broke: alcohol, ladies, and leverage.</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"我们的目标不是赚最多，而是永远不输。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>📚 投资哲学</h3>
+            <div class="quote-section">
+                <div class="tag-group">
+                    <span class="tag">长期投资</span>
+                    <span class="tag">能力圈</span>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"你不必非常出色，只要在很长、很长的时间内保持比其他人聪明一点点就够了。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"钓鱼的第一条规则是，在有鱼的地方钓鱼。钓鱼的第二条规则是，记住第一条规则。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"赚大钱绝不靠买卖，而是靠等待。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"你必须对业务进行估值才能对股票进行估值。"</div>
+                    <div class="quote-text en">You must value the business in order to value the stock.</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"所有明智的投资都是价值投资——获得的比你付出的更多。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"很多高智商的人是不好的投资者，因为他们的性格有缺陷。我认为好的性格比大脑更重要，你必须严格控制那些非理性的情绪。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"宏观是我们必须接受的，微观才是我们能有所作为的。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"耐心，是最被低估的投资能力。"</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 推荐阅读/观看 -->
+        <div class="content-card">
+            <h2>📚 推荐阅读与观看</h2>
+            
+            <div class="link-grid">
+                <a href="https://www.berkshirehathaway.com/letters/letters.html" target="_blank" class="link-card">
+                    <div class="link-title">📝 巴菲特致股东信 (伯克希尔官网)</div>
+                    <div class="link-desc">巴菲特每年致股东信的完整合集，是学习价值投资最权威的第一手资料</div>
+                </a>
+                <a href="https://www.amazon.com/Poor-Charlie-Almanack-Munger-Essays/dp/1578644293" target="_blank" class="link-card">
+                    <div class="link-title">📖 《穷查理宝典》</div>
+                    <div class="link-desc">查理·芒格智慧箴言的完整汇编，涵盖投资、生活、决策的多元思维</div>
+                </a>
+                <a href="https://www.amazon.com/Warren-Buffett-Accounting-Statements/dp/0471225651" target="_blank" class="link-card">
+                    <div class="link-title">📖 《巴菲特教你读财报》</div>
+                    <div class="link-desc">学习巴菲特如何分析企业财务报表，识别优质公司的入门读物</div>
+                </a>
+                <a href="https://www.amazon.com/Snowball-Warren-Buffett-Life-Wealth/dp/0743270577" target="_blank" class="link-card">
+                    <div class="link-title">📖 《滚雪球》</div>
+                    <div class="link-desc">艾丽斯·施罗德所著的巴菲特官方传记，全面了解股神的人生与投资</div>
+                </a>
+                <a href="https://www.youtube.com/c/Buffett" target="_blank" class="link-card">
+                    <div class="link-title">🎬 巴菲特股东大会视频</div>
+                    <div class="link-desc">每年伯克希尔股东大会完整视频，聆听巴菲特和芒格的现场问答</div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=ahIFL2qIg9Q" target="_blank" class="link-card">
+                    <div class="link-title">🎬 芒格谈逆向思维</div>
+                    <div class="link-desc">芒格在威斯科金融公司年会上的经典演讲，深度阐述逆向思维</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 来源 -->
+        <div class="sources">
+            <h3>📋 参考来源</h3>
+            <ul>
+                <li>Berkshire Hathaway 官方网站 (berkshirehathaway.com)</li>
+                <li>《穷查理宝典》(Poor Charlie's Almanack)</li>
+                <li>巴菲特历年致股东信</li>
+                <li>CNBC 巴菲特访谈</li>
+                <li>芒格在威斯科金融公司(Site for Graham & Doddsville)的演讲</li>
+                <li>Various financial publications and interviews</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-home">← 返回首页</a>
+        </div>
+
+        <div class="footer-note">
+            <p>© 2026 投研分析报告 | 本页面仅供学习研究参考</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">巴菲特与芒格的智慧箴言</p>
+        </div>
+    </div>
+</body>
+</html>
