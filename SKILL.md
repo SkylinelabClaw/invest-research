@@ -17,20 +17,25 @@ invest-research/
 ## 核心规则
 
 ### 1. 公司排序规则（重要！必须严格遵守）
-- **首页目录按拼音/单词首字母排序**
-- A-Z顺序，每个字母一个section
-- **中文公司按拼音首字母**：如"寒武纪"拼音Han → H，"三花"拼音San → S
-- **英文公司按英文首字母**：如Coinbase → C，Nvidia → N
-- 如果同一字母下公司过多，可使用 C, C2, C3 细分
-- 示例：section-A, section-C, section-C2
+- **核心原则：每家公司只出现一次**
+- **中国公司（含中国总部/在香港或A股上市的公司）→ 中文拼音首字母**
+- **外国公司（总部在美/欧/日等）→ 英文单词首字母**
+- A-Z顺序，每个字母一个section，每个公司只出现在一个字母下
 
-**排序示例：**
-- A: alibaba, arm
-- C: coin (Coinbase是英文，按C)
-- D: dongpeng
-- G: google
-- H: cambricon (寒武纪→H), hygon (海光→H), hims, hood
-- J: cambridgetechnology (剑桥→J), geekplus (极智嘉→J), jacobiopharma (加科思→J), jiaxininternational (佳鑫→J)
+**正确排序示例（2026-03-22更新）：**
+- A: 阿里巴巴(A)、安克创新(A→Anke)、ARM(英国/日本→A)
+- C: 剑桥科技(Jian→J 移动到J!)、Coinbase(美国→C) → 实际C段: 剑桥科技、Coinbase
+- D: 东鹏特饮(Dong→D)
+- G: 谷歌(Google→G)、古茗(Guming→G)、极智嘉(Ji→J 移动到J!)
+- H: 寒武纪(Han→H)、海光信息(Hai→H)、Hims(美国→H)、Robinhood(美国→H)
+- J: 剑桥科技(Jian→J)、极智嘉(Ji→J)、加科思(Jia→J)、佳鑫国际(Jia→J)
+- M: Meta(美国→M)、微软(美国→M)、贵州茅台(Mao→M)、毛戈平(Mao→M)、鸣鸣很忙(Ming→M)
+- N: Nabors(美国→N)、英伟达(US Nvidia→N)
+- T: 腾讯(Ten→T)、腾讯音乐(Tencent Music→T)
+- X: 携程(Xie→X) ← 注意：携程是总部在上海的中国公司，按拼音Xietu的X排序，不在C段
+- Z: 紫金矿业(Zi→Z)
+
+**注意**：携程(Ctrip)的英文名是C开头，但中文名"携程"拼音是Xietu→X，所以归入X段，不再在C段出现。
 
 ### 2. 首页快速导航 (quick-index)
 - 搜索框下方显示字母导航
