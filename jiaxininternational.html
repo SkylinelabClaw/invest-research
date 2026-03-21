@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佳鑫国际 投资分析报告</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #64748b, #94a3b8); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        
+        .alert-box { background: rgba(255, 152, 0, 0.1); border-left: 4px solid var(--neutral); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--neutral); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        
+        .table-container { overflow-x: auto; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); font-weight: 600; }
+        td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom:15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
+        
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div><h1>⛏️ 佳鑫国际 (03858.HK) — 投资分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section><h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03)</div><div class="snapshot-value">HK$3.5</div><div class="snapshot-change">次新股</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">~$30亿</div><div class="snapshot-change">钨矿开采</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">上市日期</div><div class="snapshot-value">2025.8</div><div class="snapshot-change">港股主板</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">项目</div><div class="snapshot-value">巴库塔钨矿</div><div class="snapshot-change">全球最大露天钨矿</div></div>
+            </div>
+        </section>
+
+        <div class="alert-box">
+            <div class="alert-title">⛏️ 公司概况</div>
+            <p>佳鑫国际是专注于钨矿开采的矿业公司，2025年8月在港股上市。主要资产为哈萨克斯坦巴库塔钨矿项目，该矿被认为是全球最大的露天钨矿之一，计划发展成为世界级钨矿开采项目。</p>
+        </div>
+
+        <section><h2>💼 业务分部深度解析</h2>
+            <div class="analysis-card"><h3>⛏️ 巴库塔钨矿 — 核心资产</h3><span class="tag tag-bullish">利好</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>全球最大露天钨矿之一</li><li>2025年4月已投产</li><li>钨价上涨受益</li></ul></div>
+            <div class="analysis-card"><h3>🔧 深加工 — 产业链延伸</h3><span class="tag tag-neutral">规划中</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>计划生产APT和碳化钨</li><li>提升产品附加值</li><li>产能规划中</li></ul></div>
+            <div class="analysis-card"><h3>🌏 一带一路 — 战略布局</h3><span class="tag tag-bullish">利好</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>哈萨克斯坦资源丰富</li><li>一带一路政策支持</li><li>AIX同步上市</li></ul></div>
+        </section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>次新股，流动性有限</li><li>钨价波动风险</li><li>海外政治和运营风险</li><li>产能爬坡不确定性</li><li>2025年预计首次盈利</li></ul></div>
+        </section>
+
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 观察</h3>
+            <p style="margin:20px 0;font-size:1.1em;">佳鑫国际是港股次新股，专注于钨矿开采。</p>
+            <p style="color:var(--text-muted);">巴库塔钨矿是核心资产，钨价上涨带来想象空间。但作为次新股，需等待业绩验证。</p>
+            <h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：观察</h4>
+            <ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 等待2025年财报验证</li><li>• 关注钨价走势和产能爬坡</li><li>• 流动性风险需注意</li></ul>
+        </div></section>
+
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+    </div>
+</body>
+</html>

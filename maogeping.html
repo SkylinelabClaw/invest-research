@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛戈平 投资分析报告</title>
+    <style>
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #ec407a, #f48fb1); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        h1 { font-size: 2.2em; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .report-meta { text-align: right; color: var(--text-muted); }
+        
+        .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
+        .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
+        .snapshot-value { font-size: 1.6em; font-weight: 700; }
+        .snapshot-change { font-size: 0.9em; margin-top: 5px; }
+        .bullish { color: var(--bullish); }
+        .bearish { color: var(--bearish); }
+        .neutral { color: var(--neutral); }
+        
+        .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+        .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
+        h3 { font-size: 1.2em; margin: 20px 0 15px; }
+        
+        .table-container { overflow-x: auto; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); font-weight: 600; }
+        td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
+        .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
+        .metric-change { font-size: 0.9em; }
+        
+        .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
+        
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
+        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
+        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
+        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
+        
+        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
+        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
+        
+        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
+        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
+        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
+        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .dcf-price { font-size: 1.8em; font-weight: 700; }
+        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
+        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
+        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
+        
+        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
+        .conclusion h3 { margin-top: 0; color: var(--highlight); }
+        
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div><h1>💄 毛戈平 (1318.HK) — 投资分析</h1><p class="subtitle">Investment Research Report</p></div>
+                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section><h2>📊 股票快照</h2>
+            <div class="snapshot">
+                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-19)</div><div class="snapshot-value">HK$80.9</div><div class="snapshot-change">YTD: +15%</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">~$60亿</div><div class="snapshot-change">国货美妆龙头</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">P/E</div><div class="snapshot-value">35x</div><div class="snapshot-change">2026E</div></div>
+                <div class="snapshot-card"><div class="snapshot-label">定位</div><div class="snapshot-value">高端美妆</div><div class="snapshot-change">国货之光</div></div>
+            </div>
+        </section>
+
+        <section><h2>📈 一年股价走势</h2>
+            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+                <img src="charts/1318_HK.png" alt="毛戈平一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
+                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
+            </div>
+        </section>
+
+        <div class="alert-box">
+            <div class="alert-title">💄 品牌故事</div>
+            <p>毛戈平是中国高端美妆品牌，由知名化妆师毛戈平创立。品牌以"专业、高端、国潮"定位，产品涵盖彩妆、护肤系列。受益于国货美妆崛起和高端化趋势。</p>
+        </div>
+
+        <section><h2>💼 业务分部深度解析</h2>
+            <div class="analysis-card"><h3>💄 彩妆 — 核心业务</h3><span class="tag tag-bullish">利好</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>高端彩妆定位</li><li>底妆产品口碑好</li><li>国货替代趋势受益</li></ul></div>
+            <div class="analysis-card"><h3>🧴 护肤 — 增长快</h3><span class="tag tag-bullish">利好</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>护肤品类增长快速</li><li>高端化趋势</li><li>毛利率高</li></ul></div>
+            <div class="analysis-card"><h3>🏬 渠道扩张</h3><span class="tag tag-neutral">中性</span>
+                <ul style="margin-top:15px;padding-left:20px;"><li>线上线下渠道拓展</li><li>专柜渠道建设</li><li>下沉市场空间</li></ul></div>
+        </section>
+
+        <section><h2>📊 DCF 折现估值</h2>
+            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$120</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">15%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$96</div></div></div></div>
+            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$85</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$68</div></div></div></div>
+            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$55</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">8%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$44</div></div></div></div>
+        </section>
+
+        <section><div class="conclusion">
+            <h3>🎯 综合裁决 — 观察</h3>
+            <p style="margin:20px 0;font-size:1.1em;">当前 HK$80.9 = 中性情景 DCF 的 95%。</p>
+            <p style="color:var(--text-muted);">毛戈平是国货美妆高端品牌，但估值偏高(35x P/E)，需等待更好的买入时机。</p>
+            <h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：观察</h4>
+            <ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价HK$100，当前价位偏高</li><li>• 等待回调再考虑建仓</li><li>• 关注国货消费复苏</li></ul>
+        </div></section>
+
+        <section><h2>⚠️ 主要风险</h2>
+            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>消费降级压力</li><li>国际品牌竞争</li><li>营销成本上升</li><li>估值偏高</li></ul></div>
+        </section>
+
+        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+
+        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+    </div>
+</body>
+</html>
