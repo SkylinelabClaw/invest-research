@@ -14,7 +14,7 @@
         .subtitle { color: var(--text-muted); font-size: 1.1em; }
         
         /* Navigation */
-        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; flex-wrap: wrap; }
         .nav-tabs a { color: var(--text-muted); padding-bottom: 8px; text-decoration: none; transition: color 0.2s; }
         .nav-tabs a:hover { color: var(--text); }
         .nav-tabs a.active { color: var(--highlight); font-weight: 600; border-bottom: 2px solid var(--highlight); }
@@ -40,6 +40,14 @@
         .qa-q { color: var(--highlight); font-weight: 600; font-size: 1.1em; margin-bottom: 12px; }
         .qa-a { color: var(--text); line-height: 1.8; padding-left: 15px; border-left: 3px solid var(--accent); }
         
+        /* Timeline */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--accent); }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 12px; height: 12px; background: var(--highlight); border-radius: 50%; }
+        .timeline-year { color: var(--highlight); font-weight: 700; font-size: 1.1em; margin-bottom: 8px; }
+        .timeline-content { color: var(--text-muted); }
+        
         /* Links */
         .resource-links { display: flex; flex-wrap: wrap; gap: 12px; }
         .resource-link { padding: 10px 20px; background: var(--secondary); border-radius: 25px; color: var(--text); text-decoration: none; font-size: 0.9em; transition: all 0.2s; }
@@ -53,14 +61,31 @@
         /* Highlight box */
         .highlight-box { background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(15,52,96,0.2)); border-radius: 12px; padding: 20px; margin: 20px 0; border: 1px solid var(--accent); }
         
-        @media (max-width: 768px) { .nav-tabs { flex-wrap: wrap; } .philosophy-grid { grid-template-columns: 1fr; } }
+        /* Case Study */
+        .case-card { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .case-title { color: var(--accent); font-size: 1.3em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .case-return { display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: 600; margin-left: auto; }
+        .return-positive { background: rgba(0,200,83,0.2); color: var(--bullish); }
+        .case-content { color: var(--text-muted); line-height: 1.8; }
+        
+        /* Video List */
+        .video-item { display: flex; gap: 15px; padding: 15px; background: rgba(0,0,0,0.15); border-radius: 10px; margin-bottom: 12px; align-items: center; }
+        .video-icon { font-size: 2em; }
+        .video-info { flex: 1; }
+        .video-title { color: var(--text); font-weight: 600; margin-bottom: 5px; }
+        .video-desc { color: var(--text-muted); font-size: 0.9em; }
+        
+        /* Two Column */
+        .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        @media (max-width: 768px) { .nav-tabs { flex-wrap: wrap; } .philosophy-grid { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>💡 大道精读</h1>
-            <p class="subtitle">段永平语录与投资思想</p>
+            <p class="subtitle">段永平——中国巴菲特的商业智慧与投资哲学</p>
         </header>
 
         <div class="nav-tabs">
@@ -70,17 +95,62 @@
             <a href="buffett.html">🎯 巴菲特股东大会</a>
         </div>
 
+        <!-- 人物简介 -->
+        <div class="section">
+            <div class="section-title">👤 人物简介</div>
+            <div class="highlight-box">
+                <p style="font-size:1.1em;line-height:1.9;">
+                    <strong>段永平</strong>，毕业于浙江大学，无党派人士。1989年接手亏损200万元的中山市日华电子厂，创建"小霸王"品牌；1995年创立"步步高"，并孵化出OPPO、vivo两大手机巨头。2001年移居美国，转型为杰出投资人，因投资网易、苹果、茅台等被誉为"中国巴菲特"。其雪球ID为"<strong>大道无形我有型</strong>"。
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1989年</div>
+                    <div class="timeline-content">接手日华电子厂，转型电子游戏机市场</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1991年</div>
+                    <div class="timeline-content">创立"小霸王"品牌，邀请成龙代言</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1995年</div>
+                    <div class="timeline-content">创立步步高电子有限公司</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1999年</div>
+                    <div class="timeline-content">将步步高拆分为三家独立公司（OPPO、vivo、小天才前身）</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2001年</div>
+                    <div class="timeline-content">移居美国，转型职业投资人</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2002年</div>
+                    <div class="timeline-content">投资网易，赚取超过100倍收益</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2011年</div>
+                    <div class="timeline-content">开始重仓买入苹果股票</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025年</div>
+                    <div class="timeline-content">浙大演讲&雪球访谈，分享最新投资思想</div>
+                </div>
+            </div>
+        </div>
+
         <!-- 投资理念核心 -->
         <div class="section">
             <div class="section-title">🎯 投资理念核心</div>
             <div class="philosophy-grid">
                 <div class="philosophy-card">
                     <h3>买股票就是买公司</h3>
-                    <p>购买股票等同于购买一家公司的部分或全部所有权。上市与否仅在于退出便利性，投资的本质是对企业的所有权。</p>
+                    <p>购买股票等同于购买一家公司的部分或全部所有权。上市与否仅在于退出便利性，投资的本质是对企业的所有权。理解这句话"知易行难"。</p>
                 </div>
                 <div class="philosophy-card">
                     <h3>不懂不做（能力圈）</h3>
-                    <p>只投资自己能够深入理解的行业和企业。真正的"安全边际"并非指价格便宜，而是投资者对公司理解的深度。</p>
+                    <p>只投资自己能够深入理解的行业和企业。真正的"安全边际"并非指价格便宜，而是投资者对公司理解的深度。成功的投资基于对商业模式和未来现金流的理解。</p>
                 </div>
                 <div class="philosophy-card">
                     <h3>长期主义与平常心</h3>
@@ -128,19 +198,39 @@
             <div class="quote-card">
                 <div class="quote-text">"成长率对我来说没有任何意义。"</div>
             </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"平常心不是心态，而是理性；理性不是克制，而是想长远；想长远，就是长期主义。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"做对的事情，把事情做对。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"敢为天下后，后中争先。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"胸无大志——不要总想着做伟大企业，活着、健康最重要。"</div>
+            </div>
+            
+            <div class="quote-card">
+                <div class="quote-text">"发现错误立即改正，不管付出多大的代价都是最小的代价。"</div>
+            </div>
         </div>
 
         <!-- "本分"思想 -->
         <div class="section">
-            <div class="section-title">🏮 "本分"思想</div>
+            <div class="section-title">🏮 "本分"思想体系</div>
             <div class="highlight-box">
-                <p style="font-size:1.1em;margin-bottom:20px;">"本分"是段永平商业和投资哲学的基石，不仅是一种个人修养，更是企业经营和投资决策的指导原则。</p>
+                <p style="font-size:1.1em;margin-bottom:20px;">"本分"是段永平商业和投资哲学的基石，不仅是一种个人修养，更是企业经营和投资决策的指导原则。他将"本分"定义为"理性、想长远"的表现。</p>
             </div>
             
             <div class="philosophy-grid">
                 <div class="philosophy-card">
                     <h3>做对的事情</h3>
-                    <p>指选择正确的战略方向和目标，专注于那些长期有价值的决策，避免做错误或无意义的事情。如果发现方向错了，即使付出代价也要及时修正。</p>
+                    <p>指选择正确的战略方向和目标，专注于那些长期有价值的决策，避免做错误或无意义的事情。如果发现方向错了，即使付出代价也要及时修正。"一旦发现方向错误，不管付出多大的代价都是最小的代价。"</p>
                 </div>
                 <div class="philosophy-card">
                     <h3>把事情做对</h3>
@@ -152,7 +242,46 @@
                 </div>
                 <div class="philosophy-card">
                     <h3>平常心</h3>
-                    <p>"平常心不是心态，而是理性；理性不是克制，而是想长远；想长远，就是长期主义。"</p>
+                    <p>"平常心不是心态，而是理性；理性不是克制，而是想长远；想长远，就是长期主义。"保持心态平和，不被外界诱惑和市场波动左右，回归事物本源。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>不赚人便宜</h3>
+                    <p>在合作中秉持公平原则，宁可自己吃点亏也要保证合作方的利益。长期来看，吃小亏往往能获得更大的回报。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>自省求责</h3>
+                    <p>出现问题时，首先从自身找原因，要求自己而不是要求别人。这种思维方式和"不为清单"(Stop Doing List)紧密相关。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企业经营哲学 -->
+        <div class="section">
+            <div class="section-title">🏢 企业经营哲学</div>
+            <div class="two-col">
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:15px;">"敢为天下后，后中争先"</h3>
+                    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                        一种逆向思维的竞争策略。不惧怕进入竞争激烈的市场，而是先观察市场需求和先行者的产品，然后集中优势兵力，通过提供更高品质、更好服务的产品来"后来居上"。小霸王游戏机和步步高VCD的成功都印证了这一策略。
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:15px;">"胸无大志"的稳健哲学</h3>
+                    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                        段永平认为过度追求"伟大目标"容易导致急功近利和激进冒险。他提倡稳扎稳打、健康成长，即使错过一两次机会也要确保公司财务稳健，不冒企业无法承受的风险。
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:15px;">用户导向</h3>
+                    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                        他强调伟大的公司都是以用户为导向，而非以生意为导向，极致追求用户体验和为用户创造价值。
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:15px;">授权与人才培养</h3>
+                    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                        他通过事业部制和股权激励充分放权给下属，激发了团队的活力和忠诚度。他认为找到"对的人"比培养更重要。
+                    </p>
                 </div>
             </div>
         </div>
@@ -182,13 +311,108 @@
             </div>
         </div>
 
+        <!-- 投资案例详解 -->
+        <div class="section">
+            <div class="section-title">📈 投资案例详解</div>
+            
+            <div class="case-card">
+                <div class="case-title">
+                    <span>🎮 网易 (NetEase)</span>
+                    <span class="case-return return-positive">收益 >100倍</span>
+                </div>
+                <div class="case-content">
+                    <p><strong>投资背景：</strong>2002年初，网易在互联网泡沫破裂后遭遇重创，股价暴跌超过九成，甚至面临财务造假质疑和业务亏损。</p>
+                    <p style="margin-top:10px;"><strong>投资洞察：</strong>段永平通过咨询美国律师和会计师，深入了解网易的财务状况，判断其股价被严重低估。同时，他看到了网易向网络游戏转型的巨大潜力，发现网易当时的现金流甚至高于其市值。</p>
+                    <p style="margin-top:10px;"><strong>投资行动：</strong>2002年4月，段永平夫妇投入200万美元买入152万股网易股票，占总股本的5.05%。随后继续增持，最终持有205万股。</p>
+                    <p style="margin-top:10px;"><strong>投资成果：</strong>随着网易转型游戏业务成功，公司业绩显著提升，股价从约1美元飙升至120-130美元。持有8-9年后，获得超过100倍收益，据称赚取2.2亿至2.6亿美元。</p>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-title">
+                    <span>🍎 苹果 (Apple)</span>
+                    <span class="case-return return-positive">收益 >16倍</span>
+                </div>
+                <div class="case-content">
+                    <p><strong>投资时机：</strong>2011年11月开始买入苹果股票，当时正值史蒂夫·乔布斯辞世，市场对苹果的未来充满不确定性，股价跌至低谷。</p>
+                    <p style="margin-top:10px;"><strong>投资逻辑：</strong>基于对其产品创新力、用户粘性、卓越的客户导向以及强大生态系统的深度认同。段永平欣赏苹果"单一产品"的模式（如iPhone系列），认为公司能够集中资源实现极致的产品体验。</p>
+                    <p style="margin-top:10px;"><strong>投资行动：</strong>以约13.75美元/股的均价购入苹果股票，并长期持有。在2022年12月苹果股价再次陷入低谷时选择加仓。苹果在其美股持仓中占比高达80%。</p>
+                    <p style="margin-top:10px;"><strong>投资成果：</strong>累计收益率超过16倍（1623.48%），14年间盈利超过3400万美元，年化收益率高达24%。</p>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-title">
+                    <span>🥃 贵州茅台 (Kweichow Moutai)</span>
+                    <span class="case-return return-positive">长期持有</span>
+                </div>
+                <div class="case-content">
+                    <p><strong>投资理念：</strong>段永平认为投资茅台不需要过多关注宏观环境，因为投资本身就是着眼于十年、二十年的长远发展。</p>
+                    <p style="margin-top:10px;"><strong>投资逻辑：</strong>看重茅台在中国社交文化中不可替代的独特价值、强大的品牌壁垒和清晰简单的商业模式。即使在股价回调时，他认为茅台的股息收益率（约3%-4%）也远高于银行存款。</p>
+                    <p style="margin-top:10px;"><strong>投资行动：</strong>长期持有茅台，曾表示在茅台股价触及2600元高点时考虑过卖出，但最终因为"无处可去"而选择继续持有。在股价回调后反而持续加仓，2025年以来仍在增持。</p>
+                    <p style="margin-top:10px;"><strong>茅台vs黄金：</strong>他认为茅台比黄金更具投资价值，因为茅台核心产品价格有持续上涨空间，且提供股息，而黄金是非生息资产。</p>
+                </div>
+            </div>
+            
+            <div class="case-card">
+                <div class="case-title">
+                    <span>🐧 腾讯 (Tencent)</span>
+                    <span class="case-return return-positive">持续增持</span>
+                </div>
+                <div class="case-content">
+                    <p><strong>长期关注：</strong>一直对腾讯抱有好感，曾表示遗憾错过早期投资腾讯的机会，并等待更好的买入时机。</p>
+                    <p style="margin-top:10px;"><strong>投资逻辑：</strong>理解腾讯通过社交媒体平台实现流量变现的商业模式，并高度认可微信作为数字基础设施所构筑的"社交护城河"，其巨大的用户迁移成本形成了难以逾越的壁垒。</p>
+                    <p style="margin-top:10px;"><strong>投资行动：</strong>2023年1月为换仓苹果曾卖出部分腾讯美股ADR，但保留了港股仓位。随后在2023年11月以41.05-41.1美元的价格买回20万股腾讯ADR。2024年8月又加仓腾讯。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 视频访谈汇总 -->
+        <div class="section">
+            <div class="section-title">🎬 视频访谈与演讲</div>
+            
+            <h3 style="color:var(--accent);margin-bottom:15px;">2025年</h3>
+            <div class="video-item">
+                <div class="video-icon">🎙️</div>
+                <div class="video-info">
+                    <div class="video-title">2025年雪球访谈完整版</div>
+                    <div class="video-desc">2025年10月16日，雪球创始人方三文在美国加州对话段永平。涵盖人生经历、创业历程、投资理念、AI行业趋势、子女教育等。被称为段永平"退休"二十多年来罕见的公开视频对话之一。</div>
+                </div>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-icon">🎙️</div>
+                <div class="video-info">
+                    <div class="video-title">浙江大学演讲完整版</div>
+                    <div class="video-desc">2025年1月5日，段永平回到母校浙江大学，与师生进行90分钟现场问答会。分享对AI时代学习、创业与投资的见解，提及与巴菲特的投资对话、拼多多与步步高的企业文化等话题。</div>
+                </div>
+            </div>
+            
+            <h3 style="color:var(--accent);margin-bottom:15px;margin-top:25px;">早期</h3>
+            <div class="video-item">
+                <div class="video-icon">📺</div>
+                <div class="video-info">
+                    <div class="video-title">央视《财富人生》专访</div>
+                    <div class="video-desc">2004年，做客央视《财富人生》栏目，讲述他的"快乐人生"。</div>
+                </div>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-icon">🎙️</div>
+                <div class="video-info">
+                    <div class="video-title">与王石对话</div>
+                    <div class="video-desc">段永平与王石的对谈片段，分享企业经营和投资心得。</div>
+                </div>
+            </div>
+        </div>
+
         <!-- 投资问答录精选 -->
         <div class="section">
             <div class="section-title">💬 投资问答录精选</div>
             
             <div class="qa-item">
                 <div class="qa-q">Q: 如何判断一只股票是否值得投资？</div>
-                <div class="qa-a">A: 要看这家公司是不是好生意，是不是由对的人来经营。买股票就是买公司，要把自己当作公司的所有者而不是交易者。</div>
+                <div class="qa-a">A: 要看这家公司是不是好生意，是不是由对的人来经营。买股票就是买公司，要把自己当作公司的所有者而不是交易者。投资是基于价值而非投机。</div>
             </div>
             
             <div class="qa-item">
@@ -203,12 +427,54 @@
             
             <div class="qa-item">
                 <div class="qa-q">Q: 投资中最重要的是什么？</div>
-                <div class="qa-a">A: 不做错的事情。投资成功最重要的是避免错误，而不是抓住机会。"不做什么"比"做什么"更重要。</div>
+                <div class="qa-a">A: 不做错的事情。投资成功最重要的是避免错误，而不是抓住机会。"不做什么"比"做什么"更重要。建立自己的"不为清单"(Stop Doing List)。</div>
             </div>
             
             <div class="qa-item">
                 <div class="qa-q">Q: 年轻人如何开始投资？</div>
                 <div class="qa-a">A: 从存钱开始，慢慢积累本金。投资要慢慢来，不要想着一夜暴富。你越想挣快钱，可能越缺钱。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何看待持仓集中度？</div>
+                <div class="qa-a">A: 我是满仓主义者，拿着现金是一件很难受的事情。只要真正理解了公司，集中投资是正常的，甚至应该是全部集中到最好的几家公司。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何看待茅台的股价波动？</div>
+                <div class="qa-a">A: 当茅台股价跌去50%时，如果扛不住就不应该买。茅台的股息收益率约3%-4%，远高于银行存款，是资金的更好去处。</div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-q">Q: 如何看待AI行业的投资机会？</div>
+                <div class="qa-a">A: （2025年访谈）我对AI的理解还不够深，在这个领域我还没有找到让我有足够安全边际的公司。我不懂的东西不会去碰。</div>
+            </div>
+        </div>
+
+        <!-- OPPO/vivo企业文化 -->
+        <div class="section">
+            <div class="section-title">📱 OPPO/vivo与步步高系</div>
+            <p style="color:var(--text-muted);margin-bottom:20px;">
+                段永平退居幕后但影响深远。1999年将步步高拆分为三家独立公司，分别由陈明永（OPPO）、沈炜（vivo）、金志江（小天才）负责。这些企业共同秉承了"本分"的价值观。
+            </p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>OPPO的诞生</h3>
+                    <p>1999年，步步高视听电子独立为OPPO，由陈明永负责。陈明永是段永平的"门徒"，将段永平的商业思想融入OPPO的企业文化中。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>vivo的诞生</h3>
+                    <p>步步高通讯科技独立为vivo，由沈炜负责。沈炜同样深受段永平"本分"哲学的影响，强调消费者导向和健康经营。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>小天才</h3>
+                    <p>教育电子业务发展为小天才品牌，专注于儿童智能手表和教育电子产品，延续了步步高的品质理念。</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>精神传承</h3>
+                    <p>段永平表示从未"遥控"过这些公司，但通过理念传递，使它们秉承了共同的价值观和经营哲学，成为各自领域的头部企业。</p>
+                </div>
             </div>
         </div>
 
@@ -222,7 +488,8 @@
                 <a href="https://book.douban.com/subject/35525072/" target="_blank" class="resource-link">📖 《段永平投资问答录》（投资逻辑篇）</a>
                 <a href="https://book.douban.com/subject/35525070/" target="_blank" class="resource-link">📖 《段永平投资问答录》（商业逻辑篇）</a>
                 <a href="https://36kr.com/p/3549591336819078" target="_blank" class="resource-link">📰 2025年雪球深度访谈</a>
-                <a href="https://wallstreetcn.com/articles/3759228" target="_blank" class="resource-link">📰 浙江大学演讲</a>
+                <a href="https://wallstreetcn.com/articles/3759228" target="_blank" class="resource-link">📰 浙江大学2025年演讲</a>
+                <a href="https://finance.sina.com.cn/stock/stockzmt/2025-01-06/doc-inecyfep3065663.shtml" target="_blank" class="resource-link">📰 2万字！段永平浙大问答实录</a>
             </div>
         </div>
 
@@ -232,9 +499,10 @@
             <ul style="color:var(--text-muted);font-size:0.9em;line-height:2;padding-left:20px;">
                 <li>雪球专栏 - 段永平（ID：大道无形我有型）</li>
                 <li>《段永平投资问答录》投资逻辑篇 & 商业逻辑篇</li>
-                <li>2025年雪球《方略》栏目专访</li>
-                <li>浙江大学2025年演讲与交流</li>
-                <li>Various financial news and analysis platforms</li>
+                <li>2025年雪球《方略》栏目专访（方三文对话段永平）</li>
+                <li>浙江大学2025年1月5日演讲与交流</li>
+                <li>央视《财富人生》2004年专访</li>
+                <li>36氪、虎嗅、华尔街见闻等财经媒体</li>
             </ul>
         </div>
 

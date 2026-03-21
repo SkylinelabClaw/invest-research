@@ -255,3 +255,47 @@ invest-research/
 - 投资分析仅供研究参考，不构成投资建议
 - 定期更新股价和财报数据（每季度财报季结束后更新）
 - **禁止空泛的定性描述，所有结论必须有数据支撑**
+
+## A+H股 / 港股+美股 双重上市规则
+
+对于在两个资本市场上市的公司（如A+H股、港股+美股），必须：
+
+1. **股票代码标注**
+   - 列出所有市场的股票代码
+   - 例如：阿里巴巴 (BABA.US / 09988.HK)
+
+2. **双重股价展示**
+   - 展示每个市场的当前股价
+   - 分别标注涨跌幅和YTD
+
+3. **AH/H股折价计算**
+   - 计算折价/溢价比例
+   - 标注折价计算公式和数据日期
+
+4. **双重股价走势图**
+   - 为每个市场分别生成股价走势图
+   - 或在一个图中叠加显示两个市场的走势
+
+5. **数据来源**
+   - 标注每个市场的数据来源
+
+**示例格式：**
+```html
+<div class="dual-listings">
+    <div class="listing-item">
+        <span class="market">🇺🇸 美股</span>
+        <span class="code">BABA.US</span>
+        <span class="price">$124.9</span>
+        <span class="change bearish">-8.0%</span>
+    </div>
+    <div class="listing-item">
+        <span class="market">🇭🇰 港股</span>
+        <span class="code">09988.HK</span>
+        <span class="price">HK$72.5</span>
+        <span class="change bearish">-6.5%</span>
+    </div>
+    <div class="ah-premium">
+        <span>AH折价: -15.2%</span>（以2026-03-20汇率计算）
+    </div>
+</div>
+```
