@@ -1,24 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>贵州茅台 投资分析报告</title>
 <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --bullish: #00c853;
-            --bearish: #ff1744;
-            --neutral: #ff9800;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --card-bg: #1f2937;
-            --border: #374151;
-        }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
@@ -27,7 +14,6 @@
         h1 { font-size: 2.2em; font-weight: 700; }
         .subtitle { color: var(--text-muted); font-size: 1.1em; }
         .report-meta { text-align: right; color: var(--primary); font-weight: 600; }
-        
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
@@ -37,56 +23,32 @@
         .bullish { color: var(--bullish); }
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
-        
         .alert-box { background: rgba(255, 23, 68, 0.1); border-left: 4px solid var(--bearish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
         .alert-title { font-weight: 700; color: var(--bearish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        
         section { margin-bottom: 40px; }
         h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
         h3 { font-size: 1.2em; margin: 20px 0 15px; }
-        
         .table-container { overflow-x: auto; margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
         th { background: var(--accent); font-weight: 600; }
         td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
-        
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
         .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
         .metric-change { font-size: 0.9em; }
-        
         .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
         .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
-        
         .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
         .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
         .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
         .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
-        
         .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
         .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
-        
-        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
-        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
-        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
-        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
-        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .dcf-price { font-size: 1.8em; font-weight: 700; }
-        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
-        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
-        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
-        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
-        
-        .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
-        .conclusion h3 { margin-top: 0; color: var(--highlight); }
-        
         footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
         footer a { color: var(--accent); text-decoration: none; }
-        
-        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -100,146 +62,72 @@
 <header>
 <div class="container">
 <div class="header-content">
-<div><h1>🍶 贵州茅台 (600519.SS) — 投资分析报告</h1><p class="subtitle">中国高端白酒龙头企业 | A股主板</p></div>
-<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 强烈买入</div></div>
+<div><h1>🍶 贵州茅台 (600519.SS) — 深度投资分析报告</h1><p class="subtitle">中国高端白酒龙头企业 | A股主板</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 跑赢行业 (核心资产)</div></div>
 </div>
 </div>
 </header>
 <div class="container">
 <section><h2>📊 股票快照</h2>
 <div class="snapshot">
-<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">¥1445.00</div><div class="snapshot-change">前一天: -0.5% | YTD: +1.3%</div></div>
-<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">¥1.81万亿</div><div class="snapshot-change">A股市值第一</div></div>
-<div class="snapshot-card"><div class="snapshot-label">市盈率 (TTM)</div><div class="snapshot-value">19.5x</div><div class="snapshot-change neutral">历史平均: 32x</div></div>
-<div class="snapshot-card"><div class="snapshot-label">2026目标价</div><div class="snapshot-value">¥1,852</div><div class="snapshot-change bullish">+28% 上涨空间</div></div>
-</div>
-</section>
-<section><h2>📈 一年股价走势</h2>
-<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-<img alt="贵州茅台一年股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh600519.gif" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
-<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: 新浪财经 | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">¥1445.00</div><div class="snapshot-change">历史估值中低位</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">¥1.81万亿</div><div class="snapshot-change">A股核心定价基准</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市盈率 (TTM)</div><div class="snapshot-value">19.5x</div><div class="snapshot-change neutral">具备极高安全边际</div></div>
 </div>
 </section>
 <div class="alert-box">
-<div class="alert-title">🚨 核心关注点</div>
-<p>贵州茅台面临白酒行业深度调整期的多重挑战：消费下行、"新禁酒令"影响、年轻消费群体流失。但公司正通过直销渠道扩张（占比已达43.88%）、"i茅台"数字化平台、国际化战略进行积极转型。当前P/E约19.5x低于历史平均32x，分析师平均目标价¥1,852，潜在涨幅28%。</p>
+<div class="alert-title">🚨 最新业绩与行业风向</div>
+<p>贵州茅台在行业深度调整期表现出极强的业绩韧性。2025年前三季度营收1309亿元（+6.3% YoY），归母净利润646亿元（+6.2% YoY），完成了从“高速增长”向“高质稳健”的战略切换。渠道改革不断深化（“i茅台”等直销占比迫近50%），取消部分非标产品分销以优化供需。尽管近期飞天批价在淡季有所回落（散瓶约1560-1600元），但其长期定价权和品牌护城河依然坚不可摧。</p>
 </div>
-<section><h2>💰 核心财务指标 — 2025年</h2>
-<h3>▎2025年上半年</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营业总收入</span><span class="metric-period">H1 2025</span></div><div class="metric-value">¥910.9亿</div><div class="metric-change">同比稳健增长</div></div>
-<div class="metric-card"><div class="metric-header"><span>归母净利润</span><span class="metric-period">H1 2025</span></div><div class="metric-value">¥454.0亿</div><div class="metric-change">净利率 ~49.8%</div></div>
-<div class="metric-card"><div class="metric-header"><span>毛利率</span><span class="metric-period">H1 2025</span></div><div class="metric-value">91.3%</div><div class="metric-change bullish">行业最高水平</div></div>
-<div class="metric-card"><div class="metric-header"><span>直销占比</span><span class="metric-period">2025</span></div><div class="metric-value">43.88%</div><div class="metric-change bullish">持续提升</div></div>
-</div>
-<h3 style="margin-top:30px;">▎2025年前三季度 (Q1-Q3)</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营业总收入</span><span class="metric-period">Q1-Q3 2025</span></div><div class="metric-value">¥1,285亿</div><div class="metric-change">增速为近年新低</div></div>
-<div class="metric-card"><div class="metric-header"><span>归母净利润</span><span class="metric-period">Q1-Q3 2025</span></div><div class="metric-value">¥646.3亿</div><div class="metric-change">净利率 ~50.3%</div></div>
-</div>
-<h3 style="margin-top:30px;">▎2026年业绩预测</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>预期归母净利润</span><span class="metric-period">FY 2026E</span></div><div class="metric-value">¥930.2亿</div><div class="metric-change bullish">+7% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>预期EPS</span><span class="metric-period">FY 2026E</span></div><div class="metric-value">¥74.05</div><div class="metric-change bullish">同比提升</div></div>
-<div class="metric-card"><div class="metric-header"><span>远期市盈率</span><span class="metric-period">2026E</span></div><div class="metric-value">17.6x</div><div class="metric-change">低于当前TTM</div></div>
-</div>
-</section>
-<section><h2>📈 五季度财务明细</h2>
+<section><h2>💰 深度财务数据与趋势</h2>
 <div class="table-container">
-<table><thead><tr><th>指标</th><th class="number">Q1 2025</th><th class="number">Q2 2025</th><th class="number">Q3 2025</th><th class="number">Q4 2025E</th><th class="number">FY 2025E</th></tr></thead>
+<table><thead><tr><th>指标</th><th class="number">FY2023</th><th class="number">FY2024</th><th class="number">FY2025E</th><th class="number">FY2026E (机构一致预期)</th><th class="number">FY2027E (机构一致预期)</th></tr></thead>
 <tbody>
-<tr><td>营业总收入 (亿元)</td><td class="number">~460</td><td class="number">~451</td><td class="number">~374</td><td class="number">~350</td><td class="number">~1,635</td></tr>
-<tr><td>归母净利润 (亿元)</td><td class="number">~240</td><td class="number">~214</td><td class="number">~192</td><td class="number">~180</td><td class="number">~826</td></tr>
-<tr><td>净利率 (%)</td><td class="number">52.2%</td><td class="number">47.5%</td><td class="number">51.3%</td><td class="number">51.4%</td><td class="number">~50.5%</td></tr>
-<tr><td>直销收入占比 (%)</td><td class="number">~42%</td><td class="number">~44%</td><td class="number">~45%</td><td class="number">~46%</td><td class="number">43.88%</td></tr>
+<tr><td>营业总收入 (亿元)</td><td class="number">1,505</td><td class="number">1,707</td><td class="number">~1,820</td><td class="number">~1,930</td><td class="number">~2,050</td></tr>
+<tr><td>归母净利润 (亿元)</td><td class="number">747</td><td class="number">862</td><td class="number">~910</td><td class="number">~954</td><td class="number">~1,010</td></tr>
+<tr><td>毛利率 (%)</td><td class="number">91.9%</td><td class="number">91.8%</td><td class="number">91.5%</td><td class="number">保持稳定</td><td class="number">保持稳定</td></tr>
+<tr><td>净利率 (%)</td><td class="number">49.6%</td><td class="number">50.5%</td><td class="number">50.0%</td><td class="number">49.5%</td><td class="number">49.3%</td></tr>
 </tbody>
 </table>
 </div>
-<p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">* Q4 2025及全年数据为机构预测，实际年报预计2026年4月发布</p>
+<p style="color:var(--text-muted);font-size:0.85em;">* 备注：过去两年在宏观压力下营收、利润依然保持单边向上。未来两年机构预期增速放缓至个位数（约5%-7%），但绝对利润体量稳步突破千亿大关。</p>
 </section>
-<section><h2>💼 业务分部深度解析</h2>
-<div class="analysis-card"><h3>🍶 核心产品 — 飞天茅台</h3><span class="tag tag-bullish">基石</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>53度500ml飞天茅台为核心产品，占收入主要份额</li><li>官方指导价¥1,149/瓶，市场批价回升至¥1,650-1,700</li><li>2026年起飞天茅台以¥1,499上线"i茅台"直销平台</li><li>春节开瓶率高达62%，真实消费需求旺盛</li></ul></div>
-<div class="analysis-card"><h3>📱 数字化直销 — i茅台平台</h3><span class="tag tag-bullish">增长引擎</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2026年1-2月MAU分别达2,300万和1,900万</li><li>2025年上半年平台收入¥107.6亿（不含税）</li><li>2026年1月订单量超200万笔，新增用户630万</li><li>飞天系列日均销售约100吨，直销毛利率高达95%</li><li>远期目标：直销占比提升至50%</li></ul></div>
-<div class="analysis-card"><h3>🏪 渠道改革 — 扁平化与直营化</h3><span class="tag tag-bullish">战略转型</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2025年直销收入占比已达43.88%</li><li>从2026年起取消分销模式，经销商转为获得5%佣金</li><li>构建批发、线下零售、线上零售、餐饮、私域"五大渠道"体系</li><li>经销商库存保持30-45天健康水平</li></ul></div>
-<div class="analysis-card"><h3>🌍 国际化战略</h3><span class="tag tag-neutral">长期机遇</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>确定12个战略市场、14个重点市场、38个关注市场</li><li>将香港、日本、新加坡打造为样板市场</li><li>目标：2035年综合实力进入全球食品饮料行业前五</li><li>挑战：海外"回流酒"影响国内价格体系</li></ul></div>
-<div class="analysis-card"><h3>📦 产品结构优化</h3><span class="tag tag-neutral">调整中</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2025年减少500ml普通飞天和珍品茅台投放量</li><li>适度增加1L装飞天、100ml飞天及其他开发产品</li><li>非标产品（精品、生肖、陈年）从"渠道累赘"转为盈利增量</li><li>构建"金字塔"型产品矩阵</li></ul></div>
-</section>
-<section><h2>📊 财务数据详表</h2>
-<div class="table-container">
-<table><thead><tr><th>指标</th><th class="number">2024年</th><th class="number">2025年Q1</th><th class="number">2025年H1</th><th class="number">2025年Q3</th><th class="number">2025年E</th><th class="number">2026E</th></tr></thead>
-<tbody>
-<tr><td>营业总收入 (亿元)</td><td class="number">1,707.0</td><td class="number">514.4</td><td class="number">910.9</td><td class="number">398.1</td><td class="number">~1,635</td><td class="number">~1,710</td></tr>
-<tr><td>归母净利润 (亿元)</td><td class="number">862.3</td><td class="number">268.5</td><td class="number">454.0</td><td class="number">192.2</td><td class="number">~826</td><td class="number">~930</td></tr>
-<tr><td>净利率 (%)</td><td class="number">50.5%</td><td class="number">52.2%</td><td class="number">49.8%</td><td class="number">48.3%</td><td class="number">~50.5%</td><td class="number">~54.4%</td></tr>
-<tr><td>毛利率 (%)</td><td class="number">91.8%</td><td class="number">—</td><td class="number">91.3%</td><td class="number">—</td><td class="number">~91.5%</td><td class="number">~91.5%</td></tr>
-<tr><td>直销收入占比 (%)</td><td class="number">45.6%</td><td class="number">~42%</td><td class="number">43.88%</td><td class="number">~45%</td><td class="number">~46%</td><td class="number">~50%</td></tr>
-<tr><td>EPS (元)</td><td class="number">68.7</td><td class="number">21.38</td><td class="number">36.15</td><td class="number">15.31</td><td class="number">~65.8</td><td class="number">~74.1</td></tr>
-</tbody>
-</table>
-</div>
-<p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">* 2025年全年数据为机构预测，实际年报预计2026年4月发布</p>
-</section>
-<section><h2>🎯 分析师预测</h2>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>共识评级</span><span class="tag tag-bullish">强烈买入</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">基于53位分析师调查</p><p style="font-size:0.85em;margin-top:10px;">86.8% 强烈买入 | 11.3% 买入 | 1.9% 持有</p></div>
-<div class="metric-card"><div class="metric-header"><span>平均目标价</span><span class="metric-period">12个月</span></div><div class="metric-value">¥1,852</div><div class="metric-change bullish">+28.2% 上涨空间</div></div>
-<div class="metric-card"><div class="metric-header"><span>目标价范围</span><span class="metric-period">12个月</span></div><div class="metric-value">¥1,480 - ¥2,300</div><div class="metric-change">最低¥1,480 | 最高¥2,300</div></div>
-</div>
-<div class="analysis-card" style="margin-top:20px;"><h3>📋 主要券商评级</h3>
+<section><h2>💼 业务分部拆解</h2>
+<div class="analysis-card"><h3>🍶 核心业务：茅台酒 (飞天及非标产品)</h3><span class="tag tag-bullish">利润基石</span>
 <ul style="margin-top:15px;padding-left:20px;">
-<li><strong>东吴证券</strong>：维持"买入"评级，目标价 <strong>¥1,850</strong></li>
-<li><strong>财信证券</strong>：维持"买入"评级</li>
-<li><strong>招商证券</strong>：给予"强烈推荐"评级</li>
-<li><strong>中金公司</strong>：维持"买入"评级，目标价 <strong>¥2,000</strong></li>
+<li><strong>占比与增速：</strong> 茅台酒贡献了超80%的总营收（2025年前三季度达1105亿元，+9.28% YoY），是抵御周期波动的定海神针。</li>
+<li><strong>毛利率：</strong> 常年保持在93%-94%的极高水平。</li>
+</ul></div>
+<div class="analysis-card"><h3>🍷 增长极：系列酒业务 (茅台1935等)</h3><span class="tag tag-neutral">结构性补充</span>
+<ul style="margin-top:15px;padding-left:20px;">
+<li><strong>定位：</strong> 承担做大受众盘、抢占千元价格带的重任。营收占比在15%左右波动。</li>
+<li><strong>表现：</strong> 增速受到行业整体消费降级和库存压力的阶段性影响，但整体毛利率稳步提升至75%以上。</li>
+</ul></div>
+</section>
+<section><h2>🏰 核心护城河与竞争格局</h2>
+<div class="analysis-card"><h3>📈 批价走势与渠道改革护城河</h3>
+<ul style="margin-top:15px;padding-left:20px;">
+<li><strong>批价韧性：</strong> 尽管近期散瓶飞天批价回落至1560元附近（受淡季与宏观需求双重影响），但依然远高于出厂价与官方指导价（1499元），渠道丰厚的利润垫依然存在。</li>
+<li><strong>渠道重塑：</strong> 直销体系（尤其是“i茅台”APP）彻底改变了茅台被传统经销商裹挟的被动局面。直销占比从几年前的不到10%快速拉升至约45%，不仅回收了渠道利润，更直接触达了真实消费者，抑制了黄牛炒作炒单，赋予了公司真正的逆周期“水库”调节能力。</li>
+<li><strong>优化供给：</strong> 2026年起停止部分非标产品的传统分销，引导经销商将精力转移到核心产品和真实动销上，长远看极大地优化了市场生态。</li>
+</ul></div>
+</section>
+<section><h2>📞 最新管理层指引与财报会表态</h2>
+<div class="qa-item"><div class="qa-question">战略定调：从“渠道驱动”向“消费者驱动”转型</div>
+<div class="qa-answer"><p>管理层多次强调，公司正经历关键的换挡期。不再盲目追求短期双位数的高增长，而是主动拥抱调整，通过数字化营销、精细化供需管理来夯实品牌护城河。“直营化改革不是为了打压经销商，而是为了让茅台酒真正回到消费者餐桌。”</p></div></div>
+</section>
+<section><h2>🎯 各大机构共识与分歧目标价</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>机构共识评级</span><span class="tag tag-bullish">优于大市/买入</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">估值极具吸引力</p></div>
+<div class="metric-card"><div class="metric-header"><span>目标价中枢 (12个月)</span><span class="metric-period">中金/国信等预测</span></div><div class="metric-value">¥1,800 - ¥1,860</div><div class="metric-change">+25% 潜在空间</div></div>
+</div>
+<div class="analysis-card" style="margin-top:20px;"><h3>📋 机构观点总结</h3>
+<ul style="margin-top:15px;padding-left:20px;">
+<li><strong>共识：</strong> 当前不到20倍的PE处于历史低位区间（历史均值30x左右）。强劲的自由现金流、高额分红（及特别分红）为股价提供了极强的下行保护（安全垫）。中金给出目标价¥1,860。</li>
+<li><strong>分歧与担忧：</strong> 悲观预期主要集中于中国宏观经济的修复斜率、商务宴请需求的长期萎缩，以及年轻人对白酒文化接受度的下降。部分外资机构担忧批价跌破心理关口（如1500元）可能引发渠道抛售的负螺旋。但主流内资券商认为茅台强大的品牌溢价足以穿越本轮周期。</li>
 </ul>
 </div>
 </section>
-<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-<p style="margin-bottom:20px;color:var(--text-muted);">共同假设：总股本 ~12.56亿股 | 2025年现金流约¥800亿 | 无有息负债 | 现金储备充裕</p>
-<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">¥1,680</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">FCF增速</div><div class="dcf-detail-value">10%/年 → 6%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">9%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥1,344</div></div></div></div>
-<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">¥1,450</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">FCF增速</div><div class="dcf-detail-value">7%/年 → 4%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥1,160</div></div></div></div>
-<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">¥1,150</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">FCF增速</div><div class="dcf-detail-value">5%/年 → 2%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥920</div></div></div></div>
-</section>
-<section><h2>🏆 巴菲特逐项评分</h2>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">品牌+产区+稀缺性（极强）</p><p style="font-size:0.85em;margin-top:10px;">赤水河谷独特产区、不可复制的酿造工艺、千年品牌积淀。茅台已超越物质消费，成为"精神性商品"和社交货币。定价权极强，毛利率常年在90%以上。</p></div>
-<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">战略清晰，但治理存隐忧</p><p style="font-size:0.85em;margin-top:10px;">渠道改革、数字化、国际化战略方向正确。2026年3月高管被查事件暴露公司治理问题，需持续关注。</p></div>
-<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">现金充裕，零有息负债</p><p style="font-size:0.85em;margin-top:10px;">经营现金流强劲，常年数百亿。账面现金充裕，无有息负债。净利率50%+，盈利能力行业顶尖。</p></div>
-<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高毛利率+高净利率</p><p style="font-size:0.85em;margin-top:10px;">毛利率91%+，净利率50%+。，直销占比提升进一步拉高盈利质量。利润真实性强，现金流优秀。</p></div>
-<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px">业绩稳定可预见</p><p style="font-size:0.85em;margin-top:10px">作为A股业绩最稳定的公司之一，历年业绩波动小。渠道库存健康，产品价格体系稳固。</p></div>
-<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高分红+稳定回购</p><p style="font-size:0.85em;margin-top:10px;">常年高分红比例，股息率在A股中名列前茅。长期为股东创造价值，是"时间的朋友"。</p></div>
-</div>
-</section>
-<section><div class="conclusion">
-<h3>🎯 综合裁决 — 强烈买入（长期确定性最强核心资产）</h3>
-<p style="margin:20px 0;font-size:1.1em;">当前¥1,445 = 乐观DCF的86% = 中性DCF的100% = 悲观DCF的126%。</p>
-<p style="color:var(--text-muted);">当前估值约为19.5x P/E，显著低于历史平均32x，处于近十年较低水平。分析师平均目标价¥1,852，潜在上涨空间28%。</p>
-<h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：强烈买入（Long-term Buy）</h4>
-<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 茅台是A股确定性最强的核心资产，品牌护城河极深</li><li>• 渠道改革成效显著，直销占比提升至44%，单瓶利润增厚约¥330</li><li>• "i茅台"数字化平台MAU强劲，2026年直销量目标增加5,000吨</li><li>• 当前估值具备吸引力，股息率可观，适合长期配置</li><li>• 风险：消费下行、白酒行业调整、高管治理问题、国际市场拓展不确定性</li></ul>
-</div></section>
-<section><h2>⚠️ 主要风险</h2>
-<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;">
-<li><strong>消费下行风险：</strong>白酒行业进入深度调整期，2025年营收增速创十年新低</li>
-<li><strong>政策风险：</strong>"新禁酒令"冲击公务和商务宴请消费</li>
-<li><strong>价格波动风险：</strong>飞天茅台批价曾跌破¥1,500，渠道库存压力存在</li>
-<li><strong>年轻消费群体流失：</strong>Z世代对传统白酒接受度下降</li>
-<li><strong>治理风险：</strong>2026年3月高管被查，公司治理存隐忧</li>
-<li><strong>国际化风险：</strong>海外"回流酒"冲击国内价格体系</li>
-</ul></div>
-</section>
-<section><h2>📋 分析师评级与目标价</h2>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>共识评级</span><span class="tag tag-bullish">强烈买入</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">53位分析师在过去3个月给出评级</p><p style="font-size:0.85em;margin-top:10px;">86.79% 强烈买入 | 11.32% 买入 | 1.89% 持有</p></div>
-<div class="metric-card"><div class="metric-header"><span>平均目标价</span><span class="metric-period">12个月</span></div><div class="metric-value">¥1,852</div><div class="metric-change bullish">+28.2% 上涨空间</div></div>
-<div class="metric-card"><div class="metric-header"><span>目标价范围</span><span class="metric-period">12个月</span></div><div class="metric-value">¥1,480 - ¥2,300</div><div class="metric-change">最低¥1,480 | 最高¥2,300</div></div>
-</div>
-</section>
-<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。贵州茅台2025年年度报告预计将于2026年4月发布，届时请以正式财报数据为准。</p></div></section>
 <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
 </div>
 </body>
