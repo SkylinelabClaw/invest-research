@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>山西汾酒 投资分析报告</title>
 <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --bullish: #00c853;
-            --bearish: #ff1744;
-            --neutral: #ff9800;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --card-bg: #1f2937;
-            --border: #374151;
-        }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         header { background: linear-gradient(135deg, #00c853, #69f0ae); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
         .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        h1 { font-size: 2.2em; font-weight: 700; }
-        .subtitle { color: var(--text-muted); font-size: 1.1em; }
-        .report-meta { text-align: right; color: var(--text-muted); }
-        
+        h1 { font-size: 2.2em; font-weight: 700; color: #fff; }
+        .subtitle { color: #e0e0e0; font-size: 1.1em; }
+        .report-meta { text-align: right; color: #e0e0e0; }
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
@@ -37,221 +23,121 @@
         .bullish { color: var(--bullish); }
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
-        
         .alert-box { background: rgba(255, 152, 0, 0.1); border-left: 4px solid var(--neutral); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
         .alert-title { font-weight: 700; color: var(--neutral); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        
         section { margin-bottom: 40px; }
         h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
-        h3 { font-size: 1.2em; margin: 20px 0 15px; }
-        
+        h3 { font-size: 1.2em; margin: 20px 0 15px; border-left: 4px solid var(--bullish); padding-left: 10px; }
         .table-container { overflow-x: auto; margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
         th { background: var(--accent); font-weight: 600; }
         td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
-        
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
         .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
         .metric-change { font-size: 0.9em; }
-        
         .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
-        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
-        
-        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
-        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
-        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
-        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
-        
-        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
-        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--bullish); }
-        
-        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
-        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
-        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
-        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
-        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .dcf-price { font-size: 1.8em; font-weight: 700; }
-        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
-        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
-        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
-        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
-        
+        .analysis-card h4 { font-size: 1.1em; margin-bottom: 10px; }
         .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
         .conclusion h3 { margin-top: 0; color: var(--bullish); }
-        
-        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
-        footer a { color: var(--accent); text-decoration: none; }
-        
-        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
-<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-<div style="display:flex;gap:10px;">
-<a href="tencentmusic.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-<a href="zijinmining.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-</div>
-</div>
 <header>
 <div class="container">
 <div class="header-content">
-<div><h1>🍶 山西汾酒 (600809.SS) — 投资分析报告</h1><p class="subtitle">Investment Research Report | A股主板</p></div>
-<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 优于大市</div></div>
+<div><h1>🍶 山西汾酒 (600809.SH) — 深度投资分析报告</h1><p class="subtitle">清香型白酒龙头 | 青花系列高端化 | 省外高势能渗透</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-22</div><div>评级: 买入 / 优于大市</div></div>
 </div>
 </div>
 </header>
 <div class="container">
+
 <section><h2>📊 股票快照</h2>
 <div class="snapshot">
-<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">¥153.86</div><div class="snapshot-change">前一天: -1.5% | YTD: -13.1%</div></div>
-<div class="snapshot-card"><div class="snapshot-label">总市值</div><div class="snapshot-value">¥1,877亿</div><div class="snapshot-change">约 $262亿</div></div>
-<div class="snapshot-card"><div class="snapshot-label">2024年营收</div><div class="snapshot-value">¥360.1亿</div><div class="snapshot-change">全年</div></div>
-<div class="snapshot-card"><div class="snapshot-label">2024年净利润</div><div class="snapshot-value">¥122.4亿</div><div class="snapshot-change">净利率 34.0%</div></div>
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价</div><div class="snapshot-value">¥153.86</div><div class="snapshot-change">共识目标价: ¥221+</div></div>
+<div class="snapshot-card"><div class="snapshot-label">2024年营收</div><div class="snapshot-value">360.1亿</div><div class="snapshot-change bullish">+12.8% YoY</div></div>
+<div class="snapshot-card"><div class="snapshot-label">2024年净利润</div><div class="snapshot-value">122.4亿</div><div class="snapshot-change bullish">+10.2% YoY</div></div>
+<div class="snapshot-card"><div class="snapshot-label">省外营收占比</div><div class="snapshot-value">>62%</div><div class="snapshot-change bullish">2024省外营收223.7亿</div></div>
 </div>
-</section>
-<section><h2>📈 一年股价走势</h2>
-<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-<img alt="山西汾酒一年股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh600809.gif" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
-<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: 新浪财经 | 过去52周周线走势</p>
-</div>
-</section>
 <div class="alert-box">
-<div class="alert-title">📋 核心观点</div>
-<p>山西汾酒在2025年白酒行业深度调整期展现出强大的经营韧性。营收连续保持增长，省外市场扩张成效显著，产品结构持续优化。尽管净利润增速放缓，但在行业整体承压背景下，汾酒仍保持高于行业平均水平的增速，巩固了中国清香型白酒龙头地位。全国化战略进入收获期，青花汾酒系列带动产品结构升级，是公司中长期增长的核心驱动力。</p>
-</div>
-<section><h2>💰 核心财务指标 — 2024全年 &amp; 2025前三季度</h2>
-<h3>▎2024 全年</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2024</span></div><div class="metric-value">¥360.1亿</div><div class="metric-change bullish">+12.8% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">FY 2024</span></div><div class="metric-value">¥122.4亿</div><div class="metric-change bullish">+10.2% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>毛利率</span><span class="metric-period">FY 2024</span></div><div class="metric-value">76.0%</div><div class="metric-change">稳居高位</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利率</span><span class="metric-period">FY 2024</span></div><div class="metric-value">34.0%</div><div class="metric-change">盈利能力突出</div></div>
-</div>
-<h3 style="margin-top:30px;">▎2025 前三季度</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营业收入</span><span class="metric-period">Q1-Q3 2025</span></div><div class="metric-value">¥329.2亿</div><div class="metric-change bullish">+5.0% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">Q1-Q3 2025</span></div><div class="metric-value">¥114.1亿</div><div class="metric-change neutral">+0.48% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>Q3 单季营收</span><span class="metric-period">Q3 2025</span></div><div class="metric-value">¥89.6亿</div><div class="metric-change bullish">+4.05% YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>Q3 单季净利润</span><span class="metric-period">Q3 2025</span></div><div class="metric-value">¥29.0亿</div><div class="metric-change bearish">-1.38% YoY</div></div>
+<div class="alert-title">📋 核心研判</div>
+<p>在白酒行业深度调整、渠道高库存的周期低谷中，山西汾酒凭借“青花系列向上突破”和“长江以南市场高歌猛进”两大战略引擎，展现出极其罕见的抗周期韧性。青花20已稳居百亿超级大单品，省外营收占比突破62%，利润率逆势创下历史新高。</p>
 </div>
 </section>
-<section><h2>📊 财务数据详表 (QVeris)</h2>
+
+<section><h2>💰 深度财务数据与趋势</h2>
+<h3>▎过去两年及近期业绩趋势</h3>
 <div class="table-container">
-<table><thead><tr><th>财务指标</th><th class="number">2024全年</th><th class="number">2025前三季度</th><th class="number">2025 H1</th><th class="number">Q3 2025</th></tr></thead>
+<table>
+<thead><tr><th>核心指标</th><th class="number">2023年</th><th class="number">2024年</th><th class="number">2025年H1 / Q3累计</th><th class="number">当前趋势</th></tr></thead>
 <tbody>
-<tr><td>营业收入 (亿元)</td><td class="number">360.11</td><td class="number">329.24</td><td class="number">239.64</td><td class="number">89.60</td></tr>
-<tr><td>营收 YoY</td><td class="number bullish">+12.79%</td><td class="number bullish">+5.00%</td><td class="number bullish">+5.35%</td><td class="number bullish">+4.05%</td></tr>
-<tr><td>净利润 (亿元)</td><td class="number">122.43</td><td class="number">114.05</td><td class="number">85.05</td><td class="number">29.00</td></tr>
-<tr><td>净利润 YoY</td><td class="number bullish">+17.29%</td><td class="number neutral">+0.54%</td><td class="number neutral">+1.13%</td><td class="number bearish">-1.38%</td></tr>
-<tr><td>EPS (元)</td><td class="number">10.04</td><td class="number">-</td><td class="number">-</td><td class="number">-</td></tr>
-<tr><td>毛利率</td><td class="number">76.0%</td><td class="number">-</td><td class="number">-</td><td class="number">-</td></tr>
-<tr><td>净利率</td><td class="number">34.0%</td><td class="number">34.6%</td><td class="number">35.5%</td><td class="number">32.4%</td></tr>
-<tr><td>留存收益 (亿元)</td><td class="number">-</td><td class="number">369</td><td class="number">-</td><td class="number">-</td></tr>
-</tbody>
-</table>
+<tr><td>营业收入 (亿元)</td><td class="number">319.28</td><td class="number">360.11</td><td class="number">329.24 (Q3累计)</td><td class="number bullish">逆势增长</td></tr>
+<tr><td>归母净利润 (亿元)</td><td class="number">104.38</td><td class="number">122.43</td><td class="number">114.05 (Q3累计)</td><td class="number neutral">基数效应下微增</td></tr>
+<tr><td>销售毛利率</td><td class="number">75.3%</td><td class="number">76.0%</td><td class="number">~76%+</td><td class="number bullish">稳中有升</td></tr>
+<tr><td>销售净利率</td><td class="number">32.7%</td><td class="number">34.0%</td><td class="number">34.6% / 最高破40%</td><td class="number bullish">创历史新高</td></tr>
+</tbody></table>
 </div>
-<p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">数据来源: QVeris | 截至2025年9月30日</p>
-</section>
-<section><h2>📈 五季度财务明细</h2>
-<div class="table-container">
-<table><thead><tr><th>指标</th><th class="number">Q1 2025</th><th class="number">H1 2025</th><th class="number">Q3 2025</th><th class="number">Q1-Q3 2025</th><th class="number">FY 2024</th></tr></thead>
-<tbody>
-<tr><td>营业收入 (亿RMB)</td><td class="number">165.2</td><td class="number">239.6</td><td class="number">89.6</td><td class="number">329.2</td><td class="number">360.1</td></tr>
-<tr><td>营收 YoY</td><td class="number bullish">+7.7%</td><td class="number bullish">+5.4%</td><td class="number bullish">+4.1%</td><td class="number bullish">+5.0%</td><td class="number bullish">+12.8%</td></tr>
-<tr><td>净利润 (亿RMB)</td><td class="number">66.5</td><td class="number">85.1</td><td class="number">29.0</td><td class="number">114.1</td><td class="number">122.4</td></tr>
-<tr><td>净利润 YoY</td><td class="number bullish">+6.2%</td><td class="number bullish">+1.1%</td><td class="number bearish">-1.4%</td><td class="number neutral">+0.5%</td><td class="number bullish">+10.2%</td></tr>
-<tr><td>经营现金流 (亿RMB)</td><td class="number">-</td><td class="number">59.8</td><td class="number">-</td><td class="number bearish">-21.5%</td><td class="number">-</td></tr>
-</tbody>
-</table>
-</div>
-</section>
-<section><h2>💼 业务分部深度解析</h2>
-<div class="analysis-card"><h3>🌸 青花汾酒系列 — 核心增长引擎</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>青花汾酒作为公司核心产品线，保持快速增长势头</li><li>产品结构升级带动毛利率维持在76%高位</li><li>青花20、青花30等次高端产品占比持续提升</li><li>有效对冲行业价格波动风险</li></ul></div>
-<div class="analysis-card"><h3>🏠 全国化战略 — 省外扩张成效显著</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2025年前三季度省外市场销售收入218.1亿元，同比大幅增长12.7%</li><li>省外营收占比提升至74.6%（Q3单季）</li><li>长三角、珠三角等高潜力区域实现显著增长</li><li>省外经销商数量回升至2872家（Q3末）</li></ul></div>
-<div class="analysis-card"><h3>🔷 玻汾 — 核心大单品稳底盘</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>玻汾作为核心大单品，为消费者提供高性价比选择</li><li>在消费分化背景下，高端光瓶酒需求保持稳定</li><li>稳住了汾酒在大众消费市场的基本盘</li></ul></div>
-<div class="analysis-card"><h3>🌐 国际化战略 — 积极拓展海外市场</h3><span class="tag tag-neutral">观察</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>响应"一带一路"倡议，推进差异化、试点化出海</li><li>成功填补11个国家市场空白</li><li>2024年酒类创汇同比增长超50%</li><li>海外市场仍处于早期布局阶段</li></ul></div>
-<div class="analysis-card"><h3>🎯 年轻化战略 — 拥抱新消费群体</h3><span class="tag tag-neutral">观察</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>推进"7个年轻化"战略方向</li><li>针对桂花汾酒的自发爆款内容进行官方互动</li><li>推出组合套装，带动抖音旗舰店销售额破亿元</li><li>年轻消费者培育仍是长期课题</li></ul></div>
-</section>
-<section><h2>📊 行业环境分析</h2>
-<div class="analysis-card" style="border-left-color:var(--neutral);"><h3>🍶 白酒行业深度调整</h3>
-<ul style="margin-top:15px;padding-left:20px;"><li><strong>调整期特征：</strong>2025年是中国白酒行业"调整与革新"的十字路口</li><li><strong>渠道压力：</strong>行业平均存货周转天数达900天，渠道库存高企</li><li><strong>价格倒挂：</strong>部分产品存在价格倒挂问题</li><li><strong>消费趋势：</strong>从"量"转向"质"，呈现"低度化、利口化"趋势</li><li><strong>竞争格局：</strong>头部酒企集中度提升，从价格战转向品质战、品牌战</li></ul></div>
-<div class="analysis-card" style="border-left-color:var(--bullish);"><h3>🍶 清香型白酒优势</h3>
-<ul style="margin-top:15px;padding-left:20px;"><li>清香型白酒口感清淡，更符合年轻化和健康化消费趋势</li><li>汾酒作为清香型龙头，具备品类代表性和品牌溢价能力</li><li>在行业调整期，清香型品类展现较强抗风险能力</li></ul></div>
-</section>
-<section><h2>🔮 分析师预测 (QVeris)</h2>
+
+<h3>▎未来两年机构一致预期</h3>
 <div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>目标价 (12个月)</span><span class="metric-period">均值</span></div><div class="metric-value">¥221.12</div><div class="metric-change bullish">+44% 上涨空间</div></div>
-<div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-period">12个月</span></div><div class="metric-value">¥287</div><div class="metric-change">乐观情景</div></div>
-<div class="metric-card"><div class="metric-header"><span>最低目标价</span><span class="metric-period">12个月</span></div><div class="metric-value">¥182</div><div class="metric-change">保守情景</div></div>
-<div class="metric-card"><div class="metric-header"><span>分析师评级</span><span class="metric-period">共识</span></div><div class="metric-value">买入</div><div class="metric-change bullish">12/12 买入</div></div>
-</div>
-<h3 style="margin-top:25px;">▎盈利预测</h3>
-<div class="table-container">
-<table><thead><tr><th>预测指标</th><th class="number">2025E</th><th class="number">2026E</th><th class="number">2027E</th></tr></thead>
-<tbody>
-<tr><td>EPS (元)</td><td class="number">9.99</td><td class="number">10.85</td><td class="number">11.78</td></tr>
-<tr><td>净利润 (亿元)</td><td class="number">121.83</td><td class="number">132.00</td><td class="number">143.20</td></tr>
-<tr><td>营收 (亿元)</td><td class="number">378.00</td><td class="number">406.00</td><td class="number">436.00</td></tr>
-<tr><td>净利润增速</td><td class="number bearish">-0.49%</td><td class="number bullish">+8.3%</td><td class="number bullish">+8.5%</td></tr>
-</tbody>
-</table>
-</div>
-<h3 style="margin-top:20px;">▎长期增长预期</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>年均盈利增长率</span><span class="metric-period">3年</span></div><div class="metric-value">8.6%</div><div class="metric-change">CAGR</div></div>
-<div class="metric-card"><div class="metric-header"><span>年均营收增长率</span><span class="metric-period">3年</span></div><div class="metric-value">7.6%</div><div class="metric-change">CAGR</div></div>
-<div class="metric-card"><div class="metric-header"><span>ROE</span><span class="metric-period">3年内</span></div><div class="metric-value">30.2%</div><div class="metric-change">预计</div></div>
-</div>
-<p style="color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: QVeris | 分析师评级基于12位分析师共识</p>
-</section>
-<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-<p style="margin-bottom:20px;color:var(--text-muted);">估值假设：总股本约12.38亿股 | 2025年预估净利润约123亿元 | 永续增长率假设2-3%</p>
-<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">¥210</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">净利润增速</div><div class="dcf-detail-value">8%/年 → 5%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">9%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥168</div></div></div></div>
-<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">¥165</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">净利润增速</div><div class="dcf-detail-value">5%/年 → 3%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥132</div></div></div></div>
-<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">¥120</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">净利润增速</div><div class="dcf-detail-value">2%/年 → 1%</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥96</div></div></div></div>
-<div style="margin-top:20px;padding:15px;background:var(--card-bg);border-radius:12px;">
-<p style="color:var(--text-muted);">当前股价¥153.86位于<span class="neutral">中性情景</span>和<span class="bullish">乐观情景</span>之间，接近中性估值但低于乐观预期，反映市场对公司未来增长预期较为谨慎。</p>
+<div class="metric-card"><div class="metric-header"><span>2025E 营收</span><span class="metric-period">预期均值</span></div><div class="metric-value">378.0亿</div><div class="metric-change bullish">YoY +5.0%</div></div>
+<div class="metric-card"><div class="metric-header"><span>2025E 净利润</span><span class="metric-period">蓄力期</span></div><div class="metric-value">121.8亿</div><div class="metric-change neutral">YoY -0.5% (微降)</div></div>
+<div class="metric-card"><div class="metric-header"><span>2026E 营收</span><span class="metric-period">复苏预期</span></div><div class="metric-value">406.0亿</div><div class="metric-change bullish">YoY +7.4%</div></div>
+<div class="metric-card"><div class="metric-header"><span>2026E 净利润</span><span class="metric-period">重回增长</span></div><div class="metric-value">132.0亿</div><div class="metric-change bullish">YoY +8.3%</div></div>
 </div>
 </section>
-<section><h2>🏆 巴菲特逐项评分</h2>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">清香型白酒龙头，品牌历史悠久</p><p style="font-size:0.85em;margin-top:10px;">汾酒拥有深厚的历史文化底蕴，作为清香型白酒代表具备品类定价权。"汾"字品牌全国知名，青花系列在次高端市场具备较强竞争力。</p></div>
-<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px">战略清晰，执行力强</p><p style="font-size:0.85em;margin-top:10px">全国化战略成效显著，产品矩阵完善（青花+玻汾），渠道管理稳健。在行业调整期展现出较强的风险应对能力。</p></div>
-<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">盈利能力强，现金流充沛</p><p style="font-size:0.85em;margin-top:10px">毛利率76%稳居行业高位，净利率34%。2025年前三季度经营现金流有所下降（-21.5%），但整体财务结构健康。</p></div>
-<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高毛利率，高净利率</p><p style="font-size:0.85em;margin-top:10px">76%毛利率在白酒行业处于领先水平，34%净利率显示极强的盈利能力。产品结构升级持续推进。</p></div>
-<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">行业周期影响较大</p><p style="font-size:0.85em;margin-top:10px">白酒行业受宏观经济和消费趋势影响较大。2025年净利润增速放缓至0.5%，需关注行业复苏节奏。</p></div>
-<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">稳定分红，股东回报良好</p><p style="font-size:0.85em;margin-top:10px">长期保持稳定分红，2024年分红比例较高。融资需求较低，显示出良好的自我造血能力。</p></div>
+
+<section><h2>💼 业务拆解与护城河</h2>
+<div class="analysis-card">
+<h4>🏆 战略核心：青花系列高端化全面突破</h4>
+<p><strong>百亿大单品护城河：</strong> 2024年青花系列销售额突破150亿元，占总营收比重高达46%。其中“青花20”已牢牢站稳次高端百亿大单品地位；“青花30”复兴版在千元价格带亦打开局面。</p>
+<p><strong>拔中高、控底部：</strong> 在行业价格倒挂的逆风下，汾酒依靠青花系列的结构性升级，成功推动净利率在2024-2025年连续创出新高（24Q1净利率一度突破40.86%），实现了“量价齐升”到“质价双优”的转变。</p>
+</div>
+<div class="analysis-card">
+<h4>🗺️ 增长引擎：省外市场势如破竹的渗透</h4>
+<p><strong>跨越黄河，剑指长江：</strong> 2024年省外营收达223.74亿元(YoY +13.8%)，占比超过62%。“十四五”末有望冲击70%的省外占比。汾酒彻底蜕变为全国性酒企。</p>
+<p><strong>玻汾开路，青花收割：</strong> 在长三角、珠三角等高线经济圈，汾酒采用“高性价比玻汾导入培育口感 + 青花20承接高端商务宴请”的战术，成功切入南方高端酒水市场，新增省外经销商数百家，渠道推力极强。</p>
 </div>
 </section>
+
+<section><h2>🎯 机构最新共识与多空分歧点</h2>
+<div class="metrics-grid" style="margin-bottom: 20px;">
+<div class="metric-card"><div class="metric-header"><span>机构平均目标价</span><span class="metric-period">12个月</span></div><div class="metric-value">¥221.12</div><div class="metric-change bullish">看涨空间 +43%</div></div>
+<div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-period">华创证券等</span></div><div class="metric-value">¥285 - 300</div><div class="metric-change bullish">极度乐观预期</div></div>
+</div>
+
+<div class="analysis-card" style="border-left: 4px solid var(--bullish);">
+<h4>🟢 多头逻辑 (Bulls)：穿越周期的阿尔法</h4>
+<ul>
+<li><strong>抗周期性极强：</strong> 在白酒需求整体疲软的背景下，汾酒是极少数能在2025年三季度单季营收/利润指标上超越五粮液的酒企。</li>
+<li><strong>清香型红利：</strong> 消费趋势呈现“低度化、利口化”，清香型白酒的天然属性契合年轻化和健康化需求，汾酒作为品类绝对龙头享受品类红利。</li>
+<li><strong>净利率惊艳：</strong> “降费增效”叠加青花系列占比提升，盈利质量大幅优于同行，安全垫极厚。</li>
+</ul>
+</div>
+
+<div class="analysis-card" style="border-left: 4px solid var(--bearish);">
+<h4>🔴 空头分歧点 (Bears)：高基数下的成长烦恼</h4>
+<ul>
+<li><strong>成长性透支担忧：</strong> 2020-2023年的狂飙突进拔高了业绩基数，2025年Q3单季净利出现罕见微降(-1.38%)，市场担忧高增长势能已达顶峰。</li>
+<li><strong>渠道库存与价格体系：</strong> 截至2025年上半年，存货大幅飙升至131.98亿元。省外过快扩张引发了市场对“渠道压货、价格体系混乱以及品牌力反噬”的隐忧。</li>
+<li><strong>新增产能消化：</strong> 巨额扩产计划在行业调整期投产，若宏观消费迟迟不振，产能消化将成巨大包袱。</li>
+</ul>
+</div>
+</section>
+
 <section><div class="conclusion">
-<h3>🎯 综合裁决 — 优于大市</h3>
-<p style="margin:20px 0;font-size:1.1em;">当前股价¥153.86 ≈ 中性DCF估值¥165的93% ≈ 悲观DCF估值¥120的128%。</p>
-<p style="color:var(--text-muted);">在白酒行业深度调整期，山西汾酒展现出优于行业平均的经营韧性。全国化战略进入收获期，产品结构持续优化，龙头地位稳固。</p>
-<h4 style="margin:30px 0 15px;color:var(--bullish);">⚖️ 结论：优于大市（Outperform）</h4>
-<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价：¥165-180（基于DCF中性至乐观情景）</li><li>• 安全边际：当前价格接近中性估值，向下空间有限</li><li>• 催化剂：消费复苏、白酒行业企稳、省外市场持续高增长</li><li>• 风险关注：宏观经济复苏不及预期、行业价格战加剧、省内市场恢复缓慢</li></ul>
+<h3>🎯 综合投资裁决 — 买入 / 优于大市</h3>
+<p style="margin:20px 0;">汾酒是本轮白酒周期中最具韧性和成长确定性的标的。市场当前赋予的低估值（股价回调超30%）已充分反映了宏观消费悲观预期和库存担忧。</p>
+<ul style="text-align:left;max-width:600px;margin:0 auto; line-height: 1.8;">
+<li>• <strong>核心投资点：</strong> 坚守“青花高端化+全国化渗透”的确定性，估值修复空间巨大。</li>
+<li>• <strong>策略建议：</strong> 现价153元附近具备深度配置价值，目标位看至220元以上。</li>
+</ul>
 </div></section>
-<section><h2>⚠️ 主要风险</h2>
-<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;">
-<li>宏观经济波动影响白酒消费需求</li>
-<li>白酒行业调整期延长，渠道库存压力</li>
-<li>省内市场受特殊因素影响短期承压</li>
-<li>行业竞争加剧，头部酒企集中度提升</li>
-<li>经营现金流同比下降，需关注资金管理</li>
-<li>年轻消费者培育效果待观察</li>
-</ul></div>
-</section>
-<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。报告数据来源于公开信息，可能存在滞后或不准确之处。</p></div></section>
-<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+
 </div>
 </body>
 </html>

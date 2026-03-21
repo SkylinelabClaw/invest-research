@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>古茗 投资分析报告</title>
 <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --bullish: #00c853;
-            --bearish: #ff1744;
-            --neutral: #ff9800;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --card-bg: #1f2937;
-            --border: #374151;
-        }
+        :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         header { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px; }
         .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        h1 { font-size: 2.2em; font-weight: 700; }
-        .subtitle { color: var(--text-muted); font-size: 1.1em; }
-        .report-meta { text-align: right; color: var(--text-muted); }
-        
+        h1 { font-size: 2.2em; font-weight: 700; color: #fff;}
+        .subtitle { color: #f0f0f0; font-size: 1.1em; }
+        .report-meta { text-align: right; color: #f0f0f0; }
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
@@ -37,176 +23,121 @@
         .bullish { color: var(--bullish); }
         .bearish { color: var(--bearish); }
         .neutral { color: var(--neutral); }
-        
         .alert-box { background: rgba(0, 200, 83, 0.1); border-left: 4px solid var(--bullish); padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
         .alert-title { font-weight: 700; color: var(--bullish); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        
         section { margin-bottom: 40px; }
         h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); }
-        h3 { font-size: 1.2em; margin: 20px 0 15px; }
-        
+        h3 { font-size: 1.2em; margin: 20px 0 15px; border-left: 4px solid var(--highlight); padding-left: 10px;}
         .table-container { overflow-x: auto; margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 12px; overflow: hidden; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
         th { background: var(--accent); font-weight: 600; }
         td.number { text-align: right; font-family: 'SF Mono', Monaco, monospace; }
-        
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .metric-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
         .metric-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .metric-period { font-size: 0.8em; color: var(--text-muted); background: var(--accent); padding: 3px 8px; border-radius: 4px; }
         .metric-value { font-size: 2em; font-weight: 700; margin: 10px 0; }
         .metric-change { font-size: 0.9em; }
-        
         .analysis-card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; border: 1px solid var(--border); }
-        .analysis-card h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; }
-        
-        .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; font-weight: 600; margin-right: 8px; }
-        .tag-bullish { background: rgba(0, 200, 83, 0.2); color: var(--bullish); }
-        .tag-bearish { background: rgba(255, 23, 68, 0.2); color: var(--bearish); }
-        .tag-neutral { background: rgba(255, 152, 0, 0.2); color: var(--neutral); }
-        
-        .qa-item { background: var(--card-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
-        .qa-question { font-weight: 600; margin-bottom: 10px; color: var(--highlight); }
-        
-        .dcf-scenario { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 15px; border: 1px solid var(--border); }
-        .dcf-scenario.optimistic { border-left: 4px solid var(--bullish); }
-        .dcf-scenario.base { border-left: 4px solid var(--neutral); }
-        .dcf-scenario.pessimistic { border-left: 4px solid var(--bearish); }
-        .dcf-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .dcf-price { font-size: 1.8em; font-weight: 700; }
-        .dcf-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
-        .dcf-detail { text-align: center; padding: 10px; background: var(--secondary); border-radius: 8px; }
-        .dcf-detail-label { font-size: 0.8em; color: var(--text-muted); }
-        .dcf-detail-value { font-weight: 600; margin-top: 5px; }
-        
+        .analysis-card h4 { font-size: 1.1em; margin-bottom: 10px; }
         .conclusion { background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 12px; padding: 30px; text-align: center; }
         .conclusion h3 { margin-top: 0; color: var(--highlight); }
-        
-        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid var(--border); margin-top: 40px; }
-        footer a { color: var(--accent); text-decoration: none; }
-        
-        @media (max-width: 768px) { h1 { font-size: 1.5em; } .header-content { flex-direction: column; text-align: center; } .report-meta { text-align: center; } .snapshot { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
-<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-<div style="display:flex;gap:10px;">
-<a href="tencentmusic.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-<a href="zijinmining.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-</div>
-</div>
 <header>
 <div class="container">
 <div class="header-content">
-<div><h1>🧋 古茗 (01364.HK) — 投资分析报告</h1><p class="subtitle">大众现制茶饮连锁龙头 | 深耕下沉市场</p></div>
-<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+<div><h1>🧋 古茗 (01364.HK) — 深度投资分析报告</h1><p class="subtitle">大众现制茶饮之王 | 万店下沉网络 | 极致供应链</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-22</div><div>评级: 买入 (Buy)</div></div>
 </div>
 </div>
 </header>
 <div class="container">
+
 <section><h2>📊 股票快照</h2>
 <div class="snapshot">
-<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">HK$28.94</div><div class="snapshot-change">前一天: +3.0% | YTD: +17.9%</div></div>
-<div class="snapshot-card"><div class="snapshot-label">发行价</div><div class="snapshot-value">HK$9.94</div><div class="snapshot-change">2025-02-12 上市</div></div>
-<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">HK$688亿</div><div class="snapshot-change">约 $88亿</div></div>
-<div class="snapshot-card"><div class="snapshot-label">2025E P/E</div><div class="snapshot-value">25.4x</div><div class="snapshot-change">基于全年盈利预测</div></div>
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价</div><div class="snapshot-value">HK$28.94</div><div class="snapshot-change">上市以来涨幅超190%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">2025H1 营收</div><div class="snapshot-value">56.63亿</div><div class="snapshot-change bullish">+41.2% YoY</div></div>
+<div class="snapshot-card"><div class="snapshot-label">2025H1 净利润</div><div class="snapshot-value">16.25亿</div><div class="snapshot-change bullish">+121.5% YoY</div></div>
+<div class="snapshot-card"><div class="snapshot-label">门店总数</div><div class="snapshot-value">11,179家</div><div class="snapshot-change bullish">进入两万店时代冲刺期</div></div>
 </div>
-</section>
-<section><h2>📈 股价走势（上市至今）</h2>
-<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-<img alt="古茗股价走势" src="charts/GUMING.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
-<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 2025-02 至 2026-03 日线走势</p>
-</div>
-</section>
 <div class="alert-box">
-<div class="alert-title">✅ 核心亮点</div>
-<p>古茗2025年上半年营收同比增长41.2%，净利润同比暴增121.5%，净利率高达28.7%。门店数量从2024年底的9,914家扩张至2025年底的13,278家，单店日均GMV从6,200元提升至7,600元。上市后股价累计上涨超190%，市值突破690亿港元，展现出强劲的增长动能。</p>
-</div>
-<section><h2>💰 核心财务指标</h2>
-<h3>▎2025年上半年</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营收</span><span class="metric-period">H1 2025</span></div><div class="metric-value">RMB 56.6亿</div><div class="metric-change bullish">YoY +41.2%</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">H1 2025</span></div><div class="metric-value">RMB 16.25亿</div><div class="metric-change bullish">YoY +121.5%</div></div>
-<div class="metric-card"><div class="metric-header"><span>毛利率</span><span class="metric-period">H1 2025</span></div><div class="metric-value">31.5%</div><div class="metric-change neutral">同比持平</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利率</span><span class="metric-period">H1 2025</span></div><div class="metric-value">28.7%</div><div class="metric-change bullish">+10pp YoY</div></div>
-<div class="metric-card"><div class="metric-header"><span>单店日均GMV</span><span class="metric-period">H1 2025</span></div><div class="metric-value">RMB 7,600</div><div class="metric-change bullish">vs 2024年6,500</div></div>
-<div class="metric-card"><div class="metric-header"><span>门店总数</span><span class="metric-period">H1 2025</span></div><div class="metric-value">11,179家</div><div class="metric-change bullish">净增 1,265家</div></div>
-</div>
-<h3 style="margin-top:30px;">▎2024年全年</h3>
-<div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>营收</span><span class="metric-period">FY 2024</span></div><div class="metric-value">RMB 87.9亿</div><div class="metric-change bullish">YoY +14.5%</div></div>
-<div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">FY 2024</span></div><div class="metric-value">RMB 14.9亿</div><div class="metric-change bullish">YoY +36.2%</div></div>
-<div class="metric-card"><div class="metric-header"><span>门店总数</span><span class="metric-period">2024-12</span></div><div class="metric-value">9,914家</div><div class="metric-change bullish">YoY +10.1%</div></div>
+<div class="alert-title">✅ 核心研判</div>
+<p>作为中国下沉市场茶饮的绝对霸主，古茗凭借极致的加盟商单店模型和“两日一配”冷链物流，成功跨越万店门槛。2025年上半年业绩极具爆发力，净利率逼近30%的惊人水平。机构全面看多其长线市占率收割逻辑。</p>
 </div>
 </section>
-<section><h2>📈 季度财务明细</h2>
+
+<section><h2>💰 深度财务数据与趋势</h2>
+<h3>▎过去两年及近期业绩趋势</h3>
 <div class="table-container">
-<table><thead><tr><th>指标</th><th class="number">FY 2023</th><th class="number">FY 2024</th><th class="number">H1 2024</th><th class="number">H1 2025</th><th class="number">YoY</th></tr></thead>
+<table>
+<thead><tr><th>核心指标</th><th class="number">2023年</th><th class="number">2024年 (前三季度)</th><th class="number">2025年H1</th><th class="number">YoY (25H1)</th></tr></thead>
 <tbody>
-<tr><td>营收 (亿RMB)</td><td class="number">76.8</td><td class="number">87.9</td><td class="number">40.1</td><td class="number">56.6</td><td class="number bullish">+41.2%</td></tr>
-<tr><td>净利润 (亿RMB)</td><td class="number">11.0</td><td class="number">14.9</td><td class="number">7.3</td><td class="number">16.25</td><td class="number bullish">+121.5%</td></tr>
-<tr><td>毛利率</td><td class="number">30.2%</td><td class="number">30.6%</td><td class="number">31.6%</td><td class="number">31.5%</td><td class="number neutral">-0.1pp</td></tr>
-<tr><td>净利率</td><td class="number">14.3%</td><td class="number">17.0%</td><td class="number">18.2%</td><td class="number">28.7%</td><td class="number bullish">+10.5pp</td></tr>
-<tr><td>门店数量</td><td class="number">9,001</td><td class="number">9,914</td><td class="number">9,914</td><td class="number">11,179</td><td class="number bullish">+12.8%</td></tr>
-<tr><td>单店日均GMV (RMB)</td><td class="number">6,800</td><td class="number">6,500</td><td class="number">6,200</td><td class="number">7,600</td><td class="number bullish">+22.6%</td></tr>
-</tbody>
-</table>
+<tr><td>营业收入 (亿元)</td><td class="number">76.76</td><td class="number">64.41</td><td class="number">56.63</td><td class="number bullish">+41.2%</td></tr>
+<tr><td>经调整净利润 (亿元)</td><td class="number">14.59</td><td class="number">11.49</td><td class="number">11.36 (核心)</td><td class="number bullish">+49.0%</td></tr>
+<tr><td>毛利率</td><td class="number">~30.2%</td><td class="number">30.6%</td><td class="number">31.5%</td><td class="number bullish">稳健提升</td></tr>
+<tr><td>净利率</td><td class="number">14.3%</td><td class="number">17.0%</td><td class="number">28.7% (账面)</td><td class="number bullish">大幅飙升</td></tr>
+</tbody></table>
 </div>
-</section>
-<section><h2>💼 业务分部深度解析</h2>
-<div class="analysis-card"><h3>🏪 加盟模式 — 轻资产高速扩张</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>约97%收入来自加盟店：向加盟商销售商品及设备 (70.27亿) + 加盟管理服务 (17.50亿)</li><li>2025年上半年净增门店1,265家，全年门店达13,278家</li><li>"地域加密"策略：在17个省份密集开店，形成规模效应</li><li>自建冷链仓储及物流：向97%门店实现"两日一配"，保障原料新鲜度</li></ul></div>
-<div class="analysis-card"><h3>🎯 市场定位 — 深耕下沉市场</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>80%门店位于二线及以下城市，定位10-18元中端价格带</li><li>截至2023年底，按GMV计算在二线及以下城市大众茶饮市场占22%份额</li><li>大众茶饮市场（10-20元）是最大细分赛道，增长潜力足</li></ul></div>
-<div class="analysis-card"><h3>☕ 产品创新 — 品类延伸</h3><span class="tag tag-bullish">利好</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2024年前三季度推出85款新品，产品研发能力强</li><li>咖啡品类拓展：超过8,000家门店配备咖啡机，上新16款咖啡饮品</li><li>小程序会员体系：注册会员1.51亿名，Q4活跃会员超4,400万</li></ul></div>
-<div class="analysis-card"><h3>⚠️ 单店GMV挑战 — 2024年承压</h3><span class="tag tag-bearish">风险</span>
-<ul style="margin-top:15px;padding-left:20px;"><li>2024年单店GMV同比下滑4.29%至236万元，日均从6,800元降至6,500元</li><li>单店售出杯数同比下滑7.96%至14万杯（日均384杯）</li><li>原因：市场增长放缓、行业竞争加剧、低价产品冲击</li><li>2025年H1已逆转：单店日均GMV回升至7,600元</li></ul></div>
-</section>
-<section><h2>🏆 巴菲特逐项评分</h2>
+
+<h3>▎未来两年机构一致预期</h3>
 <div class="metrics-grid">
-<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">供应链壁垒 + 规模效应（强）</p><p style="font-size:0.85em;margin-top:10px;">自建冷链仓储是中国现制茶饮品牌中规模最大的，"两日一配"物流网络是核心竞争力。1.51亿会员数据支撑精准选址和供应链管理。地域加密策略形成高进入壁垒。</p></div>
-<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">执行力强，增长迅猛</p><p style="font-size:0.85em;margin-top:10px;">上市后业绩爆发，2025H1净利润同比+121.5%。门店扩张迅速，单店GMV企稳回升。但需观察管理层稳定性和长期资本配置能力。</p></div>
-<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高净利率，现金流充裕</p><p style="font-size:0.85em;margin-top:10px;">净利率高达28.7%（H1 2025），远超行业平均水平。加盟模式轻资产，现金流健康。IPO融资17.21亿港元增强资金实力。</p></div>
-<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">净利润高速增长，质量扎实</p><p style="font-size:0.85em;margin-top:10px;">2025H1净利润16.25亿，同比+121.5%。经调整核心利润11.36亿，同比+49.0%。毛利率稳定在31%左右。</p></div>
-<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">门店数据透明，但行业波动大</p><p style="font-size:0.85em;margin-top:10px;">每季度披露门店数量、单店GMV等核心指标。但茶饮行业竞争激烈，价格战、消费者偏好变化带来不确定性。</p></div>
-<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">IPO后扩张期，重回增长</p><p style="font-size:0.85em;margin-top:10px;">上市时间较短（2025年2月），股东回报政策待观察。基石投资者包括腾讯、美团龙珠、元生资本等产业资本。</p></div>
+<div class="metric-card"><div class="metric-header"><span>2025E 营收</span><span class="metric-period">华创/HTI预期</span></div><div class="metric-value">108.4 - 111.6亿</div><div class="metric-change bullish">跨越百亿大关</div></div>
+<div class="metric-card"><div class="metric-header"><span>2025E 净利润</span><span class="metric-period">盈利能力释放</span></div><div class="metric-value">18.8 - 24.8亿</div><div class="metric-change bullish">高确定性兑现</div></div>
+<div class="metric-card"><div class="metric-header"><span>2026E 营收</span><span class="metric-period">预期均值</span></div><div class="metric-value">128 - 134亿</div><div class="metric-change bullish">YoY ~20%</div></div>
+<div class="metric-card"><div class="metric-header"><span>2026E 净利润</span><span class="metric-period">预期均值</span></div><div class="metric-value">22 - 26.2亿</div><div class="metric-change bullish">稳定现金牛</div></div>
 </div>
 </section>
-<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-<p style="margin-bottom:20px;color:var(--text-muted);">假设：总股本 ~23.8亿股 | 现金及等价物 ~RMB 30亿 | 汇率 0.88</p>
-<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$38.5</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">25%/年 → 15%</div></div><div class="dcf-detail"><div class="dcf-detail-label">净利率</div><div class="dcf-detail-value">30%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$30.8</div></div></div></div>
-<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$28.0</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">20%/年 → 10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">净利率</div><div class="dcf-detail-value">25%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$22.4</div></div></div></div>
-<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$18.5</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年 → 5%</div></div><div class="dcf-detail"><div class="dcf-detail-label">净利率</div><div class="dcf-detail-value">20%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$14.8</div></div></div></div>
-<p style="margin-top:20px;color:var(--text-muted);">当前股价 HK$28.94 接近中性情景估值，反映市场对公司持续增长抱有较高预期。</p>
-</section>
-<section><h2>☕ 行业竞争格局</h2>
-<div class="table-container">
-<table><thead><tr><th>品牌</th><th class="number">门店数</th><th class="number">定价区间</th><th class="number">2024年营收</th><th class="number">2024年净利润</th><th>定位</th></tr></thead>
-<tbody>
-<tr><td>蜜雪冰城</td><td class="number">40,000+</td><td class="number">6-8元</td><td class="number">248.3亿</td><td class="number">44.5亿</td><td>平价之王</td></tr>
-<tr><td><strong>古茗</strong></td><td class="number">13,278</td><td class="number">10-18元</td><td class="number">87.9亿</td><td class="number">14.9亿</td><td>大众茶饮</td></tr>
-<tr><td>喜茶</td><td class="number">5,135</td><td class="number">20元左右</td><td class="number">~90亿</td><td class="number">盈利</td><td>高端茶饮</td></tr>
-<tr><td>奈雪的茶</td><td class="number">1,798</td><td class="number">25元左右</td><td class="number">~50亿</td><td class="number">-9.19亿</td><td>高端茶饮</td></tr>
-</tbody>
-</table>
+
+<section><h2>💼 业务拆解与护城河</h2>
+<div class="analysis-card">
+<h4>🏪 万店加盟壁垒与下沉之王</h4>
+<p><strong>绝对下沉：</strong> 截至2025年年中，古茗81%的门店位于二线及以下城市，其中乡镇门店占比猛增至43%。通过极致的“地域加密”策略，在17个省份形成无死角覆盖，彻底锁定10-18元中端大众茶饮生态位。</p>
+<p><strong>供应链护城河：</strong> 自建庞大冷链仓储网络，支撑全国97%以上的门店实现“两日一配”。这使得古茗在下沉市场能提供一线城市级别的新鲜果茶，构成对区域散兵游勇的降维打击。</p>
 </div>
-<div class="analysis-card" style="margin-top:20px;"><ul style="padding-left:20px;"><li><strong>蜜雪冰城：</strong>绝对规模优势，全球4.5万+门店，低价策略统治下沉市场</li><li><strong>古茗：</strong>中端市场领导者，10-18元价格带，80%门店在二线及以下城市</li><li><strong>喜茶/奈雪：</strong>高端市场承压，喜茶开放加盟，奈雪仍陷亏损</li><li><strong>行业趋势：</strong>价格战加剧，从"跑马圈地"转向精细化运营</li></ul></div>
+<div class="analysis-card">
+<h4>📈 拆解恐怖的单店模型 (Unit Economics)</h4>
+<p><strong>超高ROI：</strong> 2023年单店GMV达246.6万，实际收入约186.1万。成本结构极其优越：货品成本仅占实际收入40%，运营费31%，加盟商单店经营利润高达37.6万元，利润率超20%（远超行业均值15%）。投资回收期仅为惊人的13.2个月。</p>
+<p><strong>逆势回升：</strong> 经历2024年的短暂波动后，2025年H1单店日均GMV强势反弹至7600元（日均售出杯数跃升至439杯），同时2025年新政将首店启动资金门槛下调至23万，进一步加速开店飞轮。</p>
+</div>
 </section>
-<section><h2>⚠️ 主要风险</h2>
-<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li><strong>行业竞争加剧：</strong>蜜雪冰城低价挤压，行业价格战可能进一步压缩利润空间</li><li><strong>单店GMV波动：</strong>2024年曾下滑，虽有2025H1回升，但仍需持续观察</li><li><strong>扩张天花板：</strong>门店数量达13,278家后，开店速度可能放缓</li><li><strong>消费者偏好变化：</strong>新式茶饮同质化严重，需持续产品创新</li><li><strong>食品安全风险：</strong>大规模门店对供应链管理提出更高要求</li></ul></div>
+
+<section><h2>🎯 机构最新共识与多空分歧点</h2>
+<div class="metrics-grid" style="margin-bottom: 20px;">
+<div class="metric-card"><div class="metric-header"><span>机构目标价中枢</span><span class="metric-period">美银/华创</span></div><div class="metric-value">HK$ 27.8 - 35.0</div><div class="metric-change bullish">评级：买入/推荐</div></div>
+<div class="metric-card"><div class="metric-header"><span>复合增长预期</span><span class="metric-period">24-27年 CAGR</span></div><div class="metric-value">净利 ~35%</div><div class="metric-change bullish">领跑现制茶饮赛道</div></div>
+</div>
+
+<div class="analysis-card" style="border-left: 4px solid var(--bullish);">
+<h4>🟢 多头逻辑 (Bulls)</h4>
+<ul>
+<li><strong>赢家通吃：</strong> 在宏观消费降级背景下，10-20元价格带的“高质平价”茶饮是唯一能保持规模扩容的赛道。</li>
+<li><strong>高增长确定性：</strong> 2025上半年净利激增121.5%，证明了万店规模后的经营杠杆释放威力；净利率高达28.7%，同行难以企及。</li>
+<li><strong>品类微创新：</strong> 从果茶向咖啡品类延伸（8000家店标配咖啡机），打开单店创收天花板。</li>
+</ul>
+</div>
+
+<div class="analysis-card" style="border-left: 4px solid var(--bearish);">
+<h4>🔴 空头分歧点 (Bears)</h4>
+<ul>
+<li><strong>加盟商生态隐患：</strong> 2024年部分数据显示加盟商流失率高达19%，2025上半年关店数也有所增加。老加盟商盈利空间若被极度内卷挤压，将威胁开店底盘。</li>
+<li><strong>单店GMV天花板：</strong> 尽管25H1大幅回升，但面对蜜雪冰城的下探和霸王茶姬等同行的侧面进攻，全国单店同店销售额（SSSG）的长期正增长极具挑战。</li>
+<li><strong>财务杠杆担忧：</strong> 2025年上半年计息银行借款激增，在充沛现金流下大幅增加负债，引发市场对资金用途及财务成本的关注。</li>
+</ul>
+</div>
 </section>
+
 <section><div class="conclusion">
-<h3>🎯 综合裁决 — 买入评级</h3>
-<p style="margin:20px 0;font-size:1.1em;">当前 HK$28.94 ≈ 中性 DCF 估值 (HK$28.0) = 乐观情景的 75%。</p>
-<p style="color:var(--text-muted);">古茗在大众茶饮细分市场具有显著竞争优势，供应链壁垒深厚，2025年业绩爆发式增长，单店GMV企稳回升。股价虽已上涨190%，但估值仍处于合理区间。</p>
-<h4 style="margin:30px 0 15px;color:var(--highlight);">✅ 结论：买入 (Buy)</h4>
-<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价：HK$32-35（约15-20%上涨空间）</li><li>• 短期催化剂：2025年全年财报预期继续高增长</li><li>• 长期逻辑：门店扩张 + 单店效率提升 + 咖啡品类拓展</li><li>• 止损线：若单店GMV再次跌破6,500元或净利润增速低于20%，考虑减仓</li></ul>
+<h3>🎯 综合投资裁决 — 买入 (Buy)</h3>
+<p style="margin:20px 0;">古茗不仅是卖茶饮的公司，更是下沉市场最强悍的冷链物流和供应链金融网络。在行业血海竞争中，它用实打实的120%净利增速回应了质疑。</p>
+<ul style="text-align:left;max-width:600px;margin:0 auto; line-height: 1.8;">
+<li>• <strong>核心投资点：</strong> 买入其在下沉市场不可复制的供应链壁垒和万店网络规模效应。</li>
+<li>• <strong>策略建议：</strong> 目标价HK$35，逢回调坚定买入。</li>
+</ul>
 </div></section>
-<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。股票代码：01364.HK（用户提及的09857可能为错误代码，实际上市代码为01364）。</p></div></section>
-<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+
 </div>
 </body>
 </html>
