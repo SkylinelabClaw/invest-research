@@ -362,17 +362,19 @@ invest-research/
 为了保证所有34家公司详情页的极致统一和专业度，必须严格执行以下模块化标准：
 
 #### 8.1 统一顶部导航栏 (Top Navigation)
-- **左上角**：必须是「回到首页」的链接。
+- **每个公司详情页必须在最顶部添加导航栏**
+- **格式**：使用 `<div class="nav-bar">` 样式（与首页保持一致）
+- **左上角**：必须是「回到目录」的链接。
 - **右上角**：必须是「上一家」和「下一家」的链接（按照首页A-Z的字母顺序闭环排列）。
 - **代码结构标准**：
 ```html
-<nav style="display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
-    <a href="index.html" style="color: #4CAF50; text-decoration: none;">← 回到首页</a>
-    <div>
-        <a href="prev_company.html" style="color: #4CAF50; text-decoration: none; margin-right: 15px;">上一家</a>
-        <a href="next_company.html" style="color: #4CAF50; text-decoration: none;">下一家</a>
-    </div>
-</nav>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="prev_company.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="next_company.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
 ```
 
 #### 8.2 统一页脚声明 (Footer)
