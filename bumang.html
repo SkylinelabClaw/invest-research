@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>巴芒之道 - 巴菲特与芒格语录精选</title>
+    <title>巴芒之道 - 巴菲特与芒格投资智慧全集</title>
     <style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,7 +14,7 @@
         .subtitle { color: var(--text-muted); font-size: 1.1em; }
         
         /* 导航标签 */
-        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        .nav-tabs { display: flex; gap: 20px; justify-content: center; padding: 15px 0; border-bottom: 1px solid var(--border); margin-bottom: 30px; flex-wrap: wrap; }
         .nav-tabs a { color: var(--text-muted); padding-bottom: 8px; text-decoration: none; transition: color 0.3s; }
         .nav-tabs a:hover { color: var(--text); }
         .nav-tabs a.active { color: var(--highlight); font-weight: 600; border-bottom: 2px solid var(--highlight); }
@@ -23,7 +23,8 @@
         .content-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid var(--border); margin-bottom: 30px; }
         
         h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); display: flex; align-items: center; gap: 10px; }
-        h3 { font-size: 1.2em; margin: 25px 0 15px; color: var(--highlight); }
+        h3 { font-size: 1.2em; margin: 30px 0 15px; color: var(--highlight); }
+        h4 { font-size: 1.05em; margin: 20px 0 10px; color: var(--neutral); }
         
         /* 语录样式 */
         .quote-section { margin-bottom: 25px; }
@@ -35,6 +36,16 @@
         /* 分类标签 */
         .tag-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
         .tag { padding: 4px 12px; background: var(--secondary); border-radius: 15px; font-size: 0.8em; color: var(--text-muted); }
+        
+        /* 章节内容样式 */
+        .section-content { margin-bottom: 25px; padding: 20px; background: rgba(0,0,0,0.15); border-radius: 12px; }
+        .section-content p { margin-bottom: 15px; line-height: 1.8; }
+        .section-content ul { padding-left: 25px; margin-bottom: 15px; }
+        .section-content li { margin-bottom: 8px; color: var(--text-muted); }
+        
+        /* 案例卡片 */
+        .case-card { padding: 25px; background: rgba(0,0,0,0.25); border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .case-card h4 { color: var(--highlight); margin-bottom: 15px; }
         
         /* 推荐链接 */
         .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 20px; }
@@ -62,7 +73,7 @@
     <div class="container">
         <header>
             <h1>📖 巴芒之道</h1>
-            <p class="subtitle">巴菲特与芒格语录精选 | 价值投资智慧</p>
+            <p class="subtitle">巴菲特与芒格投资智慧全集 | 价值投资深度解读</p>
         </header>
 
         <div class="nav-tabs">
@@ -72,199 +83,405 @@
             <a href="buffett.html">🎯 巴菲特股东大会</a>
         </div>
 
-        <!-- 巴菲特语录 -->
+        <!-- 核心投资理念 -->
         <div class="content-card">
-            <h2>👑 沃伦·巴菲特 (Warren Buffett)</h2>
+            <h2>🏛️ 巴芒大道核心投资理念</h2>
             
-            <div class="quote-section">
+            <div class="section-content">
                 <div class="tag-group">
                     <span class="tag">价值投资</span>
                     <span class="tag">长期主义</span>
+                    <span class="tag">理性思维</span>
                 </div>
+                <h3>什么是"巴芒大道"？</h3>
+                <p>"巴芒大道"代表着沃伦·巴菲特（Warren Buffett）和查理·芒格（Charlie Munger）所共同践行的投资哲学与智慧之路。他们的合作被视为思想史上的典范，不仅成就了伯克希尔·哈撒韦（Berkshire Hathaway）的传奇，更揭示了投资智慧的本质，即精确计算与前瞻判断的完美统一。</p>
+                <p>这条大道的核心理念包括<strong>价值投资</strong>、<strong>长期持有</strong>以及<strong>坚守能力圈</strong>。巴菲特和芒格用几十年的实践证明了这条道路的正确性，为全球投资者提供了宝贵的智慧财富。</p>
+            </div>
+
+            <h3>💎 价值投资的核心思想</h3>
+            <div class="section-content">
+                <p>巴菲特和芒格是价值投资的坚定倡导者。价值投资的核心是寻找被市场低估的资产，寻找内在价值高于当前市场价格的公司。他们认为，真正的投资在于购买企业的股权，而非仅仅交易股票。</p>
+                <p>在芒格的影响下，巴菲特的投资策略从早期寻找"烟蒂型"股票（即价格极低但质地平庸的公司）演变为"以合理价格买入优秀的企业"。他们关注那些具有强大经济护城河、优秀管理团队和可持续增长潜力的企业，以确保投资的质量和长期回报。</p>
+                
+                <h4>经典语录</h4>
                 <div class="quote-item">
-                    <div class="quote-text">"价格是你付出的，价值是你得到的。"</div>
+                    <div class="quote-text">"价格是你付出的，价值是你得到的。</div>
                     <div class="quote-text en">Price is what you pay. Value is what you get.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"以合理的价格买入一家优秀的公司，远比以低廉的价格买入一家平庸的公司要好得多。"</div>
+                    <div class="quote-text">"以合理的价格买入一家优秀的公司，远比以低廉的价格买入一家平庸的公司要好得多。</div>
                     <div class="quote-text en">It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"我们最喜欢的持有期限是永远。"</div>
+                    <div class="quote-text">"所有明智的投资都是价值投资——获得的比你付出的更多。</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>⏳ 长期持有与复利的力量</h3>
+            <div class="section-content">
+                <p>巴菲特和芒格坚信复利的力量，认为财富的创造是一场马拉松而非短跑。他们推崇"买入并持有"策略，即一旦找到优质企业，便长期持有，甚至"永远持有"。</p>
+                <p>芒格曾说："真正赚钱的地方不在于买卖，而在于等待。"这种耐心和对短期市场波动的忽视是他们投资成功的关键。他们认为短于五年的投资是"傻子的投资"，因为企业价值通常需要更长时间才能充分体现。</p>
+                
+                <h4>经典语录</h4>
+                <div class="quote-item">
+                    <div class="quote-text">"我们最喜欢的持有期限是永远。</div>
                     <div class="quote-text en">Our favorite holding period is forever.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"如果你不愿意持有一只股票十年，那就连十分钟也不要持有。"</div>
+                    <div class="quote-text">"如果你不愿意持有一只股票十年，那就连十分钟也不要持有。</div>
                     <div class="quote-text en">If you aren't willing to own a stock for ten years, don't even think about owning it for ten minutes.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
-            </div>
-
-            <h3>🎭 关于贪婪与恐惧</h3>
-            <div class="quote-section">
-                <div class="tag-group">
-                    <span class="tag">逆向思维</span>
-                    <span class="tag">市场情绪</span>
+                <div class="quote-item">
+                    <div class="quote-text">"赚大钱绝不靠买卖，而是靠等待。</div>
+                    <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"在别人恐惧时我贪婪，在别人贪婪时我恐惧。"</div>
-                    <div class="quote-text en">Be fearful when others are greedy and greedy when others are fearful.</div>
-                    <div class="quote-author">— 巴菲特 (最著名的投资格言)</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"股票市场是为了将钱从不耐烦的人手中转移到有耐心的人手中。"</div>
-                    <div class="quote-text en">The stock market is designed to transfer money from the Active to the Patient.</div>
-                    <div class="quote-author">— 巴菲特</div>
+                    <div class="quote-text">"耐心，是最被低估的投资能力。</div>
+                    <div class="quote-author">— 芒格</div>
                 </div>
             </div>
+        </div>
 
-            <h3>🎯 能力圈</h3>
-            <div class="quote-section">
-                <div class="tag-group">
-                    <span class="tag">能力圈</span>
-                    <span class="tag">风险控制</span>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"风险来自于你不知道自己在做什么。"</div>
-                    <div class="quote-text en">Risk comes from not knowing what you're doing.</div>
-                    <div class="quote-author">— 巴菲特</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"每个人都有不同的能力圈，重要的是圈子的大小不重要，重要的是要呆在自己的能力圈内。"</div>
-                    <div class="quote-text en">Everybody's got a different circle of competence. The important thing is not how big the circle is. The important thing is staying inside the circle.</div>
-                    <div class="quote-author">— 巴菲特 (1996年致股东信)</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"永远不要投资于你不了解的企业。"</div>
-                    <div class="quote-text en">Never invest in a business you cannot understand.</div>
-                    <div class="quote-author">— 巴菲特</div>
-                </div>
+        <!-- 三大核心概念 -->
+        <div class="content-card">
+            <h2>🛡️ 投资的三大核心概念</h2>
+            
+            <h3>1. 经济护城河 (Economic Moat)</h3>
+            <div class="section-content">
+                <p>"护城河"是巴菲特投资理论中的一个核心概念，指的是企业所拥有的可持续竞争优势，能够保护其长期利润和市场份额免受竞争对手侵蚀。巴菲特常将此比喻为环绕城堡的护城河，越宽越深，城堡就越安全。</p>
+                
+                <h4>经济护城河的主要来源：</h4>
+                <ul>
+                    <li><strong>无形资产：</strong>如强大的品牌（例如可口可乐）、专利、特许权等</li>
+                    <li><strong>转换成本：</strong>客户转换到竞争对手产品或服务所需付出的成本</li>
+                    <li><strong>网络效应：</strong>产品或服务的价值随着用户数量的增加而增加</li>
+                    <li><strong>成本优势：</strong>公司能够以低于竞争对手的成本生产商品或提供服务，这可能源于规模经济、地理位置优势或独特的生产技术</li>
+                    <li><strong>有效规模：</strong>某些市场只能容纳有限数量的有效参与者</li>
+                </ul>
+                
+                <p>对于希望长期持有一家公司股份的投资者来说，护城河至关重要，它能帮助判断企业未来是否能保持稳固的地位。</p>
             </div>
 
-            <h3>💎 投资智慧</h3>
-            <div class="quote-section">
-                <div class="tag-group">
-                    <span class="tag">投资原则</span>
-                    <span class="tag">个人成长</span>
-                </div>
+            <h3>2. 安全边际 (Margin of Safety)</h3>
+            <div class="section-content">
+                <p>安全边际是价值投资的基石，由本杰明·格雷厄姆提出并被巴菲特和芒格奉为圭臬。它意味着投资者在购买股票时，应确保其市场价格远低于公司的内在价值，从而为估值错误或市场波动提供一个缓冲空间。</p>
+                
+                <p>芒格对安全边际的理解有所侧重，他强调"质地安全"而非仅仅是"价格安全"。芒格认为，即使以合理的价格购买一家伟大的公司，也比以非常便宜的价格购买一家普通公司更好。在他看来，真正的风险不是价格高低，而是投资于"垃圾公司"。</p>
+                
                 <div class="quote-item">
-                    <div class="quote-text">"投资最重要的品质是性情，而非智力。"</div>
-                    <div class="quote-text en">The most important quality for an investor is temperament, not intellect.</div>
-                    <div class="quote-author">— 巴菲特</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"规则一：永远不要亏钱。规则二：永远不要忘记规则一。"</div>
+                    <div class="quote-text">"规则一：永远不要亏钱。规则二：永远不要忘记规则一。</div>
                     <div class="quote-text en">Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"最好的投资就是投资自己。"</div>
-                    <div class="quote-text en">The best investment you can make is in yourself.</div>
+                    <div class="quote-text">"根据股票的波动性来判断风险是很傻的。我们认为只有两种风险：一，血本无归；二，回报不足。</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>3. 能力圈 (Circle of Competence)</h3>
+            <div class="section-content">
+                <p>"能力圈"是由巴菲特提出的一个重要概念，其核心原则是只投资你真正了解的行业和公司。巴菲特曾指出："重要的不是你的能力圈有多大，而是你必须清楚它的边界"。</p>
+                
+                <p>这意味着投资者应当避免涉足自己不熟悉或不理解的领域，即使这些领域看起来很有吸引力。巴菲特和芒格本人就曾因"看不懂"而避免投资许多科技公司，如微软，尽管他们认可这些公司创始人的实力。</p>
+                
+                <p>能力圈的建立可以基于个人的职业、爱好以及对产品和服务的熟悉程度。关键是要诚实面对自己的认知边界，不试图跨越自己的能力圈去投资。</p>
+                
+                <div class="quote-item">
+                    <div class="quote-text">"风险来自于你不知道自己在做什么。</div>
+                    <div class="quote-text en">Risk comes from not knowing what you're doing.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"每个人都有不同的能力圈，重要的是圈子的大小不重要，重要的是要呆在自己的能力圈内。</div>
+                    <div class="quote-text en">Everybody's got a different circle of competence. The important thing is not how big the circle is. The important thing is staying inside the circle.</div>
+                    <div class="quote-author">— 巴菲特 (1996年致股东信)</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"永远不要投资于你不了解的企业。</div>
+                    <div class="quote-text en">Never invest in a business you cannot understand.</div>
                     <div class="quote-author">— 巴菲特</div>
                 </div>
             </div>
         </div>
 
-        <!-- 芒格语录 -->
+        <!-- 芒格的思维智慧 -->
         <div class="content-card">
-            <h2>🎓 查理·芒格 (Charlie Munger)</h2>
+            <h2>🧠 查理·芒格的思维智慧</h2>
             
-            <h3>🔄 逆向思维</h3>
-            <div class="quote-section">
+            <h3>🔄 逆向思维 (Invert, Always Invert)</h3>
+            <div class="section-content">
                 <div class="tag-group">
                     <span class="tag">逆向思维</span>
                     <span class="tag">决策智慧</span>
+                    <span class="tag">心理学</span>
                 </div>
+                <p>查理·芒格，作为沃伦·巴菲特长期以来的合作伙伴和伯克希尔·哈撒韦公司的副主席，以其独特的思维方式和投资理念闻名于世。逆向思维是他最核心的智慧之一。</p>
+                
+                <p>芒格反复强调逆向思维的重要性，他常引用一句格言："我只想知道将来我会死在什么地方，这样我就永远不去那儿了。"这种思维方式的核心在于，与其思考如何成功，不如先思考如何避免失败。</p>
+                
+                <p>逆向思维深受19世纪德国数学家卡尔·雅各比"反过来想，永远反过来想"的启发。具体应用包括：</p>
+                <ul>
+                    <li><strong>定义并规避失败：</strong>与其构想成功的蓝图，不如先列出可能导致失败的因素，并像躲避瘟疫一样避开它们</li>
+                    <li><strong>事前验尸 (Pre-mortem)：</strong>在项目开始前，假设项目已经失败，然后倒推失败原因，从而发现并解决潜在问题</li>
+                    <li><strong>避免"锤子人倾向"：</strong>通过寻求反面证据来挑战和摧毁自己原有的错误观念，而不是只用一种工具解决所有问题</li>
+                    <li><strong>专注于避免愚蠢：</strong>芒格认为，在很多情况下，避免做蠢事比努力变得非常聪明更容易取得长期优势</li>
+                </ul>
+                
+                <p>在投资中，逆向思维意味着在市场恐慌时反向操作，例如在1973-74年的市场低谷投资《华盛顿邮报》这样具有垄断优势的企业，当时其股价远低于私有产权价值。这种"在别人恐惧时贪婪"的决策，正是逆向思维的成功应用。</p>
+                
                 <div class="quote-item">
-                    <div class="quote-text">"反过来想，总是反过来想。"</div>
+                    <div class="quote-text">"反过来想，总是反过来想。</div>
                     <div class="quote-text en">Invert, always invert.</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"我如果知道我会死在哪里，我永远不会去那里。"</div>
+                    <div class="quote-text">"我如果知道我会死在哪里，我永远不会去那里。</div>
                     <div class="quote-text en">If I knew where I was going to die, I would never go there.</div>
                     <div class="quote-author">— 芒格 (逆向思维的经典表达)</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"随大流只会让你往平均值靠近（只能获得中等的业绩）。"</div>
+                    <div class="quote-text">"随大流只会让你往平均值靠近（只能获得中等的业绩）。</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"我专门琢磨怎么否定自己。大多数人都是努力维护自己的想法，无论自己的想法多么愚不可及。"</div>
+                    <div class="quote-text">"我专门琢磨怎么否定自己。大多数人都是努力维护自己的想法，无论自己的想法多么愚不可及。</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"避免愚蠢，比寻找天才来得有效。"</div>
+                    <div class="quote-text">"避免愚蠢，比寻找天才来得有效。</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
             </div>
 
-            <h3>⚠️ 关于风险</h3>
-            <div class="quote-section">
+            <h3>📚 多元思维模型 (Multidisciplinary Thinking Models)</h3>
+            <div class="section-content">
+                <p>多元思维模型是查理·芒格一生智慧的核心和其成功的关键之一。芒格提倡打破学科界限，从众多学科中汲取知识，构建一个跨学科的思维框架，以全面分析和解决复杂问题。</p>
+                
+                <p>芒格认为世界是众多学科的综合体，因此需要跨领域的知识，包括但不限于：</p>
+                <ul>
+                    <li><strong>数学：</strong>如复利 (Compound Interest) 和费马帕斯卡系统 (Fermat/Pascal System)</li>
+                    <li><strong>心理学：</strong>如人类误判心理学 (Psychology of Misjudgment)，识别和规避各种心理偏见。芒格总结了大约25种心理倾向，并在投资分析中检查它们如何影响管理层决策和自身判断</li>
+                    <li><strong>经济学：</strong>理解市场运行机制和供需关系</li>
+                    <li><strong>历史学：</strong>从历史中汲取经验教训</li>
+                    <li><strong>生物学：</strong>如进化论中的选择性压力和遗传规律</li>
+                    <li><strong>工程学：</strong>如后备系统 (Backup System) 和临界质量 (Critical Mass)</li>
+                    <li><strong>会计学：</strong>如复式簿记 (Double-Entry Bookkeeping)</li>
+                </ul>
+                
+                <p>通过整合这些不同学科的思维模型，投资者可以从多维度视角看透问题本质，避免单一思维带来的偏见，从而做出更明智的决策。</p>
+                
+                <div class="quote-item">
+                    <div class="quote-text">"你不必非常出色，只要在很长、很长的时间内保持比其他人聪明一点点就够了。</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>💥 Lollapalooza效应</h3>
+            <div class="section-content">
+                <p>Lollapalooza效应，又称"好上加好效应"、"合奏效应"或"协同效应"，是查理·芒格在《穷查理宝典》中提出的概念，指的是多个相互关联且同向作用的因素叠加后，产生远超简单加和的极强放大作用。</p>
+                
+                <p>这种效应如同物理学中的临界质量，一旦达到，便能引发核爆炸般的巨大影响，无论是好是坏。芒格在投资中会积极寻找那些能够产生Lollapalooza效应的公司，即多种因素共同作用并极大地放大彼此效应的企业。</p>
+                
+                <p>芒格认为Costco是能够产生Lollapalooza效应的公司，即多种有利因素叠加能带来巨大合力，因此重仓买入并长期持有。</p>
+            </div>
+        </div>
+
+        <!-- 投资实战案例 -->
+        <div class="content-card">
+            <h2>📈 经典投资案例分析</h2>
+            
+            <div class="case-card">
+                <h4>🍎 苹果 (Apple) - 最成功的科技投资</h4>
                 <div class="tag-group">
-                    <span class="tag">风险管理</span>
-                    <span class="tag">质地优先</span>
+                    <span class="tag">消费品牌</span>
+                    <span class="tag">护城河</span>
+                    <span class="tag">长期持有</span>
                 </div>
-                <div class="quote-item">
-                    <div class="quote-text">"真正的风险，不是价格风险，而是质地风险。大部分人亏钱，是因为买了垃圾公司，而非买了很贵的公司。"</div>
-                    <div class="quote-author">— 芒格</div>
+                <p><strong>投资时间与背景：</strong>巴菲特从2016年开始买入苹果公司股票。当时苹果正面临销售危机，股价遭遇"戴维斯双杀"（即业绩和估值双重下跌）。</p>
+                <p><strong>投资理念：</strong>尽管苹果是科技巨头，但巴菲特将其视为一家消费品公司来分析，看重其强大的品牌忠诚度和用户黏性，认为它拥有坚固的"护城河"。芒格最初对投资科技公司持保留态度，但后来也高度赞扬了苹果的管理层，认为其客户忠诚度令人震惊。</p>
+                <p><strong>结果：</strong>苹果成为了伯克希尔·哈撒韦公司最大的持仓股。巴菲特坦言，两年前因税务考量卖掉一些苹果股票是"愚蠢的决定"，并表示苹果公司比伯克希尔拥有的任何其他企业都要好。</p>
+            </div>
+
+            <div class="case-card">
+                <h4>🥤 可口可乐 (Coca-Cola) - 价值投资的典范</h4>
+                <div class="tag-group">
+                    <span class="tag">品牌</span>
+                    <span class="tag">全球化</span>
+                    <span class="tag">股息</span>
                 </div>
-                <div class="quote-item">
-                    <div class="quote-text">"根据股票的波动性来判断风险是很傻的。我们认为只有两种风险：一，血本无归；二，回报不足。"</div>
-                    <div class="quote-author">— 芒格</div>
+                <p><strong>投资时间与背景：</strong>巴菲特自1988年开始投资可口可乐。他从小就对可口可乐情有独钟，看到了其非凡的消费者吸引力和商业潜力。在投资时，可口可乐因管理层更迭和市场竞争导致股价低迷。</p>
+                <p><strong>投资理念：</strong>这是巴菲特价值投资的经典案例，体现了他"长期持有优质企业"的核心理念。他深信可口可乐强大的品牌护城河、稳定的行业地位和持续稳健增长的能力。芒格也通过喜诗糖果的投资，加深了对品牌力量的理解，这对比投资可口可乐起到了基础性作用。</p>
+                <p><strong>结果：</strong>可口可乐在1989年至2003年以及2005年至2011年间多次成为伯克希尔的第一大重仓股。这项投资带来了近29倍的总回报（含股息），年化收益率约10%，并为伯克希尔带来了超过70亿美元的累计股息收入。</p>
+            </div>
+
+            <div class="case-card">
+                <h4>🚗 比亚迪 (BYD) - 芒格最自豪的投资</h4>
+                <div class="tag-group">
+                    <span class="tag">新能源</span>
+                    <span class="tag">中国制造</span>
+                    <span class="tag">创始人</span>
                 </div>
+                <p><strong>投资时间与背景：</strong>伯克希尔·哈撒韦公司于2008年投资比亚迪。这项投资主要是在查理·芒格的极力推荐下进行的，芒格高度评价比亚迪创始人王传福是"爱迪生和韦尔奇的结合体"。伯克希尔以每股8港元的价格认购了2.25亿股比亚迪H股，总计约18亿港元（约2.3亿美元），占总股本的9.89%。</p>
+                <p><strong>投资理念：</strong>芒格对比亚迪在电池技术和企业管理方面的能力深信不疑。他认为投资就是投人，看中了王传福的企业家精神和创新能力。</p>
+                <p><strong>结果与退出：</strong>在长达17年的投资中，比亚迪的股价上涨了约3890%，伯克希尔·哈撒韦获得了超过38倍的回报。然而，伯克希尔自2022年开始逐步减持比亚迪股份，并于2025年第一季度完全清仓。减持的原因被分析与全球电动车市场竞争加剧、估值过高以及地缘政治因素有关。</p>
+            </div>
+
+            <div class="case-card">
+                <h4>🏦 富国银行 (Wells Fargo) - 逆势投资与教训</h4>
+                <div class="tag-group">
+                    <span class="tag">银行业</span>
+                    <span class="tag">逆势投资</span>
+                    <span class="tag">管理层</span>
+                </div>
+                <p><strong>投资时间与背景：</strong>巴菲特在1989年至1991年期间开始买入富国银行股票，当时正值美国西海岸房地产泡沫破裂，银行业陷入危机，市场普遍悲观。</p>
+                <p><strong>投资理念：</strong>巴菲特逆势买入，看中富国银行优秀的管理层和稳健的基本面，当时估值处于历史低位（市盈率约5倍，市净率约1倍）。富国银行一直是巴菲特投资组合中唯一的商业银行，持股量达到了审批上限9.9%。</p>
+                <p><strong>结果与教训：</strong>这项投资在十年内获得了约10倍的回报。然而，富国银行在2016年曝光了一系列丑闻，包括未经客户授权开设虚假账户，严重损害了其声誉，导致高额罚款和管理层变动。尽管巴菲特曾多次表示支持富国银行，但伯克希尔最终大幅减持了其股份。</p>
+            </div>
+        </div>
+
+        <!-- 失败教训 -->
+        <div class="content-card">
+            <h2>⚠️ 投资失败与教训</h2>
+            <div class="section-content">
+                <p>巴菲特和芒格在漫长的投资生涯中也曾犯下错误，并从中吸取了宝贵教训。他们的成功，很大程度上来自于对错误的反思和总结。</p>
+                
+                <h4>1. 购买伯克希尔·哈撒韦纺织厂</h4>
+                <p>巴菲特认为收购伯克希尔·哈撒韦公司的控制权是他"最糟糕的交易"。当时他仅仅因为价格便宜而买入一个前景黯淡的纺织业务，与他后来"以合理价格买入优质企业"的理念相悖。他花了20年时间试图挽救这项业务。这个经历使他认识到企业内在品质和长期价值的重要性，促成了他投资理念的重大转变。</p>
+                
+                <h4>2. 过早卖出</h4>
+                <p>芒格曾坦言他最失败的投资之一是过早卖出了一只上涨5倍的股票，而该股最终上涨了30倍。巴菲特也曾因过早卖出迪士尼和台积电等公司而错失巨额回报。这强调了长期持有的价值和避免因短期波动而做出交易决策的重要性。</p>
+                
+                <h4>3. 错过高增长科技股</h4>
+                <p>芒格曾对没有投资谷歌感到"羞愧"，称其为"很大的错误"。巴菲特也承认错过了亚马逊，并高度赞扬了杰夫·贝佐斯，但伯克希尔从未持有亚马逊的股票。这表明即使是投资大师，也可能因未能充分理解新兴行业或公司的潜力而错失良机。</p>
+                
+                <h4>4. IBM投资失误</h4>
+                <p>巴菲特承认他在IBM的投资上"搞砸了"。尽管他初期买入，但后来发现IBM的表现不如预期，尤其在云计算领域面临亚马逊等强劲对手的竞争。他最终出售了大部分IBM股票。这促使他重新评估科技股的投资方式，并转向他认为更像消费品公司的苹果。</p>
+                
+                <h4>5. 不当多元化</h4>
+                <p>芒格指出，过度广泛的多元化必然包含对平庸企业的投资，最终只能导致平庸的结果。他提倡根据个人风险承受能力和目标，构建一个集中且均衡的投资组合。</p>
+                
                 <div class="quote-item">
-                    <div class="quote-text">"一个聪明的人只有三种破产方法：酒精、女士和杠杆。"</div>
+                    <div class="quote-text">"一个聪明的人只有三种破产方法：酒精、女士和杠杆。</div>
                     <div class="quote-text en">A smart person only has three ways to go broke: alcohol, ladies, and leverage.</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"我们的目标不是赚最多，而是永远不输。"</div>
+                    <div class="quote-text">"真正的风险，不是价格风险，而是质地风险。大部分人亏钱，是因为买了垃圾公司，而非买了很贵的公司。</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
             </div>
+        </div>
 
-            <h3>📚 投资哲学</h3>
-            <div class="quote-section">
+        <!-- 股东大会智慧 -->
+        <div class="content-card">
+            <h2>🎤 股东大会智慧结晶</h2>
+            
+            <h3>2023年股东大会：抓住机遇，应对不确定性</h3>
+            <div class="section-content">
                 <div class="tag-group">
-                    <span class="tag">长期投资</span>
-                    <span class="tag">能力圈</span>
+                    <span class="tag">2023</span>
+                    <span class="tag">经济形势</span>
+                    <span class="tag">AI</span>
+                </div>
+                <p>在2023年的股东大会上，92岁的巴菲特和99岁的芒格共同出席，吸引了数万人前往奥马哈。他们强调，投资机会往往来源于他人"做蠢事"的时候，价值投资者应习惯收入的减少，因为竞争日益激烈。</p>
+                
+                <h4>投资智慧要点：</h4>
+                <ul>
+                    <li><strong>经济形势：</strong>巴菲特指出，经济的"令人难以置信的飙升时期"正在结束，预计未来大多数业务收益可能走低。他认为通胀是当时最需要解决的问题，并强调不能持续"印钞票"</li>
+                    <li><strong>银行危机：</strong>针对硅谷银行危机，巴菲特表示如果存款没有得到担保，将产生灾难性影响，并指出联邦存款保险公司（FDIC）的设立是具有远见的举措</li>
+                    <li><strong>对中国市场的看法：</strong>芒格表示，投资中国可以让投资者以更便宜的价格买到一些好公司，并强调中美两国为了共同利益应该好好相处</li>
+                    <li><strong>对AI的观点：</strong>巴菲特认为人工智能可以帮助筛选符合特定参数的股票，但有局限性，可能无法告知买卖哪只股票。他担忧AI的不可控性。芒格则认为机器人使用将日益普遍，但对人工智能的一些炒作持怀疑态度</li>
+                </ul>
+            </div>
+
+            <h3>2024年股东大会：缅怀芒格，智慧传承</h3>
+            <div class="section-content">
+                <div class="tag-group">
+                    <span class="tag">2024</span>
+                    <span class="tag">芒格逝世</span>
+                    <span class="tag">继承人</span>
+                </div>
+                <p>2024年的股东大会是芒格去世后的首次大会。巴菲特在会上深情缅怀了这位老友，称芒格"做了所有想做的事，说了想说的话，人生完成度很高"。伯克希尔的开场视频也专门向芒格致敬。</p>
+                
+                <h4>投资智慧要点：</h4>
+                <ul>
+                    <li><strong>AI的潜在风险：</strong>巴菲特将AI比作核武器的发明，认为其具有"巨大的潜在好处和巨大的潜在危害"，但他对此一无所知，无法给出如何处理的建议</li>
+                    <li><strong>苹果持仓：</strong>巴菲特表示，除非出现"真正改变资本配置的戏剧性事件"，否则苹果将是伯克希尔最大的投资。他解释减持苹果是出于税收考量，而非对苹果长期判断的改变</li>
+                    <li><strong>现金储备：</strong>伯克希尔的现金储备已增至1890亿美元，巴菲特预计二季度末将达到2000亿美元。他表示不急于为了交易而交易</li>
+                    <li><strong>继承人问题：</strong>巴菲特首次确认，指定接班人格雷格·阿贝尔将完全接管投资决策，强调伯克希尔的资本配置应由阿贝尔全权负责</li>
+                </ul>
+                
+                <div class="quote-item">
+                    <div class="quote-text">"没有什么是确定的。明天什么都不确定。明年什么都不确定。</div>
+                    <div class="quote-author">— 巴菲特 (2023年股东大会)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人生智慧 -->
+        <div class="content-card">
+            <h2>🌟 人生智慧与成长哲学</h2>
+            
+            <h3>🎯 关于投资与性格</h3>
+            <div class="section-content">
+                <div class="tag-group">
+                    <span class="tag">性格</span>
+                    <span class="tag">理性</span>
+                    <span class="tag">个人成长</span>
+                </div>
+                <p>巴菲特和芒格都认为，投资最重要的品质是性情，而非智力。芒格曾指出，很多高智商的人是不好的投资者，因为他们的性格有缺陷。他认为好的性格比大脑更重要，必须严格控制那些非理性的情绪。</p>
+                
+                <p>芒格分享的长寿秘诀包括：喜欢吃花生酱糖，很少刻意锻炼，并指出人类文明对我们的要求本就不高：要对自己和他人做出切合实际的期望，延迟满足能提高成功的几率，而理性是最好的品质。</p>
+                <div class="quote-item">
+                    <div class="quote-text">"投资最重要的品质是性情，而非智力。</div>
+                    <div class="quote-text en">The most important quality for an investor is temperament, not intellect.</div>
+                    <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"你不必非常出色，只要在很长、很长的时间内保持比其他人聪明一点点就够了。"</div>
-                    <div class="quote-author">— 芒格</div>
+                    <div class="quote-text">"最好的投资就是投资自己。</div>
+                    <div class="quote-text en">The best investment you can make is in yourself.</div>
+                    <div class="quote-author">— 巴菲特</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"钓鱼的第一条规则是，在有鱼的地方钓鱼。钓鱼的第二条规则是，记住第一条规则。"</div>
-                    <div class="quote-author">— 芒格</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"赚大钱绝不靠买卖，而是靠等待。"</div>
-                    <div class="quote-author">— 芒格</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"你必须对业务进行估值才能对股票进行估值。"</div>
+                    <div class="quote-text">"你必须对业务进行估值才能对股票进行估值。</div>
                     <div class="quote-text en">You must value the business in order to value the stock.</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"所有明智的投资都是价值投资——获得的比你付出的更多。"</div>
+                    <div class="quote-text">"宏观是我们必须接受的，微观才是我们能有所作为的。</div>
+                    <div class="quote-author">— 芒格</div>
+                </div>
+            </div>
+
+            <h3>🧡 关于友谊与合作伙伴</h3>
+            <div class="section-content">
+                <p>芒格在《穷查理宝典》中写道："如果你能和伟大的人交上朋友，那你必将过上更好的生活。" 他与巴菲特的合作就是最好的例证。他们相识五十多年来，相互学习、相互启发，共同创造了伯克希尔的传奇。</p>
+                
+                <p>巴菲特在2024年股东大会上深情缅怀芒格："芒格做了所有想做的事，说了想说的话，人生完成度很高。" 这段跨越半个世纪的友谊不仅是投资界的佳话，更是人生智慧的典范。</p>
+                
+                <div class="quote-item">
+                    <div class="quote-text">"在别人恐惧时我贪婪，在别人贪婪时我恐惧。</div>
+                    <div class="quote-text en">Be fearful when others are greedy and greedy when others are fearful.</div>
+                    <div class="quote-author">— 巴菲特 (最著名的投资格言)</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"股票市场是为了将钱从不耐烦的人手中转移到有耐心的人手中。</div>
+                    <div class="quote-text en">The stock market is designed to transfer money from the Active to the Patient.</div>
+                    <div class="quote-author">— 巴菲特</div>
+                </div>
+                <div class="quote-item">
+                    <div class="quote-text">"钓鱼的第一条规则是，在有鱼的地方钓鱼。钓鱼的第二条规则是，记住第一条规则。</div>
                     <div class="quote-author">— 芒格</div>
                 </div>
                 <div class="quote-item">
-                    <div class="quote-text">"很多高智商的人是不好的投资者，因为他们的性格有缺陷。我认为好的性格比大脑更重要，你必须严格控制那些非理性的情绪。"</div>
-                    <div class="quote-author">— 芒格</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"宏观是我们必须接受的，微观才是我们能有所作为的。"</div>
-                    <div class="quote-author">— 芒格</div>
-                </div>
-                <div class="quote-item">
-                    <div class="quote-text">"耐心，是最被低估的投资能力。"</div>
-                    <div class="quote-author">— 芒格</div>
+                    <div class="quote-text">"我们希望成为永久的资本输出者，而不是频繁的资本吞吐者。</div>
+                    <div class="quote-author">— 巴菲特</div>
                 </div>
             </div>
         </div>
@@ -310,6 +527,7 @@
                 <li>巴菲特历年致股东信</li>
                 <li>CNBC 巴菲特访谈</li>
                 <li>芒格在威斯科金融公司(Site for Graham & Doddsville)的演讲</li>
+                <li>2023年、2024年伯克希尔股东大会</li>
                 <li>Various financial publications and interviews</li>
             </ul>
         </div>
