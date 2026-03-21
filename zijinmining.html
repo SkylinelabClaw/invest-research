@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>紫金矿业 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>紫金矿业 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -77,147 +78,134 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="tencentmusic.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="alibaba.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>🪙 紫金矿业 — 投资分析报告</h1><p class="subtitle">A股: 601899.SZ | 港股: 2899.HK (A+H双重上市)</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">A股 (2026-03-21)</div><div class="snapshot-value">¥34.8</div><div class="snapshot-change bullish">YTD: +35%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">港股 (2026-03-21)</div><div class="snapshot-value">HK$18</div><div class="snapshot-change">2899.HK</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">A股市值</div><div class="snapshot-value">¥5800亿</div><div class="snapshot-change">约 HK$6300亿</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">P/E</div><div class="snapshot-value">25x</div><div class="snapshot-change">2026E</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/601899_SZ.png" alt="紫金矿业一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: 新浪财经 | 过去52周周线走势</p>
-            </div>
-        </section>
-
-        <div class="alert-box">
-            <div class="alert-title">🪙 核心亮点</div>
-            <p>紫金矿业是中国最大的金矿和铜矿生产商，受益于金价和铜价上涨，2025年业绩大幅增长。全球布局优质矿产资源，储量丰富，产量持续增长。</p>
-        </section>
-
-        <section><h2>💰 核心财务指标</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>2025营收</span><span class="metric-period">FY</span></div><div class="metric-value">¥3490.8亿</div><div class="metric-change bullish">+14.96% YoY</div></div>
-                <div class="metric-card"><div class="metric-header"><span>2025净利润</span><span class="metric-period">FY</span></div><div class="metric-value">¥517.8亿</div><div class="metric-change bullish">+61.55% YoY</div></div>
-                <div class="metric-card"><div class="metric-header"><span>黄金产量</span><span class="metric-period">2025</span></div><div class="metric-value">89.58吨</div><div class="metric-change">+22.81% YoY</div></div>
-                <div class="metric-card"><div class="metric-header"><span>铜产量</span><span class="metric-period">2025</span></div><div class="metric-value">108.5万吨</div><div class="metric-change">+1.56% YoY</div></div>
-            </div>
-        </section>
-
-        <section><h2>📊 财务数据详表</h2>
-            <h3>▎2025年全年财务摘要</h3>
-            <div class="table-container">
-                <table><thead><tr><th>指标</th><th class="number">2024年</th><th class="number">2025年</th><th class="number">YoY</th></tr></thead>
-                    <tbody>
-                        <tr><td>营业收入 (亿元)</td><td class="number">3036.3</td><td class="number">3490.8</td><td class="number bullish">+14.96%</td></tr>
-                        <tr><td>归母净利润 (亿元)</td><td class="number">320.5</td><td class="number">517.8</td><td class="number bullish">+61.55%</td></tr>
-                        <tr><td>扣非净利润 (亿元)</td><td class="number">298.7</td><td class="number">477.9</td><td class="number bullish">+60.05%</td></tr>
-                        <tr><td>基本每股收益 (元)</td><td class="number">1.21</td><td class="number">1.95</td><td class="number bullish">+61.16%</td></tr>
-                        <tr><td>经营活动现金流 (亿元)</td><td class="number">568.2</td><td class="number">754.3</td><td class="number bullish">+32.76%</td></tr>
-                        <tr><td>资产总额 (亿元)</td><td class="number">4420.1</td><td class="number">5120.1</td><td class="number bullish">+15.84%</td></tr>
-                        <tr><td>矿产金产量 (吨)</td><td class="number">73.0</td><td class="number">89.6</td><td class="number bullish">+22.81%</td></tr>
-                        <tr><td>矿产铜产量 (万吨)</td><td class="number">106.8</td><td class="number">108.5</td><td class="number bullish">+1.56%</td></tr>
-                        <tr><td>矿产锂 (万吨LCE)</td><td class="number">0.76</td><td class="number">2.55</td><td class="number bullish">+235.5%</td></tr>
-                        <tr><td>矿产钼 (万吨)</td><td class="number">0.93</td><td class="number">1.15</td><td class="number bullish">+23.72%</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <h3 style="margin-top:30px;">▎主要产品产量</h3>
-            <div class="table-container">
-                <table><thead><tr><th>产品</th><th class="number">2023年</th><th class="number">2024年</th><th class="number">2025年</th><th class="number">2028年目标</th></tr></thead>
-                    <tbody>
-                        <tr><td>矿产金 (吨)</td><td class="number">62.4</td><td class="number">73.0</td><td class="number">89.6</td><td class="number">130-140</td></tr>
-                        <tr><td>矿产铜 (万吨)</td><td class="number">100.7</td><td class="number">106.8</td><td class="number">108.5</td><td class="number">150-160</td></tr>
-                        <tr><td>当量碳酸锂 (万吨)</td><td class="number">0.21</td><td class="number">0.76</td><td class="number">2.55</td><td class="number">27-32</td></tr>
-                        <tr><td>矿产钼 (万吨)</td><td class="number">0.64</td><td class="number">0.93</td><td class="number">1.15</td><td class="number">-</td></tr>
-                        <tr><td>矿产银 (吨)</td><td class="number">387</td><td class="number">436</td><td class="number">439</td><td class="number">-</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section><h2>🔮 分析师预测</h2>
-            <div class="analysis-card"><h3>📈 目标价预测</h3>
-                <div class="table-container" style="margin-top:15px;">
-                    <table><thead><tr><th>机构</th><th class="number">A股目标价 (¥)</th><th class="number">港股目标价 (HK$)</th><th>评级</th></tr></thead>
-                        <tbody>
-                            <tr><td>汇丰环球研究</td><td class="number">¥51.20</td><td class="number">HK$58.00</td><td><span class="tag tag-bullish">买入</span></td></tr>
-                            <tr><td>摩根大通</td><td class="number">¥45.00</td><td class="number">-</td><td><span class="tag tag-bullish">增持</span></td></tr>
-                            <tr><td>建银国际</td><td class="number">-</td><td class="number">HK$22.10</td><td><span class="tag tag-bullish">跑赢大市</span></td></tr>
-                            <tr><td>一致预期均值</td><td class="number">¥48.13</td><td class="number">HK$50.82</td><td><span class="tag tag-bullish">强力买入</span></td></tr>
-                            <tr><td>最高</td><td class="number">¥62.40</td><td class="number">HK$66.33</td><td>-</td></tr>
-                            <tr><td>最低</td><td class="number">¥36.00</td><td class="number">HK$23.69</td><td>-</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="analysis-card"><h3>📊 业绩预测</h3>
-                <div class="metrics-grid" style="margin-top:15px;">
-                    <div class="metric-card"><div class="metric-header"><span>2026E 营收</span><span class="metric-period">预测</span></div><div class="metric-value">¥3800亿</div><div class="metric-change">+9% YoY</div></div>
-                    <div class="metric-card"><div class="metric-header"><span>2026E 净利润</span><span class="metric-period">预测</span></div><div class="metric-value">¥580亿</div><div class="metric-change">+12% YoY</div></div>
-                    <div class="metric-card"><div class="metric-header"><span>当前P/E</span><span class="metric-period">2026E</span></div><div class="metric-value">25x</div><div class="metric-change">基于¥34.8</div></div>
-                    <div class="metric-card"><div class="metric-header"><span>上涨空间</span><span class="metric-period">均值</span></div><div class="metric-value">+38%</div><div class="metric-change">至目标价¥48</div></div>
-                </div>
-            </div>
-            <div class="analysis-card"><h3>⚖️ 分析师观点总结</h3>
-                <ul style="margin-top:15px;padding-left:20px;">
-                    <li><strong>看多理由：</strong>金价铜价上涨周期持续；矿产金产量增长22.8%超预期；锂业务正式规模化生产；2028年产量目标宏伟（矿产金130-140吨，铜150-160万吨）；股息分红丰厚（159.5亿元）+回购计划（15-25亿元）</li>
-                    <li><strong>风险因素：</strong>金价铜价波动；海外政治/政策风险；环保监管趋严；开采成本上升</li>
-                    <li><strong>战略目标：</strong>2028年矿产金130-140吨（+45-56%），矿产铜150-160万吨（+38-47%），当量碳酸锂27-32万吨（+10倍）</li>
-                </ul>
-            </div>
-        </section>
-
-        <section><h2>💼 业务分部深度解析</h2>
-            <div class="analysis-card"><h3>🥇 黄金业务 — 核心利润</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>金价上涨带动盈利增长</li><li>国内外金矿资源丰富</li><li>储量持续增加</li></ul></div>
-            <div class="analysis-card"><h3>🔶 铜业务 — 新增长点</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>铜价上涨趋势</li><li>新能源需求拉动</li><li>扩产项目中</li></ul></div>
-            <div class="analysis-card"><h3>🌏 国际化 — 全球布局</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>海外并购持续</li><li>非洲、南美资源</li><li>一带一路受益</li></ul></div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值</h2>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">¥50</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥500/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥40</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">¥38</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥420/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥30</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">¥25</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥350/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+5%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥20</div></div></div></div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 买入</h3>
-            <p style="margin:20px 0;font-size:1.1em;">当前 ¥34.8 = 中性情景 DCF 的 92%。</p>
-            <p style="color:var(--text-muted);">紫金矿业是黄金和铜矿龙头，受益于大宗商品上涨周期，目标价¥42有21%上涨空间。</p>
-            <h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：买入</h4>
-            <ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价¥42，当前价位适合建仓</li><li>• 金价铜价上涨周期持续</li><li>• 止损位：¥28</li></ul>
-        </div></section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>金价铜价下跌风险</li><li>海外政治风险</li><li>环保政策趋严</li><li>资源开采成本上升</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
-</body>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="tencentmusic.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="alibaba.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>🪙 紫金矿业 — 投资分析报告</h1><p class="subtitle">A股: 601899.SZ | 港股: 2899.HK (A+H双重上市)</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">¥31.65</div><div class="snapshot-change">前一天: -2.1% | YTD: -10.6%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">港股 (2026-03-21)</div><div class="snapshot-value">HK$18</div><div class="snapshot-change">2899.HK</div></div>
+<div class="snapshot-card"><div class="snapshot-label">A股市值</div><div class="snapshot-value">¥8,416亿</div><div class="snapshot-change">约 HK$6300亿</div></div>
+<div class="snapshot-card"><div class="snapshot-label">P/E</div><div class="snapshot-value">18.8x</div><div class="snapshot-change">2026E</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="紫金矿业一年股价走势" src="charts/601899_SZ.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: 新浪财经 | 过去52周周线走势</p>
+</div>
+</section>
+<div class="alert-box">
+<div class="alert-title">🪙 核心亮点</div>
+<p>紫金矿业是中国最大的金矿和铜矿生产商，受益于金价和铜价上涨，2025年业绩大幅增长。全球布局优质矿产资源，储量丰富，产量持续增长。</p>
+<section><h2>💰 核心财务指标</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>2025营收</span><span class="metric-period">FY</span></div><div class="metric-value">¥3490.8亿</div><div class="metric-change bullish">+14.96% YoY</div></div>
+<div class="metric-card"><div class="metric-header"><span>2025净利润</span><span class="metric-period">FY</span></div><div class="metric-value">¥517.8亿</div><div class="metric-change bullish">+61.55% YoY</div></div>
+<div class="metric-card"><div class="metric-header"><span>黄金产量</span><span class="metric-period">2025</span></div><div class="metric-value">89.58吨</div><div class="metric-change">+22.81% YoY</div></div>
+<div class="metric-card"><div class="metric-header"><span>铜产量</span><span class="metric-period">2025</span></div><div class="metric-value">108.5万吨</div><div class="metric-change">+1.56% YoY</div></div>
+</div>
+</section>
+<section><h2>📊 财务数据详表</h2>
+<h3>▎2025年全年财务摘要</h3>
+<div class="table-container">
+<table><thead><tr><th>指标</th><th class="number">2024年</th><th class="number">2025年</th><th class="number">YoY</th></tr></thead>
+<tbody>
+<tr><td>营业收入 (亿元)</td><td class="number">3036.3</td><td class="number">3490.8</td><td class="number bullish">+14.96%</td></tr>
+<tr><td>归母净利润 (亿元)</td><td class="number">320.5</td><td class="number">517.8</td><td class="number bullish">+61.55%</td></tr>
+<tr><td>扣非净利润 (亿元)</td><td class="number">298.7</td><td class="number">477.9</td><td class="number bullish">+60.05%</td></tr>
+<tr><td>基本每股收益 (元)</td><td class="number">1.21</td><td class="number">1.95</td><td class="number bullish">+61.16%</td></tr>
+<tr><td>经营活动现金流 (亿元)</td><td class="number">568.2</td><td class="number">754.3</td><td class="number bullish">+32.76%</td></tr>
+<tr><td>资产总额 (亿元)</td><td class="number">4420.1</td><td class="number">5120.1</td><td class="number bullish">+15.84%</td></tr>
+<tr><td>矿产金产量 (吨)</td><td class="number">73.0</td><td class="number">89.6</td><td class="number bullish">+22.81%</td></tr>
+<tr><td>矿产铜产量 (万吨)</td><td class="number">106.8</td><td class="number">108.5</td><td class="number bullish">+1.56%</td></tr>
+<tr><td>矿产锂 (万吨LCE)</td><td class="number">0.76</td><td class="number">2.55</td><td class="number bullish">+235.5%</td></tr>
+<tr><td>矿产钼 (万吨)</td><td class="number">0.93</td><td class="number">1.15</td><td class="number bullish">+23.72%</td></tr>
+</tbody>
+</table>
+</div>
+<h3 style="margin-top:30px;">▎主要产品产量</h3>
+<div class="table-container">
+<table><thead><tr><th>产品</th><th class="number">2023年</th><th class="number">2024年</th><th class="number">2025年</th><th class="number">2028年目标</th></tr></thead>
+<tbody>
+<tr><td>矿产金 (吨)</td><td class="number">62.4</td><td class="number">73.0</td><td class="number">89.6</td><td class="number">130-140</td></tr>
+<tr><td>矿产铜 (万吨)</td><td class="number">100.7</td><td class="number">106.8</td><td class="number">108.5</td><td class="number">150-160</td></tr>
+<tr><td>当量碳酸锂 (万吨)</td><td class="number">0.21</td><td class="number">0.76</td><td class="number">2.55</td><td class="number">27-32</td></tr>
+<tr><td>矿产钼 (万吨)</td><td class="number">0.64</td><td class="number">0.93</td><td class="number">1.15</td><td class="number">-</td></tr>
+<tr><td>矿产银 (吨)</td><td class="number">387</td><td class="number">436</td><td class="number">439</td><td class="number">-</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section><h2>🔮 分析师预测</h2>
+<div class="analysis-card"><h3>📈 目标价预测</h3>
+<div class="table-container" style="margin-top:15px;">
+<table><thead><tr><th>机构</th><th class="number">A股目标价 (¥)</th><th class="number">港股目标价 (HK$)</th><th>评级</th></tr></thead>
+<tbody>
+<tr><td>汇丰环球研究</td><td class="number">¥51.20</td><td class="number">HK$58.00</td><td><span class="tag tag-bullish">买入</span></td></tr>
+<tr><td>摩根大通</td><td class="number">¥45.00</td><td class="number">-</td><td><span class="tag tag-bullish">增持</span></td></tr>
+<tr><td>建银国际</td><td class="number">-</td><td class="number">HK$22.10</td><td><span class="tag tag-bullish">跑赢大市</span></td></tr>
+<tr><td>一致预期均值</td><td class="number">¥48.13</td><td class="number">HK$50.82</td><td><span class="tag tag-bullish">强力买入</span></td></tr>
+<tr><td>最高</td><td class="number">¥62.40</td><td class="number">HK$66.33</td><td>-</td></tr>
+<tr><td>最低</td><td class="number">¥36.00</td><td class="number">HK$23.69</td><td>-</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="analysis-card"><h3>📊 业绩预测</h3>
+<div class="metrics-grid" style="margin-top:15px;">
+<div class="metric-card"><div class="metric-header"><span>2026E 营收</span><span class="metric-period">预测</span></div><div class="metric-value">¥3800亿</div><div class="metric-change">+9% YoY</div></div>
+<div class="metric-card"><div class="metric-header"><span>2026E 净利润</span><span class="metric-period">预测</span></div><div class="metric-value">¥580亿</div><div class="metric-change">+12% YoY</div></div>
+<div class="metric-card"><div class="metric-header"><span>当前P/E</span><span class="metric-period">2026E</span></div><div class="metric-value">25x</div><div class="metric-change">基于¥34.8</div></div>
+<div class="metric-card"><div class="metric-header"><span>上涨空间</span><span class="metric-period">均值</span></div><div class="metric-value">+38%</div><div class="metric-change">至目标价¥48</div></div>
+</div>
+</div>
+<div class="analysis-card"><h3>⚖️ 分析师观点总结</h3>
+<ul style="margin-top:15px;padding-left:20px;">
+<li><strong>看多理由：</strong>金价铜价上涨周期持续；矿产金产量增长22.8%超预期；锂业务正式规模化生产；2028年产量目标宏伟（矿产金130-140吨，铜150-160万吨）；股息分红丰厚（159.5亿元）+回购计划（15-25亿元）</li>
+<li><strong>风险因素：</strong>金价铜价波动；海外政治/政策风险；环保监管趋严；开采成本上升</li>
+<li><strong>战略目标：</strong>2028年矿产金130-140吨（+45-56%），矿产铜150-160万吨（+38-47%），当量碳酸锂27-32万吨（+10倍）</li>
+</ul>
+</div>
+</section>
+<section><h2>💼 业务分部深度解析</h2>
+<div class="analysis-card"><h3>🥇 黄金业务 — 核心利润</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>金价上涨带动盈利增长</li><li>国内外金矿资源丰富</li><li>储量持续增加</li></ul></div>
+<div class="analysis-card"><h3>🔶 铜业务 — 新增长点</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>铜价上涨趋势</li><li>新能源需求拉动</li><li>扩产项目中</li></ul></div>
+<div class="analysis-card"><h3>🌏 国际化 — 全球布局</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>海外并购持续</li><li>非洲、南美资源</li><li>一带一路受益</li></ul></div>
+</section>
+<section><h2>📊 DCF 折现估值</h2>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">¥50</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥500/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥40</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">¥38</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥420/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥30</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">¥25</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">金价假设</div><div class="dcf-detail-value">¥350/克</div></div><div class="dcf-detail"><div class="dcf-detail-label">产量增长</div><div class="dcf-detail-value">+5%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">¥20</div></div></div></div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 买入</h3>
+<p style="margin:20px 0;font-size:1.1em;">当前 ¥34.8 = 中性情景 DCF 的 92%。</p>
+<p style="color:var(--text-muted);">紫金矿业是黄金和铜矿龙头，受益于大宗商品上涨周期，目标价¥42有21%上涨空间。</p>
+<h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：买入</h4>
+<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价¥42，当前价位适合建仓</li><li>• 金价铜价上涨周期持续</li><li>• 止损位：¥28</li></ul>
+</div></section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>金价铜价下跌风险</li><li>海外政治风险</li><li>环保政策趋严</li><li>资源开采成本上升</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
+</div></body>
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSL集团 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OSL集团 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -77,104 +78,90 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="nvidia.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="pinduoduo.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>OSL集团 — 投资分析报告</h1><p class="subtitle">0863.HK</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
-            </div>
-        </div>
-    </header>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-21)</div><div class="snapshot-value">HK$14.1</div><div class="snapshot-change">YTD: +25%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">~$80亿</div><div class="snapshot-change">香港持牌加密平台</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">HK$22</div><div class="snapshot-change">分析师均值</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">评级</div><div class="snapshot-value">买入</div><div class="snapshot-change">共识</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/0863_HK.png" alt="OSL一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
-            </div>
-        </section>
-
-        <div class="alert-box">
-            <div class="alert-title">🚀 核心亮点</div>
-            <p>OSL是香港唯一的持牌加密货币交易平台，受益于香港加密监管政策和现货ETF推出。2025年获批提供虚拟资产现货ETF服务，市场份额持续提升。</p>
-        </div>
-
-        <section><h2>📊 财务数据详表</h2>
-            <div class="table-container">
-                <table><thead><tr><th>指标</th><th class="number">2023</th><th class="number">2024</th><th class="number">2025H1</th><th class="number">2025E全年</th></tr></thead>
-                    <tbody>
-                        <tr><td>营收 (百万港元)</td><td class="number">287</td><td class="number">375</td><td class="number">195</td><td class="number">450-530</td></tr>
-                        <tr><td>同比增速</td><td class="number">-</td><td class="number bullish">+31%</td><td class="number">-</td><td class="number">+20%~41%</td></tr>
-                        <tr><td>净利润 (百万港元)</td><td class="number">-72</td><td class="number bullish">48</td><td class="number bearish">-40</td><td class="number bearish">-370~-430</td></tr>
-                        <tr><td>首次盈利</td><td class="number">否</td><td class="number bullish">是</td><td class="number">-</td><td class="number bearish">预计亏损</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: OSL集团财报 | 2025年为公司业绩指引</p>
-        </section>
-
-        <section><h2>🔮 分析师预测</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>评级</span><span class="tag tag-bullish">买入 (共识)</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">10位分析师中60%强力买入，40%买入</p></div>
-                <div class="metric-card"><div class="metric-header"><span>目标价</span><span class="metric-value" style="font-size:1.4em;">HK$22</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">12个月目标价均值，当前价HK$14.1有56%上涨空间</p></div>
-                <div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-value" style="font-size:1.2em;">HK$18-25</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">最低HK$18.99 / 最高HK$25.33</p></div>
-                <div class="metric-card"><div class="metric-header"><span>2026年EPS预测</span><span class="metric-value" style="font-size:1.2em;">HK$0.31</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">Fintel预测，每股收益2027年</p></div>
-            </div>
-            <div class="analysis-card" style="margin-top:20px;"><h3>📝 分析师观点要点</h3>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>积极因素：</strong>香港唯一持牌加密平台，受益于监管红利；现货ETF服务获批带来新增长点；机构投资者入场增加</li><li><strong>风险因素：</strong>2025年为战略投入期，预计全年净亏损3.7-4.3亿港元；加密市场波动性；全球扩张成本</li><li><strong>增长预测：</strong>Simply Wall St预测收入将增长45.5%/年，盈利增长4%/年</li></ul>
-            </div>
-            <p style="color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Moomoo, Fintel, Investing.com, Simply Wall St (2026年3月)</p>
-        </section>
-
-        <section><h2>💼 业务分部深度解析</h2>
-            <div class="analysis-card"><h3>💱 现货交易 — 核心业务</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>香港唯一持牌平台</li><li>现货ETF服务获批</li><li>机构投资者入场增加</li></ul></div>
-            <div class="analysis-card"><h3>🔐 托管服务 — 高壁垒</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>持牌托管服务</li><li>合规优势明显</li><li>机构资产托管需求增长</li></ul></div>
-            <div class="analysis-card"><h3>🌏 国际化 — 扩张中</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>亚洲市场扩张</li><li>机构合作增加</li><li>合规优势助力全球化</li></ul></div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值</h2>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$28</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+50%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">25%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$22</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$20</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">18%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$16</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$12</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$10</div></div></div></div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 买入</h3>
-            <p style="margin:20px 0;font-size:1.1em;">当前 HK$14.1 = 中性情景 DCF 的 71%。</p>
-            <p style="color:var(--text-muted);">OSL是香港加密市场唯一持牌平台，受益于监管红利，目标价HK$22有56%上涨空间。</p>
-            <h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：买入</h4>
-            <ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价HK$22，当前价位极具吸引力</li><li>• 香港加密政策利好持续</li><li>• 止损位：HK$10</li></ul>
-        </div></section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>加密市场波动大</li><li>监管政策变化</li><li>竞争加剧</li><li>香港市场容量有限</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="nvidia.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="pinduoduo.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>OSL集团 — 投资分析报告</h1><p class="subtitle">0863.HK</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">HK$14.11</div><div class="snapshot-change">前一天: +3.5% | YTD: -16.9%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">HK$126亿</div><div class="snapshot-change">香港持牌加密平台</div></div>
+<div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">HK$22</div><div class="snapshot-change">分析师均值</div></div>
+<div class="snapshot-card"><div class="snapshot-label">评级</div><div class="snapshot-value">买入</div><div class="snapshot-change">共识</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="OSL一年股价走势" src="charts/0863_HK.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势</p>
+</div>
+</section>
+<div class="alert-box">
+<div class="alert-title">🚀 核心亮点</div>
+<p>OSL是香港唯一的持牌加密货币交易平台，受益于香港加密监管政策和现货ETF推出。2025年获批提供虚拟资产现货ETF服务，市场份额持续提升。</p>
+</div>
+<section><h2>📊 财务数据详表</h2>
+<div class="table-container">
+<table><thead><tr><th>指标</th><th class="number">2023</th><th class="number">2024</th><th class="number">2025H1</th><th class="number">2025E全年</th></tr></thead>
+<tbody>
+<tr><td>营收 (百万港元)</td><td class="number">287</td><td class="number">375</td><td class="number">195</td><td class="number">450-530</td></tr>
+<tr><td>同比增速</td><td class="number">-</td><td class="number bullish">+31%</td><td class="number">-</td><td class="number">+20%~41%</td></tr>
+<tr><td>净利润 (百万港元)</td><td class="number">-72</td><td class="number bullish">48</td><td class="number bearish">-40</td><td class="number bearish">-370~-430</td></tr>
+<tr><td>首次盈利</td><td class="number">否</td><td class="number bullish">是</td><td class="number">-</td><td class="number bearish">预计亏损</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: OSL集团财报 | 2025年为公司业绩指引</p>
+</section>
+<section><h2>🔮 分析师预测</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>评级</span><span class="tag tag-bullish">买入 (共识)</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">10位分析师中60%强力买入，40%买入</p></div>
+<div class="metric-card"><div class="metric-header"><span>目标价</span><span class="metric-value" style="font-size:1.4em;">HK$22</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">12个月目标价均值，当前价HK$14.1有56%上涨空间</p></div>
+<div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-value" style="font-size:1.2em;">HK$18-25</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">最低HK$18.99 / 最高HK$25.33</p></div>
+<div class="metric-card"><div class="metric-header"><span>2026年EPS预测</span><span class="metric-value" style="font-size:1.2em;">HK$0.31</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">Fintel预测，每股收益2027年</p></div>
+</div>
+<div class="analysis-card" style="margin-top:20px;"><h3>📝 分析师观点要点</h3>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>积极因素：</strong>香港唯一持牌加密平台，受益于监管红利；现货ETF服务获批带来新增长点；机构投资者入场增加</li><li><strong>风险因素：</strong>2025年为战略投入期，预计全年净亏损3.7-4.3亿港元；加密市场波动性；全球扩张成本</li><li><strong>增长预测：</strong>Simply Wall St预测收入将增长45.5%/年，盈利增长4%/年</li></ul>
+</div>
+<p style="color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Moomoo, Fintel, Investing.com, Simply Wall St (2026年3月)</p>
+</section>
+<section><h2>💼 业务分部深度解析</h2>
+<div class="analysis-card"><h3>💱 现货交易 — 核心业务</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>香港唯一持牌平台</li><li>现货ETF服务获批</li><li>机构投资者入场增加</li></ul></div>
+<div class="analysis-card"><h3>🔐 托管服务 — 高壁垒</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>持牌托管服务</li><li>合规优势明显</li><li>机构资产托管需求增长</li></ul></div>
+<div class="analysis-card"><h3>🌏 国际化 — 扩张中</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>亚洲市场扩张</li><li>机构合作增加</li><li>合规优势助力全球化</li></ul></div>
+</section>
+<section><h2>📊 DCF 折现估值</h2>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$28</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+50%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">25%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$22</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$20</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">18%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$16</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$12</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">用户增长</div><div class="dcf-detail-value">+10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">利润率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$10</div></div></div></div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 买入</h3>
+<p style="margin:20px 0;font-size:1.1em;">当前 HK$14.1 = 中性情景 DCF 的 71%。</p>
+<p style="color:var(--text-muted);">OSL是香港加密市场唯一持牌平台，受益于监管红利，目标价HK$22有56%上涨空间。</p>
+<h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：买入</h4>
+<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价HK$22，当前价位极具吸引力</li><li>• 香港加密政策利好持续</li><li>• 止损位：HK$10</li></ul>
+</div></section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>加密市场波动大</li><li>监管政策变化</li><li>竞争加剧</li><li>香港市场容量有限</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
 </body>
 </html>

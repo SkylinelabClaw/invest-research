@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coinbase Global 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coinbase Global 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -77,148 +78,132 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="cambridgetechnology.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="dongpeng.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>Coinbase Global — 投资分析报告</h1><p class="subtitle">COIN.US</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
-            </div>
-        </div>
-    </header>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">$248</div><div class="snapshot-change">YTD: +12.5%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">~$620亿</div><div class="snapshot-change">加密货币交易所龙头</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">P/E (TTM)</div><div class="snapshot-value">N/A</div><div class="snapshot-change">GAAP 亏损</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$290</div><div class="snapshot-change">分析师均值</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/COIN.png" alt="Coinbase一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
-            </div>
-        </section>
-
-        <div class="alert-box">
-            <div class="alert-title">⚠️ 核心警示</div>
-            <p>Coinbase Q4 2025营收$17.8亿，同比下降22%，环比下降5%，低于市场预期。GAAP净亏损$6.67亿。交易量市场份额翻倍，但整体加密市场降温导致收入下滑。2025年全年营收$72亿，同比+9%。</p>
-        </div>
-
-        <section><h2>💰 核心财务指标 — Q4 2025 & 全年</h2>
-            <h3>▎财务数据详表</h3>
-            <div class="table-container">
-                <table><thead><tr><th>指标</th><th class="number">Q4 2025</th><th class="number">Q4 2024</th><th class="number">FY 2025</th><th class="number">FY 2024</th><th class="number">YoY</th></tr></thead>
-                    <tbody>
-                        <tr><td>总营收</td><td class="number">$17.8亿</td><td class="number">$22.8亿</td><td class="number">$71.8亿</td><td class="number">$65.7亿</td><td class="number bullish">+9.4%</td></tr>
-                        <tr><td>交易收入</td><td class="number">$9.83亿</td><td class="number">$13.3亿</td><td class="number">$41亿</td><td class="number">$40亿</td><td class="number">+2%</td></tr>
-                        <tr><td>订阅服务收入</td><td class="number">$7.27亿</td><td class="number">$6.8亿</td><td class="number">$28.3亿</td><td class="number">$22亿</td><td class="number bullish">+29%</td></tr>
-                        <tr><td>GAAP净亏损/利润</td><td class="number">-$6.67亿</td><td class="number">$2.4亿</td><td class="number">$13亿</td><td class="number">$17亿</td><td class="number bearish">-24%</td></tr>
-                        <tr><td>调整后EBITDA</td><td class="number">$5.66亿</td><td class="number">$9.5亿</td><td class="number">$28亿</td><td class="number">$26亿</td><td class="number bullish">+8%</td></tr>
-                        <tr><td>调整后EPS</td><td class="number">$0.66</td><td class="number">$3.45</td><td class="number">$7.50</td><td class="number">$7.15</td><td class="number bullish">+5%</td></tr>
-                        <tr><td>总交易量</td><td class="number">—</td><td class="number">—</td><td class="number">$5.2万亿</td><td class="number">$2.0万亿</td><td class="number bullish">+156%</td></tr>
-                        <tr><td>现金及等价物</td><td class="number">$113亿</td><td class="number">—</td><td class="number">$113亿</td><td class="number">$68亿</td><td class="number bullish">+66%</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">*数据来源: Coinbase 2025年报及Q4财报</p>
-            
-            <h3>▎Q4 2025 单季</h3>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>总营收</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$17.8亿</div><div class="metric-change bearish">YoY -22%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>GAAP净亏损</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">-$6.67亿</div><div class="metric-change bearish">vs 预期</div></div>
-                <div class="metric-card"><div class="metric-header"><span>调整后EPS</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$0.66</div><div class="metric-change bearish">vs 预期 $0.96</div></div>
-                <div class="metric-card"><div class="metric-header"><span>订阅服务收入</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$7.27亿</div><div class="metric-change">稳定增长</div></div>
-            </div>
-            <h3 style="margin-top:30px;">▎全年 2025</h3>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>总营收</span><span class="metric-period">FY 2025</span></div><div class="metric-value">$72亿</div><div class="metric-change bullish">YoY +9%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>交易量市场份额</span><span class="metric-period">FY 2025</span></div><div class="metric-value">翻倍</div><div class="metric-change bullish">行业领先</div></div>
-            </div>
-        </section>
-
-        <section><h2>💼 业务分部深度解析</h2>
-            <div class="analysis-card"><h3>📈 交易业务 — 核心收入</h3><span class="tag tag-bearish">利空</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4交易收入$9.83亿</strong>，同比下降约26%，环比下滑</li><li>全年交易收入$41亿，同比增长仅2%（均价下滑影响）</li><li>全年交易量$5.2万亿，同比+156%，市场份额翻倍</li><li>现货交易仍是主要收入来源，但费率压力持续</li></ul></div>
-            <div class="analysis-card"><h3>💎 订阅服务 — 稳定增长引擎</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4订阅服务收入$7.27亿</strong>，环比稳定</li><li>全年订阅服务收入$28.3亿，包括Staking、Custody等</li><li>净利率17.6%（vs 去年41%），盈利能力大幅下滑</li><li>提供稳定经常性收入，抵抗市场波动</li></ul></div>
-            <div class="analysis-card"><h3>📊 Q4 vs 全年盈利对比</h3><span class="tag tag-bearish">风险警示</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4净亏损$6.67亿</strong>，GAAP盈利转为亏损</li><li>全年净利润$12.6亿，仍保持盈利</li><li>全年营收$71.8亿，同比增长9%</li><li>毛利率下降，费用率上升导致Q4转亏</li></ul></div>
-            <div class="analysis-card"><h3>🌐 国际化扩张 — 长期利好</h3><span class="tag tag-bullish">利好</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>继续扩展欧洲和亚洲市场</li><li>合规优势明显，美国监管壁垒高</li><li>机构业务增长稳健，机构投资者兴趣增加</li></ul></div>
-        </section>
-
-        <section><h2>🎯 分析师预测</h2>
-            <div class="analysis-card"><h3>📊 机构评级与目标价</h3>
-                <div class="metrics-grid" style="margin-top:15px;">
-                    <div class="metric-card"><div class="metric-header"><span>分析师评级</span><span class="tag tag-neutral">持有/中性</span></div><p style="font-size:0.85em;margin-top:10px;">多数机构维持持有评级，认为长期增长潜力存在但短期波动较大</p></div>
-                    <div class="metric-card"><div class="metric-header"><span>12个月目标价</span><span class="metric-value">$290</span></div><p style="font-size:0.85em;margin-top:10px;">较当前$248有17%上涨空间</p></div>
-                    <div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-value">$380</span></div><p style="font-size:0.85em;margin-top:10px">Benchmark等给出</p></div>
-                    <div class="metric-card"><div class="metric-header"><span>最低目标价</span><span class="metric-value">$160</span></div><p style="font-size:0.85em;margin-top:10px">悲观情景</p></div>
-                </div>
-            </div>
-            <div class="analysis-card"><h3>📈 未来盈利预测</h3>
-                <div class="table-container">
-                    <table><thead><tr><th>财年</th><th class="number">营收预测</th><th class="number">调整后EBITDA</th><th class="number">调整后EPS</th></tr></thead>
-                        <tbody>
-                            <tr><td>2026E</td><td class="number">$85亿</td><td class="number">$35亿</td><td class="number">$9.20</td></tr>
-                            <tr><td>2027E</td><td class="number">$110亿</td><td class="number">$45亿</td><td class="number">$12.50</td></tr>
-                            <tr><td>2028E</td><td class="number">$140亿</td><td class="number">$58亿</td><td class="number">$16.00</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">*预测基于加密市场复苏预期，BTC价格假设$100,000-150,000</p>
-            </div>
-            <div class="analysis-card"><h3>🔑 分析师核心观点</h3>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>看好因素：</strong>订阅服务收入快速增长（2025年同比+29%）、USDC稳定币收入增长50%、市场份额翻倍、机构业务增长稳健</li><li><strong>担忧因素：</strong>Q4转亏、交易收入下滑、加密市场波动性、监管不确定性</li><li><strong>投资建议：</strong>等待加密市场趋势明确，关注BTC价格走势和监管政策变化</li></ul>
-            </div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$380</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$150,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+40%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$304</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$260</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$100,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$208</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$160</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$60,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">-10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$128</div></div></div></div>
-        </section>
-
-        <section><h2>🏆 巴菲特逐项评分</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">合规壁垒+品牌优势</p><p style="font-size:0.85em;margin-top:10px;">美国最大合规加密交易所，SEC监管优势明显，品牌信任度高。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">战略执行能力强</p><p style="font-size:0.85em;margin-top:10px;">合规优先策略正确，但盈利能力受市场影响大。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-neutral">B-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">现金储备充足</p><p style="font-size:0.85em;margin-top:10px;">Q4亏损后现金仍充足，但盈利波动大。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bearish">C</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高度依赖加密市场</p><p style="font-size:0.85em;margin-top:10px;">Q4 GAAP亏损，盈利质量需改善。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bearish">C-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">受币价波动大</p><p style="font-size:0.85em;margin-top:10px;">收入与加密货币价格高度相关。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">投资增长</p><p style="font-size:0.85em;margin-top:10px;">持续投资产品和国际化扩张。</p></div>
-            </div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 观望</h3>
-            <p style="margin:20px 0;font-size:1.1em;">当前 $248 = 中性情景 DCF 的 95%。</p>
-            <p style="color:var(--text-muted;">Coinbase是加密货币行业龙头，合规优势明显，但收入高度依赖加密市场周期性。Q4业绩低于预期，需要等待加密市场复苏。</p>
-            <h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：观望</h4>
-            <ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价$290，当前估值合理偏高</li><li>• 需等待加密市场趋势明确</li><li>• 关注BTC价格走势和监管政策</li></ul>
-        </div></section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>加密货币价格大幅下跌</li><li>SEC等监管机构加强监管</li><li>竞争加剧（Binance等）</li><li>公司盈利波动性大</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="cambridgetechnology.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="dongpeng.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>Coinbase Global — 投资分析报告</h1><p class="subtitle">COIN.US</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">$197.50</div><div class="snapshot-change">前一天: -2.7% | YTD: -16.5%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$533亿</div><div class="snapshot-change">加密货币交易所龙头</div></div>
+<div class="snapshot-card"><div class="snapshot-label">P/E (TTM)</div><div class="snapshot-value">44.5x</div><div class="snapshot-change">GAAP 亏损</div></div>
+<div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$290</div><div class="snapshot-change">分析师均值</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="Coinbase一年股价走势" src="charts/COIN.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
+</div>
+</section>
+<div class="alert-box">
+<div class="alert-title">⚠️ 核心警示</div>
+<p>Coinbase Q4 2025营收$17.8亿，同比下降22%，环比下降5%，低于市场预期。GAAP净亏损$6.67亿。交易量市场份额翻倍，但整体加密市场降温导致收入下滑。2025年全年营收$72亿，同比+9%。</p>
+</div>
+<section><h2>💰 核心财务指标 — Q4 2025 &amp; 全年</h2>
+<h3>▎财务数据详表</h3>
+<div class="table-container">
+<table><thead><tr><th>指标</th><th class="number">Q4 2025</th><th class="number">Q4 2024</th><th class="number">FY 2025</th><th class="number">FY 2024</th><th class="number">YoY</th></tr></thead>
+<tbody>
+<tr><td>总营收</td><td class="number">$17.8亿</td><td class="number">$22.8亿</td><td class="number">$71.8亿</td><td class="number">$65.7亿</td><td class="number bullish">+9.4%</td></tr>
+<tr><td>交易收入</td><td class="number">$9.83亿</td><td class="number">$13.3亿</td><td class="number">$41亿</td><td class="number">$40亿</td><td class="number">+2%</td></tr>
+<tr><td>订阅服务收入</td><td class="number">$7.27亿</td><td class="number">$6.8亿</td><td class="number">$28.3亿</td><td class="number">$22亿</td><td class="number bullish">+29%</td></tr>
+<tr><td>GAAP净亏损/利润</td><td class="number">-$6.67亿</td><td class="number">$2.4亿</td><td class="number">$13亿</td><td class="number">$17亿</td><td class="number bearish">-24%</td></tr>
+<tr><td>调整后EBITDA</td><td class="number">$5.66亿</td><td class="number">$9.5亿</td><td class="number">$28亿</td><td class="number">$26亿</td><td class="number bullish">+8%</td></tr>
+<tr><td>调整后EPS</td><td class="number">$0.66</td><td class="number">$3.45</td><td class="number">$7.50</td><td class="number">$7.15</td><td class="number bullish">+5%</td></tr>
+<tr><td>总交易量</td><td class="number">—</td><td class="number">—</td><td class="number">$5.2万亿</td><td class="number">$2.0万亿</td><td class="number bullish">+156%</td></tr>
+<tr><td>现金及等价物</td><td class="number">$113亿</td><td class="number">—</td><td class="number">$113亿</td><td class="number">$68亿</td><td class="number bullish">+66%</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">*数据来源: Coinbase 2025年报及Q4财报</p>
+<h3>▎Q4 2025 单季</h3>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>总营收</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$17.8亿</div><div class="metric-change bearish">YoY -22%</div></div>
+<div class="metric-card"><div class="metric-header"><span>GAAP净亏损</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">-$6.67亿</div><div class="metric-change bearish">vs 预期</div></div>
+<div class="metric-card"><div class="metric-header"><span>调整后EPS</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$0.66</div><div class="metric-change bearish">vs 预期 $0.96</div></div>
+<div class="metric-card"><div class="metric-header"><span>订阅服务收入</span><span class="metric-period">Q4 2025</span></div><div class="metric-value">$7.27亿</div><div class="metric-change">稳定增长</div></div>
+</div>
+<h3 style="margin-top:30px;">▎全年 2025</h3>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>总营收</span><span class="metric-period">FY 2025</span></div><div class="metric-value">$72亿</div><div class="metric-change bullish">YoY +9%</div></div>
+<div class="metric-card"><div class="metric-header"><span>交易量市场份额</span><span class="metric-period">FY 2025</span></div><div class="metric-value">翻倍</div><div class="metric-change bullish">行业领先</div></div>
+</div>
+</section>
+<section><h2>💼 业务分部深度解析</h2>
+<div class="analysis-card"><h3>📈 交易业务 — 核心收入</h3><span class="tag tag-bearish">利空</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4交易收入$9.83亿</strong>，同比下降约26%，环比下滑</li><li>全年交易收入$41亿，同比增长仅2%（均价下滑影响）</li><li>全年交易量$5.2万亿，同比+156%，市场份额翻倍</li><li>现货交易仍是主要收入来源，但费率压力持续</li></ul></div>
+<div class="analysis-card"><h3>💎 订阅服务 — 稳定增长引擎</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4订阅服务收入$7.27亿</strong>，环比稳定</li><li>全年订阅服务收入$28.3亿，包括Staking、Custody等</li><li>净利率17.6%（vs 去年41%），盈利能力大幅下滑</li><li>提供稳定经常性收入，抵抗市场波动</li></ul></div>
+<div class="analysis-card"><h3>📊 Q4 vs 全年盈利对比</h3><span class="tag tag-bearish">风险警示</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4净亏损$6.67亿</strong>，GAAP盈利转为亏损</li><li>全年净利润$12.6亿，仍保持盈利</li><li>全年营收$71.8亿，同比增长9%</li><li>毛利率下降，费用率上升导致Q4转亏</li></ul></div>
+<div class="analysis-card"><h3>🌐 国际化扩张 — 长期利好</h3><span class="tag tag-bullish">利好</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>继续扩展欧洲和亚洲市场</li><li>合规优势明显，美国监管壁垒高</li><li>机构业务增长稳健，机构投资者兴趣增加</li></ul></div>
+</section>
+<section><h2>🎯 分析师预测</h2>
+<div class="analysis-card"><h3>📊 机构评级与目标价</h3>
+<div class="metrics-grid" style="margin-top:15px;">
+<div class="metric-card"><div class="metric-header"><span>分析师评级</span><span class="tag tag-neutral">持有/中性</span></div><p style="font-size:0.85em;margin-top:10px;">多数机构维持持有评级，认为长期增长潜力存在但短期波动较大</p></div>
+<div class="metric-card"><div class="metric-header"><span>12个月目标价</span><span class="metric-value">$290</span></div><p style="font-size:0.85em;margin-top:10px;">较当前$248有17%上涨空间</p></div>
+<div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-value">$380</span></div><p style="font-size:0.85em;margin-top:10px">Benchmark等给出</p></div>
+<div class="metric-card"><div class="metric-header"><span>最低目标价</span><span class="metric-value">$160</span></div><p style="font-size:0.85em;margin-top:10px">悲观情景</p></div>
+</div>
+</div>
+<div class="analysis-card"><h3>📈 未来盈利预测</h3>
+<div class="table-container">
+<table><thead><tr><th>财年</th><th class="number">营收预测</th><th class="number">调整后EBITDA</th><th class="number">调整后EPS</th></tr></thead>
+<tbody>
+<tr><td>2026E</td><td class="number">$85亿</td><td class="number">$35亿</td><td class="number">$9.20</td></tr>
+<tr><td>2027E</td><td class="number">$110亿</td><td class="number">$45亿</td><td class="number">$12.50</td></tr>
+<tr><td>2028E</td><td class="number">$140亿</td><td class="number">$58亿</td><td class="number">$16.00</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:var(--text-muted);font-size:0.85em;margin-top:10px;">*预测基于加密市场复苏预期，BTC价格假设$100,000-150,000</p>
+</div>
+<div class="analysis-card"><h3>🔑 分析师核心观点</h3>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>看好因素：</strong>订阅服务收入快速增长（2025年同比+29%）、USDC稳定币收入增长50%、市场份额翻倍、机构业务增长稳健</li><li><strong>担忧因素：</strong>Q4转亏、交易收入下滑、加密市场波动性、监管不确定性</li><li><strong>投资建议：</strong>等待加密市场趋势明确，关注BTC价格走势和监管政策变化</li></ul>
+</div>
+</section>
+<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$380</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$150,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+40%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$304</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$260</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$100,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">+20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$208</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$160</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">BTC假设</div><div class="dcf-detail-value">$60,000</div></div><div class="dcf-detail"><div class="dcf-detail-label">营收增长</div><div class="dcf-detail-value">-10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$128</div></div></div></div>
+</section>
+<section><h2>🏆 巴菲特逐项评分</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">合规壁垒+品牌优势</p><p style="font-size:0.85em;margin-top:10px;">美国最大合规加密交易所，SEC监管优势明显，品牌信任度高。</p></div>
+<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">战略执行能力强</p><p style="font-size:0.85em;margin-top:10px;">合规优先策略正确，但盈利能力受市场影响大。</p></div>
+<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-neutral">B-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">现金储备充足</p><p style="font-size:0.85em;margin-top:10px;">Q4亏损后现金仍充足，但盈利波动大。</p></div>
+<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bearish">C</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高度依赖加密市场</p><p style="font-size:0.85em;margin-top:10px;">Q4 GAAP亏损，盈利质量需改善。</p></div>
+<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bearish">C-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">受币价波动大</p><p style="font-size:0.85em;margin-top:10px;">收入与加密货币价格高度相关。</p></div>
+<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-neutral">B</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">投资增长</p><p style="font-size:0.85em;margin-top:10px;">持续投资产品和国际化扩张。</p></div>
+</div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 观望</h3>
+<p style="margin:20px 0;font-size:1.1em;">当前 $248 = 中性情景 DCF 的 95%。</p>
+<p style="color:var(--text-muted;">Coinbase是加密货币行业龙头，合规优势明显，但收入高度依赖加密市场周期性。Q4业绩低于预期，需要等待加密市场复苏。</p>
+<h4 style="margin:30px 0 15px;color:var(--highlight);">⚖️ 结论：观望</h4>
+<ul style="text-align:left;max-width:700px;margin:0 auto;"><li>• 目标价$290，当前估值合理偏高</li><li>• 需等待加密市场趋势明确</li><li>• 关注BTC价格走势和监管政策</li></ul>
+</div></section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>加密货币价格大幅下跌</li><li>SEC等监管机构加强监管</li><li>竞争加剧（Binance等）</li><li>公司盈利波动性大</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
 </body>
 </html>

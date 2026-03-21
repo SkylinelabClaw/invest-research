@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>老铺黄金 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>老铺黄金 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #ffd700; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -65,270 +66,255 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="jiaxininternational.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="maogeping.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>💰 老铺黄金 (06181.HK) — 2025年财报深度分析</h1><p class="subtitle">Investment Research Report</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">HK$638</div><div class="snapshot-change">前一天: -4.4% | YTD: -18.0%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">≈ HKD 1,150亿</div><div class="snapshot-change">约 RMB 1,070亿</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">2025E P/E</div><div class="snapshot-value">~22x</div><div class="snapshot-change">净利润 48-49亿</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">股息率</div><div class="snapshot-value">~2.5%</div><div class="snapshot-change">维持高分红</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/6181.HK.png" alt="老铺黄金一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
-            </div>
-        </section>
-
-        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
-            <p>2025年营收同比暴增 217%-229%至 270-280亿，净利润同比激增 226%-233%至 48-49亿。品牌影响力持续扩大，产品持续创新，门店扩张驱动量价齐升。但估值已反映高增长预期，需观察后续门店扩张节奏和同店增长持续性。</p>
-        </div>
-
-        <section><h2>💰 2025年全年业绩 (预告)</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 270-280亿</div><div class="metric-change bullish">YoY +217% ~ +229%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 48-49亿</div><div class="metric-change bullish">YoY +226% ~ +233%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>经调整净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 50-51亿</div><div class="metric-change bullish">剔除股权激励后 +233% ~ +240%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>含税销售额</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 310-320亿</div><div class="metric-change bullish">YoY +216% ~ +227%</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 历史业绩对比</h2>
-            <div class="table-container">
-                <table><thead><tr><th>指标</th><th class="number">2024全年</th><th class="number">2025上半年</th><th class="number">2025全年E</th><th class="number">YoY</th></tr></thead>
-                    <tbody>
-                        <tr><td>营收 (亿RMB)</td><td class="number">~85</td><td class="number">123.5</td><td class="number">270-280</td><td class="number bullish">+217%</td></tr>
-                        <tr><td>净利润 (亿RMB)</td><td class="number">~15</td><td class="number">22.7</td><td class="number">48-49</td><td class="number bullish">+226%</td></tr>
-                        <tr><td>门店数量</td><td class="number">~50</td><td class="number">~55</td><td class="number">~60</td><td class="number bullish">+10家</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section><h2>💼 增长驱动深度解析</h2>
-            <div class="analysis-card"><h3>🏪 门店扩张 — 增量引擎</h3><span class="tag tag-bullish">核心驱动</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>2025年新增 <strong>10家门店</strong></li><li>对 <strong>9家既有门店</strong> 进行优化及扩容</li><li>门店数量持续增长带来增量营收</li><li>平均店效目标超过 <strong>10亿元</strong></li></ul></div>
-            <div class="analysis-card"><h3>✨ 品牌与产品 — 护城河</h3><span class="tag tag-bullish">竞争优势</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>品牌影响力持续扩大形成的绝对市场优势</li><li>产品持续优化和推新迭代</li><li>2025年进行了 <strong>三次产品价格上调</strong></li><li>2026年2月底完成 <strong>2026年首次提价</strong></li></ul></div>
-            <div class="analysis-card"><h3>📈 量价齐升 — 增长模式</h3><span class="tag tag-bullish">双轮驱动</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>门店覆盖加密带来客流增长</li><li>同店销售增长强劲</li><li>高毛利率产品占比提升</li><li>线上线下店铺整体营收大幅增长</li></ul></div>
-            <div class="analysis-card"><h3>🌏 海外扩张 — 新增长点</h3><span class="tag tag-neutral">探索期</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>2025年在新加坡和日本进行新店拓展和布局</li><li>调整境内外产品的商品结构</li><li>海外市场仍处于早期探索阶段</li></ul></div>
-        </section>
-
-        <section><h2>📞 管理层发言</h2>
-            <div class="qa-item"><div class="qa-question">徐高明 — 老铺黄金董事长</div>
-                <div class="qa-answer"><p>「老铺黄金并非'接住'了这波流量，而是'预判'并'顺应'了这个趋势，才取得了现在的市场效果。我们平均店效目标是超过10亿元，在2025年8月时认为已经达到该水平。」</p><p style="margin-top:10px;"><span class="tag tag-bullish">利好</span> 管理层对品牌定位清晰，执行力强。</p></div></div>
-            <div class="qa-item"><div class="qa-question">徐高明 — 高客管理与海外市场</div>
-                <div class="qa-answer"><p>「我们将继续深耕高客管理策略，通过产品创新和服务升级提升客户价值。同时，公司正在积极布局海外市场，2025年在新加坡和日本进行新店拓展和布局，调整境内外产品的商品结构。」</p><p style="margin-top:10px;"><span class="tag tag-neutral">观望</span> 海外扩张是长期看点，但短期贡献有限。</p></div></div>
-            <div class="qa-item" style="border-left-color: var(--bearish);"><div class="qa-question">⚠️ 风险提示</div>
-                <div class="qa-answer"><p>「我们认识到门店扩张可能面临选址、人才等挑战。同时，消费环境变化可能影响高端消费需求。」</p><p style="margin-top:10px;"><span class="tag tag-bearish">利空</span> 扩张速度和消费环境是主要风险。</p></div></div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-            <p style="margin-bottom:20px;color:var(--text-muted);">共同假设：股本 ~1.8亿股 | 净现金充裕 | 高增长预期</p>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$850</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$680</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$680</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$544</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$480</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$384</div></div></div></div>
-        </section>
-
-        <section><h2>🏆 巴菲特逐项评分</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">品牌壁垒</p><p style="font-size:0.85em;margin-top:10px;">古法金工艺+品牌溢价构成独特护城河。高客单价+高复购率。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">优秀且理性</p><p style="font-size:0.85em;margin-top:10px;">徐高明战略清晰，IP运营克制。持续提价显示品牌力。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高增长高盈利</p><p style="font-size:0.85em;margin-top:10px;">净利润+226%，ROE高，现金流健康。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">量价齐升，真实增长。持续提价验证品牌力。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">门店驱动</p><p style="font-size:0.85em;margin-top:10px;">增长依赖门店扩张，扩张速度有不确定性。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">积极扩张</p><p style="font-size:0.85em;margin-top:10px;">门店扩张+海外探索并行。</p></div>
-            </div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 观察 (Watch)</h3>
-            <p style="margin:20px 0;">股价HK$650已反映高增长预期，22x PE处于历史高位区间。等待更好的买入点位。</p>
-            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
-            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 等待更好的买入点位（HK$550-600）</li><li>• 关注2026年门店扩张计划</li><li>• 跟踪同店销售增长趋势</li><li>• 止损位：HK$480</li></ul>
-        </div></section>
-
-        <section><h2>📊 财务数据详表</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>财务指标</th>
-                            <th class="number">2024年</th>
-                            <th class="number">同比增长</th>
-                            <th>备注</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>营业收入</td>
-                            <td class="number">RMB 85.06亿</td>
-                            <td class="number bullish">+167.5%</td>
-                            <td>大幅增长</td>
-                        </tr>
-                        <tr>
-                            <td>毛利润</td>
-                            <td class="number">RMB 35.01亿</td>
-                            <td class="number bullish">-</td>
-                            <td>新增</td>
-                        </tr>
-                        <tr>
-                            <td>毛利率</td>
-                            <td class="number">41.2%</td>
-                            <td class="number">-</td>
-                            <td>保持高位</td>
-                        </tr>
-                        <tr>
-                            <td>净利润</td>
-                            <td class="number">RMB 14.73亿</td>
-                            <td class="number bullish">+253.9%</td>
-                            <td>年内利润</td>
-                        </tr>
-                        <tr>
-                            <td>经调整净利润</td>
-                            <td class="number">RMB 15.02亿</td>
-                            <td class="number bullish">+253.4%</td>
-                            <td>非IFRS</td>
-                        </tr>
-                        <tr>
-                            <td>含税销售额</td>
-                            <td class="number">RMB 98.0亿</td>
-                            <td class="number bullish">+166%</td>
-                            <td>销售业绩</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section><h2>🎯 分析师预测</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>机构</th>
-                            <th class="number">评级</th>
-                            <th class="number">目标价 (港元)</th>
-                            <th>备注</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>摩根大通</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">1,296</td>
-                            <td>最高目标价</td>
-                        </tr>
-                        <tr>
-                            <td>高盛</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">1,168</td>
-                            <td>上调盈利预测</td>
-                        </tr>
-                        <tr>
-                            <td>花旗</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">1,162</td>
-                            <td>上调目标价</td>
-                        </tr>
-                        <tr>
-                            <td>野村证券</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">1,160</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>华泰证券</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">1,200</td>
-                            <td>重申</td>
-                        </tr>
-                        <tr>
-                            <td>中金公司</td>
-                            <td class="number"><span class="tag tag-bullish">跑赢行业</span></td>
-                            <td class="number">1,079</td>
-                            <td>维持</td>
-                        </tr>
-                        <tr>
-                            <td>摩根士丹利</td>
-                            <td class="number"><span class="tag tag-neutral">与大市同步</span></td>
-                            <td class="number">1,055</td>
-                            <td>上调</td>
-                        </tr>
-                        <tr>
-                            <td>富瑞</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">981</td>
-                            <td>维持</td>
-                        </tr>
-                        <tr>
-                            <td>国盛证券</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">822</td>
-                            <td>重申</td>
-                        </tr>
-                        <tr>
-                            <td>国泰海通</td>
-                            <td class="number"><span class="tag tag-bullish">买入</span></td>
-                            <td class="number">814</td>
-                            <td>下调</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="metrics-grid" style="margin-top:20px;">
-                <div class="metric-card">
-                    <div class="metric-header"><span>一致目标价</span></div>
-                    <div class="metric-value" style="font-size:1.4em;">1,018.52港元</div>
-                    <div class="metric-change">基于16位分析师</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-header"><span>目标价区间</span></div>
-                    <div class="metric-value" style="font-size:1.2em;">814 - 1,296港元</div>
-                    <div class="metric-change">当前: HK$638</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-header"><span>市场共识</span></div>
-                    <div class="metric-value bullish" style="font-size:1.4em;">强烈买入</div>
-                    <div class="metric-change">平均上涨空间 60%</div>
-                </div>
-            </div>
-            <div class="analysis-card" style="margin-top:20px;">
-                <h3>📈 2025年业绩展望</h3>
-                <div class="metrics-grid">
-                    <div class="metric-card"><div class="metric-header"><span>收入预测</span></div><div class="metric-value" style="font-size:1.2em;">RMB 270-280亿</div><div class="metric-change bullish">+217% ~ +229%</div></div>
-                    <div class="metric-card"><div class="metric-header"><span>净利润预测</span></div><div class="metric-value" style="font-size:1.2em;">RMB 48-49亿</div><div class="metric-change bullish">+226% ~ +233%</div></div>
-                </div>
-            </div>
-        </section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>估值偏高，22x PE 反映过度乐观预期</li><li>门店扩张速度放缓影响增长逻辑</li><li>黄金价格波动影响毛利率</li><li>高端消费下行压力</li><li>海外扩张不确定性</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="jiaxininternational.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="maogeping.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>💰 老铺黄金 (06181.HK) — 2025年财报深度分析</h1><p class="subtitle">Investment Research Report</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-20</div><div>分析师: 投研团队</div><div>评级: 观察</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">HK$611.00</div><div class="snapshot-change">前一天: -4.2% | YTD: -1.8%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">HK$1,080亿</div><div class="snapshot-change">约 RMB 1,070亿</div></div>
+<div class="snapshot-card"><div class="snapshot-label">2025E P/E</div><div class="snapshot-value">28.7x</div><div class="snapshot-change">净利润 48-49亿</div></div>
+<div class="snapshot-card"><div class="snapshot-label">股息率</div><div class="snapshot-value">~2.5%</div><div class="snapshot-change">维持高分红</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="老铺黄金一年股价走势" src="charts/6181.HK.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
+</div>
+</section>
+<div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+<p>2025年营收同比暴增 217%-229%至 270-280亿，净利润同比激增 226%-233%至 48-49亿。品牌影响力持续扩大，产品持续创新，门店扩张驱动量价齐升。但估值已反映高增长预期，需观察后续门店扩张节奏和同店增长持续性。</p>
+</div>
+<section><h2>💰 2025年全年业绩 (预告)</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>营业收入</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 270-280亿</div><div class="metric-change bullish">YoY +217% ~ +229%</div></div>
+<div class="metric-card"><div class="metric-header"><span>净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 48-49亿</div><div class="metric-change bullish">YoY +226% ~ +233%</div></div>
+<div class="metric-card"><div class="metric-header"><span>经调整净利润</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 50-51亿</div><div class="metric-change bullish">剔除股权激励后 +233% ~ +240%</div></div>
+<div class="metric-card"><div class="metric-header"><span>含税销售额</span><span class="metric-period">FY 2025E</span></div><div class="metric-value">RMB 310-320亿</div><div class="metric-change bullish">YoY +216% ~ +227%</div></div>
+</div>
+</section>
+<section><h2>📈 历史业绩对比</h2>
+<div class="table-container">
+<table><thead><tr><th>指标</th><th class="number">2024全年</th><th class="number">2025上半年</th><th class="number">2025全年E</th><th class="number">YoY</th></tr></thead>
+<tbody>
+<tr><td>营收 (亿RMB)</td><td class="number">~85</td><td class="number">123.5</td><td class="number">270-280</td><td class="number bullish">+217%</td></tr>
+<tr><td>净利润 (亿RMB)</td><td class="number">~15</td><td class="number">22.7</td><td class="number">48-49</td><td class="number bullish">+226%</td></tr>
+<tr><td>门店数量</td><td class="number">~50</td><td class="number">~55</td><td class="number">~60</td><td class="number bullish">+10家</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section><h2>💼 增长驱动深度解析</h2>
+<div class="analysis-card"><h3>🏪 门店扩张 — 增量引擎</h3><span class="tag tag-bullish">核心驱动</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>2025年新增 <strong>10家门店</strong></li><li>对 <strong>9家既有门店</strong> 进行优化及扩容</li><li>门店数量持续增长带来增量营收</li><li>平均店效目标超过 <strong>10亿元</strong></li></ul></div>
+<div class="analysis-card"><h3>✨ 品牌与产品 — 护城河</h3><span class="tag tag-bullish">竞争优势</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>品牌影响力持续扩大形成的绝对市场优势</li><li>产品持续优化和推新迭代</li><li>2025年进行了 <strong>三次产品价格上调</strong></li><li>2026年2月底完成 <strong>2026年首次提价</strong></li></ul></div>
+<div class="analysis-card"><h3>📈 量价齐升 — 增长模式</h3><span class="tag tag-bullish">双轮驱动</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>门店覆盖加密带来客流增长</li><li>同店销售增长强劲</li><li>高毛利率产品占比提升</li><li>线上线下店铺整体营收大幅增长</li></ul></div>
+<div class="analysis-card"><h3>🌏 海外扩张 — 新增长点</h3><span class="tag tag-neutral">探索期</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>2025年在新加坡和日本进行新店拓展和布局</li><li>调整境内外产品的商品结构</li><li>海外市场仍处于早期探索阶段</li></ul></div>
+</section>
+<section><h2>📞 管理层发言</h2>
+<div class="qa-item"><div class="qa-question">徐高明 — 老铺黄金董事长</div>
+<div class="qa-answer"><p>「老铺黄金并非'接住'了这波流量，而是'预判'并'顺应'了这个趋势，才取得了现在的市场效果。我们平均店效目标是超过10亿元，在2025年8月时认为已经达到该水平。」</p><p style="margin-top:10px;"><span class="tag tag-bullish">利好</span> 管理层对品牌定位清晰，执行力强。</p></div></div>
+<div class="qa-item"><div class="qa-question">徐高明 — 高客管理与海外市场</div>
+<div class="qa-answer"><p>「我们将继续深耕高客管理策略，通过产品创新和服务升级提升客户价值。同时，公司正在积极布局海外市场，2025年在新加坡和日本进行新店拓展和布局，调整境内外产品的商品结构。」</p><p style="margin-top:10px;"><span class="tag tag-neutral">观望</span> 海外扩张是长期看点，但短期贡献有限。</p></div></div>
+<div class="qa-item" style="border-left-color: var(--bearish);"><div class="qa-question">⚠️ 风险提示</div>
+<div class="qa-answer"><p>「我们认识到门店扩张可能面临选址、人才等挑战。同时，消费环境变化可能影响高端消费需求。」</p><p style="margin-top:10px;"><span class="tag tag-bearish">利空</span> 扩张速度和消费环境是主要风险。</p></div></div>
+</section>
+<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+<p style="margin-bottom:20px;color:var(--text-muted);">共同假设：股本 ~1.8亿股 | 净现金充裕 | 高增长预期</p>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">HK$850</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$680</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">HK$680</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">20%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$544</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">HK$480</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">HK$384</div></div></div></div>
+</section>
+<section><h2>🏆 巴菲特逐项评分</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">品牌壁垒</p><p style="font-size:0.85em;margin-top:10px;">古法金工艺+品牌溢价构成独特护城河。高客单价+高复购率。</p></div>
+<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">优秀且理性</p><p style="font-size:0.85em;margin-top:10px;">徐高明战略清晰，IP运营克制。持续提价显示品牌力。</p></div>
+<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高增长高盈利</p><p style="font-size:0.85em;margin-top:10px;">净利润+226%，ROE高，现金流健康。</p></div>
+<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">量价齐升，真实增长。持续提价验证品牌力。</p></div>
+<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-neutral">B+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">门店驱动</p><p style="font-size:0.85em;margin-top:10px;">增长依赖门店扩张，扩张速度有不确定性。</p></div>
+<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A-</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">积极扩张</p><p style="font-size:0.85em;margin-top:10px;">门店扩张+海外探索并行。</p></div>
+</div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 观察 (Watch)</h3>
+<p style="margin:20px 0;">股价HK$650已反映高增长预期，22x PE处于历史高位区间。等待更好的买入点位。</p>
+<h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+<ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 等待更好的买入点位（HK$550-600）</li><li>• 关注2026年门店扩张计划</li><li>• 跟踪同店销售增长趋势</li><li>• 止损位：HK$480</li></ul>
+</div></section>
+<section><h2>📊 财务数据详表</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>财务指标</th>
+<th class="number">2024年</th>
+<th class="number">同比增长</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营业收入</td>
+<td class="number">RMB 85.06亿</td>
+<td class="number bullish">+167.5%</td>
+<td>大幅增长</td>
+</tr>
+<tr>
+<td>毛利润</td>
+<td class="number">RMB 35.01亿</td>
+<td class="number bullish">-</td>
+<td>新增</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td class="number">41.2%</td>
+<td class="number">-</td>
+<td>保持高位</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td class="number">RMB 14.73亿</td>
+<td class="number bullish">+253.9%</td>
+<td>年内利润</td>
+</tr>
+<tr>
+<td>经调整净利润</td>
+<td class="number">RMB 15.02亿</td>
+<td class="number bullish">+253.4%</td>
+<td>非IFRS</td>
+</tr>
+<tr>
+<td>含税销售额</td>
+<td class="number">RMB 98.0亿</td>
+<td class="number bullish">+166%</td>
+<td>销售业绩</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section><h2>🎯 分析师预测</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>机构</th>
+<th class="number">评级</th>
+<th class="number">目标价 (港元)</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>摩根大通</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">1,296</td>
+<td>最高目标价</td>
+</tr>
+<tr>
+<td>高盛</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">1,168</td>
+<td>上调盈利预测</td>
+</tr>
+<tr>
+<td>花旗</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">1,162</td>
+<td>上调目标价</td>
+</tr>
+<tr>
+<td>野村证券</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">1,160</td>
+<td>-</td>
+</tr>
+<tr>
+<td>华泰证券</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">1,200</td>
+<td>重申</td>
+</tr>
+<tr>
+<td>中金公司</td>
+<td class="number"><span class="tag tag-bullish">跑赢行业</span></td>
+<td class="number">1,079</td>
+<td>维持</td>
+</tr>
+<tr>
+<td>摩根士丹利</td>
+<td class="number"><span class="tag tag-neutral">与大市同步</span></td>
+<td class="number">1,055</td>
+<td>上调</td>
+</tr>
+<tr>
+<td>富瑞</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">981</td>
+<td>维持</td>
+</tr>
+<tr>
+<td>国盛证券</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">822</td>
+<td>重申</td>
+</tr>
+<tr>
+<td>国泰海通</td>
+<td class="number"><span class="tag tag-bullish">买入</span></td>
+<td class="number">814</td>
+<td>下调</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="metrics-grid" style="margin-top:20px;">
+<div class="metric-card">
+<div class="metric-header"><span>一致目标价</span></div>
+<div class="metric-value" style="font-size:1.4em;">1,018.52港元</div>
+<div class="metric-change">基于16位分析师</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>目标价区间</span></div>
+<div class="metric-value" style="font-size:1.2em;">814 - 1,296港元</div>
+<div class="metric-change">当前: HK$638</div>
+</div>
+<div class="metric-card">
+<div class="metric-header"><span>市场共识</span></div>
+<div class="metric-value bullish" style="font-size:1.4em;">强烈买入</div>
+<div class="metric-change">平均上涨空间 60%</div>
+</div>
+</div>
+<div class="analysis-card" style="margin-top:20px;">
+<h3>📈 2025年业绩展望</h3>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>收入预测</span></div><div class="metric-value" style="font-size:1.2em;">RMB 270-280亿</div><div class="metric-change bullish">+217% ~ +229%</div></div>
+<div class="metric-card"><div class="metric-header"><span>净利润预测</span></div><div class="metric-value" style="font-size:1.2em;">RMB 48-49亿</div><div class="metric-change bullish">+226% ~ +233%</div></div>
+</div>
+</div>
+</section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>估值偏高，22x PE 反映过度乐观预期</li><li>门店扩张速度放缓影响增长逻辑</li><li>黄金价格波动影响毛利率</li><li>高端消费下行压力</li><li>海外扩张不确定性</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
 </body>
 </html>

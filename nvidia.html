@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>英伟达 NVIDIA 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>英伟达 NVIDIA 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #76B900; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -60,142 +61,126 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="nbis.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="osl.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>NVIDIA 英伟达 — 投资分析报告</h1><p class="subtitle">NVDA.US</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
-            </div>
-        </div>
-    </header>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-19)</div><div class="snapshot-value">$178.56</div><div class="snapshot-change neutral">从高点$207回调-14%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">4.4万亿美元</div><div class="snapshot-change">全球第一</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">~65x</div><div class="snapshot-change">高增长溢价</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$325</div><div class="snapshot-change">Rosenblatt</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/NVDA.png" alt="nvidia一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
-            </div>
-        </section>
-
-        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
-            <p>AI芯片绝对霸主，市占率90%。Q4营收$681亿 (+73%) 超预期。H100/H200持续热销，下一代Blackwell架构即将放量。AWS宣布百万GPU订单。</p>
-        </div>
-
-        <section><h2>💰 季度财务表现 (FY26 Q4)</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>Q4 营收</span><span class="metric-period">FY26 Q4</span></div><div class="metric-value">$681亿</div><div class="metric-change bullish">YoY +73%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Non-GAAP EPS</span><span class="metric-period">FY26 Q4</span></div><div class="metric-value">$1.62</div><div class="metric-change bullish">超预期</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Q1指引</span><span class="metric-period">FY27 Q1</span></div><div class="metric-value">~$780亿</div><div class="metric-change bullish">继续高增长</div></div>
-                <div class="metric-card"><div class="metric-header"><span>FY26全年营收</span><span class="metric-period">FY26</span></div><div class="metric-value">$2160亿</div><div class="metric-change bullish">YoY +65%</div></div>
-            </div>
-        </section>
-
-        <section><h2>💼 业务深度解析</h2>
-            <div class="analysis-card"><h3>☁️ 数据中心 — 核心增长引擎</h3><span class="tag tag-bullish">绝对垄断</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4数据中心收入$623亿</strong>，同比增长75%，占总收入91.5%</li><li><strong>数据中心网络收入$109.8亿</strong>，同比增长263%</li><li>NVLink fabric for GB200/GB300系统推动高增长</li><li>Blackwell和Vera Rubin平台订单<strong>$1万亿</strong>（到2027年）</li></ul></div>
-            <div class="analysis-card"><h3>🤖 AI芯片 — 绝对垄断</h3><span class="tag tag-bullish">核心优势</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>AI芯片市占率 <strong>90%</strong></li><li>H100/H200/H20系列完整覆盖</li><li>Blackwell架构已经开始放量</li><li>CUDA生态护城河无可撼动</li></ul></div>
-            <div class="analysis-card"><h3>💻 H100/H200 GPU — 旗舰产品</h3><span class="tag tag-bullish">爆款</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>800亿晶体管，Hopper架构</li><li>训练速度提升 <strong>9倍</strong></li><li>推理速度提升 <strong>30倍</strong></li><li>单卡售价$25,000-40,000</li></ul></div>
-            <div class="analysis-card"><h3>☁️ 云厂商大单</h3><span class="tag tag-bullish">订单充裕</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>AWS 2027年底部署 <strong>100万+ GPU</strong></li><li>微软Azure持续采购</li><li>Google Meta 各超大单</li><li>CEO黄仁勋："客户正在竞相投资AI计算"</li></ul></div>
-        </section>
-
-        <section><h2>📊 财务数据详表</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr><th>指标</th><th>FY26 Q4</th><th>FY26 Q3</th><th>FY25 Q4</th><th>YoY</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>总营收</td><td class="number">$681亿</td><td class="number">$608亿</td><td class="number">$393亿</td><td class="number bullish">+73%</td></tr>
-                        <tr><td>数据中心收入</td><td class="number">$623亿</td><td class="number">$510亿</td><td class="number">$356亿</td><td class="number bullish">+75%</td></tr>
-                        <tr><td>Non-GAAP EPS</td><td class="number">$1.62</td><td class="number">$1.53</td><td class="number">$0.89</td><td class="number bullish">+82%</td></tr>
-                        <tr><td>GAAP EPS</td><td class="number">$1.76</td><td class="number">$1.47</td><td class="number">$0.98</td><td class="number bullish">+80%</td></tr>
-                        <tr><td>毛利率 (GAAP)</td><td class="number">75.0%</td><td class="number">74.6%</td><td class="number">76.0%</td><td class="number bearish">-1pp</td></tr>
-                        <tr><td>毛利率 (Non-GAAP)</td><td class="number">75.2%</td><td class="number">75.1%</td><td class="number">76.1%</td><td class="number bearish">-0.9pp</td></tr>
-                        <tr><td>自由现金流</td><td class="number">$349亿</td><td class="number">$296亿</td><td class="number">$167亿</td><td class="number bullish">+109%</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="metrics-grid" style="margin-top:20px;">
-                <div class="metric-card"><div class="metric-header"><span>FY26全年营收</span><span class="metric-period">FY2026</span></div><div class="metric-value">$2159亿</div><div class="metric-change bullish">YoY +65%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>FY26全年EPS</span><span class="metric-period">FY2026</span></div><div class="metric-value">$4.77</div><div class="metric-change bullish">YoY +96%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Q1 FY27指引</span><span class="metric-period">FY2027 Q1</span></div><div class="metric-value">~$780亿</div><div class="metric-change bullish">环比+15%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Q1 FY27毛利率指引</span><span class="metric-period">FY2027 Q1</span></div><div class="metric-value">74.9-75.5%</div><div class="metric-change">稳定</div></div>
-            </div>
-        </section>
-
-        <section><h2>🎯 分析师预测 (2026年3月)</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>目标价中位数</span><span class="metric-period">57位分析师</span></div><div class="metric-value">$262</div><div class="metric-change bullish">潜在涨幅 47%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-period">65家机构</span></div><div class="metric-value">$138 - $433</div><div class="metric-change">高盛/摩通 ~$250</div></div>
-                <div class="metric-card"><div class="metric-header"><span>评级分布</span><span class="metric-period">综合评级</span></div><div class="metric-value">强烈看多</div><div class="metric-change bullish">Outperform</div></div>
-                <div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-period">Evercore ISI</span></div><div class="metric-value">$352</div><div class="metric-change bullish">Street最高</div></div>
-            </div>
-            <h3 style="margin-top:25px;">▎主要机构目标价</h3>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>Rosenblatt</span><span class="metric-period">买入</span></div><div class="metric-value">$325</div><div class="metric-change">上调自$300</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Tigress Financial</span><span class="metric-period">强烈买入</span></div><div class="metric-value">$360</div><div class="metric-change">上调自$350</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Bank of America</span><span class="metric-period">买入</span></div><div class="metric-value">$300</div><div class="metric-change">上调自$275</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Wedbush</span><span class="metric-period">买入</span></div><div class="metric-value">$300</div><div class="metric-change">上调自$230</div></div>
-                <div class="metric-card"><div class="metric-header"><span>JPMorgan</span><span class="metric-period">增持</span></div><div class="metric-value">$265</div><div class="metric-change">上调自$250</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Truist</span><span class="metric-period">买入</span></div><div class="metric-value">$287</div><div class="metric-change">上调自$283</div></div>
-            </div>
-            <div class="analysis-card" style="margin-top:20px;"><h3>📈 分析师核心观点</h3>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>看多理由：</strong>AI芯片绝对垄断，Blackwell架构放量，数据中心需求爆发</li><li><strong>增长动力：</strong>$1万亿Blackwell+Vera Rubin订单(2025-2027)，AWS百万GPU部署，云厂商持续抢购</li><li><strong>风险因素：</strong>高估值(PE 65x)，中国出口限制，AMD/Google自研芯片竞争</li><li><strong>订单可见度：</strong>数据中心积压订单和收入可见性达$1万亿(到2027年)</li></ul></div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$300</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">40%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$240</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$220</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$176</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$140</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">16%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$112</div></div></div></div>
-        </section>
-
-        <section><h2>🏆 巴菲特逐项评分</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">CUDA生态</p><p style="font-size:0.85em;margin-top:10px;">CUDA统治AI训练生态，竞争对手短期无法追赶。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">黄仁勋</p><p style="font-size:0.85em;margin-top:10px;">战略眼光极强，技术执行力无敌。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">超级印钞机</p><p style="font-size:0.85em;margin-top:10px;">净利润率50%+，现金流极其充裕。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">73%增速真实，订单饱满。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">订单可见</p><p style="font-size:0.85em;margin-top:10px;">数据中心需求确定，订单已到2025年。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">回购+投资</p><p style="font-size:0.85em;margin-top:10px;">持续回购，研发投入巨大。</p></div>
-            </div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 买入 (Buy)</h3>
-            <p style="margin:20px 0;">AI芯片绝对霸主，订单排到2027年，目标价$220-300，当前$178有23-68%上涨空间。</p>
-            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
-            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$160-180</li><li>• 加仓：$140以下</li><li>• 目标价：$220-300</li><li>• 止损位：$130</li></ul>
-        </div></section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>高估值 — PE 65x需高增长支撑</li><li>中国出口限制 — 影响部分市场</li><li>AMD/Google自研芯片竞争</li><li>AI投资放缓风险</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="nbis.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="osl.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>NVIDIA 英伟达 — 投资分析报告</h1><p class="subtitle">NVDA.US</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">$172.70</div><div class="snapshot-change">前一天: -3.3% | YTD: -8.5%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$4.20万亿</div><div class="snapshot-change">全球第一</div></div>
+<div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">35.2x</div><div class="snapshot-change">高增长溢价</div></div>
+<div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$325</div><div class="snapshot-change">Rosenblatt</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="nvidia一年股价走势" src="charts/NVDA.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
+</div>
+</section>
+<div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+<p>AI芯片绝对霸主，市占率90%。Q4营收$681亿 (+73%) 超预期。H100/H200持续热销，下一代Blackwell架构即将放量。AWS宣布百万GPU订单。</p>
+</div>
+<section><h2>💰 季度财务表现 (FY26 Q4)</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>Q4 营收</span><span class="metric-period">FY26 Q4</span></div><div class="metric-value">$681亿</div><div class="metric-change bullish">YoY +73%</div></div>
+<div class="metric-card"><div class="metric-header"><span>Non-GAAP EPS</span><span class="metric-period">FY26 Q4</span></div><div class="metric-value">$1.62</div><div class="metric-change bullish">超预期</div></div>
+<div class="metric-card"><div class="metric-header"><span>Q1指引</span><span class="metric-period">FY27 Q1</span></div><div class="metric-value">~$780亿</div><div class="metric-change bullish">继续高增长</div></div>
+<div class="metric-card"><div class="metric-header"><span>FY26全年营收</span><span class="metric-period">FY26</span></div><div class="metric-value">$2160亿</div><div class="metric-change bullish">YoY +65%</div></div>
+</div>
+</section>
+<section><h2>💼 业务深度解析</h2>
+<div class="analysis-card"><h3>☁️ 数据中心 — 核心增长引擎</h3><span class="tag tag-bullish">绝对垄断</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Q4数据中心收入$623亿</strong>，同比增长75%，占总收入91.5%</li><li><strong>数据中心网络收入$109.8亿</strong>，同比增长263%</li><li>NVLink fabric for GB200/GB300系统推动高增长</li><li>Blackwell和Vera Rubin平台订单<strong>$1万亿</strong>（到2027年）</li></ul></div>
+<div class="analysis-card"><h3>🤖 AI芯片 — 绝对垄断</h3><span class="tag tag-bullish">核心优势</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>AI芯片市占率 <strong>90%</strong></li><li>H100/H200/H20系列完整覆盖</li><li>Blackwell架构已经开始放量</li><li>CUDA生态护城河无可撼动</li></ul></div>
+<div class="analysis-card"><h3>💻 H100/H200 GPU — 旗舰产品</h3><span class="tag tag-bullish">爆款</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>800亿晶体管，Hopper架构</li><li>训练速度提升 <strong>9倍</strong></li><li>推理速度提升 <strong>30倍</strong></li><li>单卡售价$25,000-40,000</li></ul></div>
+<div class="analysis-card"><h3>☁️ 云厂商大单</h3><span class="tag tag-bullish">订单充裕</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>AWS 2027年底部署 <strong>100万+ GPU</strong></li><li>微软Azure持续采购</li><li>Google Meta 各超大单</li><li>CEO黄仁勋："客户正在竞相投资AI计算"</li></ul></div>
+</section>
+<section><h2>📊 财务数据详表</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th>指标</th><th>FY26 Q4</th><th>FY26 Q3</th><th>FY25 Q4</th><th>YoY</th></tr>
+</thead>
+<tbody>
+<tr><td>总营收</td><td class="number">$681亿</td><td class="number">$608亿</td><td class="number">$393亿</td><td class="number bullish">+73%</td></tr>
+<tr><td>数据中心收入</td><td class="number">$623亿</td><td class="number">$510亿</td><td class="number">$356亿</td><td class="number bullish">+75%</td></tr>
+<tr><td>Non-GAAP EPS</td><td class="number">$1.62</td><td class="number">$1.53</td><td class="number">$0.89</td><td class="number bullish">+82%</td></tr>
+<tr><td>GAAP EPS</td><td class="number">$1.76</td><td class="number">$1.47</td><td class="number">$0.98</td><td class="number bullish">+80%</td></tr>
+<tr><td>毛利率 (GAAP)</td><td class="number">75.0%</td><td class="number">74.6%</td><td class="number">76.0%</td><td class="number bearish">-1pp</td></tr>
+<tr><td>毛利率 (Non-GAAP)</td><td class="number">75.2%</td><td class="number">75.1%</td><td class="number">76.1%</td><td class="number bearish">-0.9pp</td></tr>
+<tr><td>自由现金流</td><td class="number">$349亿</td><td class="number">$296亿</td><td class="number">$167亿</td><td class="number bullish">+109%</td></tr>
+</tbody>
+</table>
+</div>
+<div class="metrics-grid" style="margin-top:20px;">
+<div class="metric-card"><div class="metric-header"><span>FY26全年营收</span><span class="metric-period">FY2026</span></div><div class="metric-value">$2159亿</div><div class="metric-change bullish">YoY +65%</div></div>
+<div class="metric-card"><div class="metric-header"><span>FY26全年EPS</span><span class="metric-period">FY2026</span></div><div class="metric-value">$4.77</div><div class="metric-change bullish">YoY +96%</div></div>
+<div class="metric-card"><div class="metric-header"><span>Q1 FY27指引</span><span class="metric-period">FY2027 Q1</span></div><div class="metric-value">~$780亿</div><div class="metric-change bullish">环比+15%</div></div>
+<div class="metric-card"><div class="metric-header"><span>Q1 FY27毛利率指引</span><span class="metric-period">FY2027 Q1</span></div><div class="metric-value">74.9-75.5%</div><div class="metric-change">稳定</div></div>
+</div>
+</section>
+<section><h2>🎯 分析师预测 (2026年3月)</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>目标价中位数</span><span class="metric-period">57位分析师</span></div><div class="metric-value">$262</div><div class="metric-change bullish">潜在涨幅 47%</div></div>
+<div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-period">65家机构</span></div><div class="metric-value">$138 - $433</div><div class="metric-change">高盛/摩通 ~$250</div></div>
+<div class="metric-card"><div class="metric-header"><span>评级分布</span><span class="metric-period">综合评级</span></div><div class="metric-value">强烈看多</div><div class="metric-change bullish">Outperform</div></div>
+<div class="metric-card"><div class="metric-header"><span>最高目标价</span><span class="metric-period">Evercore ISI</span></div><div class="metric-value">$352</div><div class="metric-change bullish">Street最高</div></div>
+</div>
+<h3 style="margin-top:25px;">▎主要机构目标价</h3>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>Rosenblatt</span><span class="metric-period">买入</span></div><div class="metric-value">$325</div><div class="metric-change">上调自$300</div></div>
+<div class="metric-card"><div class="metric-header"><span>Tigress Financial</span><span class="metric-period">强烈买入</span></div><div class="metric-value">$360</div><div class="metric-change">上调自$350</div></div>
+<div class="metric-card"><div class="metric-header"><span>Bank of America</span><span class="metric-period">买入</span></div><div class="metric-value">$300</div><div class="metric-change">上调自$275</div></div>
+<div class="metric-card"><div class="metric-header"><span>Wedbush</span><span class="metric-period">买入</span></div><div class="metric-value">$300</div><div class="metric-change">上调自$230</div></div>
+<div class="metric-card"><div class="metric-header"><span>JPMorgan</span><span class="metric-period">增持</span></div><div class="metric-value">$265</div><div class="metric-change">上调自$250</div></div>
+<div class="metric-card"><div class="metric-header"><span>Truist</span><span class="metric-period">买入</span></div><div class="metric-value">$287</div><div class="metric-change">上调自$283</div></div>
+</div>
+<div class="analysis-card" style="margin-top:20px;"><h3>📈 分析师核心观点</h3>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>看多理由：</strong>AI芯片绝对垄断，Blackwell架构放量，数据中心需求爆发</li><li><strong>增长动力：</strong>$1万亿Blackwell+Vera Rubin订单(2025-2027)，AWS百万GPU部署，云厂商持续抢购</li><li><strong>风险因素：</strong>高估值(PE 65x)，中国出口限制，AMD/Google自研芯片竞争</li><li><strong>订单可见度：</strong>数据中心积压订单和收入可见性达$1万亿(到2027年)</li></ul></div>
+</section>
+<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$300</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">40%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$240</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$220</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">30%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$176</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$140</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">16%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$112</div></div></div></div>
+</section>
+<section><h2>🏆 巴菲特逐项评分</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">CUDA生态</p><p style="font-size:0.85em;margin-top:10px;">CUDA统治AI训练生态，竞争对手短期无法追赶。</p></div>
+<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">黄仁勋</p><p style="font-size:0.85em;margin-top:10px;">战略眼光极强，技术执行力无敌。</p></div>
+<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">超级印钞机</p><p style="font-size:0.85em;margin-top:10px;">净利润率50%+，现金流极其充裕。</p></div>
+<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">73%增速真实，订单饱满。</p></div>
+<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">订单可见</p><p style="font-size:0.85em;margin-top:10px;">数据中心需求确定，订单已到2025年。</p></div>
+<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">回购+投资</p><p style="font-size:0.85em;margin-top:10px;">持续回购，研发投入巨大。</p></div>
+</div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 买入 (Buy)</h3>
+<p style="margin:20px 0;">AI芯片绝对霸主，订单排到2027年，目标价$220-300，当前$178有23-68%上涨空间。</p>
+<h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+<ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$160-180</li><li>• 加仓：$140以下</li><li>• 目标价：$220-300</li><li>• 止损位：$130</li></ul>
+</div></section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>高估值 — PE 65x需高增长支撑</li><li>中国出口限制 — 影响部分市场</li><li>AMD/Google自研芯片竞争</li><li>AI投资放缓风险</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
 </body>
 </html>

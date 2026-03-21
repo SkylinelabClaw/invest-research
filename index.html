@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Buffy价投之路</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sky Buffy价投之路</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -46,521 +47,500 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header><h1>📊 Sky Buffy价投之路</h1><p class="subtitle">价值投资研究 | 股票深度分析 (29家)</p></header>
-
-                <div class="nav-tabs" style="display:flex;gap:20px;justify-content:center;padding:15px 0;border-bottom:1px solid var(--border);margin-bottom:20px;">
-            <a href="index.html" style="color:var(--highlight);font-weight:600;padding-bottom:8px;border-bottom:2px solid var(--highlight);">🏠 首页</a>
-            <a href="bumang.html" style="color:var(--text-muted);padding-bottom:8px;">📖 巴芒之道</a>
-            <a href="dadao.html" style="color:var(--text-muted);padding-bottom:8px;">💡 大道精读</a>
-            <a href="buffett.html" style="color:var(--text-muted);padding-bottom:8px;">🎯 巴菲特股东大会</a>
-        </div>
+<div class="container">
+<header><h1>📊 Sky Buffy价投之路</h1><p class="subtitle">价值投资研究 | 股票深度分析 (29家)</p></header>
+<div class="nav-tabs" style="display:flex;gap:20px;justify-content:center;padding:15px 0;border-bottom:1px solid var(--border);margin-bottom:20px;">
+<a href="index.html" style="color:var(--highlight);font-weight:600;padding-bottom:8px;border-bottom:2px solid var(--highlight);">🏠 首页</a>
+<a href="bumang.html" style="color:var(--text-muted);padding-bottom:8px;">📖 巴芒之道</a>
+<a href="dadao.html" style="color:var(--text-muted);padding-bottom:8px;">💡 大道精读</a>
+<a href="buffett.html" style="color:var(--text-muted);padding-bottom:8px;">🎯 巴菲特股东大会</a>
+</div>
 <div class="search-section">
-            <div class="nav-hint" style="text-align:center;margin-bottom:15px;color:var(--text-muted);font-size:0.9em;">
+<div class="nav-hint" style="text-align:center;margin-bottom:15px;color:var(--text-muted);font-size:0.9em;">
                 💡 查看报告后可用导航按钮切换到上一家/下一家公司
             </div>
-            <div class="search-box"><input type="text" class="search-input" placeholder="🔍 搜索公司名称或代码..." id="searchInput" onkeyup="filterCompanies()"></div>
-                        <div class="quick-index" id="quickIndex">
-                <a href="#section-A" class="quick-index-item"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴/ARM/安克</span></a>
-                <a href="#section-F" class="quick-index-item"><span class="quick-index-letter">F</span><span class="quick-index-count">山西汾酒</span></a>
-                <a href="#section-G" class="quick-index-item"><span class="quick-index-letter">G</span><span class="quick-index-count">古茗</span></a>
-                <a href="#section-X" class="quick-index-item"><span class="quick-index-letter">X</span><span class="quick-index-count">携程</span></a>
-                <a href="#section-C" class="quick-index-item"><span class="quick-index-letter">C</span><span class="quick-index-count">寒武纪/剑桥科技</span></a>
-                <a href="#section-D" class="quick-index-item"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a>
-                <a href="#section-G" class="quick-index-item"><span class="quick-index-letter">G</span><span class="quick-index-count">谷歌/极智嘉</span></a>
-                <a href="#section-H" class="quick-index-item"><span class="quick-index-letter">H</span><span class="quick-index-count">海光/HIMS/HOOD</span></a>
-                <a href="#section-J" class="quick-index-item"><span class="quick-index-letter">J</span><span class="quick-index-count">加科思/佳鑫</span></a>
-                <a href="#section-L" class="quick-index-item"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a>
-                <a href="#section-M" class="quick-index-item"><span class="quick-index-letter">M</span><span class="quick-index-count">Meta/微软/毛戈平/鸣鸣很忙</span></a>
-                <a href="#section-N" class="quick-index-item"><span class="quick-index-letter">N</span><span class="quick-index-count">Nabors/英伟达</span></a>
-                <a href="#section-O" class="quick-index-item"><span class="quick-index-letter">O</span><span class="quick-index-count">OSL</span></a>
-                <a href="#section-P" class="quick-index-item"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a>
-                <a href="#section-S" class="quick-index-item"><span class="quick-index-letter">S</span><span class="quick-index-count">三花/Sofi</span></a>
-                <a href="#section-T" class="quick-index-item"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯/腾讯音乐/携程</span></a>
-                <a href="#section-Z" class="quick-index-item"><span class="quick-index-letter">Z</span><span class="quick-index-count">紫金矿业</span></a>
-            </div>
-        
-        
-        <div class="section-title" id="section-A">A — 阿里巴巴 / ARM</div>
-        <div class="company-grid">
-            <a href="alibaba.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🅰️ 阿里巴巴</div><div class="company-code">BABA.US / 09988.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/ALIBABA.png" alt="阿里巴巴股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">124.9</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-8.0%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-27.2%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2,900亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 20x</span><span>PE 2026E: 18x</span></div>
-                <div class="conclusion">Q3营收同比+2%，净利同比-67%。AI高投入短期承压，云计算持续盈利。年初至今跌27%。</div>
-            </a>
-            <a href="anker.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🔌 安克创新</div><div class="company-code">300866.SZ</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="https://image.sinajs.cn/newchart/weekly/n/sh300866.gif" alt="安克创新股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥106.58</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+12.85%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+45%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">350亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: ¥123</span></div>
-                <div class="conclusion">跨境电商充电龙头，Q4营收+45%超预期，目标价有15%空间。</div>
-            </a>
-            <a href="arm.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🔷 ARM Holdings</div><div class="company-code">ARM.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/ARM.png" alt="ARM Holdings股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">129.82</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+5.2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,400亿</div></div>
-                </div>
-                <div class="pe-info"><span>PS: 26x</span><span>目标价: $205</span></div>
-                <div class="conclusion">AI驱动服务器CPU转型核心受益，Q3营收+26%。目标价$205，当前$130有58%上涨空间。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-C">C — Coinbase</div>
-        <div class="company-grid">
-            <a href="coin.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💰 Coinbase Global</div><div class="company-code">COIN.US</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/COIN.png" alt="Coinbase Global股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">248</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+3%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+12%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">620亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: $290</span><span></span></div>
-                <div class="conclusion">Q4营收$17.8亿低于预期，GAAP亏损$6.67亿。加密市场波动大。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-D">D — 东鹏特饮</div>
-        <div class="company-grid">
-            <a href="dongpeng.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">⚡ 东鹏特饮</div><div class="company-code">605499.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="https://image.sinajs.cn/newchart/weekly/n/sh605499.gif" alt="东鹏特饮股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">229.95</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-1.9%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-3.1%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,000亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 28x</span><span>PE 2026E: 22x</span></div>
-                <div class="conclusion">功能饮料龙头，前三季营收+34%、净利+39%，渠道下沉+产品矩阵扩展，成长空间广阔。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-G">G — 谷歌</div>
-        <div class="company-grid">
-            <a href="google.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🔍 Alphabet 谷歌</div><div class="company-code">GOOGL.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/GOOGLE.png" alt="Alphabet 谷歌股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">305.73</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+88%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1.9万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: ~25x</span><span>目标价: $370</span></div>
-                <div class="conclusion">AI搜索整合加速，Gemini 3.1全面上线。Cloud+30%高增长。目标价$370，当前有21%空间。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-H">H — 寒武纪 / 海光信息 / HIMS / HOOD</div>
-        <div class="company-grid">
-            <a href="cambricon.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🧠 寒武纪</div><div class="company-code">688256.SZ</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/6181.HK.png" alt="寒武纪股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">1025</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-1.2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4,495亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 218x</span><span>2025净利: 20.59亿</span></div>
-                <div class="conclusion">2025年首次年度盈利！营收+453%。AI芯片国产替代核心标的，PE极高等待更好买点。</div>
-            </a>
-            <a href="hygon.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🔥 海光信息</div><div class="company-code">688041.SH</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="https://image.sinajs.cn/newchart/weekly/n/sh688041.gif" alt="海光信息股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">216.42</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-2.8%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">~500亿</div></div>
-                </div>
-                <div class="pe-info"><span>2025净利: 25.42亿</span><span>YoY: +31.66%</span></div>
-                <div class="conclusion">国产CPU绝对龙头，2025年净利+32%。Q1指引继续暴增+63-76%。目标价¥280。</div>
-            </a>
-            <a href="hims.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💊 Hims & Hers Health</div><div class="company-code">HIMS.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/HIMS.png" alt="Hims & Hers Health股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">23</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+35%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">50亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: $32</span><span></span></div>
-                <div class="conclusion">远程医疗DTC龙头，订阅模式优秀，目标价$32有40%空间。</div>
-            </a>
-            <a href="hood.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🪶 Robinhood Markets</div><div class="company-code">HOOD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/HOOD.png" alt="Robinhood Markets股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">71</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+5%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+140%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">300亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: $120</span><span></span></div>
-                <div class="conclusion">2026年EPS预期$1.62，同比增长20%。首次盈利，目标价有70%空间。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-J">J — 剑桥科技 / 极智嘉 / 加科思 / 佳鑫国际</div>
-        <div class="company-grid">
-            <a href="cambridgetechnology.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💡 剑桥科技</div><div class="company-code">603083.SH / 06166.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/CAMBRIDGETECHNOLOGY.png" alt="剑桥科技股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">129</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-5%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">450亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: ¥160</span><span></span></div>
-                <div class="conclusion">AI算力光模块+电源管理龙头，目标价¥160有24%空间。</div>
-            </a>
-            <a href="geekplus.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🤖 极智嘉 Geek+</div><div class="company-code">2590.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/GEEKPLUS.png" alt="极智嘉 Geek+股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">18.5</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+5%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+10%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">100亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: HK$25</span><span></span></div>
-                <div class="conclusion">全球AMR龙头，仓储机器人第一，目标价HK$25有35%空间。</div>
-            </a>
-            <a href="jacobiopharma.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💊 加科思</div><div class="company-code">0117.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/JACOBIOPHARMA.png" alt="加科思股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">7.0</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+4%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+20%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">80亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: HK$11.3</span><span></span></div>
-                <div class="conclusion">KRAS靶点龙头，华兴证券首次覆盖强烈推荐，目标价HK$11.3。</div>
-            </a>
-            <a href="jiaxininternational.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">⛏️ 佳鑫国际</div><div class="company-code">03858.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/JIAXININTERNATIONAL.png" alt="佳鑫国际股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">3.5</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">30亿</div></div>
-                </div>
-                <div class="pe-info"><span>次新股</span><span></span></div>
-                <div class="conclusion">港股次新股，哈萨克斯坦巴库塔钨矿，全球最大露天钨矿之一。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-L">L — 老铺黄金</div>
-        <div class="company-grid">
-            <a href="laopugold.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💰 老铺黄金</div><div class="company-code">06181.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/LAOPUGOLD.png" alt="老铺黄金股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">638</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-4.4%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-18.0%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,130亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 22x</span><span>PE 2026E: 18x</span></div>
-                <div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。年初至今跌18%。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-M">M — Meta / 微软 / 毛戈平</div>
-        <div class="company-grid">
-            <a href="meta.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">📘 Meta Platforms</div><div class="company-code">META.US</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/META.png" alt="Meta Platforms股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">612.66</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-12%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1.51万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 25.83x</span><span>股息率: 0.35%</span></div>
-                <div class="conclusion">Q4营收$599亿 (+24%) 超预期。AI投资翻倍至1150-1350亿。PE 25x合理，等待买点。</div>
-            </a>
-            <a href="microsoft.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🪟 Microsoft 微软</div><div class="company-code">MSFT.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/MICROSOFT.png" alt="Microsoft 微软股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">389.02</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-0.7%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-28%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2.91万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: ~35x</span><span>目标价: $592</span></div>
-                <div class="conclusion">从高点回调28%，PE 35x具备吸引力。Azure+39%持续强劲，Cloud首次破$500亿。目标价$450-520。</div>
-            </a>
-            <a href="maotai.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🍷 贵州茅台</div><div class="company-code">600519.SS</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="https://image.sinajs.cn/newchart/weekly/n/sh600519.gif" alt="贵州茅台股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥1,445</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-5%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-8%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1.8万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 19.5x</span><span>目标价: ¥1852</span></div>
-                <div class="conclusion">白酒龙头，直销战略成效显著，目标价¥1852有28%空间。</div>
-            </a>
-            <a href="maogeping.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💄 毛戈平</div><div class="company-code">1318.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/MAOGEPING.png" alt="毛戈平股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">80.9</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+1%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+15%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">60亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE 2026E: 35x</span><span></span></div>
-                <div class="conclusion">国货美妆高端品牌，估值偏高，需等待更好买点。</div>
-            </a>
-            <a href="mingming.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🛒 鸣鸣很忙</div><div class="company-code">01768.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/BUSYMING.png" alt="鸣鸣很忙股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;" onerror="this.style.display='none';">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$401.8</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-3.9%</div></div>
-                    <div class="price-item"><div class="price-label">IPO以来</div><div class="price-change">bullish">+70%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">HK$937亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: ~46x</span><span>目标价: HK$490-496</span></div>
-                <div class="conclusion">中国最大量贩零食连锁，21,000+门店。2025前9月营收+75%、净利+241%。次新股估值偏高，观察等待回调。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-N">N — Nabors / 英伟达</div>
-        <div class="company-grid">
-            <a href="nbis.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🏗️ Nabors Industries</div><div class="company-code">NBR.US</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/NBIS.png" alt="Nabors Industries股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">79.9</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-25%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">35亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: $69</span><span></span></div>
-                <div class="conclusion">Q4营收$7.98亿，净利仅$1000万。钻井周期股，受油价影响大。</div>
-            </a>
-            <a href="nvidia.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🟢 NVIDIA 英伟达</div><div class="company-code">NVDA.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/NVIDIA.png" alt="NVIDIA 英伟达股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">178.56</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">--</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+50%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4.4万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: ~65x</span><span>目标价: $325</span></div>
-                <div class="conclusion">AI芯片霸主市占率90%。Q4营收+73%超预期。AWS百万GPU大单。目标价$220-300。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-O">O — OSL集团</div>
-        <div class="company-grid">
-            <a href="osl.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🔐 OSL集团</div><div class="company-code">0863.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/OSL.png" alt="OSL集团股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">14.1</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+3.5%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+25%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">80亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: HK$22</span><span></span></div>
-                <div class="conclusion">香港唯一持牌加密平台，目标价HK$22有56%空间。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-P">P — 拼多多 / 泡泡玛特</div>
-        <div class="company-grid">
-            <a href="pinduoduo.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🛒 拼多多</div><div class="company-code">PDD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/PINDUODUO.png" alt="拼多多股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">97.4</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-0.2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-15.8%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,100亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 10x</span><span>PE 2026E: 12x</span></div>
-                <div class="conclusion">Q3营收+9%超预期，净利润+17%。10x PE历史低位，TEMU全球化扩张迅猛，坚定看好。</div>
-            </a>
-            <a href="popmart.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🧸 泡泡玛特</div><div class="company-code">09992.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/POPMART.png" alt="泡泡玛特股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">209</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+0.5%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+7.5%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">2,700亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 18x</span><span>PE 2026E: 15x</span></div>
-                <div class="conclusion">LABUBU全球火爆，海外扩张加速。年初至今涨7.5%，但IP热度持续性存疑。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-S">S — 三花智控 / Sofi</div>
-        <div class="company-grid">
-            <a href="sanhua.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">❄️ 三花智控</div><div class="company-code">002050.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/SANHUA.png" alt="三花智控股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">45</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-3%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-8%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">680亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE 2026E: 28x</span><span></span></div>
-                <div class="conclusion">制冷空调+新能源热管理龙头，目标价¥58有30%空间。</div>
-            </a>
-            <a href="sofi.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">💳 Sofi Technologies</div><div class="company-code">SOFI.US</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/SOFI.png" alt="Sofi Technologies股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">17.5</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-3%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-15%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">75亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: $28</span><span></span></div>
-                <div class="conclusion">Q4营收$10.1亿创纪录，Muddy Waters做空报告引发波动。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-T">T — 腾讯 / 腾讯音乐</div>
-        <div class="company-grid">
-            <a href="tencentmusic.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🎵 腾讯音乐</div><div class="company-code">TME.US / 1698.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
-                <img src="charts/TENCENTMUSIC.png" alt="腾讯音乐股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">10.3</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-24.7%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-32.1%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">165亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 12.9x</span><span>PE 2026E: 11.5x</span></div>
-                <div class="conclusion">Q4营收+16%但MAU-5%，停止披露运营指标引发恐慌，单日暴跌25%。年初至今跌32%。</div>
-            </a>
-            <a href="tencent.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🐧 腾讯控股</div><div class="company-code">00700.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/TENCENT.png" alt="腾讯控股股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">508</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bearish">-1.0%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bearish">-15.5%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">4.7万亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE TTM: 23x</span><span>PE 2026E: 14x</span></div>
-                <div class="conclusion">2025年营收7518亿净利2248亿，AI+游戏复苏+云盈利，14x PE历史低位，安全边际充足。</div>
-            </a>
-            <a href="ctrip.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">✈️ 携程集团</div><div class="company-code">9961.HK / TCOM.US</div></div><span class="rating-tag rating-watch">买入（附条件）</span></div>
-                <img src="charts/TCOM.png" alt="携程股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$405.6</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.55%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-25%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">HK$2,651亿</div></div>
-                </div>
-                <div class="pe-info"><span>FY25营收: 624亿</span><span>调整净利: 318亿</span></div>
-                <div class="conclusion">FY2025营收+17%，国际业务预订量+60%。反垄断调查悬顶，股价较高点跌35%，估值进入合理区间。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-Z">Z — 紫金矿业</div>
-        <div class="company-grid">
-            <a href="zijinmining.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🪙 紫金矿业</div><div class="company-code">601899.SZ / 2899.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/ZIJINMINING.png" alt="紫金矿业股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">34.8</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change">bullish">+10%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change">bullish">+35%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">5,800亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE 2026E: 25x</span><span></span></div>
-                <div class="conclusion">中国金矿铜矿龙头，金价上涨周期，目标价¥42有21%空间。</div>
-            </a>
-        </div>
-
-
-        <div class="section-title" id="section-F">F — 山西汾酒</div>
-        <div class="company-grid">
-            <a href="fenjiu.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🍶 山西汾酒</div><div class="company-code">600809.SS</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="https://image.sinajs.cn/newchart/weekly/n/sh600809.gif" alt="山西汾酒股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">¥153.86</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+15%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,905亿</div></div>
-                </div>
-                <div class="pe-info"><span>PE 2026E: 22x</span><span>目标价: ¥165</span></div>
-                <div class="conclusion">清香白酒龙头，全国化战略成效显著，目标价¥165。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-G">G — 古茗</div>
-        <div class="company-grid">
-            <a href="guming.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">🧋 古茗</div><div class="company-code">01364.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/guming.png" alt="古茗股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$28.94</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+5%</div></div>
-                    <div class="price-item"><div class="price-label">较发行价</div><div class="price-change bullish">+191%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">690亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: HK$32-35</span></div>
-                <div class="conclusion">奶茶连锁龙头，门店13,278家，目标价HK$32-35。</div>
-            </a>
-        </div>
-
-        <div class="section-title" id="section-X">X — 携程</div>
-        <div class="company-grid">
-            <a href="ctrip.html" class="company-card">
-                <div class="company-header"><div><div class="company-name">✈️ 携程</div><div class="company-code">9961.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
-                <img src="charts/ctrip.png" alt="携程股价走势" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;">
-                <div class="price-info">
-                    <div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$420</div></div>
-                    <div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+3%</div></div>
-                    <div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+25%</div></div>
-                    <div class="price-item"><div class="price-label">市值</div><div class="price-value">1,500亿</div></div>
-                </div>
-                <div class="pe-info"><span>目标价: HK$500</span></div>
-                <div class="conclusion">OTA龙头，出行需求强劲，目标价HK$500。</div>
-            </a>
-        </div>
-
+<div class="search-box"><input class="search-input" id="searchInput" onkeyup="filterCompanies()" placeholder="🔍 搜索公司名称或代码..." type="text"/></div>
+<div class="quick-index" id="quickIndex">
+<a class="quick-index-item" href="#section-A"><span class="quick-index-letter">A</span><span class="quick-index-count">阿里巴巴/ARM/安克</span></a>
+<a class="quick-index-item" href="#section-F"><span class="quick-index-letter">F</span><span class="quick-index-count">山西汾酒</span></a>
+<a class="quick-index-item" href="#section-G"><span class="quick-index-letter">G</span><span class="quick-index-count">古茗</span></a>
+<a class="quick-index-item" href="#section-X"><span class="quick-index-letter">X</span><span class="quick-index-count">携程</span></a>
+<a class="quick-index-item" href="#section-C"><span class="quick-index-letter">C</span><span class="quick-index-count">寒武纪/剑桥科技</span></a>
+<a class="quick-index-item" href="#section-D"><span class="quick-index-letter">D</span><span class="quick-index-count">东鹏特饮</span></a>
+<a class="quick-index-item" href="#section-G"><span class="quick-index-letter">G</span><span class="quick-index-count">谷歌/极智嘉</span></a>
+<a class="quick-index-item" href="#section-H"><span class="quick-index-letter">H</span><span class="quick-index-count">海光/HIMS/HOOD</span></a>
+<a class="quick-index-item" href="#section-J"><span class="quick-index-letter">J</span><span class="quick-index-count">加科思/佳鑫</span></a>
+<a class="quick-index-item" href="#section-L"><span class="quick-index-letter">L</span><span class="quick-index-count">老铺黄金</span></a>
+<a class="quick-index-item" href="#section-M"><span class="quick-index-letter">M</span><span class="quick-index-count">Meta/微软/毛戈平/鸣鸣很忙</span></a>
+<a class="quick-index-item" href="#section-N"><span class="quick-index-letter">N</span><span class="quick-index-count">Nabors/英伟达</span></a>
+<a class="quick-index-item" href="#section-O"><span class="quick-index-letter">O</span><span class="quick-index-count">OSL</span></a>
+<a class="quick-index-item" href="#section-P"><span class="quick-index-letter">P</span><span class="quick-index-count">拼多多/泡泡玛特</span></a>
+<a class="quick-index-item" href="#section-S"><span class="quick-index-letter">S</span><span class="quick-index-count">三花/Sofi</span></a>
+<a class="quick-index-item" href="#section-T"><span class="quick-index-letter">T</span><span class="quick-index-count">腾讯/腾讯音乐/携程</span></a>
+<a class="quick-index-item" href="#section-Z"><span class="quick-index-letter">Z</span><span class="quick-index-count">紫金矿业</span></a>
+</div>
+<div class="section-title" id="section-A">A — 阿里巴巴 / ARM</div>
+<div class="company-grid">
+<a class="company-card" href="alibaba.html">
+<div class="company-header"><div><div class="company-name">🅰️ 阿里巴巴</div><div class="company-code">BABA.US / 09988.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="阿里巴巴股价走势" src="charts/ALIBABA.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">122.41</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.0%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-21.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">2,922亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 21.7x</span><span>PE 2026E: 18x</span></div>
+<div class="conclusion">Q3营收同比+2%，净利同比-67%。AI高投入短期承压，云计算持续盈利。年初至今跌27%。</div>
+</a>
+<a class="company-card" href="anker.html">
+<div class="company-header"><div><div class="company-name">🔌 安克创新</div><div class="company-code">300866.SZ</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="安克创新股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh300866.gif" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥106.58</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+12.9%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-7.2%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">571亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: ¥123</span></div>
+<div class="conclusion">跨境电商充电龙头，Q4营收+45%超预期，目标价有15%空间。</div>
+</a>
+<a class="company-card" href="arm.html">
+<div class="company-header"><div><div class="company-name">🔷 ARM Holdings</div><div class="company-code">ARM.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="ARM Holdings股价走势" src="charts/ARM.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">132.35</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+1.9%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+15.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,406亿</div></div>
+</div>
+<div class="pe-info"><span>PS: 26x</span><span>目标价: $205</span></div>
+<div class="conclusion">AI驱动服务器CPU转型核心受益，Q3营收+26%。目标价$205，当前$130有58%上涨空间。</div>
+</a>
+</div>
+<div class="section-title" id="section-C">C — Coinbase</div>
+<div class="company-grid">
+<a class="company-card" href="coin.html">
+<div class="company-header"><div><div class="company-name">💰 Coinbase Global</div><div class="company-code">COIN.US</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="Coinbase Global股价走势" src="charts/COIN.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">197.50</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.7%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-16.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">533亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: $290</span><span></span></div>
+<div class="conclusion">Q4营收$17.8亿低于预期，GAAP亏损$6.67亿。加密市场波动大。</div>
+</a>
+</div>
+<div class="section-title" id="section-D">D — 东鹏特饮</div>
+<div class="company-grid">
+<a class="company-card" href="dongpeng.html">
+<div class="company-header"><div><div class="company-name">⚡ 东鹏特饮</div><div class="company-code">605499.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="东鹏特饮股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh605499.gif" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥228.09</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.8%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-18.0%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,288亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 27.1x</span><span>PE 2026E: 22x</span></div>
+<div class="conclusion">功能饮料龙头，前三季营收+34%、净利+39%，渠道下沉+产品矩阵扩展，成长空间广阔。</div>
+</a>
+</div>
+<div class="section-title" id="section-G">G — 谷歌</div>
+<div class="company-grid">
+<a class="company-card" href="google.html">
+<div class="company-header"><div><div class="company-name">🔍 Alphabet 谷歌</div><div class="company-code">GOOGL.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="Alphabet 谷歌股价走势" src="charts/GOOGLE.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">301.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.0%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-4.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">3.6万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 27.8x</span><span>目标价: $370</span></div>
+<div class="conclusion">AI搜索整合加速，Gemini 3.1全面上线。Cloud+30%高增长。目标价$370，当前有21%空间。</div>
+</a>
+</div>
+<div class="section-title" id="section-H">H — 寒武纪 / 海光信息 / HIMS / HOOD</div>
+<div class="company-grid">
+<a class="company-card" href="cambricon.html">
+<div class="company-header"><div><div class="company-name">🧠 寒武纪</div><div class="company-code">688256.SZ</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="寒武纪股价走势" src="charts/6181.HK.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥1025.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.2%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-26.3%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">4,322亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 208.3x</span><span>2025净利: 20.59亿</span></div>
+<div class="conclusion">2025年首次年度盈利！营收+453%。AI芯片国产替代核心标的，PE极高等待更好买点。</div>
+</a>
+<a class="company-card" href="hygon.html">
+<div class="company-header"><div><div class="company-name">🔥 海光信息</div><div class="company-code">688041.SH</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="海光信息股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh688041.gif" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥216.42</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.8%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-4.2%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">5,030亿</div></div>
+</div>
+<div class="pe-info"><span>2025净利: 25.42亿</span><span>YoY: +31.66%</span></div>
+<div class="conclusion">国产CPU绝对龙头，2025年净利+32%。Q1指引继续暴增+63-76%。目标价¥280。</div>
+</a>
+<a class="company-card" href="hims.html">
+<div class="company-header"><div><div class="company-name">💊 Hims &amp; Hers Health</div><div class="company-code">HIMS.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="Hims &amp; Hers Health股价走势" src="charts/HIMS.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">22.02</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-8.9%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-34.1%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">50亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: $32</span><span></span></div>
+<div class="conclusion">远程医疗DTC龙头，订阅模式优秀，目标价$32有40%空间。</div>
+</a>
+<a class="company-card" href="hood.html">
+<div class="company-header"><div><div class="company-name">🪶 Robinhood Markets</div><div class="company-code">HOOD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="Robinhood Markets股价走势" src="charts/HOOD.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">70.89</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-4.4%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-38.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">638亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: $120</span><span></span></div>
+<div class="conclusion">2026年EPS预期$1.62，同比增长20%。首次盈利，目标价有70%空间。</div>
+</a>
+</div>
+<div class="section-title" id="section-J">J — 剑桥科技 / 极智嘉 / 加科思 / 佳鑫国际</div>
+<div class="company-grid">
+<a class="company-card" href="cambridgetechnology.html">
+<div class="company-header"><div><div class="company-name">💡 剑桥科技</div><div class="company-code">603083.SH / 06166.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="剑桥科技股价走势" src="charts/CAMBRIDGETECHNOLOGY.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥115.33</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.3%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-11.3%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">407亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: ¥160</span><span></span></div>
+<div class="conclusion">AI算力光模块+电源管理龙头，目标价¥160有24%空间。</div>
+</a>
+<a class="company-card" href="geekplus.html">
+<div class="company-header"><div><div class="company-name">🤖 极智嘉 Geek+</div><div class="company-code">2590.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="极智嘉 Geek+股价走势" src="charts/GEEKPLUS.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$18.53</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.3%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-19.6%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">248亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: HK$25</span><span></span></div>
+<div class="conclusion">全球AMR龙头，仓储机器人第一，目标价HK$25有35%空间。</div>
+</a>
+<a class="company-card" href="jacobiopharma.html">
+<div class="company-header"><div><div class="company-name">💊 加科思</div><div class="company-code">0117.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="加科思股价走势" src="charts/JACOBIOPHARMA.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$0.41</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+6.6%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+15.7%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">3亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: HK$11.3</span><span></span></div>
+<div class="conclusion">KRAS靶点龙头，华兴证券首次覆盖强烈推荐，目标价HK$11.3。</div>
+</a>
+<a class="company-card" href="jiaxininternational.html">
+<div class="company-header"><div><div class="company-name">⛏️ 佳鑫国际</div><div class="company-code">03858.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="佳鑫国际股价走势" src="charts/JIAXININTERNATIONAL.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$116.80</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+8.1%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+139.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">532亿</div></div>
+</div>
+<div class="pe-info"><span>次新股</span><span></span></div>
+<div class="conclusion">港股次新股，哈萨克斯坦巴库塔钨矿，全球最大露天钨矿之一。</div>
+</a>
+</div>
+<div class="section-title" id="section-L">L — 老铺黄金</div>
+<div class="company-grid">
+<a class="company-card" href="laopugold.html">
+<div class="company-header"><div><div class="company-name">💰 老铺黄金</div><div class="company-code">06181.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="老铺黄金股价走势" src="charts/LAOPUGOLD.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$611.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-4.2%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-1.8%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,080亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 28.7x</span><span>PE 2026E: 18x</span></div>
+<div class="conclusion">2025年营收+217%、净利+226%暴增，品牌+产品+门店扩张驱动。年初至今跌18%。</div>
+</a>
+</div>
+<div class="section-title" id="section-M">M — Meta / 微软 / 毛戈平</div>
+<div class="company-grid">
+<a class="company-card" href="meta.html">
+<div class="company-header"><div><div class="company-name">📘 Meta Platforms</div><div class="company-code">META.US</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="Meta Platforms股价走势" src="charts/META.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">593.66</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.1%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-8.6%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1.5万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 25.3x</span><span>股息率: 0.35%</span></div>
+<div class="conclusion">Q4营收$599亿 (+24%) 超预期。AI投资翻倍至1150-1350亿。PE 25x合理，等待买点。</div>
+</a>
+<a class="company-card" href="microsoft.html">
+<div class="company-header"><div><div class="company-name">🪟 Microsoft 微软</div><div class="company-code">MSFT.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="Microsoft 微软股价走势" src="charts/MICROSOFT.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">381.87</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.8%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-19.1%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">2.8万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 23.9x</span><span>目标价: $592</span></div>
+<div class="conclusion">从高点回调28%，PE 35x具备吸引力。Azure+39%持续强劲，Cloud首次破$500亿。目标价$450-520。</div>
+</a>
+<a class="company-card" href="maotai.html">
+<div class="company-header"><div><div class="company-name">🍷 贵州茅台</div><div class="company-code">600519.SS</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="贵州茅台股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh600519.gif" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥1445.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+1.3%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1.8万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 20.1x</span><span>目标价: ¥1852</span></div>
+<div class="conclusion">白酒龙头，直销战略成效显著，目标价¥1852有28%空间。</div>
+</a>
+<a class="company-card" href="maogeping.html">
+<div class="company-header"><div><div class="company-name">💄 毛戈平</div><div class="company-code">1318.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="毛戈平股价走势" src="charts/MAOGEPING.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$78.60</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.3%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-5.0%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">385亿</div></div>
+</div>
+<div class="pe-info"><span>PE 2026E: 35x</span><span></span></div>
+<div class="conclusion">国货美妆高端品牌，估值偏高，需等待更好买点。</div>
+</a>
+<a class="company-card" href="mingming.html">
+<div class="company-header"><div><div class="company-name">🛒 鸣鸣很忙</div><div class="company-code">01768.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="鸣鸣很忙股价走势" onerror="this.style.display='none';" src="charts/BUSYMING.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$400.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-0.5%</div></div>
+<div class="price-item"><div class="price-label">IPO以来</div><div class="price-change neutral">0.0%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">871亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 39.8x</span><span>目标价: HK$490-496</span></div>
+<div class="conclusion">中国最大量贩零食连锁，21,000+门店。2025前9月营收+75%、净利+241%。次新股估值偏高，观察等待回调。</div>
+</a>
+</div>
+<div class="section-title" id="section-N">N — Nabors / 英伟达</div>
+<div class="company-grid">
+<a class="company-card" href="nbis.html">
+<div class="company-header"><div><div class="company-name">🏗️ Nabors Industries</div><div class="company-code">NBR.US</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="Nabors Industries股价走势" src="charts/NBIS.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">79.97</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.0%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+44.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">12亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: $69</span><span></span></div>
+<div class="conclusion">Q4营收$7.98亿，净利仅$1000万。钻井周期股，受油价影响大。</div>
+</a>
+<a class="company-card" href="nvidia.html">
+<div class="company-header"><div><div class="company-name">🟢 NVIDIA 英伟达</div><div class="company-code">NVDA.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="NVIDIA 英伟达股价走势" src="charts/NVIDIA.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">172.70</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-3.3%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-8.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">4.2万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 35.2x</span><span>目标价: $325</span></div>
+<div class="conclusion">AI芯片霸主市占率90%。Q4营收+73%超预期。AWS百万GPU大单。目标价$220-300。</div>
+</a>
+</div>
+<div class="section-title" id="section-O">O — OSL集团</div>
+<div class="company-grid">
+<a class="company-card" href="osl.html">
+<div class="company-header"><div><div class="company-name">🔐 OSL集团</div><div class="company-code">0863.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="OSL集团股价走势" src="charts/OSL.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$14.11</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+3.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-16.9%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">126亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: HK$22</span><span></span></div>
+<div class="conclusion">香港唯一持牌加密平台，目标价HK$22有56%空间。</div>
+</a>
+</div>
+<div class="section-title" id="section-P">P — 拼多多 / 泡泡玛特</div>
+<div class="company-grid">
+<a class="company-card" href="pinduoduo.html">
+<div class="company-header"><div><div class="company-name">🛒 拼多多</div><div class="company-code">PDD.US</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="拼多多股价走势" src="charts/PINDUODUO.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">96.19</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.3%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-16.9%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,366亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 9.6x</span><span>PE 2026E: 12x</span></div>
+<div class="conclusion">Q3营收+9%超预期，净利润+17%。10x PE历史低位，TEMU全球化扩张迅猛，坚定看好。</div>
+</a>
+<a class="company-card" href="popmart.html">
+<div class="company-header"><div><div class="company-name">🧸 泡泡玛特</div><div class="company-code">09992.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="泡泡玛特股价走势" src="charts/POPMART.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$209.60</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bullish">+8.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">2,784亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 36.1x</span><span>PE 2026E: 15x</span></div>
+<div class="conclusion">LABUBU全球火爆，海外扩张加速。年初至今涨7.5%，但IP热度持续性存疑。</div>
+</a>
+</div>
+<div class="section-title" id="section-S">S — 三花智控 / Sofi</div>
+<div class="company-grid">
+<a class="company-card" href="sanhua.html">
+<div class="company-header"><div><div class="company-name">❄️ 三花智控</div><div class="company-code">002050.SZ</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="三花智控股价走势" src="charts/SANHUA.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥44.23</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.7%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-21.2%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,861亿</div></div>
+</div>
+<div class="pe-info"><span>PE 2026E: 28x</span><span></span></div>
+<div class="conclusion">制冷空调+新能源热管理龙头，目标价¥58有30%空间。</div>
+</a>
+<a class="company-card" href="sofi.html">
+<div class="company-header"><div><div class="company-name">💳 Sofi Technologies</div><div class="company-code">SOFI.US</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="Sofi Technologies股价走势" src="charts/SOFI.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">16.90</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.1%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-38.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">216亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: $28</span><span></span></div>
+<div class="conclusion">Q4营收$10.1亿创纪录，Muddy Waters做空报告引发波动。</div>
+</a>
+</div>
+<div class="section-title" id="section-T">T — 腾讯 / 腾讯音乐</div>
+<div class="company-grid">
+<a class="company-card" href="tencentmusic.html">
+<div class="company-header"><div><div class="company-name">🎵 腾讯音乐</div><div class="company-code">TME.US / 1698.HK</div></div><span class="rating-tag rating-watch">观察</span></div>
+<img alt="腾讯音乐股价走势" src="charts/TENCENTMUSIC.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">10.09</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.9%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-43.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">170亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 9.7x</span><span>PE 2026E: 11.5x</span></div>
+<div class="conclusion">Q4营收+16%但MAU-5%，停止披露运营指标引发恐慌，单日暴跌25%。年初至今跌32%。</div>
+</a>
+<a class="company-card" href="tencent.html">
+<div class="company-header"><div><div class="company-name">🐧 腾讯控股</div><div class="company-code">00700.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="腾讯控股股价走势" src="charts/TENCENT.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$508.00</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.0%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-18.5%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">4.6万亿</div></div>
+</div>
+<div class="pe-info"><span>PE TTM: 20.0x</span><span>PE 2026E: 14x</span></div>
+<div class="conclusion">2025年营收7518亿净利2248亿，AI+游戏复苏+云盈利，14x PE历史低位，安全边际充足。</div>
+</a>
+<a class="company-card" href="ctrip.html">
+<div class="company-header"><div><div class="company-name">✈️ 携程集团</div><div class="company-code">9961.HK / TCOM.US</div></div><span class="rating-tag rating-watch">买入（附条件）</span></div>
+<img alt="携程股价走势" src="charts/TCOM.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$405.60</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-30.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">2,651亿</div></div>
+</div>
+<div class="pe-info"><span>FY25营收: 624亿</span><span>调整净利: 318亿</span></div>
+<div class="conclusion">FY2025营收+17%，国际业务预订量+60%。反垄断调查悬顶，股价较高点跌35%，估值进入合理区间。</div>
+</a>
+</div>
+<div class="section-title" id="section-Z">Z — 紫金矿业</div>
+<div class="company-grid">
+<a class="company-card" href="zijinmining.html">
+<div class="company-header"><div><div class="company-name">🪙 紫金矿业</div><div class="company-code">601899.SZ / 2899.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="紫金矿业股价走势" src="charts/ZIJINMINING.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥31.65</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-2.1%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-10.6%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">8,416亿</div></div>
+</div>
+<div class="pe-info"><span>PE 2026E: 25x</span><span></span></div>
+<div class="conclusion">中国金矿铜矿龙头，金价上涨周期，目标价¥42有21%空间。</div>
+</a>
+</div>
+<div class="section-title" id="section-F">F — 山西汾酒</div>
+<div class="company-grid">
+<a class="company-card" href="fenjiu.html">
+<div class="company-header"><div><div class="company-name">🍶 山西汾酒</div><div class="company-code">600809.SS</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="山西汾酒股价走势" src="https://image.sinajs.cn/newchart/weekly/n/sh600809.gif" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">¥153.86</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bearish">-1.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-13.1%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">1,877亿</div></div>
+</div>
+<div class="pe-info"><span>PE 2026E: 22x</span><span>目标价: ¥165</span></div>
+<div class="conclusion">清香白酒龙头，全国化战略成效显著，目标价¥165。</div>
+</a>
+</div>
+<div class="section-title" id="section-G">G — 古茗</div>
+<div class="company-grid">
+<a class="company-card" href="guming.html">
+<div class="company-header"><div><div class="company-name">🧋 古茗</div><div class="company-code">01364.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="古茗股价走势" src="charts/guming.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$28.94</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+3.0%</div></div>
+<div class="price-item"><div class="price-label">较发行价</div><div class="price-change bullish">+17.9%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">688亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: HK$32-35</span></div>
+<div class="conclusion">奶茶连锁龙头，门店13,278家，目标价HK$32-35。</div>
+</a>
+</div>
+<div class="section-title" id="section-X">X — 携程</div>
+<div class="company-grid">
+<a class="company-card" href="ctrip.html">
+<div class="company-header"><div><div class="company-name">✈️ 携程</div><div class="company-code">9961.HK</div></div><span class="rating-tag rating-buy">买入</span></div>
+<img alt="携程股价走势" src="charts/ctrip.png" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px;"/>
+<div class="price-info">
+<div class="price-item"><div class="price-label">股价</div><div class="price-value">HK$405.60</div></div>
+<div class="price-item"><div class="price-label">前一天</div><div class="price-change bullish">+0.5%</div></div>
+<div class="price-item"><div class="price-label">YTD</div><div class="price-change bearish">-30.4%</div></div>
+<div class="price-item"><div class="price-label">市值</div><div class="price-value">2,651亿</div></div>
+</div>
+<div class="pe-info"><span>目标价: HK$500</span></div>
+<div class="conclusion">OTA龙头，出行需求强劲，目标价HK$500。</div>
+</a>
+</div>
 <div class="footer-note"><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p><p style="margin-top:10px;font-size:0.85em;">数据更新时间: 2026-03-20 | 股价数据仅供参考，投资有风险</p></div>
-    </div>
-    <script>
+</div>
+<script>
     function filterCompanies() {
         var input = document.getElementById('searchInput');
         var filter = input.value.toLowerCase();
@@ -572,5 +552,5 @@
         });
     }
     </script>
-</body>
+</div></body>
 </html>

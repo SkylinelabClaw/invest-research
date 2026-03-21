@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft 微软 投资分析报告</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Microsoft 微软 投资分析报告</title>
+<style>
         :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #00A4EF; --bullish: #00c853; --bearish: #ff1744; --neutral: #ff9800; --text: #eaeaea; --text-muted: #a0a0a0; --card-bg: #1f2937; --border: #374151; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
@@ -60,135 +61,119 @@
     </style>
 </head>
 <body>
-    <div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-        <a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
-        <div style="display:flex;gap:10px;">
-            <a href="meta.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
-            <a href="nbis.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
-        </div>
-    </div>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div><h1>Microsoft 微软 — 投资分析报告</h1><p class="subtitle">MSFT.US</p></div>
-                <div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
-            </div>
-        </div>
-    </header>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section><h2>📊 股票快照</h2>
-            <div class="snapshot">
-                <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-19)</div><div class="snapshot-value">$389.02</div><div class="snapshot-change bearish">从高点$540回调-28%</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">2.91万亿美元</div><div class="snapshot-change">全球第二</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">~35x</div><div class="snapshot-change">回调后合理</div></div>
-                <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$592</div><div class="snapshot-change">分析师平均</div></div>
-            </div>
-        </section>
-
-        <section><h2>📈 一年股价走势</h2>
-            <div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
-                <img src="charts/microsoft.png" alt="microsoft一年股价走势" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;">
-                <p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
-            </div>
-        </section>
-
-        <div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
-            <p>Q2营收$813亿 (+17%) 超预期，Microsoft Cloud首次突破$500亿。Azure增长39%持续强劲。AI资本开支$375亿创纪录，长期投资确定。PE 35x回调后具备吸引力。</p>
-        </div>
-
-        <section><h2>💰 季度财务表现 (FY26 Q2)</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>营收</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$813亿</div><div class="metric-change bullish">YoY +17%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Non-GAAP EPS</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$4.14</div><div class="metric-change bullish">YoY +24%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Microsoft Cloud</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$515亿</div><div class="metric-change bullish">首次突破500亿</div></div>
-                <div class="metric-card"><div class="metric-header"><span>Azure增长</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">+39%</div><div class="metric-change bullish">持续强劲</div></div>
-            </div>
-        </section>
-
-        <section><h2>💼 业务深度解析</h2>
-            <div class="analysis-card"><h3>☁️ Azure — 核心增长引擎</h3><span class="tag tag-bullish">最大看点</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Azure收入同比增长39%</strong>（固定汇率38%）</li><li>全球第二大云服务商，市场份额21%</li><li>AI需求驱动Azure增长加速</li><li>与OpenAI合作深化，Azure独占地位稳固</li><li>商业未完成performance obligations $6250亿，同比增长110%</li></ul></div>
-            <div class="analysis-card"><h3>🤖 AI 商业化 — 加速推进</h3><span class="tag tag-bullish">增长点</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Microsoft 365 Copilot付费席位1500万</strong>，同比增长160%</li><li>Copilot日使用量同比增长10倍</li><li>GitHub Copilot普及，企业用户增长</li><li>Azure AI平台客户增加</li><li>OpenAI额外$250亿Azure承诺</li></ul></div>
-            <div class="analysis-card"><h3>💻 传统软件 — 现金牛</h3><span class="tag tag-bullish">稳定</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li>Office 365订阅稳定</li><li>LinkedIn增长稳健</li><li>Windows OEM收入回升</li></ul></div>
-            <div class="analysis-card"><h3>💰 资本开支 — 大手笔投入AI</h3><span class="tag tag-neutral">风险点</span>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>Q2资本开支$375亿</strong>，同比增长66%</li><li>主要用于AI加速器和计算基础设施</li><li>高投入导致毛利率小幅下降</li><li>长期投资确定，短期利润承压</li></ul></div>
-        </section>
-
-        <section><h2>📊 财务数据详表</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr><th>指标</th><th>FY26 Q2</th><th>FY26 Q1</th><th>FY25 Q2</th><th>YoY</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>总营收</td><td class="number">$813亿</td><td class="number">$696亿</td><td class="number">$696亿</td><td class="number bullish">+17%</td></tr>
-                        <tr><td>Azure收入</td><td class="number">~$257亿</td><td class="number">~$213亿</td><td class="number">~$185亿</td><td class="number bullish">+39%</td></tr>
-                        <tr><td>Microsoft Cloud</td><td class="number">$515亿</td><td class="number">$439亿</td><td class="number">$409亿</td><td class="number bullish">+26%</td></tr>
-                        <tr><td>EPS (Non-GAAP)</td><td class="number">$4.14</td><td class="number">$3.45</td><td class="number">$3.34</td><td class="number bullish">+24%</td></tr>
-                        <tr><td>EPS (GAAP)</td><td class="number">$5.16</td><td class="number">$3.99</td><td class="number">$3.23</td><td class="number bullish">+60%</td></tr>
-                        <tr><td>营业利润</td><td class="number">$383亿</td><td class="number">$320亿</td><td class="number">$317亿</td><td class="number bullish">+21%</td></tr>
-                        <tr><td>营业利润率</td><td class="number">47%</td><td class="number">46%</td><td class="number">46%</td><td class="number bullish">+1pp</td></tr>
-                        <tr><td>自由现金流</td><td class="number">$59亿</td><td class="number">$257亿</td><td class="number">$65亿</td><td class="number bearish">-9%</td></tr>
-                        <tr><td>资本开支</td><td class="number">$375亿</td><td>$228亿</td><td>$226亿</td><td class="number bullish">+66%</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="metrics-grid" style="margin-top:20px;">
-                <div class="metric-card"><div class="metric-header"><span>Microsoft Cloud 毛利率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">67%</div><div class="metric-change">受AI投资影响</div></div>
-                <div class="metric-card"><div class="metric-header"><span>智能云营业利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">42%</div><div class="metric-change">稳定</div></div>
-                <div class="metric-card"><div class="metric-header"><span>生产力和业务流程利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">60%</div><div class="metric-change">强劲</div></div>
-                <div class="metric-card"><div class="metric-header"><span>TTM自由现金流利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">25.3%</div><div class="metric-change">TTM</div></div>
-            </div>
-        </section>
-
-        <section><h2>🎯 分析师预测 (2026年3月)</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>目标价中位数</span><span class="metric-period">45位分析师</span></div><div class="metric-value">$592</div><div class="metric-change bullish">潜在涨幅 55%</div></div>
-                <div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-period">67位分析师</span></div><div class="metric-value">$392 - $730</div><div class="metric-change">中位数 $600</div></div>
-                <div class="metric-card"><div class="metric-header"><span>评级分布</span><span class="metric-period">67位分析师</span></div><div class="metric-value">54买入/3持有/0卖出</div><div class="metric-change bullish">强烈看多</div></div>
-                <div class="metric-card"><div class="metric-header"><span>高盛目标价</span><span class="metric-period">重申买入</span></div><div class="metric-value">$600</div><div class="metric-change">2026年2月</div></div>
-            </div>
-            <div class="analysis-card" style="margin-top:20px;"><h3>📈 分析师核心观点</h3>
-                <ul style="margin-top:15px;padding-left:20px;"><li><strong>看多理由：</strong>Azure云业务持续强劲，AI布局领先，Microsoft 365 Copilot商业化加速</li><li><strong>增长动力：</strong>企业AI采用率提升，Azure市场份额扩大，Copilot付费用户增长</li><li><strong>风险因素：</strong>AI资本开支持续高企，企业AI采用速度放缓，竞争加剧</li><li><strong>订单积压：</strong>商业未完成订单$6250亿，同比增长110%，未来收入确定性强</li></ul></div>
-        </section>
-
-        <section><h2>📊 DCF 折现估值 — 三情景对比</h2>
-            <div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$520</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">18%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$416</div></div></div></div>
-            <div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$450</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$360</div></div></div></div>
-            <div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$350</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$280</div></div></div></div>
-        </section>
-
-        <section><h2>🏆 巴菲特逐项评分</h2>
-            <div class="metrics-grid">
-                <div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">Office+Azure</p><p style="font-size:0.85em;margin-top:10px;">Office 365统治企业软件，Azure全球第二，护城河宽广。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">纳德拉领导</p><p style="font-size:0.85em;margin-top:10px;">纳德拉战略眼光强，云转型成功，AI布局领先。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">超强现金流</p><p style="font-size:0.85em;margin-top:10px;">利润率行业领先，现金流充裕。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">订阅模式稳定，EPS增速高于营收。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">商业模式稳</p><p style="font-size:0.85em;margin-top:10px;">订阅收入可预测，云增长确定。</p></div>
-                <div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">进取</p><p style="font-size:0.85em;margin-top:10px;">回购+AI投资并重，股东回报丰厚。</p></div>
-            </div>
-        </section>
-
-        <section><div class="conclusion">
-            <h3>🎯 综合裁决 — 买入 (Buy)</h3>
-            <p style="margin:20px 0;">从高点回调28%，PE 35x具备吸引力。Azure+AI长期增长确定，目标价$450-520。</p>
-            <h4 style="margin:30px 0 15px;">💼 操作建议</h4>
-            <ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$370-390</li><li>• 加仓：$340以下</li><li>• 目标价：$450-520</li><li>• 止损位：$320</li></ul>
-        </div></section>
-
-        <section><h2>⚠️ 主要风险</h2>
-            <div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>AI资本开支过高 — 压制利润率</li><li>Azure竞争加剧 — AWS/Google Cloud</li><li>OpenAI依赖 — 合作变动风险</li><li>监管反垄断调查</li></ul></div>
-        </section>
-
-        <section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
-
-        <footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
-    </div>
+<div class="nav-bar" style="background:var(--card-bg);padding:15px 20px;margin:20px auto;max-width:1160px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+<a href="index.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">🏠 回到目录</a>
+<div style="display:flex;gap:10px;">
+<a href="meta.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">⬅️ 上一家</a>
+<a href="nbis.html" style="display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;padding:10px 20px;background:var(--secondary);border-radius:8px;font-size:0.95em;">下一家 ➡️</a>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="header-content">
+<div><h1>Microsoft 微软 — 投资分析报告</h1><p class="subtitle">MSFT.US</p></div>
+<div class="report-meta"><div>报告日期: 2026-03-21</div><div>分析师: 投研团队</div><div>评级: 买入</div></div>
+</div>
+</div>
+</header>
+<div class="container">
+<section><h2>📊 股票快照</h2>
+<div class="snapshot">
+<div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-20)</div><div class="snapshot-value">$381.87</div><div class="snapshot-change">前一天: -1.8% | YTD: -19.1%</div></div>
+<div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$2.84万亿</div><div class="snapshot-change">全球第二</div></div>
+<div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">23.9x</div><div class="snapshot-change">回调后合理</div></div>
+<div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$592</div><div class="snapshot-change">分析师平均</div></div>
+</div>
+</section>
+<section><h2>📈 一年股价走势</h2>
+<div class="chart-container" style="background:var(--card-bg);border-radius:12px;padding:20px;margin-bottom:30px;">
+<img alt="microsoft一年股价走势" src="charts/microsoft.png" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:8px;"/>
+<p style="text-align:center;color:var(--text-muted);font-size:0.85em;margin-top:15px;">数据来源: Yahoo Finance | 过去52周周线走势 (2025-03 ~ 2026-03)</p>
+</div>
+</section>
+<div class="alert-box"><div class="alert-title">🎯 核心亮点</div>
+<p>Q2营收$813亿 (+17%) 超预期，Microsoft Cloud首次突破$500亿。Azure增长39%持续强劲。AI资本开支$375亿创纪录，长期投资确定。PE 35x回调后具备吸引力。</p>
+</div>
+<section><h2>💰 季度财务表现 (FY26 Q2)</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>营收</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$813亿</div><div class="metric-change bullish">YoY +17%</div></div>
+<div class="metric-card"><div class="metric-header"><span>Non-GAAP EPS</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$4.14</div><div class="metric-change bullish">YoY +24%</div></div>
+<div class="metric-card"><div class="metric-header"><span>Microsoft Cloud</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">$515亿</div><div class="metric-change bullish">首次突破500亿</div></div>
+<div class="metric-card"><div class="metric-header"><span>Azure增长</span><span class="metric-period">FY26 Q2</span></div><div class="metric-value">+39%</div><div class="metric-change bullish">持续强劲</div></div>
+</div>
+</section>
+<section><h2>💼 业务深度解析</h2>
+<div class="analysis-card"><h3>☁️ Azure — 核心增长引擎</h3><span class="tag tag-bullish">最大看点</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Azure收入同比增长39%</strong>（固定汇率38%）</li><li>全球第二大云服务商，市场份额21%</li><li>AI需求驱动Azure增长加速</li><li>与OpenAI合作深化，Azure独占地位稳固</li><li>商业未完成performance obligations $6250亿，同比增长110%</li></ul></div>
+<div class="analysis-card"><h3>🤖 AI 商业化 — 加速推进</h3><span class="tag tag-bullish">增长点</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Microsoft 365 Copilot付费席位1500万</strong>，同比增长160%</li><li>Copilot日使用量同比增长10倍</li><li>GitHub Copilot普及，企业用户增长</li><li>Azure AI平台客户增加</li><li>OpenAI额外$250亿Azure承诺</li></ul></div>
+<div class="analysis-card"><h3>💻 传统软件 — 现金牛</h3><span class="tag tag-bullish">稳定</span>
+<ul style="margin-top:15px;padding-left:20px;"><li>Office 365订阅稳定</li><li>LinkedIn增长稳健</li><li>Windows OEM收入回升</li></ul></div>
+<div class="analysis-card"><h3>💰 资本开支 — 大手笔投入AI</h3><span class="tag tag-neutral">风险点</span>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>Q2资本开支$375亿</strong>，同比增长66%</li><li>主要用于AI加速器和计算基础设施</li><li>高投入导致毛利率小幅下降</li><li>长期投资确定，短期利润承压</li></ul></div>
+</section>
+<section><h2>📊 财务数据详表</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th>指标</th><th>FY26 Q2</th><th>FY26 Q1</th><th>FY25 Q2</th><th>YoY</th></tr>
+</thead>
+<tbody>
+<tr><td>总营收</td><td class="number">$813亿</td><td class="number">$696亿</td><td class="number">$696亿</td><td class="number bullish">+17%</td></tr>
+<tr><td>Azure收入</td><td class="number">~$257亿</td><td class="number">~$213亿</td><td class="number">~$185亿</td><td class="number bullish">+39%</td></tr>
+<tr><td>Microsoft Cloud</td><td class="number">$515亿</td><td class="number">$439亿</td><td class="number">$409亿</td><td class="number bullish">+26%</td></tr>
+<tr><td>EPS (Non-GAAP)</td><td class="number">$4.14</td><td class="number">$3.45</td><td class="number">$3.34</td><td class="number bullish">+24%</td></tr>
+<tr><td>EPS (GAAP)</td><td class="number">$5.16</td><td class="number">$3.99</td><td class="number">$3.23</td><td class="number bullish">+60%</td></tr>
+<tr><td>营业利润</td><td class="number">$383亿</td><td class="number">$320亿</td><td class="number">$317亿</td><td class="number bullish">+21%</td></tr>
+<tr><td>营业利润率</td><td class="number">47%</td><td class="number">46%</td><td class="number">46%</td><td class="number bullish">+1pp</td></tr>
+<tr><td>自由现金流</td><td class="number">$59亿</td><td class="number">$257亿</td><td class="number">$65亿</td><td class="number bearish">-9%</td></tr>
+<tr><td>资本开支</td><td class="number">$375亿</td><td>$228亿</td><td>$226亿</td><td class="number bullish">+66%</td></tr>
+</tbody>
+</table>
+</div>
+<div class="metrics-grid" style="margin-top:20px;">
+<div class="metric-card"><div class="metric-header"><span>Microsoft Cloud 毛利率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">67%</div><div class="metric-change">受AI投资影响</div></div>
+<div class="metric-card"><div class="metric-header"><span>智能云营业利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">42%</div><div class="metric-change">稳定</div></div>
+<div class="metric-card"><div class="metric-header"><span>生产力和业务流程利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">60%</div><div class="metric-change">强劲</div></div>
+<div class="metric-card"><div class="metric-header"><span>TTM自由现金流利润率</span><span class="metric-period">Q2 FY26</span></div><div class="metric-value">25.3%</div><div class="metric-change">TTM</div></div>
+</div>
+</section>
+<section><h2>🎯 分析师预测 (2026年3月)</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>目标价中位数</span><span class="metric-period">45位分析师</span></div><div class="metric-value">$592</div><div class="metric-change bullish">潜在涨幅 55%</div></div>
+<div class="metric-card"><div class="metric-header"><span>目标价区间</span><span class="metric-period">67位分析师</span></div><div class="metric-value">$392 - $730</div><div class="metric-change">中位数 $600</div></div>
+<div class="metric-card"><div class="metric-header"><span>评级分布</span><span class="metric-period">67位分析师</span></div><div class="metric-value">54买入/3持有/0卖出</div><div class="metric-change bullish">强烈看多</div></div>
+<div class="metric-card"><div class="metric-header"><span>高盛目标价</span><span class="metric-period">重申买入</span></div><div class="metric-value">$600</div><div class="metric-change">2026年2月</div></div>
+</div>
+<div class="analysis-card" style="margin-top:20px;"><h3>📈 分析师核心观点</h3>
+<ul style="margin-top:15px;padding-left:20px;"><li><strong>看多理由：</strong>Azure云业务持续强劲，AI布局领先，Microsoft 365 Copilot商业化加速</li><li><strong>增长动力：</strong>企业AI采用率提升，Azure市场份额扩大，Copilot付费用户增长</li><li><strong>风险因素：</strong>AI资本开支持续高企，企业AI采用速度放缓，竞争加剧</li><li><strong>订单积压：</strong>商业未完成订单$6250亿，同比增长110%，未来收入确定性强</li></ul></div>
+</section>
+<section><h2>📊 DCF 折现估值 — 三情景对比</h2>
+<div class="dcf-scenario optimistic"><div class="dcf-header"><h3 style="margin:0;">🟢 乐观情景</h3><span class="dcf-price bullish">$520</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">18%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">10%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$416</div></div></div></div>
+<div class="dcf-scenario base"><div class="dcf-header"><h3 style="margin:0;">📊 中性情景</h3><span class="dcf-price neutral">$450</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">15%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">12%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$360</div></div></div></div>
+<div class="dcf-scenario pessimistic"><div class="dcf-header"><h3 style="margin:0;">🔴 悲观情景</h3><span class="dcf-price bearish">$350</span></div><div class="dcf-details"><div class="dcf-detail"><div class="dcf-detail-label">营收增速</div><div class="dcf-detail-value">10%/年</div></div><div class="dcf-detail"><div class="dcf-detail-label">折现率</div><div class="dcf-detail-value">14%</div></div><div class="dcf-detail"><div class="dcf-detail-label">含20%安全垫</div><div class="dcf-detail-value">$280</div></div></div></div>
+</section>
+<section><h2>🏆 巴菲特逐项评分</h2>
+<div class="metrics-grid">
+<div class="metric-card"><div class="metric-header"><span>护城河</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">Office+Azure</p><p style="font-size:0.85em;margin-top:10px;">Office 365统治企业软件，Azure全球第二，护城河宽广。</p></div>
+<div class="metric-card"><div class="metric-header"><span>管理层</span><span class="tag tag-bullish">A+</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">纳德拉领导</p><p style="font-size:0.85em;margin-top:10px;">纳德拉战略眼光强，云转型成功，AI布局领先。</p></div>
+<div class="metric-card"><div class="metric-header"><span>财务健康</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">超强现金流</p><p style="font-size:0.85em;margin-top:10px;">利润率行业领先，现金流充裕。</p></div>
+<div class="metric-card"><div class="metric-header"><span>盈利质量</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">高质量</p><p style="font-size:0.85em;margin-top:10px;">订阅模式稳定，EPS增速高于营收。</p></div>
+<div class="metric-card"><div class="metric-header"><span>可预测性</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">商业模式稳</p><p style="font-size:0.85em;margin-top:10px;">订阅收入可预测，云增长确定。</p></div>
+<div class="metric-card"><div class="metric-header"><span>资本配置</span><span class="tag tag-bullish">A</span></div><p style="color:var(--text-muted);font-size:0.9em;margin-top:10px;">进取</p><p style="font-size:0.85em;margin-top:10px;">回购+AI投资并重，股东回报丰厚。</p></div>
+</div>
+</section>
+<section><div class="conclusion">
+<h3>🎯 综合裁决 — 买入 (Buy)</h3>
+<p style="margin:20px 0;">从高点回调28%，PE 35x具备吸引力。Azure+AI长期增长确定，目标价$450-520。</p>
+<h4 style="margin:30px 0 15px;">💼 操作建议</h4>
+<ul style="text-align:left;max-width:600px;margin:0 auto;"><li>• 首次买入：$370-390</li><li>• 加仓：$340以下</li><li>• 目标价：$450-520</li><li>• 止损位：$320</li></ul>
+</div></section>
+<section><h2>⚠️ 主要风险</h2>
+<div class="analysis-card" style="border-left-color:var(--bearish);"><ul style="padding-left:20px;"><li>AI资本开支过高 — 压制利润率</li><li>Azure竞争加剧 — AWS/Google Cloud</li><li>OpenAI依赖 — 合作变动风险</li><li>监管反垄断调查</li></ul></div>
+</section>
+<section><div class="alert-box" style="background:rgba(255,152,0,0.1);border-color:var(--neutral);"><div class="alert-title" style="color:var(--neutral);">📋 免责声明</div><p>以上分析仅供研究参考，不构成投资建议。投资有风险，请结合自身风险承受能力做决策。</p></div></section>
+<footer><p><a href="index.html">← 返回目录</a></p><p>© 2026 投研分析报告 | 本报告仅供研究参考，不构成投资建议</p></footer>
+</div>
 </body>
 </html>
