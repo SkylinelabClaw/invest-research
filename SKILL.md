@@ -16,11 +16,21 @@ invest-research/
 
 ## 核心规则
 
-### 1. 公司排序规则（重要！）
+### 1. 公司排序规则（重要！必须严格遵守）
 - **首页目录按拼音/单词首字母排序**
 - A-Z顺序，每个字母一个section
+- **中文公司按拼音首字母**：如"寒武纪"拼音Han → H，"三花"拼音San → S
+- **英文公司按英文首字母**：如Coinbase → C，Nvidia → N
 - 如果同一字母下公司过多，可使用 C, C2, C3 细分
 - 示例：section-A, section-C, section-C2
+
+**排序示例：**
+- A: alibaba, arm
+- C: coin (Coinbase是英文，按C)
+- D: dongpeng
+- G: google
+- H: cambricon (寒武纪→H), hygon (海光→H), hims, hood
+- J: cambridgetechnology (剑桥→J), geekplus (极智嘉→J), jacobiopharma (加科思→J), jiaxininternational (佳鑫→J)
 
 ### 2. 首页快速导航 (quick-index)
 - 搜索框下方显示字母导航
