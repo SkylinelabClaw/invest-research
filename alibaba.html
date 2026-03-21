@@ -17,6 +17,9 @@
         
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--bearish); background: linear-gradient(135deg, var(--card-bg), rgba(255, 23, 68, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -102,6 +105,7 @@
 <div class="snapshot-card"><div class="snapshot-label">美股市值</div><div class="snapshot-value">$2,922亿</div><div class="snapshot-change">约 HK$2.3万亿</div></div>
 <div class="snapshot-card"><div class="snapshot-label">目标价共识 (中位数)</div><div class="snapshot-value">$140.00</div><div class="snapshot-change neutral">分歧区间: $100 - $175</div></div>
 <div class="snapshot-card"><div class="snapshot-label">2026E P/E</div><div class="snapshot-value">21.7x</div><div class="snapshot-change bearish">利润承压导致被动抬升</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.alibabagroup.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 <div class="alert-box"><div class="alert-title">⚠️ 最新核心分歧点 (The Market Debate)</div>
 <p><strong>多头逻辑：</strong>阿里云重回高增长轨道（+36% YoY），AI商业化收入连续10个季度三位数暴增；核心电商正在企稳；管理层明确提出5年内云+AI收入1000亿美元的宏伟目标。<br/><strong>空头逻辑：</strong>淘天集团防御战极为烧钱，即时零售与AI基建的高强度投入导致FY26 Q3净利润同比暴跌67%。市场正在担忧这究竟是“短期阵痛”还是“长期烧钱无底洞”。</p>

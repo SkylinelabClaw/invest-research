@@ -30,6 +30,9 @@
         
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -115,6 +118,7 @@
 <div class="snapshot-card"><div class="snapshot-label">总市值</div><div class="snapshot-value">¥571亿</div><div class="snapshot-change">约 $77亿</div></div>
 <div class="snapshot-card"><div class="snapshot-label">12个月目标价</div><div class="snapshot-value">¥123.26</div><div class="snapshot-change bullish">+15.65% 上涨空间</div></div>
 <div class="snapshot-card"><div class="snapshot-label">分析师评级</div><div class="snapshot-value">买入</div><div class="snapshot-change">7家买入 | 0家卖出</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.anker.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 </section>
 <section><h2>📈 一年股价走势</h2>

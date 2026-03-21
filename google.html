@@ -16,6 +16,9 @@
         .report-meta { text-align: right; color: var(--text-muted); }
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -86,6 +89,7 @@
 <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$3.64万亿</div><div class="snapshot-change">全球第三巨头</div></div>
 <div class="snapshot-card"><div class="snapshot-label">目标价共识 (中位数)</div><div class="snapshot-value">$376.50</div><div class="snapshot-change bullish">分歧区间: $303 - $450</div></div>
 <div class="snapshot-card"><div class="snapshot-label">P/E TTM</div><div class="snapshot-value">27.8x</div><div class="snapshot-change">对齐历史均值，估值合理</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.google.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 <div class="alert-box"><div class="alert-title">🎯 核心分歧点 (The Market Debate)</div>
 <p><strong>多头逻辑：</strong>Google Cloud 增速惊人(Q4 YoY +48%)，一举重塑估值模型；AI Overview 并没有摧毁搜索广告点击率，反而推高了查询量(Query volume)和用户参与度；资本回报率极高。<br/><strong>空头/谨慎逻辑：</strong>司法部(DOJ)反垄断分拆阴云未散（尤其是搜索和广告技术栈的潜在剥离）；OpenAI的SearchGPT和Perplexity在高端垂类搜索中渗透率上升，长线对搜索基本盘仍有威胁。</p>

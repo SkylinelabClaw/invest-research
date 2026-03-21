@@ -18,6 +18,9 @@
         
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -110,6 +113,7 @@
 <div class="snapshot-card highlight"><div class="snapshot-label">当前股价 (2026-03-18)</div><div class="snapshot-value">HK$68.8</div><div class="snapshot-change">较发行价持平</div></div>
 <div class="snapshot-card"><div class="snapshot-label">股票代码</div><div class="snapshot-value">06166.HK</div></div>
 <div class="snapshot-card"><div class="snapshot-label">上市日期</div><div class="snapshot-value">2025-10-28</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.cig.com.cn" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 </div>
 <div style="background:var(--card-bg);padding:15px;border-radius:8px;border-left:3px solid var(--highlight);">

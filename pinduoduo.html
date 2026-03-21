@@ -18,6 +18,9 @@
         
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -102,6 +105,7 @@
 <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$1,366亿</div><div class="snapshot-change">约 RMB 8,000亿</div></div>
 <div class="snapshot-card"><div class="snapshot-label">2025E P/E</div><div class="snapshot-value">9.6x</div><div class="snapshot-change">极具吸引力</div></div>
 <div class="snapshot-card"><div class="snapshot-label">2026财报发布日期</div><div class="snapshot-value">3月25日</div><div class="snapshot-change">即将公布</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.pinduoduo.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 </section>
 <section><h2>📈 一年股价走势</h2>

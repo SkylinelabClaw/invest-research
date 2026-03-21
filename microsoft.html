@@ -17,6 +17,9 @@
         .report-meta { text-align: right; color: var(--text-muted); }
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--neutral); background: linear-gradient(135deg, var(--card-bg), rgba(255, 152, 0, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -85,6 +88,7 @@
 <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">$2.84万亿</div><div class="snapshot-change">全球第二</div></div>
 <div class="snapshot-card"><div class="snapshot-label">PE TTM</div><div class="snapshot-value">23.9x</div><div class="snapshot-change">回调后合理</div></div>
 <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">$592</div><div class="snapshot-change">分析师平均</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.microsoft.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 </section>
 <section><h2>📈 一年股价走势</h2>

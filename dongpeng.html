@@ -16,6 +16,9 @@
         .report-meta { text-align: right; color: var(--text-muted); }
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--bullish); background: linear-gradient(135deg, var(--card-bg), rgba(0, 200, 83, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -79,6 +82,7 @@
 <div class="snapshot-card"><div class="snapshot-label">2024年营收</div><div class="snapshot-value">158.4亿</div><div class="snapshot-change bullish">+40% YoY</div></div>
 <div class="snapshot-card"><div class="snapshot-label">2024年净利润</div><div class="snapshot-value">33.3亿</div><div class="snapshot-change bullish">+63.1% YoY</div></div>
 <div class="snapshot-card"><div class="snapshot-label">补水啦营收 (25Q1-Q3)</div><div class="snapshot-value">28.47亿</div><div class="snapshot-change bullish">占总营收16.91%</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.dongpenggroup.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 <div class="alert-box">
 <div class="alert-title">🎯 核心亮点</div>

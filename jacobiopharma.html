@@ -18,6 +18,9 @@
         
         .snapshot { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .snapshot-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        .metric { background: var(--card-bg); padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .metric-label { color: var(--text-muted); font-size: 0.9em; }
+        
         .snapshot-card.highlight { border-color: var(--highlight); background: linear-gradient(135deg, var(--card-bg), rgba(233, 69, 96, 0.1)); }
         .snapshot-label { font-size: 0.85em; color: var(--text-muted); margin-bottom: 5px; }
         .snapshot-value { font-size: 1.6em; font-weight: 700; }
@@ -103,6 +106,7 @@
 <div class="snapshot-card"><div class="snapshot-label">市值</div><div class="snapshot-value">HK$3亿</div><div class="snapshot-change">创新药企</div></div>
 <div class="snapshot-card"><div class="snapshot-label">目标价</div><div class="snapshot-value">HK$11.3</div><div class="snapshot-change">华兴证券首次覆盖</div></div>
 <div class="snapshot-card"><div class="snapshot-label">评级</div><div class="snapshot-value">强烈推荐</div><div class="snapshot-change">华兴证券</div></div>
+<div class="metric"><span class="metric-label">官网:</span> <a href="https://www.jacobio.com" target="_blank" style="color: var(--highlight);">访问官网</a></div>
 </div>
 </section>
 <section><h2>📈 一年股价走势</h2>
