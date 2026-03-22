@@ -168,9 +168,15 @@ invest-research/
 - [ ] 竞争对手对比（如有）
 
 ### 6. 股价走势图
-- 美股/港股：使用Yahoo Finance图表 → 保存到 charts/ 目录
-- A股：使用新浪财经 GIF图表
+- **统一使用本地静态图**：使用 yfinance 获取数据，用 matplotlib 生成静态 PNG 图
 - 时间标注：`(2025-03 ~ 2026-03)` 格式
+- **禁止使用外部 iframe 链接**
+
+#### 6.1 图表文件名规范（重要！避免大小写匹配问题）
+- **所有图表文件名必须使用小写**：`alibaba.png`、`arm.png`、`coin.png`、`google.png`
+- **禁止使用大写或混合大小写**：`ARM.png`、`COIN.png`、`GOOGL.png` ❌
+- **生成图表后必须验证**：确保 HTML 中的 `src="charts/xxx.png"` 与实际文件名完全匹配（区分大小写）
+- **本地调试建议**：在 Mac/Linux 上开发时，由于文件系统默认不区分大小写，建议用 `ls -la` 确认文件确实存在
 
 ### 7. GitHub Pages
 - 仓库：https://github.com/SkylinelabClaw/invest-research
