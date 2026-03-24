@@ -186,10 +186,22 @@ invest-research/
 3. **禁止大写或混写**：`ARM.png`、`COIN.png`、`GOOGL.png`、`GuMing.png` ❌
 4. **审查确认**：生成图表后，必须确保 `src="charts/xxx.png"` 在大小写上与实际文件绝对匹配。
 
-### 7. GitHub Pages
+### 7. GitHub 推送与部署规范（重要防封禁规则！）
 - 仓库：https://github.com/SkylinelabClaw/invest-research
 - 网页：https://skylinelabclaw.github.io/invest-research/
-- 每次更新后执行：`git add -A && git commit -m "描述" && git push`
+- **⚠️ 核心防封禁原则：禁止高频推送 (No Frequent Pushing)**
+  - 由于 GitHub Actions 对自动化频繁触发有严格的风控（Spam Filter），高频执行 `git push` 会导致账号 Actions 权限被封禁。
+  - **必须采用“本地批处理”模式**：在本地完成所有公司的 HTML 更新、图表生成、JSON/CSV 数据修改后，**统一执行一次完整的 commit 和 push**。
+  - 严禁“改一家公司就 push 一次”。单次任务无论更新多少家公司，最终只允许 push **1次**。
+
+#### 统一提交示例：
+```bash
+# 所有公司更新完毕后，最后统一执行
+cd invest-research
+git add -A
+git commit -m "Batch update: 刷新多家公司财务数据与走势图"
+git push
+```
 
 ## 添加新公司流程
 
@@ -222,13 +234,8 @@ invest-research/
    - 更新quick-index导航
    - 更新公司总数 (在header的subtitle中)
 
-7. **推送更新**
-   ```bash
-   cd invest-research
-   git add -A
-   git commit -m "Add {公司名} investment report"
-   git push
-   ```
+7. **放入待提交队列（不立即 push）**
+   - 不要立刻 push！所有公司新增/更新全部完成后，再统一按第 7 节规范执行一次 `git push`。
 
 ## 更新现有公司流程
 
@@ -237,7 +244,7 @@ invest-research/
 3. 更新业务分析section（确保每项业务都有数据）
 4. 更新时间戳和数据来源
 5. 重新生成股价走势图（如需要）
-6. 提交推送
+6. **暂存（不立即 push）**：等本次所有公司更新完毕后，统一执行 `git commit` 和 `git push`。
 
 ## 评级说明
 - **买入 (Buy)**: 推荐买入，目标价有20%+上涨空间，有详细数据支撑
